@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const startDate = '2022-05-23 00:00:00';
+    const startDate = '2026-05-23 00:00:00';
 
     function updateLoveTimer() {
         const startDateObj = new Date(startDate);
