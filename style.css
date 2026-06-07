@@ -690,8 +690,8 @@ MOBILE
 
 .heart-left{
     position:absolute;
-    left:-8px;
-    top:-18px;
+    left:-10px;
+    top:20px;
     font-size:28px;
     z-index:10;
 }
@@ -700,15 +700,15 @@ MOBILE
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:-25px;
+    top:20px;
     font-size:34px;
     z-index:10;
 }
 
 .heart-right{
     position:absolute;
-    right:-8px;
-    top:-18px;
+    right:-10px;
+    top:20px;
     font-size:30px;
     z-index:10;
 }
