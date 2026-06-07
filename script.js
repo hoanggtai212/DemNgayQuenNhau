@@ -142,11 +142,22 @@ if (password === "29012012") {
 
     }, 2400);
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        showAlbum();
+    document.getElementById(
+        "unlock-overlay"
+    ).style.display = "none";
 
-    }, 3000);
+    showLoadingLove();
+    function showLoveSuccess(){
+
+    document.getElementById(
+        "loveSuccess"
+    ).style.display = "flex";
+
+}
+
+}, 3000);
 
 } else {
 
@@ -176,6 +187,23 @@ ALBUM
 
 document.addEventListener('DOMContentLoaded', () => {
 
+const clickMe =
+    document.getElementById("clickMe");
+
+if(clickMe){
+
+    clickMe.addEventListener("click",()=>{
+
+        document.getElementById(
+            "loveSuccess"
+        ).style.display = "none";
+
+        showAlbum();
+
+    });
+
+}
+    
 const message =
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
 
@@ -515,19 +543,21 @@ function showLoadingLove(){
             text.textContent =
                 progress + "%";
 
-            if(progress >= 100){
+if(progress >= 100){
 
-                clearInterval(timer);
+    clearInterval(timer);
 
-                setTimeout(()=>{
+    setTimeout(()=>{
 
-                    document.getElementById(
-                        "loveLoading"
-                    ).style.display="none";
+        document.getElementById(
+            "loveLoading"
+        ).style.display = "none";
 
-                    showAlbum();
+        showLoveSuccess();
 
-                },500);
+    },500);
+
+}
 
             }
 
