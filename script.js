@@ -65,16 +65,12 @@ document.getElementById("passwordPage").style.display = "flex";
 
 function showAlbum() {
 
-document.getElementById("passwordPage").style.display = "none";
+    document.getElementById("passwordPage").style.display = "none";
+    document.getElementById("albumPage").style.display = "block";
 
-document.getElementById("albumPage").style.display = "block";
-
-    // reset text
-    idx = 0;
-    typingDiv.textContent = "";
-
-    setTimeout(type, 800);
-    
+    setTimeout(() => {
+        startTyping();
+    }, 800);
 }
 
 function backHome() {
@@ -224,7 +220,13 @@ const typingDiv = document.getElementById("typing");
 if (!albumBtn) return;
 
 let idx = 0;
-
+window.startTyping = function () {
+    idx = 0;
+    typingDiv.textContent = "";
+    albumBtn.classList.remove("visible");
+    type();
+};
+    
 function type() {
 if (idx < message.length) {
 typingDiv.textContent += message[idx++];
