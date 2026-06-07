@@ -649,3 +649,31 @@ MOBILE
     background:#f7d8e3;
     z-index:999999;
 }
+
+.heart-group{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.success-bar{
+    width:320px;
+    height:30px;
+    border:2px solid #777;
+    background:#ff8a98;
+    color:white;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+#clickMe{
+    border:none;
+    padding:8px 20px;
+    border-radius:20px;
+    background:#ff6b9a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
