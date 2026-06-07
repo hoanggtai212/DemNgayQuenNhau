@@ -653,13 +653,13 @@ MOBILE
 .heart-group{
     width:320px;
     position:relative;
-    height:60px;
-    margin-bottom:-5px;
+    height:50px;
+    margin-bottom:-2px;
 }
 
 .success-bar{
     width:320px;
-    height:42px;
+    height:34px;
     border:2px solid #666;
     background:#f58799;
     color:white;
@@ -682,9 +682,7 @@ MOBILE
     color:white;
     font-weight:bold;
     font-size:18px;
-
     margin-top:20px;
-
     box-shadow:
         0 8px 18px rgba(255,95,145,.35);
     cursor:pointer;
@@ -692,8 +690,8 @@ MOBILE
 
 .heart-left{
     position:absolute;
-    left:-5px;
-    top:-15px;
+    left:0;
+    top:-10px;
     font-size:30px;
 }
 
@@ -701,28 +699,48 @@ MOBILE
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:-22px;
+    top:-18px;
     font-size:38px;
 }
 
 .heart-right{
     position:absolute;
-    right:-5px;
-    top:-15px;
+    right:0;
+    top:-10px;
     font-size:30px;
 }
 
-.heart-left::after,
-.heart-center::after,
+.heart-left::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:32px;
+    width:2px;
+    height:18px;
+    background:#666;
+}
+
+.heart-center::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:42px;
+    width:2px;
+    height:18px;
+    background:#666;
+}
+
 .heart-right::after{
     content:"";
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:28px;
+    top:32px;
     width:2px;
     height:18px;
-    background:#777;
+    background:#666;
 }
 
 .success-box{
