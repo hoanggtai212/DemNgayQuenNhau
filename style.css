@@ -1,13 +1,17 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #fde7f0 0%, #f8c8dc 100%);
     overflow-x: hidden;
     color: #5c3e4a;
+}
+
+#counterPage{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
 .love-counter-container {
@@ -297,11 +301,6 @@ PASSWORD PAGE
 
 .ok:active{
     transform:scale(.92);
-}
-
-.delete{
-    background:#ff5b93;
-    color:white;
 }
 
 .empty{
