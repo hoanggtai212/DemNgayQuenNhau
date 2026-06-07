@@ -587,7 +587,8 @@ MOBILE
         font-size:16px;
         padding:0 10px;
     }
-
+}
+    
 #loveLoading{
     position:fixed;
     inset:0;
@@ -637,4 +638,14 @@ MOBILE
     font-weight:bold;
     letter-spacing:2px;
 }
+
+#loveSuccess{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#f7d8e3;
+    z-index:999999;
 }
