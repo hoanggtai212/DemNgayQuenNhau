@@ -45,11 +45,6 @@ function showAlbum() {
 function backHome() {
 location.reload();
 }
-function showLoveSuccess(){
-    document.getElementById(
-        "loveSuccess"
-    ).style.display = "flex";
-}
 function showLoadingLove(){
     document.getElementById(
         "passwordPage"
@@ -368,5 +363,6 @@ for (
       totalPhotos
     );
   }, i * 100);
+}
 }}
-);
+});
