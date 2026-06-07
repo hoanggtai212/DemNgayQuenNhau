@@ -227,3 +227,267 @@ h1 {
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.6) !important;
   }
 }
+
+/* ==========================
+ALBUM PAGE
+========================== */
+
+#albumPage{
+    display:none;
+    min-height:100vh;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(
+        270deg,
+        #fdeff9,
+        #e0f7ff,
+        #fff0f6,
+        #fdeff9
+    );
+    background-size:800% 800%;
+    animation:gradientShift 20s ease infinite;
+    text-align:center;
+}
+
+.main-content{
+    position:relative;
+    z-index:5;
+    padding-top:60px;
+}
+
+#albumPage h1{
+    font-family:'Dancing Script',cursive;
+    font-size:3.5em;
+    color:#e91e63;
+    text-shadow:0 0 15px rgba(233,30,99,.5);
+}
+
+.message{
+    font-size:1.4em;
+    max-width:650px;
+    margin:25px auto;
+    color:#d6336c;
+    min-height:80px;
+}
+
+.action-btn{
+    padding:14px 36px;
+    border:none;
+    border-radius:30px;
+    background:#ff4c8b;
+    color:white;
+    font-size:1.2em;
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(30px);
+    transition:.6s;
+}
+
+.action-btn.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.music-btn,
+.back-btn{
+    position:fixed;
+    top:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.5);
+    cursor:pointer;
+    z-index:20;
+}
+
+.music-btn{
+    right:20px;
+}
+
+.back-btn{
+    left:20px;
+}
+
+/* ==========================
+FLOATING HEARTS
+========================== */
+
+.floating-heart{
+    position:absolute;
+    bottom:-80px;
+    font-size:30px;
+    animation:floatUp 10s linear infinite;
+    opacity:0;
+    z-index:1;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+    10%{
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+/* ==========================
+CONFETTI
+========================== */
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    animation:explode 1s ease-out forwards;
+}
+
+.confetti.heart{
+    width:12px;
+    height:12px;
+    border-radius:0;
+    transform:rotate(45deg);
+}
+
+.confetti.heart::before,
+.confetti.heart::after{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:inherit;
+}
+
+.confetti.heart::before{
+    top:-6px;
+    left:0;
+}
+
+.confetti.heart::after{
+    left:-6px;
+    top:0;
+}
+
+@keyframes explode{
+    from{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+    to{
+        transform:
+            translate(var(--x),var(--y))
+            scale(0);
+        opacity:0;
+    }
+}
+
+/* ==========================
+FIREWORK
+========================== */
+
+.firework-container{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:200px;
+    height:200px;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    opacity:0;
+    z-index:25;
+}
+
+.firework{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:6px;
+    height:20px;
+    background:
+    radial-gradient(
+        circle,
+        #fff 0%,
+        transparent 70%
+    );
+    transform-origin:bottom center;
+    animation:fireworkExplode 1s ease forwards;
+}
+
+@keyframes fireworkExplode{
+    from{
+        opacity:1;
+        transform:translateY(0);
+    }
+    to{
+        opacity:0;
+        transform:translateY(-100px) scaleY(3);
+    }
+}
+
+/* ==========================
+HEART PHOTOS
+========================== */
+
+.photo{
+    position:fixed;
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid white;
+    background:white;
+    opacity:0;
+    z-index:30;
+    transform:translate(-50%,-50%);
+    transition:
+        transform 3s ease,
+        opacity 3s ease;
+    box-shadow:
+        0 0 20px
+        rgba(233,30,99,.7);
+}
+
+/* ==========================
+BACKGROUND ANIMATION
+========================== */
+
+@keyframes gradientShift{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ==========================
+MOBILE
+========================== */
+
+@media(max-width:480px){
+
+    .photo{
+        width:70px;
+        height:70px;
+    }
+
+    #albumPage h1{
+        font-size:2.2em;
+    }
+
+    .message{
+        font-size:1.1em;
+        width:90%;
+    }
+
+}
