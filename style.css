@@ -348,3 +348,202 @@ LOCK ANIMATION
     75%{transform:translateX(-10px);}
     100%{transform:translateX(0);}
 }
+
+/* ==========================
+ALBUM PAGE
+========================== */
+
+#albumPage{
+    min-height:100vh;
+    background:linear-gradient(135deg,#ffe4ec,#ffd1dc);
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:20px;
+}
+
+.main-content{
+    position:relative;
+    z-index:10;
+    margin-top:60px;
+}
+
+.main-content h1{
+    color:#ff4f81;
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.message{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#6d4c57;
+    min-height:120px;
+}
+
+.action-btn{
+    opacity:0;
+    pointer-events:none;
+    margin-top:25px;
+    padding:14px 28px;
+    border:none;
+    border-radius:50px;
+    background:#ff5b93;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.action-btn.visible{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.action-btn:hover{
+    transform:scale(1.05);
+}
+
+.music-btn,
+.back-btn{
+    position:fixed;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#ff5b93;
+    color:white;
+    cursor:pointer;
+    z-index:1000;
+    font-size:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.music-btn{
+    top:20px;
+    right:20px;
+}
+
+.back-btn{
+    top:20px;
+    left:20px;
+}
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:24px;
+    animation:floatHeart linear infinite;
+    pointer-events:none;
+    z-index:1;
+}
+
+@keyframes floatHeart{
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* ==========================
+HEART PHOTOS
+========================== */
+
+.photo{
+    position:fixed;
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid white;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    opacity:0;
+    transition:all 1s ease;
+    z-index:20;
+    pointer-events:none;
+}
+
+/* ==========================
+CONFETTI
+========================== */
+
+.confetti{
+    position:fixed;
+    width:12px;
+    height:12px;
+    animation:confettiFall 1.2s ease-out forwards;
+    z-index:999;
+}
+
+.confetti.heart{
+    clip-path:path("M6,2 C6,-1 12,-1 12,3 C12,7 6,11 6,11 C6,11 0,7 0,3 C0,-1 6,-1 6,2");
+}
+
+@keyframes confettiFall{
+    from{
+        transform:translate(0,0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translate(var(--x),var(--y)) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ==========================
+FIREWORK
+========================== */
+
+.firework-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:.3s;
+    z-index:999;
+}
+
+.firework{
+    position:absolute;
+    width:4px;
+    height:120px;
+    background:linear-gradient(
+        to top,
+        #ff5b93,
+        transparent
+    );
+}
+
+/* ==========================
+MOBILE
+========================== */
+
+@media(max-width:600px){
+
+    .photo{
+        width:65px;
+        height:65px;
+    }
+
+    .main-content h1{
+        font-size:1.5rem;
+    }
+
+    .message{
+        font-size:16px;
+        padding:0 10px;
+    }
+
+}
