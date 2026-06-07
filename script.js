@@ -75,8 +75,8 @@ if(progress >= 100){
             "loveLoading"
         ).style.display = "none";
         showLoveSuccess();
-},500);
-}}},30);
+}, 500);
+}}}, 30);
 }
 let password = "";
 function addNum(num) {
