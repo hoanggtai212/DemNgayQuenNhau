@@ -69,6 +69,12 @@ document.getElementById("passwordPage").style.display = "none";
 
 document.getElementById("albumPage").style.display = "block";
 
+    // reset text
+    idx = 0;
+    typingDiv.textContent = "";
+
+    setTimeout(type, 800);
+    
 }
 
 function backHome() {
@@ -227,8 +233,6 @@ setTimeout(type, 50);
 albumBtn.classList.add("visible");
 }
 }
-
-setTimeout(type, 1600);
 
 const heartColors = [
 "#ffb6c1",
