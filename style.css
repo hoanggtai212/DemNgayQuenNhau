@@ -588,4 +588,54 @@ MOBILE
         padding:0 10px;
     }
 
+#loveLoading{
+    position:fixed;
+    inset:0;
+    background:#f7d8e3;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+.loading-wrapper{
+    text-align:center;
+}
+
+.heart-top{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.progress-box{
+    width:320px;
+    height:28px;
+    border:2px solid #777;
+    background:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#ff8a98;
+}
+
+#progressPercent{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-weight:bold;
+    color:#444;
+}
+
+.loading-title{
+    margin-top:10px;
+    color:#ff8a98;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+    
 }
