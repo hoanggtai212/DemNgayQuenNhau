@@ -288,15 +288,22 @@ PASSWORD PAGE
     border:none;
     border-radius:50%;
 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+    line-height:1;
+
     background:linear-gradient(135deg,#ff6b9a,#e75480);
     color:white;
-    font-size:28px;
-    margin-top:18px;
+    font-size:32px;
+    font-family:Arial,sans-serif;
+
+    margin:18px auto 0;
     cursor:pointer;
 
     box-shadow:0 10px 25px rgba(231,84,128,.45);
-
-    transition:transform .12s cubic-bezier(.34,1.6,.64,1);
 }
 
 .ok:active{
