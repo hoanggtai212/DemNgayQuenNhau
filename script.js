@@ -57,7 +57,7 @@ CHUYỂN MÀN HÌNH
 
 function showPassword() {
 
-document.getElementById("homePage").style.display = "none";
+document.getElementById("counterPage").style.display = "none";
 
 document.getElementById("passwordPage").style.display = "flex";
 
