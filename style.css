@@ -651,68 +651,78 @@ MOBILE
 }
 
 .heart-group{
-    display:flex;
-    gap:10px;
-    font-size:42px;
-    margin-bottom:10px;
+    width:320px;
+    position:relative;
+    height:60px;
+    margin-bottom:-5px;
 }
 
 .success-bar{
     width:320px;
-    height:30px;
+    height:42px;
     border:2px solid #666;
-    background:#ff8a98;
+    background:#f58799;
     color:white;
     font-weight:bold;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:12px;
     box-sizing:border-box;
 }
 
 #clickMe{
-    padding:8px 20px;
+    padding:10px 30px;
     border:none;
-    border-radius:20px;
-    background:#ff6b9a;
+    border-radius:30px;
+    background:linear-gradient(
+        180deg,
+        #ff7fa9,
+        #ff5f91
+    );
     color:white;
     font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-}
+    font-size:18px;
 
-.heart-group{
-    width:320px;
-    position:relative;
-    height:35px;
-    margin-bottom:-8px;
+    margin-top:20px;
+
+    box-shadow:
+        0 8px 18px rgba(255,95,145,.35);
+    cursor:pointer;
 }
 
 .heart-left{
     position:absolute;
-    left:-15px;
-    top:-35px;
-    font-size:28px;
-    z-index:10;
+    left:-5px;
+    top:-15px;
+    font-size:30px;
 }
 
 .heart-center{
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:-35px;
-    font-size:34px;
-    z-index:10;
+    top:-22px;
+    font-size:38px;
 }
 
 .heart-right{
     position:absolute;
-    right:-15px;
-    top:-35px;
+    right:-5px;
+    top:-15px;
     font-size:30px;
-    z-index:10;
+}
+
+.heart-left::after,
+.heart-center::after,
+.heart-right::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:28px;
+    width:2px;
+    height:18px;
+    background:#777;
 }
 
 .success-box{
