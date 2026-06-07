@@ -45,6 +45,44 @@ function showAlbum() {
 function backHome() {
 location.reload();
 }
+function showLoveSuccess(){
+    document.getElementById(
+        "loveSuccess"
+    ).style.display = "flex";
+}
+function showLoadingLove(){
+    document.getElementById(
+        "passwordPage"
+    ).style.display = "none";
+    document.getElementById(
+        "loveLoading"
+    ).style.display = "flex";
+    let progress = 0;
+    const fill =
+        document.getElementById(
+            "progressFill"
+        );
+    const text =
+        document.getElementById(
+            "progressPercent"
+        );
+    const timer =
+        setInterval(()=>{
+            progress++;
+            fill.style.width =
+                progress + "%";
+            text.textContent =
+                progress + "%";
+if(progress >= 100){
+    clearInterval(timer);
+    setTimeout(()=>{
+        document.getElementById(
+            "loveLoading"
+        ).style.display = "none";
+        showLoveSuccess();
+},500);
+}}},30);
+}
 let password = "";
 function addNum(num) {
 password += num;
@@ -86,11 +124,6 @@ setTimeout(() => {
         "unlock-overlay"
     ).style.display = "none";
     showLoadingLove();
-    function showLoveSuccess(){
-    document.getElementById(
-        "loveSuccess"
-    ).style.display = "flex";
-}
 }, 3000);
 } else {
     const container =
@@ -102,6 +135,11 @@ setTimeout(() => {
     password = "";
     document.getElementById("display").value = "";
 } }
+function showLoveSuccess(){
+    document.getElementById(
+        "loveSuccess"
+    ).style.display = "flex";
+}
 document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
     document.getElementById("clickMe");
@@ -331,36 +369,4 @@ for (
     );
   }, i * 100);
 }}
-function showLoadingLove(){
-    document.getElementById(
-        "passwordPage"
-    ).style.display = "none";
-    document.getElementById(
-        "loveLoading"
-    ).style.display = "flex";
-    let progress = 0;
-    const fill =
-        document.getElementById(
-            "progressFill"
-        );
-    const text =
-        document.getElementById(
-            "progressPercent"
-        );
-    const timer =
-        setInterval(()=>{
-            progress++;
-            fill.style.width =
-                progress + "%";
-            text.textContent =
-                progress + "%";
-if(progress >= 100){
-    clearInterval(timer);
-    setTimeout(()=>{
-        document.getElementById(
-            "loveLoading"
-        ).style.display = "none";
-        showLoveSuccess();
-},500);
-}}},30);
-}});
+);
