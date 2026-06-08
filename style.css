@@ -639,6 +639,10 @@ MOBILE
     letter-spacing:2px;
 }
 
+/* ==========================
+SUCCESS PAGE
+========================== */
+
 #loveSuccess{
     position:fixed;
     inset:0;
@@ -646,60 +650,49 @@ MOBILE
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background:#f7d8e3;
+    background:#f1d5de;
     z-index:999999;
 }
 
 .heart-group{
-    width:320px;
-    height:40px;
     position:relative;
-    margin-bottom:-4px;
+    width:330px;
+    height:50px;
 }
 
-.success-bar{
-    width:320px;
-    height:34px;
-    border:2px solid #666;
-    background:#f58799;
-    color:white;
-    font-weight:bold;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-sizing:border-box;
-}
-
-#clickMe{
-    margin-top:12px;
-    padding:8px 24px;
-    font-size:15px;
-    border-radius:20px;
+.heart-left,
+.heart-center,
+.heart-right{
+    position:absolute;
+    line-height:1;
 }
 
 .heart-left{
-    left:15px;
-    top:-3px;
-    font-size:28px;
+    left:10px;
+    top:-2px;
+    font-size:34px;
 }
 
 .heart-center{
-    top:-13px;
-    font-size:38px;
+    left:50%;
+    top:-10px;
+    transform:translateX(-50%);
+    font-size:42px;
 }
 
 .heart-right{
-    right:15px;
-    top:-3px;
-    font-size:28px;
+    right:10px;
+    top:-2px;
+    font-size:34px;
 }
 
-.heart-left::after{
+.heart-left::after,
+.heart-right::after{
     content:"";
     position:absolute;
     left:50%;
+    top:30px;
     transform:translateX(-50%);
-    top:32px;
     width:2px;
     height:18px;
     background:#666;
@@ -709,37 +702,24 @@ MOBILE
     content:"";
     position:absolute;
     left:50%;
+    top:38px;
     transform:translateX(-50%);
-    top:42px;
-    width:2px;
-    height:18px;
-    background:#666;
-}
-
-.heart-right::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:32px;
     width:2px;
     height:18px;
     background:#666;
 }
 
 .success-box{
-    width:320px;
-    height:34px;
+    width:330px;
+    height:32px;
     border:2px solid #555;
     background:#f48d9d;
     position:relative;
-    overflow:hidden;
+    box-sizing:border-box;
 }
 
 .success-fill{
-    width:100%;
-    height:100%;
-    background:#f48d9d;
+    display:none;
 }
 
 .success-text{
@@ -747,8 +727,24 @@ MOBILE
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    color:#fff;
-    font-size:14px;
+    color:white;
+    font-size:15px;
     font-weight:700;
-    white-space:nowrap;
+}
+
+#clickMe{
+    margin-top:12px;
+    padding:10px 28px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(
+        to bottom,
+        #ff9fbe,
+        #ff729d
+    );
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(255,105,150,.35);
 }
