@@ -652,9 +652,9 @@ MOBILE
 
 .heart-group{
     width:320px;
+    height:40px;
     position:relative;
-    height:50px;
-    margin-bottom:-2px;
+    margin-bottom:-4px;
 }
 
 .success-bar{
@@ -671,43 +671,27 @@ MOBILE
 }
 
 #clickMe{
-    padding:10px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(
-        180deg,
-        #ff7fa9,
-        #ff5f91
-    );
-    color:white;
-    font-weight:bold;
-    font-size:18px;
-    margin-top:20px;
-    box-shadow:
-        0 8px 18px rgba(255,95,145,.35);
-    cursor:pointer;
+    margin-top:12px;
+    padding:8px 24px;
+    font-size:15px;
+    border-radius:20px;
 }
 
 .heart-left{
-    position:absolute;
-    left:0;
-    top:-10px;
-    font-size:30px;
+    left:15px;
+    top:-3px;
+    font-size:28px;
 }
 
 .heart-center{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:-18px;
+    top:-13px;
     font-size:38px;
 }
 
 .heart-right{
-    position:absolute;
-    right:0;
-    top:-10px;
-    font-size:30px;
+    right:15px;
+    top:-3px;
+    font-size:28px;
 }
 
 .heart-left::after{
