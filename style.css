@@ -665,25 +665,13 @@ SUCCESS PAGE
 .heart-right{
     position:absolute;
     line-height:1;
+    opacity:.25;
+    transition:.35s;
 }
 
-.heart-left{
-    left:10px;
-    top:-2px;
-    font-size:34px;
-}
-
-.heart-center{
-    left:50%;
-    top:-10px;
-    transform:translateX(-50%);
-    font-size:42px;
-}
-
-.heart-right{
-    right:10px;
-    top:-2px;
-    font-size:34px;
+.heart-active{
+    opacity:1 !important;
+    filter:drop-shadow(0 0 8px rgba(255,105,180,.6));
 }
 
 .heart-left::after,
@@ -715,9 +703,6 @@ SUCCESS PAGE
     border:4px solid #444;
     background:#f07b8f;
     box-shadow: inset 0 0 0 2px #fff;
-    background:#f07b8f;
-    box-shadow:
-        inset 0 0 0 4px #ffffff;
     position:relative;
     box-sizing:border-box;
 }
