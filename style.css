@@ -712,7 +712,9 @@ SUCCESS PAGE
 .success-box{
     width:320px;
     height:34px;
-    border:2px solid #666;
+    border:3px solid #444;
+    background:#f07b8f;
+    box-shadow: inset 0 0 0 4px #fff;
     background:#f07b8f;
     box-shadow:
         inset 0 0 0 4px #ffffff;
@@ -725,7 +727,6 @@ SUCCESS PAGE
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-
     color:white;
     font-size:13px;
     font-weight:bold;
@@ -733,12 +734,9 @@ SUCCESS PAGE
 
 #clickMe{
     margin-top:12px;
-
     padding:8px 25px;
-
     border:none;
     border-radius:20px;
-
     background:linear-gradient(
         to bottom,
         #ff8cab,
