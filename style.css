@@ -712,9 +712,9 @@ SUCCESS PAGE
 .success-box{
     width:320px;
     height:34px;
-    border:3px solid #444;
+    border:4px solid #444;
     background:#f07b8f;
-    box-shadow: inset 0 0 0 4px #fff;
+    box-shadow: inset 0 0 0 2px #fff;
     background:#f07b8f;
     box-shadow:
         inset 0 0 0 4px #ffffff;
