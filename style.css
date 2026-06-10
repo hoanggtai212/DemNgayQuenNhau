@@ -658,25 +658,27 @@ SUCCESS PAGE
 .heart-group{
     position:relative;
     width:320px;
-    height:50px;
+    height:40px;
+    margin-bottom:-2px;
 }
 
 .heart-left{
-    left:20px;
+    left:0;
     top:0;
     font-size:32px;
 }
 
 .heart-center{
-    left:135px;
+    left:50%;
     top:-10px;
+    transform:translateX(-50%);
     font-size:50px;
 }
 
 .heart-right{
-    right:20px;
+    right:0;
     top:0;
-    font-size:70px;
+    font-size:32px;
 }
 
 .heart-left.heart-active{
@@ -704,25 +706,15 @@ SUCCESS PAGE
 }
 
 .heart-left::after,
+.heart-center::after,
 .heart-right::after{
     content:"";
     position:absolute;
     left:50%;
-    top:30px;
     transform:translateX(-50%);
-    width:2px;
-    height:18px;
-    background:#666;
-}
-
-.heart-center::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:38px;
-    transform:translateX(-50%);
-    width:2px;
-    height:18px;
+    top:100%;
+    width:3px;
+    height:20px;
     background:#666;
 }
 
