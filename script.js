@@ -78,7 +78,6 @@ function showLoadingLove(){
                 },500);
             }
         },30);
-}, 30);
 }
 let password = "";
 function addNum(num) {
