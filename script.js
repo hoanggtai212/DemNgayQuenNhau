@@ -61,22 +61,6 @@ function showLoadingLove(){
         document.getElementById(
             "progressPercent"
         );
-function showLoadingLove(){
-    document.getElementById(
-        "passwordPage"
-    ).style.display = "none";
-    document.getElementById(
-        "loveLoading"
-    ).style.display = "flex";
-    let progress = 0;
-    const fill =
-        document.getElementById(
-            "progressFill"
-        );
-    const text =
-        document.getElementById(
-            "progressPercent"
-        );
     const timer =
         setInterval(()=>{
             progress++;
