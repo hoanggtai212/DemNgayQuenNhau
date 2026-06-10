@@ -712,10 +712,10 @@ SUCCESS PAGE
 .success-box{
     width:320px;
     height:30px;
-    background:#f48d9d;
+    background:#ee7b8f; /* đỏ hồng hơn */
     border:2px solid #666;
     box-shadow:
-        inset 0 0 0 2px #ffe3e8;
+        inset 0 0 0 2px #ffb6c1;
     position:relative;
 }
 
@@ -744,8 +744,8 @@ SUCCESS PAGE
 
     background:linear-gradient(
         to bottom,
-        #ffabc3,
-        #ff7ca3
+        #ff8cab,
+        #f06286
     );
 
     color:white;
