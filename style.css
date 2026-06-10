@@ -5,6 +5,7 @@ body {
     background: linear-gradient(135deg, #fde7f0 0%, #f8c8dc 100%);
     overflow-x: hidden;
     color: #5c3e4a;
+    touch-action: manipulation;
 }
 
 #counterPage{
