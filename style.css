@@ -709,19 +709,6 @@ SUCCESS PAGE
     transition:.5s;
 }
 
-.heart-left::after,
-.heart-center::after,
-.heart-right::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:100%;
-    width:3px;
-    height:16px;
-    background:#666;
-}
-
 .success-box{
     width:320px;
     height:34px;
