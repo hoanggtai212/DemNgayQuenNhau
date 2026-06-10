@@ -711,11 +711,11 @@ SUCCESS PAGE
 
 .success-box{
     width:320px;
-    height:36px;
-    background:#f48697;
+    height:30px;
+    background:#f48d9d;
     border:2px solid #666;
     box-shadow:
-        inset 0 0 0 2px #f7c7d0;
+        inset 0 0 0 2px #ffe3e8;
     position:relative;
 }
 
@@ -724,11 +724,10 @@ SUCCESS PAGE
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    color:#fff;
-    font-size:18px;
-    font-weight:700;
-    text-shadow:1px 1px 2px rgba(0,0,0,.15);
-    white-space:nowrap;
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+    font-family:'Quicksand',sans-serif;
 }
 
 .success-fill{
@@ -736,29 +735,26 @@ SUCCESS PAGE
 }
 
 #clickMe{
-    margin-top:14px;
-    padding:8px 30px;
+    margin-top:12px;
+
+    padding:8px 25px;
 
     border:none;
     border-radius:20px;
 
     background:linear-gradient(
         to bottom,
-        #ff9bb7 0%,
-        #ff6f96 100%
+        #ffabc3,
+        #ff7ca3
     );
 
-    color:#fff;
-    font-size:16px;
-    font-weight:700;
-
-    cursor:pointer;
+    color:white;
+    font-size:13px;
+    font-weight:bold;
 
     box-shadow:
-        0 3px 8px rgba(255,105,150,.35),
-        inset 0 1px 0 rgba(255,255,255,.6);
-
-    transition:.2s;
+        0 2px 5px rgba(0,0,0,.15),
+        inset 0 1px 0 rgba(255,255,255,.5);
 }
 
 #clickMe:hover{
