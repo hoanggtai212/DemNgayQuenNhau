@@ -61,13 +61,40 @@ function showLoadingLove(){
         document.getElementById(
             "progressPercent"
         );
-    const timer =
-        setInterval(()=>{
-            progress++;
-            fill.style.width =
-                progress + "%";
-            text.textContent =
-                progress + "%";
+const leftHeart =
+    document.querySelector(".heart-left");
+
+const centerHeart =
+    document.querySelector(".heart-center");
+
+const rightHeart =
+    document.querySelector(".heart-right");
+
+const timer =
+    setInterval(()=>{
+
+        progress++;
+
+        fill.style.width =
+            progress + "%";
+
+        text.textContent =
+            progress + "%";
+
+        // reset
+        leftHeart.classList.remove("heart-active");
+        centerHeart.classList.remove("heart-active");
+        rightHeart.classList.remove("heart-active");
+
+        if(progress < 50){
+            leftHeart.classList.add("heart-active");
+        }
+        else if(progress < 100){
+            centerHeart.classList.add("heart-active");
+        }
+        else{
+            rightHeart.classList.add("heart-active");
+        }
 if(progress >= 100){
     clearInterval(timer);
     setTimeout(()=>{
