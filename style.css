@@ -678,10 +678,22 @@ SUCCESS PAGE
     font-size:32px;
 }
 
-.heart-active{
-    opacity:1 !important;
-    transform:scale(1.15);
+.heart-left.heart-active{
+    opacity:1;
+    transform:scale(1);
+    filter:drop-shadow(0 0 8px rgba(255,105,180,.8));
+}
+
+.heart-center.heart-active{
+    opacity:1;
+    transform:scale(1.5);
     filter:drop-shadow(0 0 12px rgba(255,105,180,.8));
+}
+
+.heart-right.heart-active{
+    opacity:1;
+    transform:scale(2);
+    filter:drop-shadow(0 0 16px rgba(255,105,180,.8));
 }
 
 .heart-left,
@@ -689,8 +701,8 @@ SUCCESS PAGE
 .heart-right{
     position:absolute;
     opacity:.25;
-    transition:.35s;
     color:#ff7aa2;
+    transition:.5s;
 }
 
 .heart-left::after,
