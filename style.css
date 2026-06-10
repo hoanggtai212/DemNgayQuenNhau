@@ -661,39 +661,36 @@ SUCCESS PAGE
 }
 
 .heart-left{
-    left:40px;
+    left:20px;
     top:0;
     font-size:32px;
 }
 
 .heart-center{
-    left:140px;
+    left:135px;
     top:-10px;
     font-size:50px;
 }
 
 .heart-right{
-    right:40px;
+    right:20px;
     top:0;
-    font-size:32px;
+    font-size:70px;
 }
 
 .heart-left.heart-active{
     opacity:1;
     transform:scale(1);
-    filter:drop-shadow(0 0 8px rgba(255,105,180,.8));
 }
 
 .heart-center.heart-active{
     opacity:1;
-    transform:scale(1.5);
-    filter:drop-shadow(0 0 12px rgba(255,105,180,.8));
+    transform:scale(1.2);
 }
 
 .heart-right.heart-active{
     opacity:1;
-    transform:scale(2);
-    filter:drop-shadow(0 0 16px rgba(255,105,180,.8));
+    transform:scale(1.4);
 }
 
 .heart-left,
