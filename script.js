@@ -383,3 +383,9 @@ document.addEventListener('touchend', function(e) {
     }
     lastTouchEnd = now;
 }, { passive: false });
+
+function addNum(num) {
+    console.log("Bấm:", num);
+    password += num;
+    document.getElementById("display").value = password;
+}
