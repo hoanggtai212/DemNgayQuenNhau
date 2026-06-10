@@ -769,3 +769,48 @@ SUCCESS PAGE
 #clickMe:active{
     transform:translateY(1px);
 }
+
+.loading-heart-group{
+    position:relative;
+    width:320px;
+    height:40px;
+    margin-bottom:-2px;
+}
+
+.loading-heart-left,
+.loading-heart-center,
+.loading-heart-right{
+    position:absolute;
+}
+
+.loading-heart-left{
+    left:0;
+    top:0;
+    font-size:32px;
+}
+
+.loading-heart-center{
+    left:50%;
+    top:-12px;
+    transform:translateX(-50%);
+    font-size:50px;
+}
+
+.loading-heart-right{
+    right:0;
+    top:0;
+    font-size:32px;
+}
+
+.loading-heart-left::after,
+.loading-heart-center::after,
+.loading-heart-right::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:100%;
+    transform:translateX(-50%);
+    width:3px;
+    height:14px;
+    background:#666;
+}
