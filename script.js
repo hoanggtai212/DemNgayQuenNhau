@@ -61,6 +61,10 @@ function showLoadingLove(){
         document.getElementById(
             "progressPercent"
         );
+const heart1 = document.getElementById("heart1");
+const heart2 = document.getElementById("heart2");
+const heart3 = document.getElementById("heart3");
+heart1.classList.add("heart-active");
     const timer =
         setInterval(()=>{
             progress++;
@@ -68,15 +72,19 @@ function showLoadingLove(){
                 progress + "%";
             text.textContent =
                 progress + "%";
-            if(progress >= 100){
-                clearInterval(timer);
-                setTimeout(()=>{
-                    document.getElementById(
-                        "loveLoading"
-                    ).style.display = "none";
-                    showLoveSuccess();
-                },500);
-            }
+if(progress >= 50){
+    heart2.classList.add("heart-active");
+}
+if(progress >= 100){
+    heart3.classList.add("heart-active");
+    clearInterval(timer);
+    setTimeout(()=>{
+        document.getElementById(
+            "loveLoading"
+        ).style.display = "none";
+        showLoveSuccess();
+    },500);
+}
         },30);
 }
 let password = "";
