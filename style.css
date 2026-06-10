@@ -672,6 +672,12 @@ SUCCESS PAGE
     font-size:50px;
 }
 
+.heart-right{
+    right:40px;
+    top:0;
+    font-size:32px;
+}
+
 .heart-active{
     opacity:1 !important;
     transform:scale(1.15);
