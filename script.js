@@ -215,7 +215,7 @@ const heartColors = [
 "#ffc0cb",
 "#ff77aa"
 ];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 15; i++) {
 const heart = document.createElement("div");
 heart.className = "floating-heart";
 heart.textContent = "💗";
