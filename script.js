@@ -173,10 +173,22 @@ if (password === "29012012") {
         back.textContent = "🔓";
     }, 2400);
 setTimeout(() => {
-    document.getElementById(
-        "unlock-overlay"
-    ).style.display = "none";
-    showLoadingLove();
+    const passwordPage = document.getElementById("passwordPage");
+    const loadingPage = document.getElementById("loveLoading");
+    // 1. làm password fade out mượt
+    passwordPage.classList.add("love-fade-out");
+    setTimeout(() => {
+        passwordPage.style.display = "none";
+        // 2. hiện loading
+        loadingPage.style.display = "flex";
+        loadingPage.classList.add("love-fade-in");
+        // 3. dọn class tránh lỗi animation lần sau
+        setTimeout(() => {
+            loadingPage.classList.remove("love-fade-in");
+        }, 800);
+        // 4. chạy loading
+        showLoadingLove();
+    }, 800);
 }, 3000);
 } else {
     const container =
