@@ -46,16 +46,18 @@ function backHome() {
 location.reload();
 }
 function showLoadingLove(){
-const heart1 = document.getElementById("loadingHeart1");
-const heart2 = document.getElementById("loadingHeart2");
-const heart3 = document.getElementById("loadingHeart3");
+    const heart1 =
+        document.getElementById("loadingHeart1");
+    const heart2 =
+        document.getElementById("loadingHeart2");
+    const heart3 =
+        document.getElementById("loadingHeart3");
     document.getElementById(
         "passwordPage"
     ).style.display = "none";
     document.getElementById(
         "loveLoading"
     ).style.display = "flex";
-    let progress = 0;
     const fill =
         document.getElementById(
             "progressFill"
@@ -64,31 +66,49 @@ const heart3 = document.getElementById("loadingHeart3");
         document.getElementById(
             "progressPercent"
         );
-heart1.classList.remove("heart-active");
-heart2.classList.remove("heart-active");
-heart3.classList.remove("heart-active");
-heart1.classList.add("heart-active");
-    const timer =
-        setInterval(()=>{
+    const startBtn =
+        document.getElementById(
+            "startLoveBtn"
+        );
+    fill.style.width = "0%";
+    text.textContent = "0%";
+    heart1.classList.remove("heart-active");
+    heart2.classList.remove("heart-active");
+    heart3.classList.remove("heart-active");
+    startBtn.style.display = "inline-block";
+    startBtn.onclick = () => {
+        startBtn.style.display = "none";
+        let progress = 0;
+        const timer = setInterval(() => {
             progress++;
             fill.style.width =
                 progress + "%";
             text.textContent =
                 progress + "%";
-if(progress >= 50){
-    heart2.classList.add("heart-active");
-}
-if(progress >= 100){
-    heart3.classList.add("heart-active");
-    clearInterval(timer);
-    setTimeout(()=>{
-        document.getElementById(
-            "loveLoading"
-        ).style.display = "none";
-        showLoveSuccess();
-    },500);
-}
-        },30);
+            if(progress >= 30){
+                heart1.classList.add(
+                    "heart-active"
+                );
+            }
+            if(progress >= 60){
+                heart2.classList.add(
+                    "heart-active"
+                );
+            }
+            if(progress >= 100){
+                heart3.classList.add(
+                    "heart-active"
+                );
+                clearInterval(timer);
+                setTimeout(() => {
+                    document.getElementById(
+                        "loveLoading"
+                    ).style.display = "none";
+                    showLoveSuccess();
+                },500);
+            }
+        },40);
+    };
 }
 let password = "";
 function addNum(num) {
