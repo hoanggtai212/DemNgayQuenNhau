@@ -280,6 +280,17 @@ PASSWORD PAGE
     color: #e74c3c;
 }
 
+/* thêm hiệu ứng nhẹ cho đẹp */
+#passStatus{
+    transition: 0.3s;
+    transform: translateY(0);
+}
+
+#passStatus.success,
+#passStatus.error{
+    transform: translateY(-2px);
+}
+
 #passwordPage{
     display:none;
     justify-content:center;
