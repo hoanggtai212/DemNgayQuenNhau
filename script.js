@@ -85,12 +85,12 @@ function showLoadingLove(){
                 progress + "%";
             text.textContent =
                 progress + "%";
-            if(progress >= 30){
+            if(progress >= 1){
                 heart1.classList.add(
                     "heart-active"
                 );
             }
-            if(progress >= 60){
+            if(progress >= 50){
                 heart2.classList.add(
                     "heart-active"
                 );
