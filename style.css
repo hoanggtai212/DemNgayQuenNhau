@@ -266,10 +266,11 @@ PASSWORD PAGE
 #passStatus{
     margin-top: 12px;
     font-weight: bold;
-    font-size: 22px;
-    height: 20px;
-    transition: 0.3s;
+    font-size: 24px; /* to hơn chút cho nổi */
+    height: 28px;    /* tăng theo font để không bị cắt chữ */
     text-align: center;
+    transition: 0.3s;
+    transform: translateY(0);
 }
 
 #passStatus.success{
@@ -278,12 +279,6 @@ PASSWORD PAGE
 
 #passStatus.error{
     color: #e74c3c;
-}
-
-/* thêm hiệu ứng nhẹ cho đẹp */
-#passStatus{
-    transition: 0.3s;
-    transform: translateY(0);
 }
 
 #passStatus.success,
