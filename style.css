@@ -244,6 +244,7 @@ PASSWORD PAGE
     text-align:center;
     transform: scale(0.85);
     transform-origin: center;
+    padding: 20px;
 }
 
 .title{
