@@ -709,6 +709,7 @@ SUCCESS PAGE
 .heart-left,
 .heart-center,
 .heart-right{
+    position:absolute;
     opacity:.25;
     color:#ff7aa2;
     transition:.5s;
@@ -740,15 +741,6 @@ SUCCESS PAGE
     opacity:1;
     transform:translateX(50%) scale(1.2);
     text-shadow:0 0 12px #ff7aa2;
-}
-
-.heart-left,
-.heart-center,
-.heart-right{
-    position:absolute;
-    opacity:.25;
-    color:#ff7aa2;
-    transition:.5s;
 }
 
 .success-box{
@@ -954,4 +946,13 @@ SUCCESS PAGE
         transform: scale(1);
         filter: blur(0);
     }
+}
+
+.loading-heart-left.heart-active,
+.loading-heart-center.heart-active,
+.loading-heart-right.heart-active {
+    opacity: 1 !important;
+    transform: scale(1.25);
+    color: #ff4f81;
+    text-shadow: 0 0 12px #ff7aa2;
 }
