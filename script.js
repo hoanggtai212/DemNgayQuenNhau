@@ -136,70 +136,64 @@ function showLoadingLove(){
         },40);
     };
 }
-let password = "";
-function addNum(num) {
-password += num;
-document.getElementById("display").value =
-    password;
+let input = "";
+function addNum(num){
+    input += num;
+    document.getElementById("display").value = "*".repeat(input.length);
 }
-function delNum() {
-password = password.slice(0, -1);
-document.getElementById("display").value =
-    password;
+function delNum(){
+    input = input.slice(0, -1);
+    document.getElementById("display").value = "*".repeat(input.length);
 }
 function checkPassword() {
-if (password === "0000") {
-    const overlay =
-        document.getElementById("unlock-overlay");
-    const bigLock =
-        overlay.querySelector(".big-lock");
-    const front =
-        bigLock.querySelector(".front");
-    const back =
-        bigLock.querySelector(".back");
-    overlay.style.display = "flex";
-    bigLock.classList.remove(
-        "spin",
-        "open"
-    );
-    front.textContent = "🔒";
-    back.textContent = "🔒";
-    bigLock.classList.add("spin");
-    setTimeout(() => {
-        bigLock.classList.add("open");
-    }, 2000);
-    setTimeout(() => {
-        front.textContent = "🔓";
-        back.textContent = "🔓";
-    }, 2400);
-setTimeout(() => {
-    const passwordPage = document.getElementById("passwordPage");
-    const loadingPage = document.getElementById("loveLoading");
-    // 1. làm password fade out mượt
-    passwordPage.classList.add("love-fade-out");
-    setTimeout(() => {
-        passwordPage.style.display = "none";
-        // 2. hiện loading
-        loadingPage.style.display = "flex";
-        loadingPage.classList.add("love-fade-in");
-        // 3. dọn class tránh lỗi animation lần sau
+    const display = document.getElementById("display");
+    if (input === "0000") { // đổi pass ở đây
+        // 👉 HIỆN ĐÚNG RỒI 💗 TRƯỚC
+        display.value = "Đúng rồi 💗";
         setTimeout(() => {
-            loadingPage.classList.remove("love-fade-in");
-        }, 1000);
-        // 4. chạy loading
-        showLoadingLove();
-    }, 1000);
-}, 3000);
-} else {
-    const container =
-        document.querySelector(".container");
-    container.classList.add("shake");
-    setTimeout(() => {
-        container.classList.remove("shake");
-    }, 400);
-    password = "";
-    document.getElementById("display").value = "";
-} }
+            const overlay = document.getElementById("unlock-overlay");
+            const bigLock = overlay.querySelector(".big-lock");
+            const front = bigLock.querySelector(".front");
+            const back = bigLock.querySelector(".back");
+            overlay.style.display = "flex";
+            bigLock.classList.remove("spin", "open");
+            front.textContent = "🔒";
+            back.textContent = "🔒";
+            bigLock.classList.add("spin");
+            setTimeout(() => {
+                bigLock.classList.add("open");
+            }, 2000);
+            setTimeout(() => {
+                front.textContent = "🔓";
+                back.textContent = "🔓";
+            }, 2400);
+            setTimeout(() => {
+                const passwordPage = document.getElementById("passwordPage");
+                const loadingPage = document.getElementById("loveLoading");
+                passwordPage.classList.add("love-fade-out");
+                setTimeout(() => {
+                    passwordPage.style.display = "none";
+                    loadingPage.style.display = "flex";
+                    loadingPage.classList.add("love-fade-in");
+                    setTimeout(() => {
+                        loadingPage.classList.remove("love-fade-in");
+                    }, 1000);
+                    showLoadingLove();
+                }, 1000);
+            }, 3000);
+        }, 800); // delay để người ta thấy “Đúng rồi 💗”
+    } else {
+        // 👉 HIỆN SAI RỒI 😏
+        display.value = "Sai rồi 😏";
+        const container = document.querySelector(".container");
+        container.classList.add("shake");
+        setTimeout(() => {
+            container.classList.remove("shake");
+            // reset lại input
+            input = "";
+            display.value = "";
+        }, 800);
+    }}
 function showLoveSuccess(){
     document.getElementById(
         "loveSuccess"
