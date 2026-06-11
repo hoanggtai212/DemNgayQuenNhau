@@ -682,23 +682,11 @@ SUCCESS PAGE
     z-index:2;
 }
 
-.heart-left{
-    left:0;
-    top:-38px;
-    font-size:32px;
-}
-
-.heart-center{
-    left:50%;
-    top:-50px;
-    transform:translateX(-50%);
-    font-size:50px;
-}
-
+.heart-left,
+.heart-center,
 .heart-right{
-    right:0;
-    top:-38px;
-    font-size:32px;
+    top:-22px;
+    font-size:44px;
 }
 
 .heart-left.heart-active{
