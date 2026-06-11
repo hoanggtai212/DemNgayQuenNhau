@@ -89,10 +89,10 @@ body {
 
 .name {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.3rem;
+    font-size: 1.8rem;   /* tăng kích thước */
     color: #7d5a6a;
     margin-top: 10px;
-    font-weight: 500;
+    font-weight: 700;    /* đậm hơn */
 }
 
 .heart {
