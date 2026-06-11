@@ -804,16 +804,3 @@ SUCCESS PAGE
     top:0;
     font-size:32px;
 }
-
-.loading-heart-left::after,
-.loading-heart-center::after,
-.loading-heart-right::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:100%;
-    transform:translateX(-50%);
-    width:3px;
-    height:14px;
-    background:#666;
-}
