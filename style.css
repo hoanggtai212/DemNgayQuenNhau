@@ -797,10 +797,10 @@ SUCCESS PAGE
 
 .loading-heart-center.heart-active{
     opacity:1;
-    transform:translateX(-50%) scale(1.2);
+    transform:translateX(-50%) scale(1.4);
 }
 
 .loading-heart-right.heart-active{
     opacity:1;
-    transform:scale(1.2);
+    transform:scale(1.4);
 }
