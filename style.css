@@ -773,26 +773,26 @@ SUCCESS PAGE
 
 .loading-heart-left{
     left:0;
-    top:10px;
+    top:-20px;
     font-size:32px;
 }
 
 .loading-heart-center{
     left:50%;
-    top:10px;
+    top:-20px;
     transform:translateX(-50%);
     font-size:36px;
 }
 
 .loading-heart-right{
     right:0;
-    top:10px;
+    top:-20px;
     font-size:40px;
 }
 
 .loading-heart-left.heart-active{
     opacity:1;
-    transform:scale(1);
+    transform:scale(1.2);
 }
 
 .loading-heart-center.heart-active{
@@ -802,5 +802,5 @@ SUCCESS PAGE
 
 .loading-heart-right.heart-active{
     opacity:1;
-    transform:scale(1.4);
+    transform:scale(1.2);
 }
