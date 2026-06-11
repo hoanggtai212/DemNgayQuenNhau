@@ -774,7 +774,7 @@ SUCCESS PAGE
 .loading-heart-left{
     left:0;
     top:-20px;
-    font-size:32px;
+    font-size:36px;
 }
 
 .loading-heart-center{
@@ -787,12 +787,12 @@ SUCCESS PAGE
 .loading-heart-right{
     right:0;
     top:-20px;
-    font-size:40px;
+    font-size:36px;
 }
 
 .loading-heart-left.heart-active{
     opacity:1;
-    transform:scale(1.2);
+    transform:translateX(-50%) scale(1.4);
 }
 
 .loading-heart-center.heart-active{
@@ -802,5 +802,5 @@ SUCCESS PAGE
 
 .loading-heart-right.heart-active{
     opacity:1;
-    transform:scale(1.6);
+    transform:translateX(50%) scale(1.4);
 }
