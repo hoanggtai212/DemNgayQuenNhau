@@ -148,7 +148,7 @@ document.getElementById("display").value =
     password;
 }
 function checkPassword() {
-if (password === "29012012") {
+if (password === "0000") {
     const overlay =
         document.getElementById("unlock-overlay");
     const bigLock =
