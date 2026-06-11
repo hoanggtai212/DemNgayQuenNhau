@@ -687,6 +687,7 @@ SUCCESS PAGE
     left:0;
     top:-22px;
     font-size:44px;
+    transform:translateX(-50%);
 }
 
 .heart-center{
@@ -702,6 +703,7 @@ SUCCESS PAGE
     right:0;
     top:-22px;
     font-size:44px;
+    transform:translateX(50%);
 }
 
 .heart-left,
@@ -723,17 +725,17 @@ SUCCESS PAGE
 
 .heart-left.heart-active{
     opacity:1;
-    transform:scale(1);
+    transform:translateX(-50%) scale(1);
 }
 
 .heart-center.heart-active{
     opacity:1;
-    transform:scale(1.2);
+    transform:translateX(-50%) scale(1);
 }
 
 .heart-right.heart-active{
     opacity:1;
-    transform:scale(1.4);
+    transform:translateX(50%) scale(1);
 }
 
 .heart-left,
