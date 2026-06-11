@@ -714,6 +714,7 @@ SUCCESS PAGE
     transition:.5s;
     top:-22px;
     font-size:44px;
+    transform-origin:center center;
 }
 
 .loading-wrapper{
@@ -725,19 +726,19 @@ SUCCESS PAGE
 
 .heart-left.heart-active{
     opacity:1;
-    transform:translateX(-50%) scale(1);
+    transform:translateX(-50%) scale(1.2);
     text-shadow:0 0 12px #ff7aa2;
 }
 
 .heart-center.heart-active{
     opacity:1;
-    transform:translateX(-50%) scale(1);
+    transform:translateX(-50%) scale(1.2);
     text-shadow:0 0 12px #ff7aa2;
 }
 
 .heart-right.heart-active{
     opacity:1;
-    transform:translateX(50%) scale(1);
+    transform:translateX(50%) scale(1.2);
     text-shadow:0 0 12px #ff7aa2;
 }
 
