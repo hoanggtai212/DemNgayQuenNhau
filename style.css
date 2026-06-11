@@ -908,26 +908,21 @@ SUCCESS PAGE
 
 .petal{
     position:fixed;
-    top:-30px;
-    font-size:20px;
+    top:-40px;
+    font-size:22px;
     pointer-events:none;
     z-index:9999;
-    animation:petalFall 2s linear forwards;
+    animation: petalFall 3s linear forwards;
+    opacity:0.9;
 }
 
 @keyframes petalFall{
-    from{
-        transform:
-            translateY(-20px)
-            rotate(0deg);
+    0%{
+        transform: translateY(0) translateX(0) rotate(0deg);
         opacity:1;
     }
-
-    to{
-        transform:
-            translateY(120vh)
-            translateX(100px)
-            rotate(360deg);
+    100%{
+        transform: translateY(120vh) translateX(80px) rotate(360deg);
         opacity:0;
     }
 }
