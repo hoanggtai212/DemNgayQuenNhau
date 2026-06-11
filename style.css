@@ -682,18 +682,43 @@ SUCCESS PAGE
     z-index:2;
 }
 
-.loading-wrapper{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+.heart-left{
+    position:absolute;
+    left:0;
+    top:-22px;
+    font-size:44px;
+}
+
+.heart-center{
+    position:absolute;
+    left:50%;
+    top:-22px;
+    transform:translateX(-50%);
+    font-size:44px;
+}
+
+.heart-right{
+    position:absolute;
+    right:0;
+    top:-22px;
+    font-size:44px;
 }
 
 .heart-left,
 .heart-center,
 .heart-right{
+    opacity:.25;
+    color:#ff7aa2;
+    transition:.5s;
     top:-22px;
     font-size:44px;
+}
+
+.loading-wrapper{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .heart-left.heart-active{
