@@ -31,7 +31,23 @@ function updateLoveTimer() {
 setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
+function createPetals() {
+    for(let i = 0; i < 20; i++) {
+        const petal = document.createElement("div");
+        petal.className = "petal";
+        petal.innerHTML = "🌸";
+        petal.style.left =
+            Math.random() * 100 + "vw";
+        petal.style.animationDelay =
+            Math.random() * 0.5 + "s";
+        document.body.appendChild(petal);
+        setTimeout(() => {
+            petal.remove();
+        }, 2500);
+    }
+}
 function showPassword() {
+    createPetals();
     const counterPage =
         document.getElementById("counterPage");
     const passwordPage =
@@ -41,6 +57,9 @@ function showPassword() {
         counterPage.style.display = "none";
         passwordPage.style.display = "flex";
         passwordPage.classList.add("love-fade-in");
+        setTimeout(() => {
+            passwordPage.classList.remove("love-fade-in");
+        }, 800);
     }, 800);
 }
 function showAlbum() {
