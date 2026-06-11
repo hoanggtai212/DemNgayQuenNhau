@@ -131,27 +131,30 @@ body {
 }
 
 .time-box span#love-days {
-    font-size: 5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 6rem;
     font-weight: 700;
-    background: -webkit-linear-gradient(45deg, #d9437a, #b82e66);
+    background: linear-gradient(45deg, #e75480, #b82e66);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .time-box p {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.7rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
     color: #b82e66;
-    margin: 5px 0 0;
+    margin: 0;
 }
 
 .time-box span.time-small {
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    color: #b82e66;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #9b5f75;
+    letter-spacing: 2px;
+    margin-top: 8px;
     display: block;
-    margin-top: 5px;
 }
 
 .memories-link a {
@@ -190,15 +193,15 @@ body {
     }
 
     .time-box span#love-days {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .time-box p {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
 
     .time-box span.time-small {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .name {
