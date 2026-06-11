@@ -30,7 +30,7 @@ body {
 }
 
 /* --- Responsive cho điện thoại --- */
-@media (max-width: 600px){
+@media (max-width: 768px){
 
     body{
         overflow-x: hidden;
