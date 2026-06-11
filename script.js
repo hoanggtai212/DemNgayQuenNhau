@@ -139,9 +139,9 @@ function showLoadingLove(){
 let input = "";
 function addNum(num){
     const display = document.getElementById("display");
+    display.style.color = "#2196f3"; // luôn xanh khi nhập
     if(display.value === "Đúng rồi 💗" || display.value === "Sai rồi 😏"){
         display.value = "";
-        display.style.color = "#2196f3";
         input = "";
     }
     input += num;
