@@ -801,7 +801,3 @@ SUCCESS PAGE
     height:14px;
     background:#666;
 }
-
-heart1.classList.remove("heart-active");
-heart2.classList.remove("heart-active");
-heart3.classList.remove("heart-active");
