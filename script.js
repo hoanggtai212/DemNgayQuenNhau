@@ -32,8 +32,16 @@ setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
 function showPassword() {
-document.getElementById("counterPage").style.display = "none";
-document.getElementById("passwordPage").style.display = "flex";
+    const counterPage =
+        document.getElementById("counterPage");
+    const passwordPage =
+        document.getElementById("passwordPage");
+    counterPage.classList.add("love-fade-out");
+    setTimeout(() => {
+        counterPage.style.display = "none";
+        passwordPage.style.display = "flex";
+        passwordPage.classList.add("love-fade-in");
+    }, 800);
 }
 function showAlbum() {
     document.getElementById("passwordPage").style.display = "none";
