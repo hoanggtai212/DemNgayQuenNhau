@@ -847,3 +847,32 @@ SUCCESS PAGE
     opacity:1;
     transform:translateX(50%) scale(1);
 }
+
+#startLoveBtn{
+    margin-top:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(
+        135deg,
+        #ff8cab,
+        #f06286
+    );
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+
+    box-shadow:
+        0 6px 15px rgba(240,98,134,.4);
+
+    transition:.3s;
+}
+
+#startLoveBtn:hover{
+    transform:translateY(-2px);
+}
+
+#startLoveBtn:active{
+    transform:scale(.95);
+}
