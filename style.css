@@ -677,9 +677,17 @@ SUCCESS PAGE
 .heart-group{
     position:relative;
     width:320px;
-    height:0;
+    height:40px;
     margin-bottom:0;
     z-index:2;
+}
+
+.loading-wrapper,
+#loveSuccess{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .heart-left,
