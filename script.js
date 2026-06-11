@@ -58,15 +58,15 @@ function showPassword() {
         passwordPage.classList.add("love-fade-in");
         setTimeout(() => {
             passwordPage.classList.remove("love-fade-in");
-        }, 800);
-    }, 800);
+        }, 1000);
+    }, 1000);
 }
 function showAlbum() {
     document.getElementById("passwordPage").style.display = "none";
     document.getElementById("albumPage").style.display = "block";
     setTimeout(() => {
         startTyping();
-    }, 800);
+    }, 1000);
 }
 function backHome() {
 location.reload();
@@ -185,10 +185,10 @@ setTimeout(() => {
         // 3. dọn class tránh lỗi animation lần sau
         setTimeout(() => {
             loadingPage.classList.remove("love-fade-in");
-        }, 800);
+        }, 1000);
         // 4. chạy loading
         showLoadingLove();
-    }, 800);
+    }, 1000);
 }, 3000);
 } else {
     const container =
