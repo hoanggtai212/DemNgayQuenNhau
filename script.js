@@ -138,10 +138,17 @@ function showLoadingLove(){
 }
 let input = "";
 function addNum(num){
+    const display = document.getElementById("display");
+    if(display.value === "Đúng rồi 💗" || display.value === "Sai rồi 😏"){
+        display.value = "";
+        display.style.color = "#e75480";
+        input = "";
+    }
     input += num;
-    document.getElementById("display").value = "*".repeat(input.length);
+    display.value = "*".repeat(input.length);
 }
 function delNum(){
+    document.getElementById("display").style.color = "#e75480";
     input = input.slice(0, -1);
     document.getElementById("display").value = "*".repeat(input.length);
 }
@@ -150,6 +157,7 @@ function checkPassword() {
     if (input === "0000") {
         // Hiện thông báo trong ô nhập
         display.value = "Đúng rồi 💗";
+        display.style.color = "#00c853"; // xanh sáng
         setTimeout(() => {
             const passwordPage = document.getElementById("passwordPage");
             const loadingPage = document.getElementById("loveLoading");
@@ -185,6 +193,7 @@ function checkPassword() {
     } else {
         // Hiện thông báo trong ô nhập
         display.value = "Sai rồi 😏";
+        display.style.color = "#ff1744"; // đỏ sáng
         const container = document.querySelector(".container");
         container.classList.add("shake");
         setTimeout(() => {
