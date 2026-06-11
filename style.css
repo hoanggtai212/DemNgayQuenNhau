@@ -56,19 +56,17 @@ body {
         font-size: .9rem;
     }
 
-    .love-counter-container{
-        width: 88%;
-        padding: 15px;
-    }
-
     .love-message{
         font-size: .9rem;
     }
 
     /* TRANG PASS */
+    .love-counter-container,
     .container{
-        width: 88%;
-        padding: 15px;
+        width: 85%;
+        max-width: 420px;
+        padding: 20px;
+        margin: 0 auto;
     }
 
     .title{
