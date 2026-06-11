@@ -141,7 +141,7 @@ function addNum(num){
     const display = document.getElementById("display");
     if(display.value === "Đúng rồi 💗" || display.value === "Sai rồi 😏"){
         display.value = "";
-        display.style.color = "#e75480";
+        display.style.color = "#2196f3";
         input = "";
     }
     input += num;
@@ -200,6 +200,7 @@ function checkPassword() {
             container.classList.remove("shake");
             input = "";
             display.value = "";
+            display.style.color = "#e75480"; // trả về màu mặc định
         }, 800);
     }
 }
