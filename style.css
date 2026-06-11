@@ -25,85 +25,80 @@ body {
 
 /* --- Responsive cho điện thoại --- */
 @media (max-width: 600px) {
-    .main-title {
-        font-size: 2.8em;
-    }
 
-    .name {
-        font-size: 1.4rem;
-    }
-
-    .avatar {
-        width: 85px;
-        height: 85px;
-    }
-
-    .heart {
-        font-size: 2.2em;
-        margin: 0 12px;
-    }
-
-    .time-box span#love-days {
-        font-size: 4rem;
-    }
-
-    .time-box p {
-        font-size: 1.8rem;
-    }
-
-    .time-box span.time-small {
-        font-size: 1rem;
-        letter-spacing: 1px;
-    }
-
-    .love-message {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-
-    .love-counter-container {
-        width: 92%;
-        padding: 20px 15px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-        .memories-link a {
-        padding: 12px 30px;
-    }
-
-    /* PASS */
-        .keypad{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .btn{
-        width: 100%;
-        aspect-ratio: 1/1;
-        font-size: 20px;
-        border-radius: 16px;
-    }
-
-    #display{
-        height: 55px;
-        font-size: 20px;
-    }
-
-    .container{
-        padding: 25px 15px;
-    }
-
-    .title{
+    /* TRANG ĐẦU */
+    .main-title{
         font-size: 2.2rem;
     }
 
+    .avatar{
+        width: 75px;
+        height: 75px;
+    }
+
+    .name{
+        font-size: 1.2rem;
+    }
+
+    .heart{
+        font-size: 1.8rem;
+    }
+
+    .time-box span#love-days{
+        font-size: 3.5rem;
+    }
+
+    .time-box p{
+        font-size: 1.5rem;
+    }
+
+    .time-box span.time-small{
+        font-size: .9rem;
+    }
+
+    .love-counter-container{
+        width: 88%;
+        padding: 15px;
+    }
+
+    .love-message{
+        font-size: .9rem;
+    }
+
+    /* TRANG PASS */
+    .container{
+        width: 88%;
+        padding: 15px;
+    }
+
+    .title{
+        font-size: 1.7rem;
+    }
+
+    .subtitle{
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    #display{
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .keypad{
+        max-width: 240px;
+        gap: 8px;
+    }
+
+    .btn{
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
     .ok{
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
 
