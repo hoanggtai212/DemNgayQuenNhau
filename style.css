@@ -38,11 +38,9 @@ body {
 
     /* TRANG ĐẦU */
     .love-counter-container{
-        width: calc(100% - 24px);
-        max-width: none;
+        width: 85%;
+        max-width: 350px;
         padding: 20px 15px;
-        margin: 12px;
-        box-sizing: border-box;
     }
 
     .main-title{
@@ -87,11 +85,9 @@ body {
 
     /* TRANG PASS */
     .container{
-        width: calc(100% - 24px);
-        max-width: none;
-        margin: 12px;
+        width: 85%;
+        max-width: 350px;
         padding: 20px 15px;
-        box-sizing: border-box;
     }
 
     .title{
