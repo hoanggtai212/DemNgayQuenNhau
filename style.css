@@ -955,8 +955,20 @@ SUCCESS PAGE
     }
 }
 
-.loading-heart-left.heart-active,
-.loading-heart-center.heart-active,
+.loading-heart-left.heart-active {
+    opacity: 1;
+    transform: scale(1.25);
+    color: #ff4f81;
+    text-shadow: 0 0 12px #ff7aa2;
+}
+
+.loading-heart-center.heart-active {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.25);
+    color: #ff4f81;
+    text-shadow: 0 0 12px #ff7aa2;
+}
+
 .loading-heart-right.heart-active {
     opacity: 1;
     transform: scale(1.25);
