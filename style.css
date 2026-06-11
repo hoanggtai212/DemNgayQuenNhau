@@ -682,8 +682,7 @@ SUCCESS PAGE
     z-index:2;
 }
 
-.loading-wrapper,
-#loveSuccess{
+.loading-wrapper{
     display:flex;
     flex-direction:column;
     justify-content:center;
