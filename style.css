@@ -230,7 +230,7 @@ PASSWORD PAGE
 ========================== */
 
 #passwordPage{
-    display:flex;
+    display:none;
     justify-content:center;
     align-items:center;
     min-height:100vh;
@@ -875,4 +875,33 @@ SUCCESS PAGE
 
 #startLoveBtn:active{
     transform:scale(.95);
+}
+
+.love-fade-out{
+    animation: loveFadeOut .8s ease forwards;
+}
+
+.love-fade-in{
+    animation: loveFadeIn .8s ease forwards;
+}
+
+@keyframes loveFadeOut{
+    to{
+        opacity:0;
+        transform:scale(.9);
+        filter:blur(12px);
+    }
+}
+
+@keyframes loveFadeIn{
+    from{
+        opacity:0;
+        transform:scale(1.08);
+        filter:blur(12px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
 }
