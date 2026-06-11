@@ -39,7 +39,7 @@ body {
 }
 
 .main-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
     font-size: 3.5em;      /* to hơn */
     font-weight: 700;      /* đậm hơn */
     color: #e75480;
@@ -90,7 +90,7 @@ body {
 }
 
 .name {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
     font-size: 1.8rem;   /* tăng kích thước */
     color: #7d5a6a;
     margin-top: 10px;
@@ -176,10 +176,6 @@ body {
         margin: 20px 0;
     }
     
-    .main-title {
-        font-size: 2em;
-    }
-
     .avatar {
         width: 85px;
         height: 85px;
