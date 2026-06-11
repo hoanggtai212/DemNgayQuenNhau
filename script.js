@@ -147,10 +147,15 @@ function delNum(){
 }
 function checkPassword() {
     const display = document.getElementById("display");
-    if (input === "0000") { // đổi pass ở đây
-        // 👉 HIỆN ĐÚNG RỒI 💗 TRƯỚC
+    // tạo class để đổi màu
+    display.classList.remove("success", "error");
+    if (input === "0000") {
+        // ✅ đúng
         display.value = "Đúng rồi 💗";
+        display.classList.add("success");
         setTimeout(() => {
+            const passwordPage = document.getElementById("passwordPage");
+            const loadingPage = document.getElementById("loveLoading");
             const overlay = document.getElementById("unlock-overlay");
             const bigLock = overlay.querySelector(".big-lock");
             const front = bigLock.querySelector(".front");
@@ -168,8 +173,6 @@ function checkPassword() {
                 back.textContent = "🔓";
             }, 2400);
             setTimeout(() => {
-                const passwordPage = document.getElementById("passwordPage");
-                const loadingPage = document.getElementById("loveLoading");
                 passwordPage.classList.add("love-fade-out");
                 setTimeout(() => {
                     passwordPage.style.display = "none";
@@ -181,17 +184,18 @@ function checkPassword() {
                     showLoadingLove();
                 }, 1000);
             }, 3000);
-        }, 800); // delay để người ta thấy “Đúng rồi 💗”
+        }, 800);
     } else {
-        // 👉 HIỆN SAI RỒI 😏
+        // ❌ sai
         display.value = "Sai rồi 😏";
+        display.classList.add("error");
         const container = document.querySelector(".container");
         container.classList.add("shake");
         setTimeout(() => {
             container.classList.remove("shake");
-            // reset lại input
             input = "";
             display.value = "";
+            display.classList.remove("error");
         }, 800);
     }}
 function showLoveSuccess(){
