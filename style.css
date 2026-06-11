@@ -773,21 +773,21 @@ SUCCESS PAGE
 
 .loading-heart-left{
     left:0;
-    top:-20px;
-    font-size:36px;
+    top:-22px;
+    font-size:44px;
 }
 
 .loading-heart-center{
     left:50%;
-    top:-20px;
+    top:-22px;
     transform:translateX(-50%);
-    font-size:36px;
+    font-size:44px;
 }
 
 .loading-heart-right{
     right:0;
-    top:-20px;
-    font-size:36px;
+    top:-22px;
+    font-size:44px;
     transform:translateX(50%);
 }
 
