@@ -40,9 +40,11 @@ body {
 
 .main-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5em;
+    font-size: 3.5em;      /* to hơn */
+    font-weight: 700;      /* đậm hơn */
     color: #e75480;
     margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
 }
 
 .love-message {
