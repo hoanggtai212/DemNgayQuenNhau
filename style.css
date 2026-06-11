@@ -177,43 +177,48 @@ body {
 
 /* --- Responsive cho điện thoại --- */
 @media (max-width: 600px) {
-    .love-counter-container {
-        padding: 30px 20px;
-        margin: 20px 0;
+    .main-title {
+        font-size: 2.8em;
     }
-    
+
+    .name {
+        font-size: 1.4rem;
+    }
+
     .avatar {
         width: 85px;
         height: 85px;
     }
-    
+
     .heart {
-        font-size: 2.8em;
-        margin: 0 15px;
+        font-size: 2.2em;
+        margin: 0 12px;
     }
 
     .time-box span#love-days {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .time-box p {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .time-box span.time-small {
-        font-size: 1.1rem;
-    }
-
-    .name {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
     }
 
     .love-message {
-        font-size: 1em;
-        margin: 25px 0;
+        font-size: 1rem;
+        line-height: 1.7;
     }
-    
-    .memories-link a {
+
+    .love-counter-container {
+        padding: 25px 18px;
+        width: 88%;
+    }
+
+        .memories-link a {
         padding: 12px 30px;
     }
 }
