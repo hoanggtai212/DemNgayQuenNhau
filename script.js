@@ -46,9 +46,9 @@ function backHome() {
 location.reload();
 }
 function showLoadingLove(){
-heart1.classList.remove("heart-active");
-heart2.classList.remove("heart-active");
-heart3.classList.remove("heart-active");
+const heart1 = document.getElementById("loadingHeart1");
+const heart2 = document.getElementById("loadingHeart2");
+const heart3 = document.getElementById("loadingHeart3");
     document.getElementById(
         "passwordPage"
     ).style.display = "none";
@@ -64,9 +64,9 @@ heart3.classList.remove("heart-active");
         document.getElementById(
             "progressPercent"
         );
-const heart1 = document.getElementById("loadingHeart1");
-const heart2 = document.getElementById("loadingHeart2");
-const heart3 = document.getElementById("loadingHeart3");
+heart1.classList.remove("heart-active");
+heart2.classList.remove("heart-active");
+heart3.classList.remove("heart-active");
 heart1.classList.add("heart-active");
     const timer =
         setInterval(()=>{
