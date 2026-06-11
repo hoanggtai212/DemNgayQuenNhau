@@ -249,7 +249,7 @@ PASSWORD PAGE
     box-shadow: 0 8px 32px rgba(220,150,180,0.37);
     padding:40px 50px;
     text-align:center;
-    transform: scale(0.9);
+    transform: scale(1);
     transform-origin:center;
 }
 
