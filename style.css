@@ -771,6 +771,25 @@ SUCCESS PAGE
     transition:.5s;
 }
 
+.loading-heart-left{
+    left:0;
+    top:10px;
+    font-size:32px;
+}
+
+.loading-heart-center{
+    left:50%;
+    top:10px;
+    transform:translateX(-50%);
+    font-size:36px;
+}
+
+.loading-heart-right{
+    right:0;
+    top:10px;
+    font-size:40px;
+}
+
 .loading-heart-left.heart-active{
     opacity:1;
     transform:scale(1);
@@ -784,23 +803,4 @@ SUCCESS PAGE
 .loading-heart-right.heart-active{
     opacity:1;
     transform:scale(1.4);
-}
-
-.loading-heart-left{
-    left:0;
-    top:0;
-    font-size:32px;
-}
-
-.loading-heart-center{
-    left:50%;
-    top:-12px;
-    transform:translateX(-50%);
-    font-size:50px;
-}
-
-.loading-heart-right{
-    right:0;
-    top:0;
-    font-size:32px;
 }
