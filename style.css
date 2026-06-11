@@ -629,7 +629,7 @@ MOBILE
     width:320px;
     height:34px;
     border:4px solid #444;
-    background:#f07b8f;
+    background:white;
     box-shadow: inset 0 0 0 2px #fff;
     position:relative;
     overflow:hidden;
@@ -639,7 +639,9 @@ MOBILE
 .progress-fill{
     width:0%;
     height:100%;
-    background:#ff8a98;
+    background: linear-gradient(90deg, #ffb3c7, #ff4f81);
+    transition: width 0.2s linear;
+    box-shadow: 0 0 10px rgba(255,79,129,0.4);
 }
 
 #progressPercent{
@@ -951,7 +953,7 @@ SUCCESS PAGE
 .loading-heart-left.heart-active,
 .loading-heart-center.heart-active,
 .loading-heart-right.heart-active {
-    opacity: 1 !important;
+    opacity: 1;
     transform: scale(1.25);
     color: #ff4f81;
     text-shadow: 0 0 12px #ff7aa2;
