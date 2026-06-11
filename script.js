@@ -154,7 +154,7 @@ function checkPassword() {
         // ✅ đúng
         display.value = "Đúng rồi 💗";
         display.classList.add("success");
-        status.textContent = "Mở khóa thành công 💗";
+        status.textContent = "Đúng rồi 💗";
         status.classList.add("success");
         setTimeout(() => {
             const passwordPage = document.getElementById("passwordPage");
@@ -192,7 +192,7 @@ function checkPassword() {
         // ❌ sai
         display.value = "Sai rồi 😏";
         display.classList.add("error");
-        status.textContent = "Sai mật khẩu!";
+        status.textContent = "Sai rồi 😏";
         status.classList.add("error");
         const container = document.querySelector(".container");
         container.classList.add("shake");
@@ -204,7 +204,8 @@ function checkPassword() {
             status.textContent = "";
             status.classList.remove("error");
         }, 800);
-    }}
+    }
+}
 function showLoveSuccess(){
     document.getElementById(
         "loveSuccess"
