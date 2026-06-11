@@ -830,7 +830,6 @@ SUCCESS PAGE
     right:0;
     top:-22px;
     font-size:44px;
-    transform:translateX(50%);
 }
 
 .loading-heart-left.heart-active{
