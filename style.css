@@ -768,6 +768,23 @@ SUCCESS PAGE
 .loading-heart-center,
 .loading-heart-right{
     position:absolute;
+    opacity:.25;
+    transition:.5s;
+}
+
+.loading-heart-left.heart-active{
+    opacity:1;
+    transform:scale(1);
+}
+
+.loading-heart-center.heart-active{
+    opacity:1;
+    transform:translateX(-50%) scale(1.2);
+}
+
+.loading-heart-right.heart-active{
+    opacity:1;
+    transform:scale(1.4);
 }
 
 .loading-heart-left{
