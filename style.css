@@ -792,15 +792,15 @@ SUCCESS PAGE
 
 .loading-heart-left.heart-active{
     opacity:1;
-    transform:translateX(-50%) scale(1.4);
+    transform:translateX(-50%) scale(1);
 }
 
 .loading-heart-center.heart-active{
     opacity:1;
-    transform:translateX(-50%) scale(1.4);
+    transform:translateX(-50%) scale(1);
 }
 
 .loading-heart-right.heart-active{
     opacity:1;
-    transform:translateX(50%) scale(1.4);
+    transform:translateX(50%) scale(1);
 }
