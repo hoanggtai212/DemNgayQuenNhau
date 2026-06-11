@@ -907,13 +907,14 @@ SUCCESS PAGE
 }
 
 .petal{
-    position:fixed;
-    top:-40px;
-    font-size:22px;
-    pointer-events:none;
-    z-index:9999;
+    position: fixed;
+    top: -40px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 9999;
     animation: petalFall 3s linear forwards;
-    opacity:0.9;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 @keyframes petalFall{
