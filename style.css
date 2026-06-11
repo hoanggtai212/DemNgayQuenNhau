@@ -318,7 +318,8 @@ PASSWORD PAGE
     border-radius: 16px;
     background: #f2f2f2;
     margin-bottom: 22px;
-    letter-spacing: 2px;
+    text-align: center;
+    letter-spacing: 4px;
     box-shadow: inset 0 0 8px rgba(0,0,0,0.08),
                 0 4px 15px rgba(255,105,135,0.15);
 }
