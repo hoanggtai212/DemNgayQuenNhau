@@ -306,6 +306,7 @@ PASSWORD PAGE
 
 #display{
     width: 100%;
+    letter-spacing: 4px;
     max-width: 420px;
     height: 65px;
     font-size: 24px;
