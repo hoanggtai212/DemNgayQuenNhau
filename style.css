@@ -223,6 +223,40 @@ body {
         .memories-link a {
         padding: 12px 30px;
     }
+
+    /* PASS */
+        .keypad{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .btn{
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 20px;
+        border-radius: 16px;
+    }
+
+    #display{
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .container{
+        padding: 25px 15px;
+    }
+
+    .title{
+        font-size: 2.2rem;
+    }
+
+    .ok{
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
 }
 
 /* ==========================
