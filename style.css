@@ -726,16 +726,19 @@ SUCCESS PAGE
 .heart-left.heart-active{
     opacity:1;
     transform:translateX(-50%) scale(1);
+    text-shadow:0 0 12px #ff7aa2;
 }
 
 .heart-center.heart-active{
     opacity:1;
     transform:translateX(-50%) scale(1);
+    text-shadow:0 0 12px #ff7aa2;
 }
 
 .heart-right.heart-active{
     opacity:1;
     transform:translateX(50%) scale(1);
+    text-shadow:0 0 12px #ff7aa2;
 }
 
 .heart-left,
