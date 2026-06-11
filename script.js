@@ -32,26 +32,25 @@ setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
 function createPetals() {
-    for(let i = 0; i < 20; i++) {
+    const emojis = ["🌸", "🌺", "💮", "🌷"];
+    setInterval(() => {
         const petal = document.createElement("div");
         petal.className = "petal";
-        petal.innerHTML = "🌸";
-        petal.style.left =
-            Math.random() * 100 + "vw";
-        petal.style.animationDelay =
-            Math.random() * 0.5 + "s";
+        petal.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = (2 + Math.random() * 2) + "s";
+        petal.style.fontSize = (18 + Math.random() * 10) + "px";
         document.body.appendChild(petal);
         setTimeout(() => {
             petal.remove();
-        }, 2500);
-    }
+        }, 4000);
+    }, 250);
 }
 function showPassword() {
     createPetals();
-    const counterPage =
-        document.getElementById("counterPage");
-    const passwordPage =
-        document.getElementById("passwordPage");
+    const counterPage = document.getElementById("counterPage");
+    const passwordPage = document.getElementById("passwordPage");
     counterPage.classList.add("love-fade-out");
     setTimeout(() => {
         counterPage.style.display = "none";
