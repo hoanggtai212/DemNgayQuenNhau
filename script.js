@@ -152,8 +152,7 @@ function checkPassword() {
     status.classList.remove("success", "error");
     if (input === "0000") {
         // ✅ đúng
-        display.value = "Đúng rồi 💗";
-        display.classList.add("success");
+        display.value = "****";
         status.textContent = "Đúng rồi 💗";
         status.classList.add("success");
         setTimeout(() => {
@@ -184,14 +183,14 @@ function checkPassword() {
                     setTimeout(() => {
                         loadingPage.classList.remove("love-fade-in");
                     }, 1000);
+
                     showLoadingLove();
                 }, 1000);
             }, 3000);
         }, 800);
     } else {
         // ❌ sai
-        display.value = "Sai rồi 😏";
-        display.classList.add("error");
+        display.value = "****";
         status.textContent = "Sai rồi 😏";
         status.classList.add("error");
         const container = document.querySelector(".container");
@@ -200,7 +199,6 @@ function checkPassword() {
             container.classList.remove("shake");
             input = "";
             display.value = "";
-            display.classList.remove("error");
             status.textContent = "";
             status.classList.remove("error");
         }, 800);
