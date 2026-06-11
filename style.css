@@ -213,10 +213,11 @@ body {
         line-height: 1.7;
     }
 
-.love-counter-container {
-    padding: 22px 16px;
-    width: 82%;
-}
+    .love-counter-container {
+        width: 92%;
+        padding: 20px 15px;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 
         .memories-link a {
