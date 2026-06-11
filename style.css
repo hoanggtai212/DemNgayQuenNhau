@@ -788,6 +788,7 @@ SUCCESS PAGE
     right:0;
     top:-20px;
     font-size:36px;
+    transform:translateX(50%);
 }
 
 .loading-heart-left.heart-active{
@@ -802,4 +803,5 @@ SUCCESS PAGE
 
 .loading-heart-right.heart-active{
     opacity:1;
+    transform:translateX(50%) scale(1);
 }
