@@ -147,12 +147,15 @@ function delNum(){
 }
 function checkPassword() {
     const display = document.getElementById("display");
-    // tạo class để đổi màu
+    const status = document.getElementById("passStatus");
     display.classList.remove("success", "error");
+    status.classList.remove("success", "error");
     if (input === "0000") {
         // ✅ đúng
         display.value = "Đúng rồi 💗";
         display.classList.add("success");
+        status.textContent = "Mở khóa thành công 💗";
+        status.classList.add("success");
         setTimeout(() => {
             const passwordPage = document.getElementById("passwordPage");
             const loadingPage = document.getElementById("loveLoading");
@@ -189,6 +192,8 @@ function checkPassword() {
         // ❌ sai
         display.value = "Sai rồi 😏";
         display.classList.add("error");
+        status.textContent = "Sai mật khẩu!";
+        status.classList.add("error");
         const container = document.querySelector(".container");
         container.classList.add("shake");
         setTimeout(() => {
@@ -196,6 +201,8 @@ function checkPassword() {
             input = "";
             display.value = "";
             display.classList.remove("error");
+            status.textContent = "";
+            status.classList.remove("error");
         }, 800);
     }}
 function showLoveSuccess(){
