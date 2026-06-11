@@ -147,14 +147,9 @@ function delNum(){
 }
 function checkPassword() {
     const display = document.getElementById("display");
-    const status = document.getElementById("passStatus");
-    display.classList.remove("success", "error");
-    status.classList.remove("success", "error");
     if (input === "0000") {
-        // ✅ đúng
-        display.value = "****";
-        status.textContent = "Đúng rồi 💗";
-        status.classList.add("success");
+        // Hiện thông báo trong ô nhập
+        display.value = "Đúng rồi 💗";
         setTimeout(() => {
             const passwordPage = document.getElementById("passwordPage");
             const loadingPage = document.getElementById("loveLoading");
@@ -183,24 +178,19 @@ function checkPassword() {
                     setTimeout(() => {
                         loadingPage.classList.remove("love-fade-in");
                     }, 1000);
-
                     showLoadingLove();
                 }, 1000);
             }, 3000);
         }, 800);
     } else {
-        // ❌ sai
-        display.value = "****";
-        status.textContent = "Sai rồi 😏";
-        status.classList.add("error");
+        // Hiện thông báo trong ô nhập
+        display.value = "Sai rồi 😏";
         const container = document.querySelector(".container");
         container.classList.add("shake");
         setTimeout(() => {
             container.classList.remove("shake");
             input = "";
             display.value = "";
-            status.textContent = "";
-            status.classList.remove("error");
         }, 800);
     }
 }
