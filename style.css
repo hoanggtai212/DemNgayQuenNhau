@@ -235,16 +235,19 @@ PASSWORD PAGE
     align-items:center;
     min-height:100vh;
     background:#ead0d6;
+    background:#fff;
 }
 
 .container{
     width:100%;
     max-width:320px;
-    margin:0 auto;
+    margin: 20px;
+    background:#ead0d6;   /* nền hồng nằm trong */
+    border-radius:20px;
+    padding: 25px;
     text-align:center;
     transform: scale(0.85);
     transform-origin: center;
-    padding: 20px;
 }
 
 .title{
