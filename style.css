@@ -44,7 +44,8 @@ body {
     }
 
     .main-title{
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
     .avatar{
@@ -53,7 +54,7 @@ body {
     }
 
     .name{
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .heart{
@@ -79,8 +80,9 @@ body {
     }
 
     .love-message{
-        font-size: .9rem;
-        line-height: 1.7;
+        font-size: .8rem;
+        line-height: 1.5;
+        margin: 15px 0;
     }
 
     /* TRANG PASS */
