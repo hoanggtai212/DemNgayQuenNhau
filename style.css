@@ -148,6 +148,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
+    position: relative;
+    top: -10px;
 }
 
 .time-box p {
