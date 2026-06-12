@@ -222,7 +222,7 @@ PASSWORD PAGE
     margin-bottom: 10px;
     letter-spacing: 1px;
     display: inline-block;
-    padding: 4px 10px;
+    padding: 6px 14px;
     background: rgba(255,255,255,0.35);
     border-radius: 12px;
     backdrop-filter: blur(4px);
@@ -241,7 +241,7 @@ PASSWORD PAGE
     width:90%;
     max-width:250px;
     height:48px;
-    font-size:22px;
+    font-size:14px;
     border-radius:14px;
     letter-spacing: 4px;
     background: #f2f2f2;
