@@ -238,9 +238,8 @@ PASSWORD PAGE
 }
 
 #display{
-    width:90%;
-    max-width:250px;
-    height:48px;
+    width:180px;      /* chiều ngang */
+    height:30px;      /* chiều cao */
     font-size:14px;
     border-radius:14px;
     letter-spacing: 2px;
