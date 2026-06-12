@@ -254,7 +254,8 @@ PASSWORD PAGE
 .keypad{
     display:grid;
     grid-template-columns: repeat(3, 75px);
-    gap:10px;
+    column-gap:18px; /* khoảng cách ngang */
+    row-gap:12px;    /* khoảng cách dọc */
     justify-content:center;
 }
 
