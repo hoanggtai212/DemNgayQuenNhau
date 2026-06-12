@@ -342,3 +342,4 @@ function spawnHeartPhotosCentered() {
         }, i * 100);
     }
 }
+});
