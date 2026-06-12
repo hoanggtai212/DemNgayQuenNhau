@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    min-height: 100vh;
     background: linear-gradient(135deg, #fde7f0 0%, #f8c8dc 100%);
-    overflow-x: hidden;
     color: #5c3e4a;
     touch-action: manipulation;
 }
@@ -18,7 +22,8 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    height:100dvh;
+    overflow:hidden;
 }
 
 #homePage{
@@ -187,7 +192,8 @@ PASSWORD PAGE
     display:none;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    height:100dvh;
+    overflow:hidden;
     background: linear-gradient(135deg, #fde7f0 0%, #f8c8dc 100%);
 }
 
@@ -386,18 +392,19 @@ ALBUM PAGE
 ========================== */
 
 #albumPage{
-    min-height:100vh;
+    position:fixed;
+    inset:0;
     background:linear-gradient(135deg,#ffe4ec,#ffd1dc);
-    position:relative;
     overflow:hidden;
     text-align:center;
     padding:20px;
+    box-sizing:border-box;
 }
 
 .main-content{
     position:relative;
     z-index:10;
-    margin-top:60px;
+    margin-top:90px;
 }
 
 .main-content h1{
@@ -464,7 +471,7 @@ ALBUM PAGE
 }
 
 .floating-heart{
-    position:fixed;
+    position:absolute;
     bottom:-50px;
     font-size:24px;
     animation:floatHeart linear infinite;
@@ -491,9 +498,9 @@ HEART PHOTOS
 ========================== */
 
 .photo{
-    position:fixed;
-    width:90px;
-    height:90px;
+    position:absolute;
+    width:75px;
+    height:75px;
     object-fit:cover;
     border-radius:15px;
     border:3px solid white;
@@ -946,4 +953,35 @@ SUCCESS PAGE
 
 html{
     font-size:calc(14px + 0.25vw);
+}
+
+@media (max-width:430px){
+
+    .love-counter-container{
+        width:92%;
+        padding:35px 25px;
+    }
+
+    .main-title{
+        font-size:3rem;
+    }
+
+    .avatar{
+        width:95px;
+        height:95px;
+    }
+
+    .heart{
+        font-size:2.7rem;
+        margin:0 18px;
+    }
+
+    .time-box span#love-days{
+        font-size:5.5rem;
+    }
+
+    .container{
+        width:min(92vw,380px);
+        padding:35px 25px;
+    }
 }
