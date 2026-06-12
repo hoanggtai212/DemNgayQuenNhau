@@ -1,210 +1,225 @@
 document.addEventListener('DOMContentLoaded', () => {
 const startDate = '2026-05-23 00:00:00';
 function updateLoveTimer() {
-    const startDateObj = new Date(startDate);
-    const currentDate = new Date();
-    const timeDifference =
-        currentDate.getTime() -
-        startDateObj.getTime();
-    const daysDifference =
-        Math.floor(timeDifference / (1000 * 3600 * 24));
-    const hours =
-        Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600));
-    const minutes =
-        Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60));
-    const seconds =
-        Math.floor((timeDifference % (1000 * 60)) / 1000);
-    const daysElement =
-        document.getElementById('love-days');
-    if (daysElement) {
-        daysElement.textContent = daysDifference;
-    }
-    const timeElement =
-        document.getElementById('love-hours');
-    if (timeElement) {
-        timeElement.textContent =
-            `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
-    }
-    document.title =
-        `${daysDifference} Ngày Yêu ❤️`;
+const startDateObj = new Date(startDate);
+const currentDate = new Date();
+const timeDifference =
+currentDate.getTime() -
+startDateObj.getTime();
+const daysDifference =
+Math.floor(timeDifference / (1000 \* 3600 \* 24));
+const hours =
+Math.floor((timeDifference % (1000 \* 3600 \* 24)) / (1000 \* 3600));
+const minutes =
+Math.floor((timeDifference % (1000 \* 3600)) / (1000 \* 60));
+const seconds =
+Math.floor((timeDifference % (1000 \* 60)) / 1000);
+const daysElement =
+document.getElementById('love-days');
+if (daysElement) {
+daysElement.textContent = daysDifference;
+}
+const timeElement =
+document.getElementById('love-hours');
+if (timeElement) {
+timeElement.textContent =
+`${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+}
+document.title =
+`${daysDifference} Ngày Yêu ❤️`;
 }
 setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
+function createPetals() {
+const emojis = ["🌸", "🌺", "💮", "🌷"];
+setInterval(() => {
+const petal = document.createElement("div");
+petal.className = "petal";
+petal.textContent =
+emojis[Math.floor(Math.random() \* emojis.length)];
+petal.style.left = Math.random() \* 100 + "vw";
+petal.style.animationDuration = (2 + Math.random() \* 2) + "s";
+petal.style.fontSize = (18 + Math.random() \* 10) + "px";
+document.body.appendChild(petal);
+setTimeout(() => {
+petal.remove();
+}, 4000);
+}, 250);
+}
 function showPassword() {
-    createPetals();
-    const counterPage = document.getElementById("counterPage");
-    const passwordPage = document.getElementById("passwordPage");
-    counterPage.classList.add("love-fade-out");
-    setTimeout(() => {
-        counterPage.style.display = "none";
-        passwordPage.style.display = "flex";
-        passwordPage.classList.add("love-fade-in");
-        setTimeout(() => {
-            passwordPage.classList.remove("love-fade-in");
-        }, 1000);
-    }, 1000);
+createPetals();
+const counterPage = document.getElementById("counterPage");
+const passwordPage = document.getElementById("passwordPage");
+counterPage.classList.add("love-fade-out");
+setTimeout(() => {
+counterPage.style.display = "none";
+passwordPage.style.display = "flex";
+passwordPage.classList.add("love-fade-in");
+setTimeout(() => {
+passwordPage.classList.remove("love-fade-in");
+}, 1000);
+}, 1000);
 }
 function showAlbum() {
-    document.getElementById("passwordPage").style.display = "none";
-    document.getElementById("albumPage").style.display = "block";
-    setTimeout(() => {
-        startTyping();
-    }, 1000);
+document.getElementById("passwordPage").style.display = "none";
+document.getElementById("albumPage").style.display = "block";
+setTimeout(() => {
+startTyping();
+}, 1000);
 }
 function backHome() {
 location.reload();
 }
 function showLoadingLove(){
-    const heart1 =
-        document.getElementById("loadingHeart1");
-    const heart2 =
-        document.getElementById("loadingHeart2");
-    const heart3 =
-        document.getElementById("loadingHeart3");
-    document.getElementById(
-        "passwordPage"
-    ).style.display = "none";
-    document.getElementById(
-        "loveLoading"
-    ).style.display = "flex";
-    const fill =
-        document.getElementById(
-            "progressFill"
-        );
-    const text =
-        document.getElementById(
-            "progressPercent"
-        );
-    const startBtn =
-        document.getElementById(
-            "startLoveBtn"
-        );
-    fill.style.width = "0%";
-    text.textContent = "0%";
-    heart1.classList.remove("heart-active");
-    heart2.classList.remove("heart-active");
-    heart3.classList.remove("heart-active");
-    startBtn.style.display = "inline-block";
-    startBtn.onclick = () => {
-        startBtn.style.display = "none";
-        let progress = 0;
-        const timer = setInterval(() => {
-            progress++;
-            fill.style.width =
-                progress + "%";
-            text.textContent =
-                progress + "%";
-            if(progress >= 1){
-                heart1.classList.add(
-                    "heart-active"
-                );
-            }
-            if(progress >= 50){
-                heart2.classList.add(
-                    "heart-active"
-                );
-            }
-            if(progress >= 100){
-                heart3.classList.add(
-                    "heart-active"
-                );
-                clearInterval(timer);
-                setTimeout(() => {
-                    document.getElementById(
-                        "loveLoading"
-                    ).style.display = "none";
-                    showLoveSuccess();
-                },500);
-            }
-        },40);
-    };
+const heart1 =
+document.getElementById("loadingHeart1");
+const heart2 =
+document.getElementById("loadingHeart2");
+const heart3 =
+document.getElementById("loadingHeart3");
+document.getElementById(
+"passwordPage"
+).style.display = "none";
+document.getElementById(
+"loveLoading"
+).style.display = "flex";
+const fill =
+document.getElementById(
+"progressFill"
+);
+const text =
+document.getElementById(
+"progressPercent"
+);
+const startBtn =
+document.getElementById(
+"startLoveBtn"
+);
+fill.style.width = "0%";
+text.textContent = "0%";
+heart1.classList.remove("heart-active");
+heart2.classList.remove("heart-active");
+heart3.classList.remove("heart-active");
+startBtn.style.display = "inline-block";
+startBtn.onclick = () => {
+startBtn.style.display = "none";
+let progress = 0;
+const timer = setInterval(() => {
+progress++;
+fill.style.width =
+progress + "%";
+text.textContent =
+progress + "%";
+if(progress >= 1){
+heart1.classList.add(
+"heart-active"
+);
+}
+if(progress >= 50){
+heart2.classList.add(
+"heart-active"
+);
+}
+if(progress >= 100){
+heart3.classList.add(
+"heart-active"
+);
+clearInterval(timer);
+setTimeout(() => {
+document.getElementById(
+"loveLoading"
+).style.display = "none";
+showLoveSuccess();
+},500);
+}
+},40);
+};
 }
 let input = "";
 function addNum(num){
-    const display = document.getElementById("display");
-    display.style.color = "#2196f3"; // luôn xanh khi nhập
-    if(display.value === "Đúng rồi 💗" || display.value === "Sai rồi 😏"){
-        display.value = "";
-        input = "";
-    }
-    input += num;
-    display.value = "*".repeat(input.length);
+const display = document.getElementById("display");
+display.style.color = "#2196f3"; // luôn xanh khi nhập
+if(display.value === "Đúng rồi 💗" || display.value === "Sai rồi 😏"){
+display.value = "";
+input = "";
 }
-function delNum(){
-    document.getElementById("display").style.color = "#e75480";
-    input = input.slice(0, -1);
-    document.getElementById("display").value = "*".repeat(input.length);
+input += num;
+display.value = "*".repeat(input.length);*
+*}*
+*function delNum(){*
+*document.getElementById("display").style.color = "#e75480";*
+*input = input.slice(0, -1);*
+*document.getElementById("display").value = "*".repeat(input.length);
 }
 function checkPassword() {
-    const display = document.getElementById("display");
-    if (input === "0000") {
-        // Hiện thông báo trong ô nhập
-        display.value = "Đúng rồi 💗";
-        display.style.color = "#00c853"; // xanh sáng
-        setTimeout(() => {
-            const passwordPage = document.getElementById("passwordPage");
-            const loadingPage = document.getElementById("loveLoading");
-            const overlay = document.getElementById("unlock-overlay");
-            const bigLock = overlay.querySelector(".big-lock");
-            const front = bigLock.querySelector(".front");
-            const back = bigLock.querySelector(".back");
-            overlay.style.display = "flex";
-            bigLock.classList.remove("spin", "open");
-            front.textContent = "🔒";
-            back.textContent = "🔒";
-            bigLock.classList.add("spin");
-            setTimeout(() => {
-                bigLock.classList.add("open");
-            }, 2000);
-            setTimeout(() => {
-                front.textContent = "🔓";
-                back.textContent = "🔓";
-            }, 2400);
-            setTimeout(() => {
-                passwordPage.classList.add("love-fade-out");
-                setTimeout(() => {
-                    passwordPage.style.display = "none";
-                    loadingPage.style.display = "flex";
-                    loadingPage.classList.add("love-fade-in");
-                    setTimeout(() => {
-                        loadingPage.classList.remove("love-fade-in");
-                    }, 1000);
-                    showLoadingLove();
-                }, 1000);
-            }, 3000);
-        }, 800);
-    } else {
-        // Hiện thông báo trong ô nhập
-        display.value = "Sai rồi 😏";
-        display.style.color = "#ff1744"; // đỏ sáng
-        const container = document.querySelector(".container");
-        container.classList.add("shake");
-        setTimeout(() => {
-            container.classList.remove("shake");
-            input = "";
-            display.value = "";
-            display.style.color = "#e75480"; // trả về màu mặc định
-        }, 800);
-    }
+const display = document.getElementById("display");
+if (input === "0000") {
+// Hiện thông báo trong ô nhập
+display.value = "Đúng rồi 💗";
+display.style.color = "#00c853"; // xanh sáng
+setTimeout(() => {
+const passwordPage = document.getElementById("passwordPage");
+const loadingPage = document.getElementById("loveLoading");
+const overlay = document.getElementById("unlock-overlay");
+const bigLock = overlay.querySelector(".big-lock");
+const front = bigLock.querySelector(".front");
+const back = bigLock.querySelector(".back");
+overlay.style.display = "flex";
+bigLock.classList.remove("spin", "open");
+front.textContent = "🔒";
+back.textContent = "🔒";
+bigLock.classList.add("spin");
+setTimeout(() => {
+bigLock.classList.add("open");
+}, 2000);
+setTimeout(() => {
+front.textContent = "🔓";
+back.textContent = "🔓";
+}, 2400);
+setTimeout(() => {
+passwordPage.classList.add("love-fade-out");
+setTimeout(() => {
+passwordPage.style.display = "none";
+loadingPage.style.display = "flex";
+loadingPage.classList.add("love-fade-in");
+setTimeout(() => {
+loadingPage.classList.remove("love-fade-in");
+}, 1000);
+showLoadingLove();
+}, 1000);
+}, 3000);
+}, 800);
+} else {
+// Hiện thông báo trong ô nhập
+display.value = "Sai rồi 😏";
+display.style.color = "#ff1744"; // đỏ sáng
+const container = document.querySelector(".container");
+container.classList.add("shake");
+setTimeout(() => {
+container.classList.remove("shake");
+input = "";
+display.value = "";
+display.style.color = "#e75480"; // trả về màu mặc định
+}, 800);
+}
 }
 function showLoveSuccess(){
-    document.getElementById(
-        "loveSuccess"
-    ).style.display = "flex";
+document.getElementById(
+"loveSuccess"
+).style.display = "flex";
 }
 document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
-    document.getElementById("clickMe");
+document.getElementById("clickMe");
 if(clickMe){
-    clickMe.addEventListener("click",()=>{
-        document.getElementById(
-            "loveSuccess"
-        ).style.display = "none";
-        showAlbum();
-    });
+clickMe.addEventListener("click",()=>{
+document.getElementById(
+"loveSuccess"
+).style.display = "none";
+showAlbum();
+});
 }
-    initAlbum();
 const message =
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
 const photoUrls = [
@@ -243,13 +258,13 @@ const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 const albumBtn = document.getElementById("albumBtn");
 const typingDiv = document.getElementById("typing");
-
+if (!albumBtn) return;
 let idx = 0;
-window.startTyping = function () {
-    idx = 0;
-    typingDiv.textContent = "";
-    albumBtn.classList.remove("visible");
-    type();
+window\.startTyping = function () {
+idx = 0;
+typingDiv.textContent = "";
+albumBtn.classList.remove("visible");
+type();
 };
 function type() {
 if (idx < message.length) {
@@ -270,138 +285,139 @@ const heart = document.createElement("div");
 heart.className = "floating-heart";
 heart.textContent = "💗";
 heart.style.left =
-  Math.random() * 100 + "vw";
+Math.random() \* 100 + "vw";
 heart.style.color =
-  heartColors[
-    Math.floor(
-      Math.random() * heartColors.length
-    )
-  ];
+heartColors[
+Math.floor(
+Math.random() \* heartColors.length
+)
+];
 heart.style.animationDelay =
-  Math.random() * 10 + "s";
+Math.random() \* 10 + "s";
 heart.style.animationDuration =
-  (7 + Math.random() * 8) + "s";
+(7 + Math.random() \* 8) + "s";
 document.body.appendChild(heart);
 }
 musicBtn.addEventListener("click", () => {
 if (music.paused) {
-  music.play();
-  musicBtn.innerHTML =
-    '<i class="fa-solid fa-music"></i>';
+music.play();
+musicBtn.innerHTML =
+'';
 } else {
-  music.pause();
-  musicBtn.innerHTML =
-    '<i class="fa-solid fa-volume-xmark"></i>';
+music.pause();
+musicBtn.innerHTML =
+'';
 }});
 function showConfetti() {
 const confettiColors = [
-  "#ff6f91",
-  "#ff9671",
-  "#ffc75f",
-  "#f9f871",
-  "#ff3c78"
+"#ff6f91",
+"#ff9671",
+"#ffc75f",
+"#f9f871",
+"#ff3c78"
 ];
 for (let i = 0; i < 100; i++) {
-  const confetti =
-    document.createElement("div");
-  confetti.className = "confetti";
-  if (i % 2 === 0) {
-    confetti.classList.add("heart");
-  }
-  confetti.style.backgroundColor =
-    confettiColors[
-      Math.floor(
-        Math.random() *
-        confettiColors.length
-      )
-    ];
-  confetti.style.setProperty(
-    "--x",
-    (Math.random() * 500 - 250) + "px"
-  );
-  confetti.style.setProperty(
-    "--y",
-    (Math.random() * -500) + "px"
-  );
-  confetti.style.left =
-    window.innerWidth / 2 + "px";
-  confetti.style.top =
-    window.innerHeight / 2 + "px";
-  document.body.appendChild(confetti);
-  setTimeout(() => {
-    confetti.remove();
-  }, 1200);
+const confetti =
+document.createElement("div");
+confetti.className = "confetti";
+if (i % 2 === 0) {
+confetti.classList.add("heart");
+}
+confetti.style.backgroundColor =
+confettiColors[
+Math.floor(
+Math.random() \*
+confettiColors.length
+)
+];
+confetti.style.setProperty(
+"--x",
+(Math.random() \* 500 - 250) + "px"
+);
+confetti.style.setProperty(
+"--y",
+(Math.random() \* -500) + "px"
+);
+confetti.style.left =
+window\.innerWidth / 2 + "px";
+confetti.style.top =
+window\.innerHeight / 2 + "px";
+document.body.appendChild(confetti);
+setTimeout(() => {
+confetti.remove();
+}, 1200);
 }}
 function showFirework() {
 const container =
-  document.getElementById(
-    "fireworkContainer"
-  );
+document.getElementById(
+"fireworkContainer"
+);
 container.innerHTML = "";
 container.style.opacity = 1;
 for (let i = 0; i < 30; i++) {
-  const fw =
-    document.createElement("div");
-  fw.className = "firework";
-  fw.style.transform =
-    `rotate(${i * 12}deg) translateY(-40px)`;
-  container.appendChild(fw);
+const fw =
+document.createElement("div");
+fw\.className = "firework";
+fw\.style.transform =
+`rotate(${i * 12}deg) translateY(-40px)`;
+container.appendChild(fw);
 }
 setTimeout(() => {
-  container.style.opacity = 0;
+container.style.opacity = 0;
 }, 1000);
 }
-function initAlbum() {
-  const albumBtn = document.getElementById("albumBtn");
-  if (!albumBtn) return;
-  albumBtn.onclick = () => {
-    showPassword();
-  };
-}
+albumBtn.addEventListener("click", () => {
+albumBtn.style.display = "none";
+showConfetti();
+showFirework();
+setTimeout(() => {
+spawnHeartPhotosCentered();
+}, 500);
+});
 function createHeartPhotoCentered(
 idx,
 total
 ) {
 const photo =
-  document.createElement("img");
+document.createElement("img");
 photo.src =
-  photoUrls[idx % photoUrls.length];
+photoUrls[idx % photoUrls.length];
 photo.className = "photo";
 document.body.appendChild(photo);
 const centerX =
-  window.innerWidth / 2;
+window\.innerWidth / 2;
 const centerY =
-  window.innerHeight / 2;
+window\.innerHeight / 2;
 const t =
-  Math.PI * 2 * (idx / total);
+Math.PI \* 2 \* (idx / total);
 const scale =
-  (window.innerWidth <= 480)
-    ? 14
-    : 22;
+(window\.innerWidth <= 480)
+? 14
+: 22;
 const targetX =
-  centerX +
-  scale *
-  16 *
-  Math.pow(Math.sin(t), 3);
+centerX +
+scale \*
+16 \*
+Math.pow(Math.sin(t), 3);
 const targetY =
-  centerY -
-  scale *
-  (
-    13 * Math.cos(t)
-    - 5 * Math.cos(2 * t)
-    - 2 * Math.cos(3 * t)
-    - Math.cos(4 * t)
-  );
+centerY -
+scale \*
+(
+13 \* Math.cos(t)
+\- 5 \* Math.cos(2 \* t)
+\- 2 \* Math.cos(3 \* t)
+\- Math.cos(4 \* t)
+);
 photo.style.left =
-  centerX + "px";
+centerX + "px";
 photo.style.top =
-  centerY + "px";
+centerY + "px";
 setTimeout(() => {
-  photo.style.opacity = "1";
-  photo.style.pointerEvents =
-    "auto";
-  photo.style.transform =
-    `translate(-50%, -50%)
+photo.style.opacity = "1";
+photo.style.pointerEvents =
+"auto";
+photo.style.transform =
+`translate(-50%, -50%)
      translate(
        ${targetX - centerX}px,
        ${targetY - centerY}px
@@ -411,15 +427,15 @@ setTimeout(() => {
 function spawnHeartPhotosCentered() {
 const totalPhotos = 30;
 for (
-  let i = 0;
-  i < totalPhotos;
-  i++
+let i = 0;
+i < totalPhotos;
+i++
 ) {
-  setTimeout(() => {
-    createHeartPhotoCentered(
-      i,
-      totalPhotos
-    );
-  }, i * 100);
+setTimeout(() => {
+createHeartPhotoCentered(
+i,
+totalPhotos
+);
+}, i \* 100);
 }}
 });
