@@ -337,17 +337,10 @@ photo.style.transform =
 }, 100);
 }
 function spawnHeartPhotosCentered() {
-const totalPhotos = 30;
-for (
-let i = 0;
-i < totalPhotos;
-i++
-) {
-setTimeout(() => {
-createHeartPhotoCentered(
-i,
-totalPhotos
-);
-}, i \* 100);
+  const totalPhotos = 30;
+  for (let i = 0; i < totalPhotos; i++) {
+    setTimeout(() => {
+      createHeartPhotoCentered(i, totalPhotos);
+    }, i * 100);
+  }
 }
-});
