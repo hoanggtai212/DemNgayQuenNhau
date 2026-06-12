@@ -145,12 +145,12 @@ display.value = "";
 input = "";
 }
 input += num;
-display.value = "*".repeat(input.length);*
-*}*
-*function delNum(){*
-*document.getElementById("display").style.color = "#e75480";*
-*input = input.slice(0, -1);*
-*document.getElementById("display").value = "*".repeat(input.length);
+display.value = "*".repeat(input.length);
+}
+function delNum(){
+document.getElementById("display").style.color = "#e75480";*
+input = input.slice(0, -1);
+*ocument.getElementById("display").value = "*".repeat(input.length);
 }
 function checkPassword() {
 const display = document.getElementById("display");
