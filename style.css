@@ -114,8 +114,8 @@ body {
     font-size: 3.2em;
     color: #e75480;
     margin: 0 25px;
-    align-self: flex-start; /* Giúp trái tim căn thẳng hàng với avatar */
-    margin-top: 20px;     /* Đẩy trái tim xuống một chút cho cân đối */
+    align-self: center;
+    margin-top: 0;
     animation: pulse 1.5s infinite;
 }
 
