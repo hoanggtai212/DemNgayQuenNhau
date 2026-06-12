@@ -29,95 +29,6 @@ body {
     width:100%;
 }
 
-/* --- Responsive cho điện thoại --- */
-@media (max-width:768px){
-
-    .love-counter-container,
-    .container{
-        width:min(92%, 340px);
-        padding:clamp(12px, 3vw, 18px);
-    }
-
-    .main-title{
-        font-size:clamp(1.4rem, 5vw, 2rem);
-        margin-bottom:10px;
-        line-height:1.2;
-    }
-
-    .avatar{
-        width:clamp(55px, 18vw, 80px);
-        height:clamp(55px, 18vw, 80px);
-    }
-
-    .name{
-        font-size:clamp(.8rem, 3vw, 1rem);
-        margin-top:5px;
-    }
-
-    .heart{
-        font-size:clamp(1.2rem, 5vw, 2rem);
-        margin:0 8px;
-        margin-top:10px;
-    }
-
-    .time-box span#love-days{
-        font-size:clamp(2.8rem, 12vw, 5rem);
-    }
-
-    .time-box p{
-        font-size:clamp(1rem, 4vw, 1.5rem);
-    }
-
-    .time-box span.time-small{
-        font-size:clamp(.7rem, 2.8vw, .9rem);
-    }
-
-    .love-message{
-        font-size:clamp(.75rem, 3vw, 1rem);
-        line-height:1.5;
-        margin:10px 0;
-    }
-
-    .memories-link a{
-        padding:10px 20px;
-        font-size:clamp(.8rem, 3vw, 1rem);
-    }
-
-    /* PASS PAGE */
-
-    .title{
-        font-size:clamp(1rem, 4vw, 1.4rem);
-    }
-
-    .subtitle{
-        font-size:clamp(.7rem, 3vw, .9rem);
-        line-height:1.5;
-    }
-
-    #display{
-        height:clamp(40px, 8vw, 55px);
-        font-size:clamp(15px, 3vw, 20px);
-        margin-bottom:12px;
-    }
-
-    .keypad{
-        grid-template-columns:repeat(3, clamp(50px, 16vw, 70px));
-        gap:clamp(6px, 2vw, 10px);
-    }
-
-    .btn{
-        width:clamp(50px, 16vw, 70px);
-        height:clamp(50px, 16vw, 70px);
-        font-size:clamp(16px, 4vw, 22px);
-    }
-
-    .ok{
-        width:clamp(42px, 12vw, 55px);
-        height:clamp(42px, 12vw, 55px);
-        font-size:clamp(18px, 4vw, 24px);
-    }
-}
-
 .love-counter-container {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
@@ -128,8 +39,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba(220, 150, 180, 0.37);
     text-align: center;
     z-index: 1;
-    max-width: 520px;
-    width: 90%;
+    width:min(92vw,520px);
     transition: all 0.3s ease;
 }
 
@@ -282,9 +192,8 @@ PASSWORD PAGE
 }
 
 .container{
-    width:100%;
-    max-width: 650px;
-    margin: 20px;
+    width:min(92vw,420px);
+    margin:20px auto;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -324,7 +233,7 @@ PASSWORD PAGE
     width: 100%;
     letter-spacing: 4px;
     max-width: 420px;
-    height: 65px;
+    height:55px;
     font-size: 24px;
     border-radius: 16px;
     background: #f2f2f2;
@@ -338,14 +247,14 @@ PASSWORD PAGE
 
 .keypad{
     display:grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 16px;
+    grid-template-columns: repeat(3, 85px);
+    gap:12px;
     justify-content:center;
 }
 
 .btn{
-    width: 100px;
-    height: 100px;
+    width:85px;
+    height:85px;
     font-size: 28px;
     border:none;
     border-radius:20px;
@@ -1033,4 +942,8 @@ SUCCESS PAGE
     transform: scale(1.25);
     color: #ff4f81;
     text-shadow: 0 0 12px #ff7aa2;
+}
+
+html{
+    font-size:calc(14px + 0.25vw);
 }
