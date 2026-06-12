@@ -126,7 +126,7 @@ body {
 }
 
 .day-counter {
-    margin: 20px 0;
+    margin: 5px 0 15px;
 }
 
 .time-display {
@@ -954,7 +954,7 @@ html{
 
     .love-counter-container{
         width:92%;
-        padding:35px 25px;
+        padding:20px 20px;
     }
 
     .main-title{
