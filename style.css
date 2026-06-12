@@ -20,8 +20,8 @@ touch-action: manipulation;
 
 .main-title {
 font-family: 'Great Vibes', cursive;
-font-size: 3.5em; /* to hơn /
-font-weight: 700; / đậm hơn */
+font-size: 3.5em; /* to hơn */
+font-weight: 700; /* đậm hơn */
 color: #e75480;
 margin-bottom: 20px;
 text-shadow: 0 3px 10px rgba(231,84,128,0.35);
@@ -74,18 +74,18 @@ object-fit: cover;
 
 .name {
 font-family: 'Great Vibes', cursive;
-font-size: 1.8rem; /* tăng kích thước /
+font-size: 1.8rem; /* tăng kích thước */
 color: #7d5a6a;
 margin-top: 10px;
-font-weight: 700; / đậm hơn */
+font-weight: 700; /* đậm hơn */
 }
 
 .heart {
 font-size: 3.2em;
 color: #e75480;
 margin: 0 25px;
-align-self: flex-start; /* Giúp trái tim căn thẳng hàng với avatar /
-margin-top: 20px; / Đẩy trái tim xuống một chút cho cân đối */
+align-self: flex-start; /* Giúp trái tim căn thẳng hàng với avatar */
+margin-top: 20px; /* Đẩy trái tim xuống một chút cho cân đối */
 animation: pulse 1.5s infinite;
 }
 
@@ -223,8 +223,8 @@ margin-bottom: 10px;
 }
 
 #display{
-width:222px; /* chiều ngang /
-height:40px; / chiều cao */
+width:222px; /* chiều ngang */
+height:40px; /* chiều cao */
 font-size:18px;
 border-radius:14px;
 letter-spacing: 2px;
