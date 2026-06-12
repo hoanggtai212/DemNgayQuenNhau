@@ -73,6 +73,7 @@ const timer = setInterval(() => {
         }, 500);
     }
 }, 30);
+}
 let password = "";
 function addNum(num) {
 password += num;
