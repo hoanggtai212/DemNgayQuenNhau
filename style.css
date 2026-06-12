@@ -32,110 +32,89 @@ body {
 /* --- Responsive cho điện thoại --- */
 @media (max-width:768px){
 
-    body{
-        overflow-x:hidden;
-    }
-
-    /* TRANG ĐẦU */
-    .love-counter-container{
-        width:92%;
-        max-width:320px;
-        padding:18px 12px;
+    .love-counter-container,
+    .container{
+        width:min(92%, 340px);
+        padding:clamp(12px, 3vw, 18px);
     }
 
     .main-title{
-        font-size:1.6rem;
-        margin-bottom:12px;
+        font-size:clamp(1.4rem, 5vw, 2rem);
+        margin-bottom:10px;
+        line-height:1.2;
     }
 
     .avatar{
-        width:60px;
-        height:60px;
+        width:clamp(55px, 18vw, 80px);
+        height:clamp(55px, 18vw, 80px);
     }
 
     .name{
-        font-size:.9rem;
-        margin-top:6px;
+        font-size:clamp(.8rem, 3vw, 1rem);
+        margin-top:5px;
     }
 
     .heart{
-        font-size:1.4rem;
-        margin:0 10px;
-        margin-top:12px;
-    }
-
-    .couple-display{
-        margin-bottom:15px;
-    }
-
-    .time-box{
-        padding:5px;
+        font-size:clamp(1.2rem, 5vw, 2rem);
+        margin:0 8px;
+        margin-top:10px;
     }
 
     .time-box span#love-days{
-        font-size:3rem;
+        font-size:clamp(2.8rem, 12vw, 5rem);
     }
 
     .time-box p{
-        font-size:1.2rem;
+        font-size:clamp(1rem, 4vw, 1.5rem);
     }
 
     .time-box span.time-small{
-        font-size:.75rem;
-        letter-spacing:.5px;
+        font-size:clamp(.7rem, 2.8vw, .9rem);
     }
 
     .love-message{
-        font-size:.8rem;
+        font-size:clamp(.75rem, 3vw, 1rem);
         line-height:1.5;
-        margin:12px 0;
+        margin:10px 0;
     }
 
     .memories-link a{
-        padding:10px 22px;
-        font-size:.85rem;
+        padding:10px 20px;
+        font-size:clamp(.8rem, 3vw, 1rem);
     }
 
-    /* TRANG PASS */
-    .container{
-        width:92%;
-        max-width:300px;
-        padding:18px 12px;
-    }
+    /* PASS PAGE */
 
     .title{
-        font-size:1.15rem;
+        font-size:clamp(1rem, 4vw, 1.4rem);
     }
 
     .subtitle{
-        font-size:.75rem;
-        margin-bottom:12px;
+        font-size:clamp(.7rem, 3vw, .9rem);
         line-height:1.5;
     }
 
     #display{
-        height:42px;
-        font-size:16px;
+        height:clamp(40px, 8vw, 55px);
+        font-size:clamp(15px, 3vw, 20px);
         margin-bottom:12px;
     }
 
     .keypad{
-        grid-template-columns:repeat(3,55px);
-        gap:8px;
+        grid-template-columns:repeat(3, clamp(50px, 16vw, 70px));
+        gap:clamp(6px, 2vw, 10px);
     }
 
     .btn{
-        width:55px;
-        height:55px;
-        font-size:18px;
-        border-radius:15px;
+        width:clamp(50px, 16vw, 70px);
+        height:clamp(50px, 16vw, 70px);
+        font-size:clamp(16px, 4vw, 22px);
     }
 
     .ok{
-        width:45px;
-        height:45px;
-        font-size:20px;
-        margin-top:12px;
+        width:clamp(42px, 12vw, 55px);
+        height:clamp(42px, 12vw, 55px);
+        font-size:clamp(18px, 4vw, 24px);
     }
 }
 
