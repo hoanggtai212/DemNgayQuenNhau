@@ -2,183 +2,147 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<title>💗 Đếm Ngày Quen Nhau 💗</title>
-
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>💗 Đếm Ngày Quen Biết Nhau 💗</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Quicksand:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<!-- COUNTER PAGE -->
 <section id="counterPage">
 <div class="love-counter-container">
-
-<h1 class="main-title">
-    <span class="title-line1">Chúng Ta Đã</span><br>
-    <span class="title-line2">Quen Nhau</span>
-</h1>
-
+<h1 class="main-title">Chúng Ta Đã Bên Nhau</h1>
 <div class="couple-display">
-    <div class="avatar-container">
-        <div class="avatar">
-            <img src="img/avatar_left.jpg">
-        </div>
-        <p class="name">Hoàng Tài</p>
-    </div>
-
-    <div class="heart">💗</div>
-
-    <div class="avatar-container">
-        <div class="avatar">
-            <img src="img/avatar_right.jpg">
-        </div>
-        <p class="name">Hồng Nhung</p>
-    </div>
+<div class="avatar-container">
+<div class="avatar">
+<img src="img/avatar_left.jpg" alt="">
 </div>
-
+<p class="name">Hoàng Tài</p>
+</div>
+<div class="heart">💗</div>
+<div class="avatar-container">
+<div class="avatar">
+<img src="img/avatar_right.jpg" alt="">
+</div>
+<p class="name">Hồng Nhung</p>
+</div>
+</div>
 <div class="day-counter">
-    <div class="time-display">
-        <div class="time-box">
-            <span id="love-days">0</span>
-            <p>Ngày</p>
-            <span id="love-hours" class="time-small">00:00:00</span>
-        </div>
-    </div>
+<div class="time-display">
+<div class="time-box">
+<span id="love-days">0</span>
+<p>Ngày</p>
+<span id="love-hours" class="time-small">
+00:00:00
+</span>
 </div>
-
+</div>
+</div>
 <div class="love-message">
-    <p>
-        Yêu Em Yêu Cả Một Đời<br>
-        Thương Em Thương Cả Một Đời Thanh Xuân
-    </p>
+<p>
+Yêu Em Yêu Cả Một Đời<br>
+Thương Em Thương Cả Một Đời Thanh Xuân
+</p>
 </div>
-
 <div class="memories-link">
-    <a href="#" onclick="showPassword()">Xem Kho Báu Kỷ Niệm</a>
+<a href="#" onclick="showPassword()">
+Xem Kho Báu Kỷ Niệm
+</a>
 </div>
-
 </div>
 </section>
-
-<!-- PASSWORD PAGE -->
 <section id="passwordPage" style="display:none;">
 <div class="container">
-
 <div class="title">
-    <span class="line1">Nhập Pass Đi</span><br>
-    <span class="line2">Người Đẹp 💗</span>
+NHẬP PASS ĐI NGƯỜI ĐẸP 💗
 </div>
-
 <div class="subtitle">
 Gợi ý: Sinh nhật của em đó 😘💗<br>
 (Ngày / Tháng / Năm)
 </div>
-
-<input type="text" id="display" readonly>
-
+<input type="text" id="display" placeholder="Enter password" readonly>
 <div class="keypad">
-<button class="btn" onclick="addNum('1')">1</button>
-<button class="btn" onclick="addNum('2')">2</button>
-<button class="btn" onclick="addNum('3')">3</button>
-
-<button class="btn" onclick="addNum('4')">4</button>
-<button class="btn" onclick="addNum('5')">5</button>
-<button class="btn" onclick="addNum('6')">6</button>
-
-<button class="btn" onclick="addNum('7')">7</button>
-<button class="btn" onclick="addNum('8')">8</button>
-<button class="btn" onclick="addNum('9')">9</button>
-
+<button class="btn" onclick="addNum('1')">1</button> <button class="btn" onclick="addNum('2')">2</button> <button class="btn" onclick="addNum('3')">3</button>
+<button class="btn" onclick="addNum('4')">4</button> <button class="btn" onclick="addNum('5')">5</button> <button class="btn" onclick="addNum('6')">6</button>
+<button class="btn" onclick="addNum('7')">7</button> <button class="btn" onclick="addNum('8')">8</button> <button class="btn" onclick="addNum('9')">9</button>
 <button class="btn empty"></button>
-<button class="btn" onclick="addNum('0')">0</button>
-<button class="btn delete" onclick="delNum()">X</button>
+<button class="btn" onclick="addNum('0')">
+0
+</button>
+<button class="btn delete" onclick="delNum()">
+X
+</button>
 </div>
-
-<button class="ok" onclick="checkPassword()">✓</button>
-
+<button class="ok" onclick="checkPassword()">
+✓
+</button>
 </div>
-
 <div id="unlock-overlay">
 <div class="big-lock">
-    <div class="front">🔒</div>
-    <div class="back">🔒</div>
+<div class="front">🔒</div>
+<div class="back">🔒</div>
 </div>
 </div>
 </section>
-
-<!-- ALBUM PAGE -->
 <section id="albumPage" style="display:none;">
-
 <audio id="music" loop src="music.mp3"></audio>
-
 <button class="music-btn" id="musicBtn">
 <i class="fa-solid fa-music"></i>
 </button>
-
 <button class="back-btn" onclick="backHome()">
 <i class="fa-solid fa-arrow-left"></i>
 </button>
-
 <div class="main-content">
 <h1>💕 Khoảnh Khắc Tình Yêu 💕</h1>
 <div class="message" id="typing"></div>
-
 <button class="action-btn" id="albumBtn">
 ✨ Mở Kho Báu Kỷ Niệm ✨
 </button>
 </div>
-
-<div class="firework-container" id="fireworkContainer"></div>
-
+<div
+class="firework-container"
+id="fireworkContainer">
+</div>
 </section>
-
-<!-- LOADING -->
 <div id="loveLoading">
 <div class="loading-wrapper">
-
 <div class="loading-heart-group">
-<span id="loadingHeart1">💗</span>
-<span id="loadingHeart2">💗</span>
-<span id="loadingHeart3">💗</span>
+<span id="loadingHeart1" class="loading-heart-left">💗</span>
+<span id="loadingHeart2" class="loading-heart-center">💗</span>
+<span id="loadingHeart3" class="loading-heart-right">💗</span>
 </div>
-
 <div class="progress-box">
 <div class="progress-fill" id="progressFill"></div>
 <span id="progressPercent">0%</span>
 </div>
-
-<div class="loading-title">LOADING LOVE...</div>
-
-<button id="startLoveBtn">Bắt Đầu 💗</button>
-
+<div class="loading-title">
+LOADING LOVE...
+</div>
+<button id="startLoveBtn">
+Bắt Đầu 💗
+</button>
 </div>
 </div>
-
 <!-- SUCCESS -->
 <div id="loveSuccess">
 <div class="heart-group">
-    <span id="heart1">💗</span>
-    <span id="heart2">💗</span>
-    <span id="heart3">💗</span>
+<span id="heart1" class="heart-left">💗</span>
+<span id="heart2" class="heart-center">💗</span>
+<span id="heart3" class="heart-right">💗</span>
 </div>
-
 <div class="success-box">
-    <span class="success-text">Ok rồi đó 💗</span>
+<div class="success-fill"></div>
+<span class="success-text">
+Ok rồi đó 💗
+</span>
 </div>
-
-<button id="clickMe">Click me!</button>
+<button id="clickMe">
+Click me!
+</button>
 </div>
-
 <script src="script.js"></script>
-
 </body>
 </html>
