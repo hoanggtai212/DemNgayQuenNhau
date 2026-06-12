@@ -46,37 +46,23 @@ function backHome() {
 location.reload();
 }
 function showLoadingLove(){
-document.getElementById(
-"passwordPage"
-).style.display = "none";
-document.getElementById(
-"loveLoading"
-).style.display = "flex";
+document.getElementById("passwordPage").style.display = "none";
+document.getElementById("loveLoading").style.display = "flex";
 let progress = 0;
-const fill =
-document.getElementById(
-"progressFill"
-);
-const text =
-document.getElementById(
-"progressPercent"
-);
-const timer =
-setInterval(()=>{
-progress++;
-fill.style.width =
-progress + "%";
-text.textContent =
-progress + "%";
-if(progress >= 100){
-clearInterval(timer);
-setTimeout(()=>{
-document.getElementById(
-"loveLoading"
-).style.display = "none";
-showLoveSuccess();
-},500);
-}}},30);
+const fill = document.getElementById("progressFill");
+const text = document.getElementById("progressPercent");
+const timer = setInterval(() => {
+    progress++;
+    fill.style.width = progress + "%";
+    text.textContent = progress + "%";
+    if (progress >= 100) {
+        clearInterval(timer);
+        setTimeout(() => {
+            document.getElementById("loveLoading").style.display = "none";
+            showLoveSuccess();
+        }, 500);
+    }
+}, 30);
 }
 let password = "";
 function addNum(num) {
