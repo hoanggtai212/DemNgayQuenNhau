@@ -201,14 +201,14 @@ PASSWORD PAGE
 
 .container{
     width:min(92vw,420px);
-    margin:20px auto;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius:25px;
     border:1.5px solid rgba(255,255,255,0.5);
     box-shadow: 0 8px 32px rgba(220,150,180,0.37);
-    padding:40px 50px;
+    margin:20px 0;   /* trên dưới 20px, trái phải 0 */
+    padding:20px;
     text-align:center;
     transform: scale(1);
     transform-origin:center;
