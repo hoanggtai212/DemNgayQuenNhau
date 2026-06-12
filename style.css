@@ -219,7 +219,7 @@ PASSWORD PAGE
     font-size: 2rem;
     font-weight: 700;
     color: #c2185b;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 6px 14px;
@@ -236,6 +236,7 @@ PASSWORD PAGE
     color: #a16a7f;
     line-height: 1.8;
     text-shadow: 0 1px 4px rgba(255,255,255,.5);
+    margin-bottom: 10px;
 }
 
 #display{
