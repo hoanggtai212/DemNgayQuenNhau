@@ -204,6 +204,7 @@ if(clickMe){
         showAlbum();
     });
 }
+    initAlbum();
 const message =
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
 const photoUrls = [
@@ -242,7 +243,7 @@ const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 const albumBtn = document.getElementById("albumBtn");
 const typingDiv = document.getElementById("typing");
-if (!albumBtn) return;
+
 let idx = 0;
 window.startTyping = function () {
     idx = 0;
@@ -350,14 +351,13 @@ setTimeout(() => {
   container.style.opacity = 0;
 }, 1000);
 }
-albumBtn.addEventListener("click", () => {
-albumBtn.style.display = "none";
-showConfetti();
-showFirework();
-setTimeout(() => {
-  spawnHeartPhotosCentered();
-}, 500);
-});
+function initAlbum() {
+  const albumBtn = document.getElementById("albumBtn");
+  if (!albumBtn) return;
+  albumBtn.onclick = () => {
+    showPassword();
+  };
+}
 function createHeartPhotoCentered(
 idx,
 total
