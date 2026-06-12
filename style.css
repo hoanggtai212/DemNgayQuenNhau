@@ -196,7 +196,7 @@ PASSWORD PAGE
     font-family: 'Great Vibes', cursive;
     font-size: 3.5em;      /* to hơn */
     font-weight: 700;      /* đậm hơn */
-    color: #e75480;
+    color: #ff69b4;
     margin-bottom: 20px;
     text-shadow: 0 3px 10px rgba(231,84,128,0.35);
 }
@@ -213,7 +213,7 @@ PASSWORD PAGE
     font-family: 'Great Vibes', cursive;
     font-size: 3.0rem;
     font-weight: 700;
-    color: #e75480;
+    color: #ff69b4;
     margin-bottom: 5px;
     letter-spacing: 1px;
     display: inline-block;
@@ -232,7 +232,7 @@ PASSWORD PAGE
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #e75480;
+    color: #ff69b4;
     line-height: 1.8;
     text-shadow: 0 1px 4px rgba(255,255,255,.5);
     margin-bottom: 10px;
