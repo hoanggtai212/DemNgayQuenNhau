@@ -979,7 +979,7 @@ html{
     }
 
     .container{
-        width:min(92vw,380px);
+        width:92%;
         padding:15px 20px;
     }
 
