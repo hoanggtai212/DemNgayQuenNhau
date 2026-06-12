@@ -212,6 +212,14 @@ PASSWORD PAGE
     text-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+.line1{
+    letter-spacing: 5px; /* tăng giảm tùy ý */
+}
+
+.line2{
+    letter-spacing: 2px;
+}
+
 .subtitle{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
