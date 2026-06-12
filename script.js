@@ -1,35 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-const startDate = '2026-05-23 00:00:00';
-function updateLoveTimer() {
-const startDateObj = new Date(startDate);
-const currentDate = new Date();
-const timeDifference =
-currentDate.getTime() -
-startDateObj.getTime();
-const daysDifference =
-Math.floor(timeDifference / (1000 \* 3600 \* 24));
-const hours =
-Math.floor((timeDifference % (1000 \* 3600 \* 24)) / (1000 \* 3600));
-const minutes =
-Math.floor((timeDifference % (1000 \* 3600)) / (1000 \* 60));
-const seconds =
-Math.floor((timeDifference % (1000 \* 60)) / 1000);
-const daysElement =
-document.getElementById('love-days');
-if (daysElement) {
-daysElement.textContent = daysDifference;
-}
-const timeElement =
-document.getElementById('love-hours');
-if (timeElement) {
-timeElement.textContent =
-`${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
-}
-document.title =
-`${daysDifference} Ngày Yêu ❤️`;
-}
-setInterval(updateLoveTimer, 1000);
-updateLoveTimer();
+    const startDate = new Date('2026-05-23T00:00:00');
+
+    function updateLoveTimer() {
+        const currentDate = new Date();
+        const timeDifference = currentDate - startDate;
+
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById("love-days").textContent = daysDifference;
+        document.getElementById("love-hours").textContent =
+            `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    updateLoveTimer();
+    setInterval(updateLoveTimer, 1000);
 });
 function showPassword() {
 document.getElementById("counterPage").style.display = "none";
@@ -207,17 +194,17 @@ const heart = document.createElement("div");
 heart.className = "floating-heart";
 heart.textContent = "❤️";
 heart.style.left =
-Math.random() \* 100 + "vw";
+Math.random() * 100 + "vw";
 heart.style.color =
 heartColors[
 Math.floor(
-Math.random() \* heartColors.length
+Math.random() * heartColors.length
 )
 ];
 heart.style.animationDelay =
-Math.random() \* 10 + "s";
+Math.random() * 10 + "s";
 heart.style.animationDuration =
-(7 + Math.random() \* 8) + "s";
+(7 + Math.random() * 8) + "s";
 document.body.appendChild(heart);
 }
 musicBtn.addEventListener("click", () => {
@@ -248,22 +235,22 @@ confetti.classList.add("heart");
 confetti.style.backgroundColor =
 confettiColors[
 Math.floor(
-Math.random() \*
+Math.random() *
 confettiColors.length
 )
 ];
 confetti.style.setProperty(
 "--x",
-(Math.random() \* 500 - 250) + "px"
+(Math.random() * 500 - 250) + "px"
 );
 confetti.style.setProperty(
 "--y",
-(Math.random() \* -500) + "px"
+(Math.random() * -500) + "px"
 );
 confetti.style.left =
-window\.innerWidth / 2 + "px";
+window.innerWidth / 2 + "px";
 confetti.style.top =
-window\.innerHeight / 2 + "px";
+window.innerHeight / 2 + "px";
 document.body.appendChild(confetti);
 setTimeout(() => {
 confetti.remove();
@@ -279,8 +266,8 @@ container.style.opacity = 1;
 for (let i = 0; i < 30; i++) {
 const fw =
 document.createElement("div");
-fw\.className = "firework";
-fw\.style.transform =
+fw.className = "firework";
+fw.style.transform =
 `rotate(${i * 12}deg) translateY(-40px)`;
 container.appendChild(fw);
 }
@@ -307,28 +294,28 @@ photoUrls[idx % photoUrls.length];
 photo.className = "photo";
 document.body.appendChild(photo);
 const centerX =
-window\.innerWidth / 2;
+window.innerWidth / 2;
 const centerY =
-window\.innerHeight / 2;
+window.innerHeight / 2;
 const t =
-Math.PI \* 2 \* (idx / total);
+Math.PI * 2 * (idx / total);
 const scale =
-(window\.innerWidth <= 480)
+(window.innerWidth <= 480)
 ? 14
 : 22;
 const targetX =
 centerX +
-scale \*
-16 \*
+scale *
+16 *
 Math.pow(Math.sin(t), 3);
 const targetY =
 centerY -
-scale \*
+scale *
 (
-13 \* Math.cos(t)
-\- 5 \* Math.cos(2 \* t)
-\- 2 \* Math.cos(3 \* t)
-\- Math.cos(4 \* t)
+13 * Math.cos(t)
+- 5 * Math.cos(2 * t)
+- 2 * Math.cos(3 * t)
+- Math.cos(4 * t)
 );
 photo.style.left =
 centerX + "px";
