@@ -170,7 +170,9 @@ const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 const albumBtn = document.getElementById("albumBtn");
 const typingDiv = document.getElementById("typing");
-if (!albumBtn) return;
+if (!albumBtn) {
+  console.warn("albumBtn not found");
+}
 let idx = 0;
 window\.startTyping = function () {
 idx = 0;
