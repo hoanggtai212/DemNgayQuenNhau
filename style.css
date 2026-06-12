@@ -201,6 +201,14 @@ PASSWORD PAGE
     text-shadow: 0 3px 10px rgba(231,84,128,0.35);
 }
 
+.title-line1{
+    letter-spacing: 5px; /* khoảng cách chữ dòng 1 */
+}
+
+.title-line2{
+    letter-spacing: 2px; /* khoảng cách chữ dòng 2 */
+}
+
 .title{
     font-family: 'Great Vibes', cursive;
     font-size: 3.0rem;
