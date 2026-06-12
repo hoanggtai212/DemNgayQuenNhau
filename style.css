@@ -149,7 +149,7 @@ body {
     -webkit-text-fill-color: transparent;
     line-height: 1;
     position: relative;
-    top: -10px;
+    top: -20px;
 }
 
 .time-box p {
@@ -975,7 +975,7 @@ html{
     }
 
     .time-box span#love-days{
-        font-size:5.5rem;
+        font-size:6.0rem;
     }
 
     .container{
