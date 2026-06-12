@@ -31,22 +31,6 @@ function updateLoveTimer() {
 setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
-function createPetals() {
-    const emojis = ["🌸", "🌺", "💮", "🌷"];
-    setInterval(() => {
-        const petal = document.createElement("div");
-        petal.className = "petal";
-        petal.textContent =
-            emojis[Math.floor(Math.random() * emojis.length)];
-        petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = (2 + Math.random() * 2) + "s";
-        petal.style.fontSize = (18 + Math.random() * 10) + "px";
-        document.body.appendChild(petal);
-        setTimeout(() => {
-            petal.remove();
-        }, 4000);
-    }, 250);
-}
 function showPassword() {
     createPetals();
     const counterPage = document.getElementById("counterPage");
