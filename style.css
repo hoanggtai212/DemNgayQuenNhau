@@ -18,14 +18,6 @@ body {
     touch-action: manipulation;
 }
 
-#counterPage{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100dvh;
-    overflow:hidden;
-}
-
 #homePage{
     display:flex;
     justify-content:center;
@@ -199,6 +191,14 @@ PASSWORD PAGE
     background: linear-gradient(135deg, #fde7f0 0%, #f8c8dc 100%);
 }
 
+#counterPage{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100dvh;
+    overflow:hidden;
+}
+
 .container{
     width:min(92vw,520px);
     background: rgba(255, 255, 255, 0.6);
@@ -207,7 +207,6 @@ PASSWORD PAGE
     border-radius:25px;
     border:1.5px solid rgba(255,255,255,0.5);
     box-shadow: 0 8px 32px rgba(220,150,180,0.37);
-    margin:20px 0;
     padding:20px;
     text-align:center;
     transform: scale(1);
