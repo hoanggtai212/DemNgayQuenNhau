@@ -197,9 +197,9 @@ PASSWORD PAGE
     font-size: 3.5em;      /* to hơn */
     font-weight: 700;      /* đậm hơn */
     color: #ff69b4;
+    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
     letter-spacing: 1px;
     margin-bottom: 20px;
-    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
 }
 
 .title-line1{
