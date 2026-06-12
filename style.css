@@ -18,15 +18,6 @@ body {
     touch-action: manipulation;
 }
 
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;      /* to hơn */
-    font-weight: 700;      /* đậm hơn */
-    color: #e75480;
-    margin-bottom: 20px;
-    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
-}
-
 .love-message {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.5em;
@@ -201,8 +192,17 @@ PASSWORD PAGE
     transition: all 0.3s ease;
 }
 
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;      /* to hơn */
+    font-weight: 700;      /* đậm hơn */
+    color: #e75480;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
+}
+
 .title{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Great Vibes', cursive;
     font-size: 2.5rem;
     font-weight: 700;
     color: #c2185b;
