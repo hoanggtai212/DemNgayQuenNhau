@@ -957,7 +957,7 @@ html{
 
     .love-counter-container{
         width:92%;
-        padding:15px 25px;
+        padding:15px 20px;
     }
 
     .main-title{
@@ -980,7 +980,7 @@ html{
 
     .container{
         width:min(92vw,380px);
-        padding:36px 25px;
+        padding:15px 20px;
     }
 
     .love-message{
