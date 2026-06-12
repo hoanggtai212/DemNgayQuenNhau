@@ -215,7 +215,7 @@ PASSWORD PAGE
 
 .title{
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #c2185b;
     margin-bottom: 5px;
@@ -230,7 +230,7 @@ PASSWORD PAGE
 
 .subtitle{
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #a16a7f;
     line-height: 1.8;
