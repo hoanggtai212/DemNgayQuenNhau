@@ -137,6 +137,8 @@ body {
 }
 
 .time-box span#love-days {
+    margin-bottom: 10px; /* 🔥 THÊM DÒNG NÀY */
+    display: block;      /* 🔥 QUAN TRỌNG */
     font-family: 'Poppins', sans-serif;
     font-size: 6rem;
     font-weight: 700;
