@@ -61,7 +61,8 @@ body {
 
 .couple-display{
     display:flex;
-    justify-content:center;
+    justify-content: space-evenly;
+    padding: 0 10px;
     align-items:center;
     gap:50px;
 }
