@@ -581,8 +581,53 @@ MOBILE
         font-size:16px;
         padding:0 10px;
     }
-}
     
+    .love-counter-container{
+        width:92%;
+        padding:15px 20px;
+    }
+
+    .container{
+        width:92%;
+        padding:15px 20px;
+    }
+
+    .avatar-container{
+        width:90px;
+    }
+
+    .couple-display{
+        justify-content: space-between;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    
+    .main-title{
+        font-size:3rem;
+    }
+
+    .avatar{
+        width:95px;
+        height:95px;
+    }
+
+    .heart{
+        font-size:3.5rem;
+        margin:0 20px;
+        position:relative;
+        top:-30px;
+    }
+
+    .time-box span#love-days{
+        font-size:6.0rem;
+    }
+
+    .love-message{
+    font-size: 1.0rem;
+    line-height: 1.3;
+    }
+}
+
 #loveLoading{
     position:fixed;
     inset:0;
@@ -928,54 +973,6 @@ SUCCESS PAGE
 
 html{
     font-size:calc(14px + 0.25vw);
-}
-
-@media (max-width:430px){
-
-    .love-counter-container{
-        width:92%;
-        padding:15px 20px;
-    }
-
-    .avatar-container{
-        width:90px;
-    }
-
-    .couple-display{
-        justify-content: space-between;
-        padding: 0 20px;
-        gap: 10px;
-    }
-    
-    .main-title{
-        font-size:3rem;
-    }
-
-    .avatar{
-        width:95px;
-        height:95px;
-    }
-
-    .heart{
-        font-size:3.5rem;
-        margin:0 20px;
-        position:relative;
-        top:-30px;
-    }
-
-    .time-box span#love-days{
-        font-size:6.0rem;
-    }
-
-    .container{
-        width:92%;
-        padding:15px 20px;
-    }
-
-    .love-message{
-    font-size: 1.0rem;
-    line-height: 1.3;
-    }
 }
 
 .fade-out {
