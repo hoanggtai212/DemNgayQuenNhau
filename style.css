@@ -158,12 +158,13 @@ body {
 }
 
 .time-box span.time-small {
+    margin-top: 10px;
+    opacity: 0.8;
+    letter-spacing: 2px;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: #9b5f75;
-    letter-spacing: 2px;
-    margin-top: 0px;
     display: block;
 }
 
