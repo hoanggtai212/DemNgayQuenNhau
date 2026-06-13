@@ -168,6 +168,7 @@ body {
 }
 
 .memories-link a {
+    margin-top: 20px;
     display: inline-block;
     padding: 14px 35px;
     background: #e75480;
