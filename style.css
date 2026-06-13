@@ -937,6 +937,16 @@ html{
         padding:15px 20px;
     }
 
+    .avatar-container{
+        width:90px;
+    }
+
+    .couple-display{
+        justify-content: space-between;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    
     .main-title{
         font-size:3rem;
     }
