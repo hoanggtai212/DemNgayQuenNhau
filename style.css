@@ -230,14 +230,26 @@ PASSWORD PAGE
     display: inline-block;
 }
 
-.title{
+.pass-title{
     font-family: 'Great Vibes', cursive;
+    text-align: center;
     font-size: 2rem;
     font-weight: 700;
     color: #c2185b;
     margin-bottom: 10px;
     letter-spacing: 1px;
     text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.pass-title .pass-line1{
+    display: block;
+    letter-spacing: 3px; /* nhẹ hơn */
+    margin-bottom: 4px;
+}
+
+.pass-title .pass-line2{
+    display: block;
+    letter-spacing: 2px;
 }
 
 .subtitle{
