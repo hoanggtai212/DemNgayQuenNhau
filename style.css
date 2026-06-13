@@ -218,6 +218,18 @@ PASSWORD PAGE
     text-shadow: 0 3px 10px rgba(231,84,128,0.35);
 }
 
+/* dòng 1 cách chữ nhiều */
+.line1 {
+    letter-spacing: 7px;
+    display: inline-block;
+}
+
+/* dòng 2 cách chữ ít hơn */
+.line2 {
+    letter-spacing: 10px;
+    display: inline-block;
+}
+
 .title{
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
