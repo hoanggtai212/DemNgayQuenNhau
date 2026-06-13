@@ -153,7 +153,7 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 2.4rem;
     color: #b82e66;
-    margin: 10px 0 0 0; /* chỉnh khoảng cách xuống */
+    margin: 0;
     line-height: 1;
     opacity: 0.9;
     text-align: center;
