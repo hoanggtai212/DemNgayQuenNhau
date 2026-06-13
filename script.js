@@ -72,14 +72,14 @@ const timer = setInterval(() => {
 }
 let password = "";
 function addNum(num) {
-password += num;
-document.getElementById("display").value =
-password;
+    password += num;
+    document.getElementById("display").value =
+        "*".repeat(password.length);
 }
 function delNum() {
-password = password.slice(0, -1);
-document.getElementById("display").value =
-password;
+    password = password.slice(0, -1);
+    document.getElementById("display").value =
+        "*".repeat(password.length);
 }
 function checkPassword() {
 if (password === "29012012") {
