@@ -62,7 +62,7 @@ body {
 .couple-display{
     display:flex;
     justify-content:center;
-    align-items:flex-start;
+    align-items:center;
     gap:25px;
 }
 
@@ -75,12 +75,14 @@ body {
 
 .heart{
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    font-size:3rem;
+    color:#e75480;
     width:50px;
-    height:110px; /* bằng avatar */
-    font-size:3.2rem;
+    height:110px; /* bằng chiều cao avatar */
     margin:0;
+    animation:pulse 1.5s infinite;
 }
 
 .avatar {
