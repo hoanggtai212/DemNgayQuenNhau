@@ -83,6 +83,7 @@ body {
     height:110px; /* bằng chiều cao avatar */
     margin:0;
     animation:pulse 1.5s infinite;
+    transform: translateY(-30px);
 }
 
 .avatar {
