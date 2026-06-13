@@ -7,13 +7,13 @@ const timeDifference =
 currentDate.getTime() -
 startDateObj.getTime();
 const daysDifference =
-Math.floor(timeDifference / (1000 \* 3600 \* 24));
+Math.floor(timeDifference / (1000 * 3600 * 24));
 const hours =
-Math.floor((timeDifference % (1000 \* 3600 \* 24)) / (1000 \* 3600));
+Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600));
 const minutes =
-Math.floor((timeDifference % (1000 \* 3600)) / (1000 \* 60));
+Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60));
 const seconds =
-Math.floor((timeDifference % (1000 \* 60)) / 1000);
+Math.floor((timeDifference % (1000 * 60)) / 1000);
 const daysElement =
 document.getElementById('love-days');
 if (daysElement) {
