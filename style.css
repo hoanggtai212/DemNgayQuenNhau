@@ -58,15 +58,12 @@ body {
 }
 
 .love-message {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;     /* to hơn */
-    font-weight: 600;
-    font-style: italic;    /* chữ nghiêng */
-    line-height: 1.8;
-    margin: 28px 0;
-    color: #9b5f75;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-style: italic;
+    line-height: 1.4;
+    color: #e75480;
     text-align: center;
-    letter-spacing: 0.5px;
 }
 
 .couple-display {
