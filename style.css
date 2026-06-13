@@ -61,10 +61,10 @@ body {
 
 .couple-display{
     display:flex;
-    justify-content: space-evenly;
-    padding: 0 10px;
+    justify-content: space-between;
     align-items:center;
-    gap:36px;
+    width:100%;
+    padding: 0 25px;
 }
 
 .avatar-container{
