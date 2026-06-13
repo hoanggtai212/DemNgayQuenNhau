@@ -48,15 +48,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;      /* to hơn */
-    font-weight: 700;      /* đậm hơn */
-    color: #e75480;
-    margin-bottom: 20px;
-    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
-}
-
 .love-message {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(1.5rem, 4vw, 2rem);
@@ -212,8 +203,17 @@ PASSWORD PAGE
     transform-origin:center;
 }
 
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;      /* to hơn */
+    font-weight: 700;      /* đậm hơn */
+    color: #e75480;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
+}
+
 .title{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Great Vibes', cursive;
     font-size: 1rem;
     font-weight: 700;
     color: #c2185b;
