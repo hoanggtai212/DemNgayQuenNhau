@@ -77,7 +77,7 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:15rem;
+    font-size:6rem;
     color:#e75480;
     width:50px;
     height:110px; /* bằng chiều cao avatar */
