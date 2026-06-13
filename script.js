@@ -174,7 +174,7 @@ if (!albumBtn) {
   console.warn("albumBtn not found");
 }
 let idx = 0;
-window\.startTyping = function () {
+window.startTyping = function () {
 idx = 0;
 typingDiv.textContent = "";
 albumBtn.classList.remove("visible");
@@ -199,17 +199,17 @@ const heart = document.createElement("div");
 heart.className = "floating-heart";
 heart.textContent = "❤️";
 heart.style.left =
-Math.random() \* 100 + "vw";
+Math.random() * 100 + "vw";
 heart.style.color =
 heartColors[
 Math.floor(
-Math.random() \* heartColors.length
+Math.random() * heartColors.length
 )
 ];
 heart.style.animationDelay =
-Math.random() \* 10 + "s";
+Math.random() * 10 + "s";
 heart.style.animationDuration =
-(7 + Math.random() \* 8) + "s";
+(7 + Math.random() * 8) + "s";
 document.body.appendChild(heart);
 }
 musicBtn.addEventListener("click", () => {
@@ -240,45 +240,40 @@ confetti.classList.add("heart");
 confetti.style.backgroundColor =
 confettiColors[
 Math.floor(
-Math.random() \*
+Math.random() *
 confettiColors.length
 )
 ];
 confetti.style.setProperty(
 "--x",
-(Math.random() \* 500 - 250) + "px"
+(Math.random() * 500 - 250) + "px"
 );
 confetti.style.setProperty(
 "--y",
-(Math.random() \* -500) + "px"
+(Math.random() * -500) + "px"
 );
 confetti.style.left =
-window\.innerWidth / 2 + "px";
+window.innerWidth / 2 + "px";
 confetti.style.top =
-window\.innerHeight / 2 + "px";
+window.innerHeight / 2 + "px";
 document.body.appendChild(confetti);
 setTimeout(() => {
 confetti.remove();
 }, 1200);
 }}
 function showFirework() {
-const container =
-document.getElementById(
-"fireworkContainer"
-);
-container.innerHTML = "";
-container.style.opacity = 1;
-for (let i = 0; i < 30; i++) {
-const fw =
-document.createElement("div");
-fw\.className = "firework";
-fw\.style.transform =
-`rotate(${i * 12}deg) translateY(-40px)`;
-container.appendChild(fw);
-}
-setTimeout(() => {
-container.style.opacity = 0;
-}, 1000);
+    const container = document.getElementById("fireworkContainer");
+    container.innerHTML = "";
+    container.style.opacity = 1;
+    for (let i = 0; i < 30; i++) {
+        const fw = document.createElement("div");
+        fw.className = "firework";
+        fw.style.transform = `rotate(${i * 12}deg) translateY(-40px)`;
+        container.appendChild(fw);
+    }
+    setTimeout(() => {
+        container.style.opacity = 0;
+    }, 1000);
 }
 albumBtn.addEventListener("click", () => {
 albumBtn.style.display = "none";
@@ -288,61 +283,48 @@ setTimeout(() => {
 spawnHeartPhotosCentered();
 }, 500);
 });
-function createHeartPhotoCentered(
-idx,
-total
-) {
-const photo =
-document.createElement("img");
-photo.src =
-photoUrls[idx % photoUrls.length];
-photo.className = "photo";
-document.body.appendChild(photo);
-const centerX =
-window\.innerWidth / 2;
-const centerY =
-window\.innerHeight / 2;
-const t =
-Math.PI \* 2 \* (idx / total);
-const scale =
-(window\.innerWidth <= 480)
-? 14
-: 22;
-const targetX =
-centerX +
-scale \*
-16 \*
-Math.pow(Math.sin(t), 3);
-const targetY =
-centerY -
-scale \*
-(
-13 \* Math.cos(t)
-\- 5 \* Math.cos(2 \* t)
-\- 2 \* Math.cos(3 \* t)
-\- Math.cos(4 \* t)
-);
-photo.style.left =
-centerX + "px";
-photo.style.top =
-centerY + "px";
-setTimeout(() => {
-photo.style.opacity = "1";
-photo.style.pointerEvents =
-"auto";
-photo.style.transform =
-`translate(-50%, -50%)
-     translate(
-       ${targetX - centerX}px,
-       ${targetY - centerY}px
-     )`;
-}, 100);
+function createHeartPhotoCentered(idx, total) {
+    const photo = document.createElement("img");
+    photo.src = photoUrls[idx % photoUrls.length];
+    photo.className = "photo";
+    document.body.appendChild(photo);
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const t = Math.PI * 2 * (idx / total);
+    const scale = window.innerWidth <= 480 ? 14 : 22;
+    const targetX =
+        centerX +
+        scale *
+        16 *
+        Math.pow(Math.sin(t), 3);
+
+    const targetY =
+        centerY -
+        scale *
+        (
+            13 * Math.cos(t)
+            - 5 * Math.cos(2 * t)
+            - 2 * Math.cos(3 * t)
+            - Math.cos(4 * t)
+        );
+    photo.style.left = centerX + "px";
+    photo.style.top = centerY + "px";
+    setTimeout(() => {
+        photo.style.opacity = "1";
+        photo.style.pointerEvents = "auto";
+        photo.style.transform =
+            `translate(-50%, -50%)
+             translate(
+                ${targetX - centerX}px,
+                ${targetY - centerY}px
+             )`;
+    }, 100);
 }
 function spawnHeartPhotosCentered() {
-  const totalPhotos = 30;
-  for (let i = 0; i < totalPhotos; i++) {
-    setTimeout(() => {
-      createHeartPhotoCentered(i, totalPhotos);
-    }, i * 100);
-  }
+    const totalPhotos = 30;
+    for (let i = 0; i < totalPhotos; i++) {
+        setTimeout(() => {
+            createHeartPhotoCentered(i, totalPhotos);
+        }, i * 100);
+    }
 }
