@@ -59,9 +59,10 @@ body {
 
 .love-message {
     font-family: 'Quicksand', sans-serif;
-    font-size: 1em;
+    font-size: 1.2rem;     /* to hơn */
     font-weight: 600;
-    line-height: 1.6;
+    font-style: italic;    /* chữ nghiêng */
+    line-height: 1.8;
     margin: 28px 0;
     color: #9b5f75;
     text-align: center;
