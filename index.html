@@ -67,12 +67,16 @@ Xem Kho Báu Kỷ Niệm
 Gợi ý: Sinh nhật của em đó 😘💗<br>
 (Ngày / Tháng / Năm)
 </div>
-<input
-    id="display"
-    type="text"
-    readonly
-    placeholder="Enter Password 💗"
-/>
+<div class="display-wrap">
+    <input
+        id="display"
+        type="text"
+        readonly
+    >
+    <div id="runningText">
+        💗 ENTER PASSWORD 💗
+    </div>
+</div>
 <div class="keypad">
 <button class="btn" onclick="addNum('1')">1</button> <button class="btn" onclick="addNum('2')">2</button> <button class="btn" onclick="addNum('3')">3</button>
 <button class="btn" onclick="addNum('4')">4</button> <button class="btn" onclick="addNum('5')">5</button> <button class="btn" onclick="addNum('6')">6</button>
