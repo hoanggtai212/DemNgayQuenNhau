@@ -334,7 +334,7 @@ PASSWORD PAGE
     to{
         transform:
         translateY(-50%)
-        translateX(-420px);
+        translateX(calc(-100% - 420px));
     }
 }
 
