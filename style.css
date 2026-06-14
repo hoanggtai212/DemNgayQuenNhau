@@ -295,19 +295,17 @@ PASSWORD PAGE
 }
 
 .marquee-text{
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: scrollText 2.8s linear infinite;
+    position:absolute;
+    white-space:nowrap;
+    animation: moveText 1.5s linear infinite;
+    background: linear-gradient(90deg, #ff4f81, #ffd1dc, #ff4f81);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@keyframes scrollText{
-    0%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
+@keyframes moveText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 .keypad{
