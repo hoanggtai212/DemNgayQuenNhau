@@ -71,7 +71,27 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
+let marqueeInterval;
+// chữ chạy mặc định
+function startMarqueeText(text, color = "#e75480"){
+    const display = document.getElementById("display");
+    clearInterval(marqueeInterval);
+    let str = text + "     ";
+    display.style.color = color;
+    marqueeInterval = setInterval(() => {
+        display.value = str;
+        str = str.substring(1) + str.charAt(0);
+    }, 150);
+}
+// dừng chạy
+function stopMarqueeText(){
+    clearInterval(marqueeInterval);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    startMarqueeText("💗 ENTER PASSWORD 💗");
+});
 function addNum(num) {
+    stopMarqueeText();
     password += num;
     const display = document.getElementById("display");
     display.style.color = "#333";
@@ -80,38 +100,52 @@ function addNum(num) {
 function delNum() {
     password = password.slice(0, -1);
     const display = document.getElementById("display");
-    display.style.color = "#333";
-    display.value = "*".repeat(password.length);
+    if(password.length === 0){
+        startMarqueeText("💗 ENTER PASSWORD 💗");
+    }else{
+        display.value = "*".repeat(password.length);
+    }
 }
 function checkPassword() {
-    const display = document.getElementById("display");
-    // BƯỚC 1: luôn luôn hiện loading
-    display.value = "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗";
-    display.classList.add("marquee");
-    display.style.color = "#ffb300";
+    stopMarqueeText();
+    // chạy chữ kiểm tra
+    startMarqueeText(
+        "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
+        "#ffb300"
+    );
     setTimeout(() => {
-        display.classList.remove("marquee");
-        if (password === "0000") {
-            // ĐÚNG
-            display.value = "ĐÚNG RÙI 💗";
-            display.style.color = "#00cc66";
+        stopMarqueeText();
+        const display =
+            document.getElementById("display");
+        if(password === "0000"){
+            // chạy chữ đúng
+            startMarqueeText(
+                "💗 ĐÚNG RÙI NÈ 💗",
+                "#00cc66"
+            );
             setTimeout(() => {
+                stopMarqueeText();
                 showUnlockAnimation();
-            }, 800);
-        } else {
-            // SAI
-            display.value = "SAI RÙI 😜";
-            display.style.color = "#ff3333";
-            const container = document.querySelector(".container");
+            }, 1500);
+        }else{
+            // chạy chữ sai
+            startMarqueeText(
+                "😜 SAI RÙI NÈ 😜",
+                "#ff3333"
+            );
+            const container =
+                document.querySelector(".container");
             container.classList.add("shake");
             setTimeout(() => {
                 container.classList.remove("shake");
+                stopMarqueeText();
                 password = "";
-                display.value = "";
-                display.style.color = "#333";
-            }, 1200);
+                startMarqueeText(
+                    "💗 ENTER PASSWORD 💗"
+                );
+            }, 2000);
         }
-    }, 1500); // thời gian “đang kiểm tra”
+    }, 1500);
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
