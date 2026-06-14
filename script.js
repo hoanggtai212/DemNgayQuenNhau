@@ -84,53 +84,57 @@ function delNum() {
     display.value = "*".repeat(password.length);
 }
 function checkPassword() {
-if (password === "0000") {
-    document.getElementById("display").value = "ĐÚNG RÙI 💗";
-    document.getElementById("display").style.color = "#00cc66";
-const overlay =
-document.getElementById("unlock-overlay");
-const bigLock =
-overlay.querySelector(".big-lock");
-const front =
-bigLock.querySelector(".front");
-const back =
-bigLock.querySelector(".back");
-overlay.style.display = "flex";
-bigLock.classList.remove(
-"spin",
-"open"
-);
-front.textContent = "🔒";
-back.textContent = "🔒";
-bigLock.classList.add("spin");
-setTimeout(() => {
-bigLock.classList.add("open");
-}, 2000);
-setTimeout(() => {
-front.textContent = "🔓";
-back.textContent = "🔓";
-}, 2400);
-setTimeout(() => {
-document.getElementById(
-"unlock-overlay"
-).style.display = "none";
-showLoadingLove();
-}, 3000);
-} else {
-const container =
-document.querySelector(".container");
-container.classList.add("shake");
-setTimeout(() => {
-container.classList.remove("shake");
-}, 400);
-document.getElementById("display").value = "SAI RÙI 😜";
-document.getElementById("display").style.color = "#ff3333";
-setTimeout(() => {
-    password = "";
-    document.getElementById("display").value = "";
-    document.getElementById("display").style.color = "#333";
-}, 1000);
-} }
+    const display = document.getElementById("display");
+    // Bước 1: đang kiểm tra
+    display.value = "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗";
+    display.style.color = "#ffb300";
+    setTimeout(() => {
+        if (password === "0000") {
+            // Bước 2: đúng
+            display.value = "ĐÚNG RÙI 💗";
+            display.style.color = "#00cc66";
+            setTimeout(() => {
+                const overlay =
+                document.getElementById("unlock-overlay");
+                const bigLock =
+                overlay.querySelector(".big-lock");
+                const front =
+                bigLock.querySelector(".front");
+                const back =
+                bigLock.querySelector(".back");
+                overlay.style.display = "flex";
+                bigLock.classList.remove("spin", "open");
+                front.textContent = "🔒";
+                back.textContent = "🔒";
+                bigLock.classList.add("spin");
+                setTimeout(() => {
+                    bigLock.classList.add("open");
+                }, 2000);
+                setTimeout(() => {
+                    front.textContent = "🔓";
+                    back.textContent = "🔓";
+                }, 2400);
+                setTimeout(() => {
+                    document.getElementById("unlock-overlay").style.display = "none";
+                    showLoadingLove();
+                }, 3000);
+            }, 1000);
+        } else {
+            // Bước 2: sai
+            display.value = "SAI RÙI 😜";
+            display.style.color = "#ff3333";
+            const container =
+            document.querySelector(".container");
+            container.classList.add("shake");
+            setTimeout(() => {
+                container.classList.remove("shake");
+                password = "";
+                display.value = "";
+                display.style.color = "#333";
+            }, 1200);
+        }
+    }, 1000);
+}
 function showLoveSuccess(){
 document.getElementById(
 "loveSuccess"
