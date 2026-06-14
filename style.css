@@ -10,6 +10,11 @@ html,body{
     overflow:hidden;
 }
 
+#display::placeholder{
+    color:#e75480;
+    opacity:0.8;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -294,7 +299,7 @@ PASSWORD PAGE
     outline: none;
 }
 
-.marquee-text{
+.marquee{
     position:absolute;
     white-space:nowrap;
     animation: moveText 1.5s linear infinite;
