@@ -38,7 +38,7 @@ body {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 25px;
     border: 1.5px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 32px 0 rgba(220, 150, 180, 0.37);
@@ -128,22 +128,22 @@ body {
 /* TIÊU ĐỀ CHO CHỮ " CHÚNG TA ĐÃ BÊN NHAU " */
 .main-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;      /* to hơn */
-    font-weight: 700;      /* đậm hơn */
-    color: #e75480;
     margin-bottom: 20px;
+    font-size: 3.5em;      /* to hơn */
     text-shadow: 0 3px 10px rgba(231,84,128,0.35);
+    color: #e75480;
+    -webkit-text-stroke: 1px #e75480;
 }
 
 /* dòng 1 cách chữ nhiều */
 .line1 {
-    letter-spacing: 7px;
+    letter-spacing: 10px;
     display: inline-block;
 }
 
 /* dòng 2 cách chữ ít hơn */
 .line2 {
-    letter-spacing: 10px;
+    letter-spacing: 13px;
     display: inline-block;
 }
 
