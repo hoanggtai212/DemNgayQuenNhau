@@ -85,14 +85,16 @@ function delNum() {
 }
 function checkPassword() {
     const display = document.getElementById("display");
-    // Bước 1: đang kiểm tra
+// Bước 1: đang kiểm tra
 display.value = "ĐANG KIỂM TRA\n💗 TÌNH YÊU... 💗";
 display.style.color = "#ffb300";
+display.style.fontSize = "13px"; // nhỏ lại để vừa 2 dòng
     setTimeout(() => {
         if (password === "0000") {
             // Bước 2: đúng
-            display.value = "ĐÚNG RÙI 💗";
-            display.style.color = "#00cc66";
+display.value = "ĐÚNG RÙI 💗";
+display.style.color = "#00cc66";
+display.style.fontSize = "18px"; // trả về cỡ cũ
             setTimeout(() => {
                 const overlay =
                 document.getElementById("unlock-overlay");
@@ -121,8 +123,9 @@ display.style.color = "#ffb300";
             }, 1000);
         } else {
             // Bước 2: sai
-            display.value = "SAI RÙI 😜";
-            display.style.color = "#ff3333";
+display.value = "SAI RÙI 😜";
+display.style.color = "#ff3333";
+display.style.fontSize = "18px"; // trả về cỡ cũ
             const container =
             document.querySelector(".container");
             container.classList.add("shake");
