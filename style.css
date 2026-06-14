@@ -137,13 +137,13 @@ body {
 
 /* dòng 1 cách chữ nhiều */
 .line1 {
-    letter-spacing: 10px;
+    letter-spacing: 9px;
     display: inline-block;
 }
 
 /* dòng 2 cách chữ ít hơn */
 .line2 {
-    letter-spacing: 13px;
+    letter-spacing: 12px;
     display: inline-block;
 }
 
