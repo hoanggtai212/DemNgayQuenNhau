@@ -86,8 +86,8 @@ function delNum() {
 function checkPassword() {
     const display = document.getElementById("display");
     // Bước 1: đang kiểm tra
-    display.value = "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗";
-    display.style.color = "#ffb300";
+display.value = "ĐANG KIỂM TRA\n💗 TÌNH YÊU... 💗";
+display.style.color = "#ffb300";
     setTimeout(() => {
         if (password === "0000") {
             // Bước 2: đúng
