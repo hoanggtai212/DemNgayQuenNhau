@@ -85,48 +85,24 @@ function delNum() {
 }
 function checkPassword() {
     const display = document.getElementById("display");
-// Bước 1: đang kiểm tra
-display.innerHTML = '<span class="marquee-text">💗 ĐANG KIỂM TRA TÌNH YÊU... 💗</span>';
-display.style.color = "#ffb300";
+    // BƯỚC 1: luôn luôn hiện loading
+    display.value = "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗";
+    display.classList.add("marquee");
+    display.style.color = "#ffb300";
     setTimeout(() => {
+        display.classList.remove("marquee");
         if (password === "0000") {
-            // Bước 2: đúng
-display.value = "ĐÚNG RÙI 💗";
-display.style.color = "#00cc66";
-display.style.fontSize = "18px"; // trả về cỡ cũ
+            // ĐÚNG
+            display.value = "ĐÚNG RÙI 💗";
+            display.style.color = "#00cc66";
             setTimeout(() => {
-                const overlay =
-                document.getElementById("unlock-overlay");
-                const bigLock =
-                overlay.querySelector(".big-lock");
-                const front =
-                bigLock.querySelector(".front");
-                const back =
-                bigLock.querySelector(".back");
-                overlay.style.display = "flex";
-                bigLock.classList.remove("spin", "open");
-                front.textContent = "🔒";
-                back.textContent = "🔒";
-                bigLock.classList.add("spin");
-                setTimeout(() => {
-                    bigLock.classList.add("open");
-                }, 2000);
-                setTimeout(() => {
-                    front.textContent = "🔓";
-                    back.textContent = "🔓";
-                }, 2400);
-                setTimeout(() => {
-                    document.getElementById("unlock-overlay").style.display = "none";
-                    showLoadingLove();
-                }, 3000);
-            }, 1000);
+                showUnlockAnimation();
+            }, 800);
         } else {
-            // Bước 2: sai
-display.value = "SAI RÙI 😜";
-display.style.color = "#ff3333";
-display.style.fontSize = "18px"; // trả về cỡ cũ
-            const container =
-            document.querySelector(".container");
+            // SAI
+            display.value = "SAI RÙI 😜";
+            display.style.color = "#ff3333";
+            const container = document.querySelector(".container");
             container.classList.add("shake");
             setTimeout(() => {
                 container.classList.remove("shake");
@@ -135,7 +111,29 @@ display.style.fontSize = "18px"; // trả về cỡ cũ
                 display.style.color = "#333";
             }, 1200);
         }
-    }, 1000);
+    }, 1500); // thời gian “đang kiểm tra”
+}
+function showUnlockAnimation() {
+    const overlay = document.getElementById("unlock-overlay");
+    const bigLock = overlay.querySelector(".big-lock");
+    const front = bigLock.querySelector(".front");
+    const back = bigLock.querySelector(".back");
+    overlay.style.display = "flex";
+    bigLock.classList.remove("spin", "open");
+    front.textContent = "🔒";
+    back.textContent = "🔒";
+    bigLock.classList.add("spin");
+    setTimeout(() => {
+        bigLock.classList.add("open");
+    }, 2000);
+    setTimeout(() => {
+        front.textContent = "🔓";
+        back.textContent = "🔓";
+    }, 2400);
+    setTimeout(() => {
+        document.getElementById("unlock-overlay").style.display = "none";
+        showLoadingLove();
+    }, 3000);
 }
 function showLoveSuccess(){
 document.getElementById(
