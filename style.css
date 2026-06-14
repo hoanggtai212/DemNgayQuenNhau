@@ -327,14 +327,10 @@ PASSWORD PAGE
 
 @keyframes smoothMarquee{
     from{
-        transform:
-        translateY(-50%)
-        translateX(0);
+        transform:translateX(100%);
     }
     to{
-        transform:
-        translateY(-50%)
-        translateX(calc(-100% - 420px));
+        transform:translateX(-100%);
     }
 }
 
