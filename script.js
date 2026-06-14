@@ -119,7 +119,7 @@ function checkPassword() {
     const duration = setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
         "#ffb300",
-        5000
+        6000
     );
     setTimeout(() => {
         if(password === "0000"){
