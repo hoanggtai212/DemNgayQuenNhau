@@ -73,8 +73,7 @@ const timer = setInterval(() => {
 let password = "";
 function setRunningText(
     text,
-    color = "#e75480",
-    duration = 6000
+    color = "#e75480"
 ){
     const running =
         document.getElementById("runningText");
@@ -83,8 +82,14 @@ function setRunningText(
     running.style.display = "block";
     running.style.animation = "none";
     running.offsetHeight;
+    // chiều dài text thực tế
+    const textWidth = running.scrollWidth;
+    // tốc độ cố định 80px/s
+    const speed = 80;
+    const duration =
+        ((textWidth + 420) / speed) * 1000;
     running.style.animation =
-        `smoothMarquee ${duration/1000}s linear`;
+        `smoothMarquee ${duration/1000}s linear 1`;
     return duration;
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -118,25 +123,21 @@ function checkPassword() {
     document.getElementById("display").value = "";
     const duration = setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
-        "#ffb300",
-        6000
+        "#ffb300"
     );
     setTimeout(() => {
         if(password === "0000"){
             const okDuration = setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
-                "#00cc66",
-                4000
+                "#00cc66"
             );
             setTimeout(() => {
                 showUnlockAnimation();
             }, okDuration);
-
         }else{
             const failDuration = setRunningText(
                 "😜 SAI RÙI NÈ 😜",
-                "#ff3333",
-                4000
+                "#ff3333"
             );
             const container =
                 document.querySelector(".container");
