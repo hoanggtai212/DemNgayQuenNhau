@@ -71,7 +71,11 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
-function setRunningText(text,color="#e75480"){
+function setRunningText(
+    text,
+    color = "#e75480",
+    duration = 6000
+){
     const running =
         document.getElementById("runningText");
     running.innerHTML = text;
@@ -80,7 +84,8 @@ function setRunningText(text,color="#e75480"){
     running.style.animation = "none";
     running.offsetHeight;
     running.style.animation =
-        "smoothMarquee 6s linear infinite";
+        `smoothMarquee ${duration/1000}s linear`;
+    return duration;
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningText("💗 ENTER PASSWORD 💗");
@@ -111,40 +116,43 @@ function delNum() {
 }
 function checkPassword() {
     document.getElementById("display").value = "";
-    setRunningText(
+    const duration = setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
-        "#ffb300"
+        "#ffb300",
+        5000
     );
     setTimeout(() => {
         if(password === "0000"){
-            setRunningText(
+            const okDuration = setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
-                "#00cc66"
+                "#00cc66",
+                4000
             );
             setTimeout(() => {
                 showUnlockAnimation();
-            }, 1500);
+            }, okDuration);
 
         }else{
-            setRunningText(
+            const failDuration = setRunningText(
                 "😜 SAI RÙI NÈ 😜",
-                "#ff3333"
+                "#ff3333",
+                4000
             );
             const container =
                 document.querySelector(".container");
             container.classList.add("shake");
             setTimeout(() => {
                 container.classList.remove("shake");
-                password = ""
+                password = "";
                 document.getElementById(
                     "display"
                 ).value = "";
                 setRunningText(
                     "💗 ENTER PASSWORD 💗"
                 );
-            }, 2000);
+            }, failDuration);
         }
-    }, 1500);
+    }, duration);
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
