@@ -48,17 +48,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.love-message {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #9b5f75;
-    text-align: center;
-    margin-top: 15px;
-}
-
 .couple-display{
     display:flex;
     justify-content: space-between;
@@ -136,6 +125,29 @@ body {
     border-radius: 10px;
 }
 
+/* TIÊU ĐỀ CHO CHỮ " CHÚNG TA ĐÃ BÊN NHAU " */
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;      /* to hơn */
+    font-weight: 700;      /* đậm hơn */
+    color: #e75480;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
+}
+
+/* dòng 1 cách chữ nhiều */
+.line1 {
+    letter-spacing: 7px;
+    display: inline-block;
+}
+
+/* dòng 2 cách chữ ít hơn */
+.line2 {
+    letter-spacing: 10px;
+    display: inline-block;
+}
+
+/* SỐ NGÀY LỚN */
 .time-box span#love-days {
     margin-bottom: 10px; /* 🔥 THÊM DÒNG NÀY */
     display: block;      /* 🔥 QUAN TRỌNG */
@@ -149,6 +161,7 @@ body {
     position: relative;
 }
 
+/* CHỮ "NGÀY" */
 .time-box p {
     font-family: 'Great Vibes', cursive;
     font-size: 2.4rem;
@@ -159,6 +172,7 @@ body {
     text-align: center;
 }
 
+/* THỜI GIAN CHẠY */
 .time-box span.time-small {
     margin-top: 10px;
     opacity: 0.8;
@@ -170,6 +184,19 @@ body {
     display: block;
 }
 
+/* DÒNG " YÊU EM YÊU CẢ 1 ĐỜI ... " */
+.love-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #9b5f75;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* NÚT NHẤN XEM KHO BÁU KỈ NIỆM */
 .memories-link a {
     margin-top: 20px;
     display: inline-block;
@@ -214,27 +241,6 @@ PASSWORD PAGE
     text-align:center;
     transform: scale(1);
     transform-origin:center;
-}
-
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;      /* to hơn */
-    font-weight: 700;      /* đậm hơn */
-    color: #e75480;
-    margin-bottom: 20px;
-    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
-}
-
-/* dòng 1 cách chữ nhiều */
-.line1 {
-    letter-spacing: 7px;
-    display: inline-block;
-}
-
-/* dòng 2 cách chữ ít hơn */
-.line2 {
-    letter-spacing: 10px;
-    display: inline-block;
 }
 
 .pass-title{
