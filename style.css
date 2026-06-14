@@ -130,7 +130,7 @@ body {
     font-family: 'Great Vibes', cursive;
     margin-bottom: 20px;
     font-size: 3.5em;      /* to hơn */
-    text-shadow: 0 3px 10px rgba(231,84,128,0.35);
+    text-shadow: 0 1px 3px rgba(231,84,128,0.15);
     color: #e75480;
     -webkit-text-stroke: 1px #e75480;
 }
