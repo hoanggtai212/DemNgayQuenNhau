@@ -71,65 +71,62 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
-let marqueeInterval;
-// chữ chạy mặc định
-function startMarqueeText(text, color = "#e75480"){
-    const display = document.getElementById("display");
-    clearInterval(marqueeInterval);
-    let str = text + "     ";
-    display.style.color = color;
-    marqueeInterval = setInterval(() => {
-        display.value = str;
-        str = str.substring(1) + str.charAt(0);
-    }, 150);
-}
-// dừng chạy
-function stopMarqueeText(){
-    clearInterval(marqueeInterval);
+function setRunningText(text,color="#e75480"){
+    const running =
+        document.getElementById("runningText");
+    running.innerHTML = text;
+    running.style.color = color;
+    running.style.display = "block";
+    running.style.animation = "none";
+    running.offsetHeight;
+    running.style.animation =
+        "smoothMarquee 6s linear infinite";
 }
 document.addEventListener("DOMContentLoaded", () => {
-    startMarqueeText("💗 ENTER PASSWORD 💗");
+    setRunningText("💗 ENTER PASSWORD 💗");
 });
 function addNum(num) {
-    stopMarqueeText();
     password += num;
-    const display = document.getElementById("display");
-    display.style.color = "#333";
-    display.value = "*".repeat(password.length);
+    document.getElementById(
+        "runningText"
+    ).style.display = "none";
+    const display =
+        document.getElementById("display");
+    display.value =
+        "*".repeat(password.length);
 }
 function delNum() {
-    password = password.slice(0, -1);
-    const display = document.getElementById("display");
+    password =
+        password.slice(0,-1);
+    const display =
+        document.getElementById("display");
+    display.value =
+        "*".repeat(password.length);
     if(password.length === 0){
-        startMarqueeText("💗 ENTER PASSWORD 💗");
-    }else{
-        display.value = "*".repeat(password.length);
+        display.value = "";
+        setRunningText(
+            "💗 ENTER PASSWORD 💗"
+        );
     }
 }
 function checkPassword() {
-    stopMarqueeText();
-    // chạy chữ kiểm tra
-    startMarqueeText(
+    document.getElementById("display").value = "";
+    setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
         "#ffb300"
     );
     setTimeout(() => {
-        stopMarqueeText();
-        const display =
-            document.getElementById("display");
         if(password === "0000"){
-            // chạy chữ đúng
-            startMarqueeText(
+            setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
                 "#00cc66"
             );
             setTimeout(() => {
-                stopMarqueeText();
                 showUnlockAnimation();
             }, 1500);
+
         }else{
-            // chạy chữ sai
-            startMarqueeText(
+            setRunningText(
                 "😜 SAI RÙI NÈ 😜",
                 "#ff3333"
             );
@@ -138,9 +135,11 @@ function checkPassword() {
             container.classList.add("shake");
             setTimeout(() => {
                 container.classList.remove("shake");
-                stopMarqueeText();
-                password = "";
-                startMarqueeText(
+                password = ""
+                document.getElementById(
+                    "display"
+                ).value = "";
+                setRunningText(
                     "💗 ENTER PASSWORD 💗"
                 );
             }, 2000);
