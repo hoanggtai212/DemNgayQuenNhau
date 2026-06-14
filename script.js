@@ -71,26 +71,24 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
-function setRunningText(
-    text,
-    color = "#e75480"
-){
-    const running =
-        document.getElementById("runningText");
+function setRunningText(text, color = "#e75480", callback = null){
+    const running = document.getElementById("runningText");
     running.innerHTML = text;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
     running.offsetHeight;
-    // chiều dài text thực tế
     const textWidth = running.scrollWidth;
-    // tốc độ cố định 80px/s
     const speed = 80;
-    const duration =
-        ((textWidth + 420) / speed) * 1000;
+    const duration = (textWidth + 420) / speed;
     running.style.animation =
-        `smoothMarquee ${duration/1000}s linear 1`;
-    return duration;
+        `smoothMarquee ${duration}s linear 1`;
+    if(callback){
+        running.onanimationend = () => {
+            running.onanimationend = null;
+            callback();
+        };
+    }
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningText("💗 ENTER PASSWORD 💗");
@@ -121,39 +119,39 @@ function delNum() {
 }
 function checkPassword() {
     document.getElementById("display").value = "";
-    const duration = setRunningText(
+    setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
-        "#ffb300"
-    );
-    setTimeout(() => {
-        if(password === "0000"){
-            const okDuration = setRunningText(
-                "💗 ĐÚNG RÙI NÈ 💗",
-                "#00cc66"
-            );
-            setTimeout(() => {
-                showUnlockAnimation();
-            }, okDuration);
-        }else{
-            const failDuration = setRunningText(
-                "😜 SAI RÙI NÈ 😜",
-                "#ff3333"
-            );
-            const container =
-                document.querySelector(".container");
-            container.classList.add("shake");
-            setTimeout(() => {
-                container.classList.remove("shake");
-                password = "";
-                document.getElementById(
-                    "display"
-                ).value = "";
+        "#ffb300",
+        () => {
+            if(password === "0000"){
                 setRunningText(
-                    "💗 ENTER PASSWORD 💗"
+                    "💗 ĐÚNG RÙI NÈ 💗",
+                    "#00cc66",
+                    () => {
+                        showUnlockAnimation();
+                    }
                 );
-            }, failDuration);
+            }else{
+                const container =
+                    document.querySelector(".container");
+                container.classList.add("shake");
+                setRunningText(
+                    "😜 SAI RÙI NÈ 😜",
+                    "#ff3333",
+                    () => {
+                        container.classList.remove("shake");
+                        password = "";
+                        document.getElementById(
+                            "display"
+                        ).value = "";
+                        setRunningText(
+                            "💗 ENTER PASSWORD 💗"
+                        );
+                    }
+                );
+            }
         }
-    }, duration);
+    );
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
