@@ -88,7 +88,7 @@ function checkPassword() {
 // Bước 1: đang kiểm tra
 display.value = "ĐANG KIỂM TRA\n💗 TÌNH YÊU... 💗";
 display.style.color = "#ffb300";
-display.style.fontSize = "13px"; // nhỏ lại để vừa 2 dòng
+display.style.fontSize = "11px"; // nhỏ lại để vừa 2 dòng
     setTimeout(() => {
         if (password === "0000") {
             // Bước 2: đúng
