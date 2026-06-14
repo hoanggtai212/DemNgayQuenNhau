@@ -73,16 +73,20 @@ const timer = setInterval(() => {
 let password = "";
 function addNum(num) {
     password += num;
-    document.getElementById("display").value =
-        "*".repeat(password.length);
+    const display = document.getElementById("display");
+    display.style.color = "#333";
+    display.value = "*".repeat(password.length);
 }
 function delNum() {
     password = password.slice(0, -1);
-    document.getElementById("display").value =
-        "*".repeat(password.length);
+    const display = document.getElementById("display");
+    display.style.color = "#333";
+    display.value = "*".repeat(password.length);
 }
 function checkPassword() {
-if (password === "29012012") {
+if (password === "0000") {
+    document.getElementById("display").value = "ĐÚNG RÙI 💗";
+    document.getElementById("display").style.color = "#00cc66";
 const overlay =
 document.getElementById("unlock-overlay");
 const bigLock =
@@ -119,8 +123,13 @@ container.classList.add("shake");
 setTimeout(() => {
 container.classList.remove("shake");
 }, 400);
-password = "";
-document.getElementById("display").value = "";
+document.getElementById("display").value = "SAI RÙI 😜";
+document.getElementById("display").style.color = "#ff3333";
+setTimeout(() => {
+    password = "";
+    document.getElementById("display").value = "";
+    document.getElementById("display").style.color = "#333";
+}, 1000);
 } }
 function showLoveSuccess(){
 document.getElementById(
