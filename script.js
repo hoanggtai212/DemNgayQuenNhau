@@ -78,11 +78,26 @@ function setRunningText(text, color = "#e75480") {
     running.style.display = "block";
     running.style.animation = "none";
     void running.offsetWidth;
+    // chạy 1 vòng
     running.style.animation =
         "smoothMarquee 3s linear 1 forwards";
 }
+
+function setRunningTextInfinite(text, color = "#e75480") {
+    const running = document.getElementById("runningText");
+    running.textContent = text;
+    running.style.color = color;
+    running.style.display = "block";
+    running.style.animation = "none";
+    void running.offsetWidth;
+    // chạy vô hạn
+    running.style.animation =
+        "smoothMarquee 4s linear infinite";
+}
 document.addEventListener("DOMContentLoaded", () => {
-    setRunningText("💗 ENTER PASSWORD 💗");
+    setRunningTextInfinite(
+        "💗 ENTER PASSWORD 💗"
+    );
 });
 function addNum(num) {
     password += num;
@@ -103,9 +118,9 @@ function delNum() {
         "*".repeat(password.length);
     if(password.length === 0){
         display.value = "";
-        setRunningText(
-            "💗 ENTER PASSWORD 💗"
-        );
+setRunningTextInfinite(
+    "💗 ENTER PASSWORD 💗"
+);
     }
 }
 function checkPassword() {
