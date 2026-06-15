@@ -71,16 +71,15 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
-function setRunningText(text,color="#e75480"){
-    const running =
-        document.getElementById("runningText");
-    running.innerHTML = text;
+function setRunningText(text, color = "#e75480") {
+    const running = document.getElementById("runningText");
+    running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
-    running.offsetHeight;
+    void running.offsetWidth;
     running.style.animation =
-        "smoothMarquee 6s linear infinite";
+        "smoothMarquee 3s linear 1 forwards";
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningText("💗 ENTER PASSWORD 💗");
@@ -90,9 +89,9 @@ function addNum(num) {
     document.getElementById(
         "runningText"
     ).style.display = "none";
-    const display =
-        document.getElementById("display");
-    display.value =
+    document.getElementById(
+        "display"
+    ).value =
         "*".repeat(password.length);
 }
 function delNum() {
@@ -116,16 +115,16 @@ function checkPassword() {
         "#ffb300"
     );
     setTimeout(() => {
-        if(password === "0000"){
+        if(password === "0000") {
             setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
                 "#00cc66"
             );
             setTimeout(() => {
                 showUnlockAnimation();
-            }, 1500);
+            }, 3000);
 
-        }else{
+        } else {
             setRunningText(
                 "😜 SAI RÙI NÈ 😜",
                 "#ff3333"
@@ -135,16 +134,16 @@ function checkPassword() {
             container.classList.add("shake");
             setTimeout(() => {
                 container.classList.remove("shake");
-                password = ""
+                password = "";
                 document.getElementById(
                     "display"
                 ).value = "";
                 setRunningText(
                     "💗 ENTER PASSWORD 💗"
                 );
-            }, 2000);
+            }, 3000);
         }
-    }, 1500);
+    }, 3000);
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
