@@ -71,6 +71,7 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
+let checkTimer = null;
 const MARQUEE_TIME = 6000; // 6 giây
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
@@ -100,6 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 });
 function addNum(num) {
+    // đang có kiểm tra cũ thì hủy
+    if(checkTimer){
+        clearTimeout(checkTimer);
+        checkTimer = null;
+        setRunningTextInfinite(
+            "💗 ENTER PASSWORD 💗"
+        );
+    }
     password += num;
     document.getElementById(
         "runningText"
@@ -110,27 +119,39 @@ function addNum(num) {
         "*".repeat(password.length);
 }
 function delNum() {
-    password =
-        password.slice(0,-1);
+    // hủy luồng kiểm tra cũ
+    if(checkTimer){
+        clearTimeout(checkTimer);
+        checkTimer = null;
+        setRunningTextInfinite(
+            "💗 ENTER PASSWORD 💗"
+        );
+    }
+    password = password.slice(0,-1);
     const display =
         document.getElementById("display");
     display.value =
         "*".repeat(password.length);
     if(password.length === 0){
         display.value = "";
-setRunningTextInfinite(
-    "💗 ENTER PASSWORD 💗"
-);
+        setRunningTextInfinite(
+            "💗 ENTER PASSWORD 💗"
+        );
     }
 }
 function checkPassword() {
+    // hủy lần kiểm tra trước nếu có
+    if(checkTimer){
+        clearTimeout(checkTimer);
+        checkTimer = null;
+    }
     document.getElementById("display").value = "";
     setRunningText(
         "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
         "#ffb300"
     );
-    setTimeout(() => {
-        if (password === "0000") {
+    checkTimer = setTimeout(() => {
+        if(password === "0000"){
             setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
                 "#00cc66"
@@ -138,7 +159,7 @@ function checkPassword() {
             setTimeout(() => {
                 showUnlockAnimation();
             }, MARQUEE_TIME);
-        } else {
+        }else{
             setRunningText(
                 "😜 SAI RÙI NÈ 😜",
                 "#ff3333"
@@ -157,6 +178,7 @@ function checkPassword() {
                 );
             }, MARQUEE_TIME);
         }
+        checkTimer = null;
     }, MARQUEE_TIME);
 }
 function showUnlockAnimation() {
