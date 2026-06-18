@@ -71,6 +71,7 @@ const timer = setInterval(() => {
 }, 30);
 }
 let password = "";
+const MARQUEE_TIME = 6000; // 6 giây
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
@@ -79,10 +80,9 @@ function setRunningText(text, color = "#e75480") {
     running.style.animation = "none";
     void running.offsetWidth;
     // chạy 1 vòng
-running.style.animation =
-    "smoothMarquee 6s linear infinite";
+    running.style.animation =
+        `smoothMarquee ${MARQUEE_TIME / 1000}s linear 1 forwards`;
 }
-
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
@@ -92,7 +92,7 @@ function setRunningTextInfinite(text, color = "#e75480") {
     void running.offsetWidth;
     // chạy vô hạn
     running.style.animation =
-        "smoothMarquee 6s linear infinite"
+        `smoothMarquee ${MARQUEE_TIME / 1000}s linear infinite`;
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
@@ -130,15 +130,14 @@ function checkPassword() {
         "#ffb300"
     );
     setTimeout(() => {
-        if(password === "0000") {
+        if (password === "0000") {
             setRunningText(
                 "💗 ĐÚNG RÙI NÈ 💗",
                 "#00cc66"
             );
             setTimeout(() => {
                 showUnlockAnimation();
-            }, 3000);
-
+            }, MARQUEE_TIME);
         } else {
             setRunningText(
                 "😜 SAI RÙI NÈ 😜",
@@ -153,12 +152,12 @@ function checkPassword() {
                 document.getElementById(
                     "display"
                 ).value = "";
-                setRunningText(
+                setRunningTextInfinite(
                     "💗 ENTER PASSWORD 💗"
                 );
-            }, 3000);
+            }, MARQUEE_TIME);
         }
-    }, 3000);
+    }, MARQUEE_TIME);
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
