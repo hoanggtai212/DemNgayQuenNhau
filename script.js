@@ -89,16 +89,21 @@ function cancelCurrentAction(){
         "💗 ENTER PASSWORD 💗"
     );
 }
+function getMarqueeTime(text){
+    return Math.max(2500, text.length * 180);
+}
+
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
+    const duration = getMarqueeTime(text);
     running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
     void running.offsetWidth;
-    // chạy 1 vòng
     running.style.animation =
-        `smoothMarquee ${MARQUEE_TIME / 1000}s linear 1 forwards`;
+        `smoothMarquee ${duration / 1000}s linear 1`;
+    return duration;
 }
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
@@ -144,52 +149,50 @@ function delNum() {
     }
 }
 function checkPassword() {
-    // hủy toàn bộ luồng cũ
-    if(checkTimer){
-        clearTimeout(checkTimer);
-        checkTimer = null;
-    }
-    if(actionTimer){
-        clearTimeout(actionTimer);
-        actionTimer = null;
-    }
-    document.getElementById("display").value = "";
-    setRunningText(
-        "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
-        "#ffb300"
-    );
-    checkTimer = setTimeout(() => {
-        if(password === "0000"){
-            setRunningText(
-                "💗 ĐÚNG RÙI NÈ 💗",
-                "#00cc66"
+// hủy toàn bộ luồng cũ
+if (checkTimer) {
+clearTimeout(checkTimer);
+checkTimer = null;
+}
+if (actionTimer) {
+    clearTimeout(actionTimer);
+    actionTimer = null;
+}
+document.getElementById("display").value = "";
+const checkingTime = setRunningText(
+    "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
+    "#ffb300"
+);
+checkTimer = setTimeout(() => {
+    if (password === "0000") {
+        const successTime = setRunningText(
+            "💗 ĐÚNG RÙI NÈ 💗",
+            "#00cc66"
+        );
+        actionTimer = setTimeout(() => {
+            showUnlockAnimation();
+            actionTimer = null;
+        }, successTime);
+    } else {
+        const failTime = setRunningText(
+            "😜 SAI RÙI NÈ 😜",
+            "#ff3333"
+        );
+        const container =
+            document.querySelector(".container");
+        container.classList.add("shake");
+        actionTimer = setTimeout(() => {
+            container.classList.remove("shake");
+            password = "";
+            document.getElementById("display").value = "";
+            setRunningTextInfinite(
+                "💗 ENTER PASSWORD 💗"
             );
-            actionTimer = setTimeout(() => {
-                showUnlockAnimation();
-                actionTimer = null;
-            }, MARQUEE_TIME);
-        }else{
-            setRunningText(
-                "😜 SAI RÙI NÈ 😜",
-                "#ff3333"
-            );
-            const container =
-                document.querySelector(".container");
-            container.classList.add("shake");
-            actionTimer = setTimeout(() => {
-                container.classList.remove("shake");
-                password = "";
-                document.getElementById(
-                    "display"
-                ).value = "";
-                setRunningTextInfinite(
-                    "💗 ENTER PASSWORD 💗"
-                );
-                actionTimer = null;
-            }, MARQUEE_TIME);
-        }
-        checkTimer = null;
-    }, MARQUEE_TIME);
+            actionTimer = null;
+        }, failTime);
+    }
+    checkTimer = null;
+}, checkingTime);
 }
 function showUnlockAnimation() {
     const overlay = document.getElementById("unlock-overlay");
