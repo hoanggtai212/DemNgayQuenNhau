@@ -322,10 +322,6 @@ PASSWORD PAGE
     font-weight:700;
     pointer-events:none;
     letter-spacing:2px; /* kiểu LED */
-    text-shadow:
-        0 0 5px #ff6fa5,
-        0 0 10px #ff6fa5,
-        0 0 15px #ff6fa5;
 }
 
 @keyframes smoothMarquee{
