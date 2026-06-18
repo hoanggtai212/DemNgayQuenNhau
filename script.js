@@ -85,7 +85,7 @@ function cancelCurrentAction(){
     password = "";
     document.getElementById("display").value = "";
 setRunningTextInfinite(
-"💗 ENTER PASSWORD 💗     💗 ENTER PASSWORD 💗"
+"💗 ENTER PASSWORD 💗"
 );
 }
 function getMarqueeTime(text){
