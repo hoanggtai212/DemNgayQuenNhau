@@ -72,7 +72,23 @@ const timer = setInterval(() => {
 }
 let password = "";
 let checkTimer = null;
+let actionTimer = null;
 const MARQUEE_TIME = 6000; // 6 giây
+function cancelCurrentAction(){
+    if(checkTimer){
+        clearTimeout(checkTimer);
+        checkTimer = null;
+    }
+    if(actionTimer){
+        clearTimeout(actionTimer);
+        actionTimer = null;
+    }
+    password = "";
+    document.getElementById("display").value = "";
+    setRunningTextInfinite(
+        "💗 ENTER PASSWORD 💗"
+    );
+}
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
@@ -101,31 +117,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 });
 function addNum(num) {
-    // đang có kiểm tra cũ thì hủy
-    if(checkTimer){
-        clearTimeout(checkTimer);
-        checkTimer = null;
-        setRunningTextInfinite(
-            "💗 ENTER PASSWORD 💗"
-        );
+    if(checkTimer || actionTimer){
+        cancelCurrentAction();
     }
     password += num;
-    document.getElementById(
-        "runningText"
-    ).style.display = "none";
-    document.getElementById(
-        "display"
-    ).value =
-        "*".repeat(password.length);
+    document.getElementById("runningText")
+        .style.display = "none";
+    document.getElementById("display")
+        .value = "*".repeat(password.length);
 }
 function delNum() {
-    // hủy luồng kiểm tra cũ
-    if(checkTimer){
-        clearTimeout(checkTimer);
-        checkTimer = null;
-        setRunningTextInfinite(
-            "💗 ENTER PASSWORD 💗"
-        );
+    if(checkTimer || actionTimer){
+        cancelCurrentAction();
+        return;
     }
     password = password.slice(0,-1);
     const display =
@@ -140,10 +144,14 @@ function delNum() {
     }
 }
 function checkPassword() {
-    // hủy lần kiểm tra trước nếu có
+    // hủy toàn bộ luồng cũ
     if(checkTimer){
         clearTimeout(checkTimer);
         checkTimer = null;
+    }
+    if(actionTimer){
+        clearTimeout(actionTimer);
+        actionTimer = null;
     }
     document.getElementById("display").value = "";
     setRunningText(
@@ -156,8 +164,9 @@ function checkPassword() {
                 "💗 ĐÚNG RÙI NÈ 💗",
                 "#00cc66"
             );
-            setTimeout(() => {
+            actionTimer = setTimeout(() => {
                 showUnlockAnimation();
+                actionTimer = null;
             }, MARQUEE_TIME);
         }else{
             setRunningText(
@@ -167,7 +176,7 @@ function checkPassword() {
             const container =
                 document.querySelector(".container");
             container.classList.add("shake");
-            setTimeout(() => {
+            actionTimer = setTimeout(() => {
                 container.classList.remove("shake");
                 password = "";
                 document.getElementById(
@@ -176,6 +185,7 @@ function checkPassword() {
                 setRunningTextInfinite(
                     "💗 ENTER PASSWORD 💗"
                 );
+                actionTimer = null;
             }, MARQUEE_TIME);
         }
         checkTimer = null;
