@@ -313,6 +313,7 @@ PASSWORD PAGE
 }
 
 #runningText{
+    width:max-content;
     position:absolute;
     top:50%;
     left:100%;
@@ -326,10 +327,15 @@ PASSWORD PAGE
 
 @keyframes smoothMarquee{
     from{
-        left:100%;
+        transform:
+        translateY(-50%)
+        translateX(0);
     }
+
     to{
-        left:-100%;
+        transform:
+        translateY(-50%)
+        translateX(calc(-100vw - 100%));
     }
 }
 
