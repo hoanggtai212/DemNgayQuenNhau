@@ -80,7 +80,7 @@ function setRunningText(text, color = "#e75480") {
     void running.offsetWidth;
     // chạy 1 vòng
 running.style.animation =
-    "smoothMarquee 3s linear infinite";
+    "smoothMarquee 5s linear infinite";
 }
 
 function setRunningTextInfinite(text, color = "#e75480") {
