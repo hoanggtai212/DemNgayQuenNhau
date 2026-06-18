@@ -73,7 +73,6 @@ const timer = setInterval(() => {
 let password = "";
 let checkTimer = null;
 let actionTimer = null;
-const MARQUEE_TIME = 6000; // 6 giây
 function cancelCurrentAction(){
     if(checkTimer){
         clearTimeout(checkTimer);
@@ -105,6 +104,7 @@ function setRunningText(text, color = "#e75480") {
         `smoothMarquee ${duration / 1000}s linear 1`;
     return duration;
 }
+const MARQUEE_TIME = 6000; // 6 giây
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
