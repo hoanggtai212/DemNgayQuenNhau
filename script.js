@@ -84,9 +84,9 @@ function cancelCurrentAction(){
     }
     password = "";
     document.getElementById("display").value = "";
-    setRunningTextInfinite(
-        "💗 ENTER PASSWORD 💗"
-    );
+setRunningTextInfinite(
+"💗 ENTER PASSWORD 💗     💗 ENTER PASSWORD 💗"
+);
 }
 function getMarqueeTime(text){
     return Math.max(2500, text.length * 180);
