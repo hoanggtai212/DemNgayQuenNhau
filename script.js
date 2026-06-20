@@ -47,7 +47,6 @@ function showPassword() {
         );
     }, 600);
 }
-}
 function showAlbum() {
 document.getElementById("passwordPage").style.display = "none";
 document.getElementById("albumPage").style.display = "block";
