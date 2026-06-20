@@ -313,25 +313,31 @@ PASSWORD PAGE
 }
 
 #runningText{
-    width:max-content;
     position:absolute;
     top:50%;
-    left:100%;
+    left:0;
     transform:translateY(-50%);
+    display:flex;
     white-space:nowrap;
     color:#e75480;
     font-weight:700;
     pointer-events:none;
-    letter-spacing:2px; /* kiểu LED */
+    letter-spacing:2px;
+    animation: marqueeLoop 8s linear infinite;
 }
 
-@keyframes smoothMarquee{
+#runningText span{
+    flex-shrink:0;
+    margin-right:120px; /* khoảng cách giữa 2 dòng */
+}
+
+@keyframes marqueeLoop{
     from{
-        transform: translateY(-50%) translateX(100%);
+        transform:translateY(-50%) translateX(0);
     }
 
     to{
-        transform: translateY(-50%) translateX(-100%);
+        transform:translateY(-50%) translateX(calc(-100% - 120px));
     }
 }
 
