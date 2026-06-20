@@ -315,33 +315,26 @@ PASSWORD PAGE
 #runningText{
     position:absolute;
     top:50%;
-    left:0;
+    left:100%;
     transform:translateY(-50%);
-    display:flex;
     white-space:nowrap;
     color:#e75480;
     font-weight:700;
     pointer-events:none;
     letter-spacing:2px;
-    animation: marqueeLoop 8s linear infinite;
 }
 
-#runningText span{
-    flex-shrink:0;
-    margin-right:150px;
-}
-
-@keyframes marqueeLoop{
+@keyframes smoothMarquee{
     from{
         transform:
             translateY(-50%)
-            translateX(250px);
+            translateX(0);
     }
 
     to{
         transform:
             translateY(-50%)
-            translateX(calc(-100% - 150px));
+            translateX(-350px);
     }
 }
 
