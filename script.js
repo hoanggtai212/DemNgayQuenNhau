@@ -101,7 +101,7 @@ function getMarqueeTime(text){
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     const duration = getMarqueeTime(text);
-running.innerHTML = `<span>${text}</span>`;
+running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
@@ -110,22 +110,16 @@ running.innerHTML = `<span>${text}</span>`;
         `smoothMarquee ${duration / 1000}s linear 1`;
     return duration;
 }
-const MARQUEE_TIME = 6000; // 6 giây
+const MARQUEE_TIME = 6000;
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
-    function startAnimation() {
-        running.style.animation = "none";
-        void running.offsetWidth;
-        running.style.animation =
-            `smoothMarquee ${MARQUEE_TIME / 1000}s linear 1`;
-        setTimeout(() => {
-            startAnimation(); // chạy lại từ đầu
-        }, MARQUEE_TIME + 500); // nghỉ 0.5s
-    }
-    startAnimation();
+    running.style.animation = "none";
+    void running.offsetWidth;
+    running.style.animation =
+        `smoothMarquee ${MARQUEE_TIME / 1000}s linear infinite`;
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
