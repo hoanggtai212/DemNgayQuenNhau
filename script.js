@@ -32,13 +32,19 @@ setInterval(updateLoveTimer, 1000);
 updateLoveTimer();
 });
 function showPassword() {
-    const counterPage = document.getElementById("counterPage");
-    const passwordPage = document.getElementById("passwordPage");
+    const counterPage =
+        document.getElementById("counterPage");
+    const passwordPage =
+        document.getElementById("passwordPage");
     counterPage.classList.add("fade-out");
     setTimeout(() => {
         counterPage.style.display = "none";
         passwordPage.style.display = "flex";
         passwordPage.classList.add("fade-in");
+        // RESET LED KHI MỞ TRANG
+        setRunningTextInfinite(
+            "💗 ENTER PASSWORD 💗"
+        );
     }, 600);
 }
 function showAlbum() {
@@ -95,7 +101,7 @@ function getMarqueeTime(text){
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     const duration = getMarqueeTime(text);
-    running.textContent = text;
+running.innerHTML = `<span>${text}</span>`;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
@@ -107,14 +113,12 @@ function setRunningText(text, color = "#e75480") {
 const MARQUEE_TIME = 6000; // 6 giây
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
-    running.textContent = text;
+    running.innerHTML = `
+        <span>${text}</span>
+        <span>${text}</span>
+    `;
     running.style.color = color;
-    running.style.display = "block";
-    running.style.animation = "none";
-    void running.offsetWidth;
-    // chạy vô hạn
-    running.style.animation =
-        `smoothMarquee ${MARQUEE_TIME / 1000}s linear infinite`;
+    running.style.display = "flex";
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
