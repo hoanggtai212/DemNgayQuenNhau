@@ -9,7 +9,6 @@ html,body{
     height:100%;
     overflow:hidden;
 }
-
 #display::placeholder{
     color:#e75480;
     opacity:0.8;
