@@ -328,16 +328,20 @@ PASSWORD PAGE
 
 #runningText span{
     flex-shrink:0;
-    margin-right:120px; /* khoảng cách giữa 2 dòng */
+    margin-right:150px;
 }
 
 @keyframes marqueeLoop{
     from{
-        transform:translateY(-50%) translateX(0);
+        transform:
+            translateY(-50%)
+            translateX(250px);
     }
 
     to{
-        transform:translateY(-50%) translateX(calc(-100% - 120px));
+        transform:
+            translateY(-50%)
+            translateX(calc(-100% - 150px));
     }
 }
 
