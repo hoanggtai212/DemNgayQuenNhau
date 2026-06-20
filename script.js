@@ -113,12 +113,19 @@ running.innerHTML = `<span>${text}</span>`;
 const MARQUEE_TIME = 6000; // 6 giây
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
-    running.innerHTML = `
-        <span>${text}</span>
-        <span>${text}</span>
-    `;
+    running.textContent = text;
     running.style.color = color;
-    running.style.display = "flex";
+    running.style.display = "block";
+    function startAnimation() {
+        running.style.animation = "none";
+        void running.offsetWidth;
+        running.style.animation =
+            `smoothMarquee ${MARQUEE_TIME / 1000}s linear 1`;
+        setTimeout(() => {
+            startAnimation(); // chạy lại từ đầu
+        }, MARQUEE_TIME + 500); // nghỉ 0.5s
+    }
+    startAnimation();
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
