@@ -313,18 +313,16 @@ PASSWORD PAGE
 
 #runningText{
     position:absolute;
+    top:50%;
     left:100%;
-    top:0;
-    bottom:0;
-    display:flex;
-    align-items:center;
+    transform:translateY(-50%);
     white-space:nowrap;
     color:#e75480;
     font-weight:700;
-    letter-spacing:2px;
-
     pointer-events:none;
+    letter-spacing:2px;
 }
+
 @keyframes smoothMarquee{
     from{
         transform:
