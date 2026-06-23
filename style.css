@@ -313,16 +313,21 @@ PASSWORD PAGE
 
 #runningText{
     position:absolute;
-    inset:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     display:flex;
+    justify-content:center;
     align-items:center;
-    padding-left:10px;
     white-space:nowrap;
     color:#e75480;
     font-weight:700;
-    pointer-events:none;
     letter-spacing:2px;
-    line-height:55px; /* bằng height của #display */
+    line-height:1;
+    padding:0;
+    margin:0;
+    pointer-events:none;
 }
 
 .marquee{
