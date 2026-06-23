@@ -284,6 +284,7 @@ PASSWORD PAGE
     width: 90%;
     max-width: 250px;
     height: 55px;
+    line-height:55px;
     font-size: 16px;
     border-radius: 14px;
     background: #f2f2f2;
@@ -293,7 +294,6 @@ PASSWORD PAGE
     font-weight: 700;
     box-shadow: inset 0 0 8px rgba(0,0,0,0.08),
                 0 4px 15px rgba(255,105,135,0.15);
-
     border: none;
     outline: none;
 }
@@ -313,17 +313,16 @@ PASSWORD PAGE
 
 #runningText{
     position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
+    inset:0;
     display:flex;
     align-items:center;
+    padding-left:10px;
     white-space:nowrap;
     color:#e75480;
     font-weight:700;
     pointer-events:none;
     letter-spacing:2px;
-    line-height:1;
+    line-height:55px; /* bằng height của #display */
 }
 
 .marquee{
