@@ -102,11 +102,14 @@ function setRunningText(text, color = "#e75480") {
     running.style.display = "block";
     running.style.animation = "none";
     void running.offsetWidth;
+    const distance =
+        running.offsetWidth + window.innerWidth;
+    const speed = 100; // px/s
+    const duration = distance / speed;
     running.style.animation =
-        "smoothMarquee 5s linear 1";
-    return 5000;
+        `smoothMarquee ${duration}s linear 1`;
+    return duration * 1000;
 }
-const MARQUEE_TIME = 5000;
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
@@ -114,8 +117,12 @@ function setRunningTextInfinite(text, color = "#e75480") {
     running.style.display = "block";
     running.style.animation = "none";
     void running.offsetWidth;
+    const distance =
+        running.offsetWidth + window.innerWidth;
+    const speed = 100; // px/s
+    const duration = distance / speed;
     running.style.animation =
-        `smoothMarquee ${MARQUEE_TIME / 1000}s linear infinite`;
+        `smoothMarquee ${duration}s linear infinite`;
 }
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
