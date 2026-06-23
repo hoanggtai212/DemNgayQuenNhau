@@ -94,23 +94,19 @@ setRunningTextInfinite(
 "💗 ENTER PASSWORD 💗"
 );
 }
-function getMarqueeTime(text){
-    return Math.max(2500, text.length * 180);
-}
 
 function setRunningText(text, color = "#e75480") {
     const running = document.getElementById("runningText");
-    const duration = getMarqueeTime(text);
-running.textContent = text;
+    running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
     running.style.animation = "none";
     void running.offsetWidth;
     running.style.animation =
-        `smoothMarquee ${duration / 1000}s linear 1`;
-    return duration;
+        "smoothMarquee 5s linear 1";
+    return 5000;
 }
-const MARQUEE_TIME = 6000;
+const MARQUEE_TIME = 5000;
 function setRunningTextInfinite(text, color = "#e75480") {
     const running = document.getElementById("runningText");
     running.textContent = text;
