@@ -96,34 +96,53 @@ setRunningTextInfinite(
 }
 
 function setRunningText(text, color = "#e75480") {
-    const running = document.getElementById("runningText");
-    running.textContent = text;
-    running.style.color = color;
-    running.style.display = "block";
-    running.style.animation = "none";
-    void running.offsetWidth;
-    const distance =
-        running.offsetWidth + window.innerWidth;
-    const speed = 100; // px/s
-    const duration = distance / speed;
-    running.style.animation =
-        `smoothMarquee ${duration}s linear 1`;
-    return duration * 1000;
+    return startMarquee(text, color, false);
 }
 function setRunningTextInfinite(text, color = "#e75480") {
+    startMarquee(text, color, true);
+}
+
+function startMarquee(text, color = "#e75480", loop = true) {
     const running = document.getElementById("runningText");
+    const wrap = document.querySelector(".display-wrap");
+
+    running.getAnimations().forEach(a => a.cancel());
+
     running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
-    running.style.animation = "none";
-    void running.offsetWidth;
-    const distance =
-        running.offsetWidth + window.innerWidth;
-    const speed = 100; // px/s
-    const duration = distance / speed;
-    running.style.animation =
-        `smoothMarquee ${duration}s linear infinite`;
+
+    requestAnimationFrame(() => {
+
+        const textWidth = running.offsetWidth;
+        const wrapWidth = wrap.offsetWidth;
+
+        const distance = textWidth + wrapWidth;
+        const speed = 100;
+        const duration = (distance / speed) * 1000;
+
+        running.animate(
+            [
+                {
+                    transform:
+                        `translateY(-50%) translateX(${wrapWidth}px)`
+                },
+                {
+                    transform:
+                        `translateY(-50%) translateX(-${textWidth}px)`
+                }
+            ],
+            {
+                duration,
+                iterations: loop ? Infinity : 1,
+                easing: "linear"
+            }
+        );
+    });
+
+    return ((running.offsetWidth + wrap.offsetWidth) / 100) * 1000;
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     setRunningTextInfinite(
         "💗 ENTER PASSWORD 💗"
