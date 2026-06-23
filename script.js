@@ -79,6 +79,7 @@ const timer = setInterval(() => {
 let password = "";
 let checkTimer = null;
 let actionTimer = null;
+
 function cancelCurrentAction(){
     if(checkTimer){
         clearTimeout(checkTimer);
@@ -88,11 +89,14 @@ function cancelCurrentAction(){
         clearTimeout(actionTimer);
         actionTimer = null;
     }
+    document.getElementById("runningText")
+        .getAnimations()
+        .forEach(a => a.cancel());
     password = "";
     document.getElementById("display").value = "";
-setRunningTextInfinite(
-"💗 ENTER PASSWORD 💗"
-);
+    setRunningTextInfinite(
+        "💗 ENTER PASSWORD 💗"
+    );
 }
 
 function setRunningText(text, color = "#e75480") {
@@ -103,11 +107,13 @@ function setRunningTextInfinite(text, color = "#e75480") {
 }
 
 function startMarquee(text, color = "#e75480", loop = true) {
-    const running = document.getElementById("runningText");
+const running =
+    document.getElementById("runningText");
+running.getAnimations()
+       .forEach(a => a.cancel());
+running.style.display = "none";
     const wrap = document.querySelector(".display-wrap");
-
     running.getAnimations().forEach(a => a.cancel());
-
     running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
