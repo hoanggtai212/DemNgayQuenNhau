@@ -127,17 +127,15 @@ running.style.display = "none";
         const speed = 100;
         const duration = (distance / speed) * 1000;
 
-        running.animate(
-            [
-                {
-                    transform:
-                        `translateY(-50%) translateX(${wrapWidth}px)`
-                },
-                {
-                    transform:
-                        `translateY(-50%) translateX(-${textWidth}px)`
-                }
-            ],
+running.animate(
+[
+    {
+        transform: `translateX(${wrapWidth}px)`
+    },
+    {
+        transform: `translateX(-${textWidth}px)`
+    }
+],
             {
                 duration,
                 iterations: loop ? Infinity : 1,
