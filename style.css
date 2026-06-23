@@ -281,7 +281,7 @@ PASSWORD PAGE
     padding: 10px;
     margin-top: 10px;
     opacity: 0.95;
-    width:100%;
+    width:90%;
     max-width: 250px;
     height: 55px;
     line-height:55px;
@@ -314,15 +314,20 @@ PASSWORD PAGE
 
 #runningText{
     position:absolute;
-    top:50%;
+    top:0;
     left:0;
     width:100%;
-    transform:translateY(-50%);
-    text-align:center;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    white-space:nowrap;
     color:#e75480;
     font-weight:700;
     letter-spacing:2px;
-    white-space:nowrap;
+    line-height:1;
+    padding:0;
+    margin:0;
     pointer-events:none;
 }
 
