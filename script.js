@@ -102,6 +102,7 @@ function cancelCurrentAction(){
 function setRunningText(text, color = "#e75480") {
     return startMarquee(text, color, false);
 }
+
 function setRunningTextInfinite(text, color = "#e75480") {
     startMarquee(text, color, true);
 }
@@ -113,7 +114,9 @@ running.getAnimations()
        .forEach(a => a.cancel());
 running.style.display = "none";
     const wrap = document.querySelector(".display-wrap");
+
     running.getAnimations().forEach(a => a.cancel());
+
     running.textContent = text;
     running.style.color = color;
     running.style.display = "block";
