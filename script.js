@@ -465,3 +465,15 @@ function spawnHeartPhotosCentered() {
     }
 }
 });
+let lastTouchEnd = 0;
+document.addEventListener("touchend", function (e) {
+    const clickable = e.target.closest(
+        "button, a, input, textarea, select, .btn, .ok"
+    );
+    if (clickable) return;
+    const now = Date.now();
+    if (now - lastTouchEnd < 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
