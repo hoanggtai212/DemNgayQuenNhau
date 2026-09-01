@@ -192,7 +192,7 @@ startBtn.addEventListener("click", () => {
             // Chạy hiệu ứng Success
             showLoveSuccess();
 
-        }, 800);
+        }, 1000);
 
     }, 350);
 
