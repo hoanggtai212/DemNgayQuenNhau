@@ -867,13 +867,34 @@ MOBILE
    MỜ → RÕ + PHÓNG NHẸ
 ========================================= */
 
-.loading-heart-left.heart-active,
-.loading-heart-center.heart-active,
+.loading-heart-left.heart-active{
+    opacity:1;
+    color:#ff4f81;
+    filter:none;
+    transform:scale(1.12);
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+}
+
+.loading-heart-center.heart-active{
+    opacity:1;
+    color:#ff4f81;
+    filter:none;
+    transform:translateX(-50%) scale(1.12);
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+}
+
 .loading-heart-right.heart-active{
     opacity:1;
     color:#ff4f81;
     filter:none;
-
     transform:scale(1.12);
 
     text-shadow:
