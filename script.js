@@ -58,61 +58,143 @@ function backHome() {
 location.reload();
 }
 function showLoadingLove(){
+
     document.getElementById("passwordPage").style.display = "none";
+
     const loading = document.getElementById("loveLoading");
     loading.style.display = "flex";
+
     let progress = 0;
-    const fill =
-        document.getElementById("progressFill");
-    const text =
-        document.getElementById("progressPercent");
+
+    const fill = document.getElementById("progressFill");
+    const text = document.getElementById("progressPercent");
+
     const hearts = [
         document.getElementById("loadingHeart1"),
         document.getElementById("loadingHeart2"),
         document.getElementById("loadingHeart3")
     ];
-    /* reset */
+
+    const startBtn = document.getElementById("startLoveBtn");
+
+    // =========================
+    // RESET
+    // =========================
+
     fill.style.width = "0%";
     text.textContent = "0%";
+
+    // Ẩn nút Bắt đầu khi loading
+    if(startBtn){
+        startBtn.style.display = "none";
+    }
+
+    // Reset 3 tim
     hearts.forEach(heart => {
         heart.classList.remove("heart-active");
+        heart.style.animationPlayState = "running";
     });
+
+    // =========================
+    // CHẠY LOADING
+    // =========================
+
     const timer = setInterval(() => {
+
         progress++;
+
         fill.style.width = progress + "%";
         text.textContent = progress + "%";
-        /* =====================================
-           💗 KÍCH HOẠT TRÁI TIM THEO TIẾN ĐỘ
-        ===================================== */
+
+        // Tim 1 sáng ở 20%
         if(progress >= 20){
-            hearts[0]
-                .classList.add("heart-active");
+            hearts[0].classList.add("heart-active");
         }
+
+        // Tim 2 sáng ở 50%
         if(progress >= 50){
-            hearts[1]
-                .classList.add("heart-active");
+            hearts[1].classList.add("heart-active");
         }
+
+        // Tim 3 sáng ở 80%
         if(progress >= 80){
-            hearts[2]
-                .classList.add("heart-active");
+            hearts[2].classList.add("heart-active");
         }
-        /* =====================================
-           💗 HOÀN THÀNH
-        ===================================== */
+
+        // =========================
+        // ĐẠT 100%
+        // =========================
+
         if(progress >= 100){
+
             clearInterval(timer);
+
+            fill.style.width = "100%";
             text.textContent = "100%";
-            setTimeout(() => {
-                loading.classList.add("love-fade-out");
-                setTimeout(() => {
-                    loading.style.display = "none";
-                    loading.classList.remove("love-fade-out");
-                    showLoveSuccess();
-                }, 700);
-            }, 500);
+
+            // QUAN TRỌNG:
+            // 3 tim sáng nhưng KHÔNG NHẢY
+            hearts.forEach(heart => {
+                heart.style.animationPlayState = "paused";
+            });
+
+            // Hiện nút Bắt đầu
+            if(startBtn){
+                startBtn.style.display = "block";
+            }
         }
+
     }, 30);
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    const startBtn = document.getElementById("startLoveBtn");
+
+    if(!startBtn) return;
+
+    startBtn.addEventListener("click", () => {
+
+        const loading = document.getElementById("loveLoading");
+
+        const hearts = [
+            document.getElementById("loadingHeart1"),
+            document.getElementById("loadingHeart2"),
+            document.getElementById("loadingHeart3")
+        ];
+
+        // =========================
+        // BẤM "BẮT ĐẦU"
+        // =========================
+
+        // Cho 3 tim bắt đầu nhảy
+        hearts.forEach(heart => {
+            heart.style.animationPlayState = "running";
+        });
+
+        // Ẩn nút
+        startBtn.style.display = "none";
+
+        // Cho tim nhảy khoảng 1 giây
+        setTimeout(() => {
+
+            loading.classList.add("love-fade-out");
+
+            setTimeout(() => {
+
+                loading.style.display = "none";
+                loading.classList.remove("love-fade-out");
+
+                // Sang màn SUCCESS
+                showLoveSuccess();
+
+            }, 700);
+
+        }, 1000);
+
+    });
+
+});
+
 let password = "";
 let checkTimer = null;
 let actionTimer = null;
