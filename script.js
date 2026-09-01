@@ -172,21 +172,38 @@ document.addEventListener("DOMContentLoaded", () => {
         startBtn.style.display = "none";
 
         // Cho tim nhảy khoảng 1 giây
-        setTimeout(() => {
+setTimeout(() => {
 
-            loading.classList.add("love-fade-out");
+    // Loading bắt đầu biến mất
+    loading.classList.add("page-out");
 
-            setTimeout(() => {
+    // Chuẩn bị Success ở trạng thái mờ
+    const success = document.getElementById("loveSuccess");
 
-                loading.style.display = "none";
-                loading.classList.remove("love-fade-out");
+    success.style.display = "flex";
+    success.classList.add("page-in-start");
 
-                // Sang màn SUCCESS
-                showLoveSuccess();
+    // Đợi loading fade-out gần xong
+    setTimeout(() => {
 
-            }, 700);
+        // Ẩn loading hoàn toàn
+        loading.style.display = "none";
+        loading.classList.remove("page-out");
 
-        }, 1000);
+        // Cho Success fade-in
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                success.classList.remove("page-in-start");
+                success.classList.add("page-in-active");
+            });
+        });
+
+        // Chạy hiệu ứng Success
+        showLoveSuccess();
+
+    }, 800);
+
+}, 1000);
 
     });
 
@@ -368,34 +385,36 @@ function showUnlockAnimation() {
         showLoadingLove();
     }, 3000);
 }
-function showLoveSuccess(){ 
- 
-    const success = document.getElementById("loveSuccess"); 
- 
-    const heart1 = document.getElementById("heart1"); 
-    const heart2 = document.getElementById("heart2"); 
-    const heart3 = document.getElementById("heart3"); 
- 
-    success.style.display = "flex"; 
- 
-    heart1.classList.remove("heart-active"); 
-    heart2.classList.remove("heart-active"); 
-    heart3.classList.remove("heart-active"); 
- 
+
+function showLoveSuccess(){  
+  
+    const success = document.getElementById("loveSuccess");  
+  
+    const heart1 = document.getElementById("heart1");  
+    const heart2 = document.getElementById("heart2");  
+    const heart3 = document.getElementById("heart3");  
+  
+    // KHÔNG set display ở đây nữa
+    // Vì display đã được xử lý trong hiệu ứng chuyển cảnh
+
+    heart1.classList.remove("heart-active");  
+    heart2.classList.remove("heart-active");  
+    heart3.classList.remove("heart-active");  
+  
     // Tim 1 sáng
-    setTimeout(() => { 
-        heart1.classList.add("heart-active"); 
-    }, 150); 
- 
+    setTimeout(() => {  
+        heart1.classList.add("heart-active");  
+    }, 150);  
+  
     // Tim 2 sáng
-    setTimeout(() => { 
-        heart2.classList.add("heart-active"); 
-    }, 350); 
+    setTimeout(() => {  
+        heart2.classList.add("heart-active");  
+    }, 350);  
 
     // Tim 3 sáng
-    setTimeout(() => { 
-        heart3.classList.add("heart-active"); 
-    }, 550); 
+    setTimeout(() => {  
+        heart3.classList.add("heart-active");  
+    }, 550);  
 }
 
 document.addEventListener('DOMContentLoaded', () => {
