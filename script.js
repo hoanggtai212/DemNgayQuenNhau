@@ -132,12 +132,6 @@ function showLoadingLove(){
             fill.style.width = "100%";
             text.textContent = "100%";
 
-            // QUAN TRỌNG:
-            // 3 tim sáng nhưng KHÔNG NHẢY
-            hearts.forEach(heart => {
-                heart.style.animationPlayState = "paused";
-            });
-
             // Hiện nút Bắt đầu
             if(startBtn){
                 startBtn.style.display = "block";
