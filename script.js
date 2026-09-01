@@ -125,18 +125,21 @@ function showLoadingLove(){
         // ĐẠT 100%
         // =========================
 
-        if(progress >= 100){
+if(progress >= 100){
 
-            clearInterval(timer);
+    clearInterval(timer);
 
-            fill.style.width = "100%";
-            text.textContent = "100%";
+    fill.style.width = "100%";
+    text.textContent = "100%";
 
-            // Hiện nút Bắt đầu
-            if(startBtn){
-                startBtn.style.display = "block";
-            }
-        }
+    if(startBtn){
+        startBtn.style.display = "block";
+
+        requestAnimationFrame(() => {
+            startBtn.classList.add("show");
+        });
+    }
+}
 
     }, 30);
 }
