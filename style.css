@@ -2001,231 +2001,424 @@ html{
 }
 
 /* =========================================
-   🎭 RÈM VẢI MỀM - UỐN VÀO TRONG RỒI BAY RA
+   🎭 RÈM VẢI MỀM - CONG + LƯỢN + GIÓ
 ========================================= */
 
-#curtainTransition {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
+#curtainTransition{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
 
-    display: none;
-    z-index: 1000000;
-    overflow: hidden;
-    pointer-events: none;
+    display:none;
+    z-index:1000000;
+    overflow:hidden;
+    pointer-events:none;
 
-    perspective: 1000px;
+    perspective:1200px;
 }
 
-/* RÈM */
-#curtainTransition .curtain {
-    position: absolute;
-    top: -3%;
-    width: 54%;
-    height: 106%;
+/* ================================
+   RÈM
+================================ */
+
+#curtainTransition .curtain{
+    position:absolute;
+    top:-3%;
+
+    width:55%;
+    height:106%;
 
     background:
         repeating-linear-gradient(
             90deg,
             #8b1748 0px,
-            #d92f6c 25px,
-            #ff719e 50px,
-            #b51d58 75px,
-            #ed4b82 100px
+            #b51d58 18px,
+            #ed4b82 38px,
+            #ff719e 55px,
+            #c42661 72px,
+            #8f1749 90px
         );
 
     box-shadow:
-        inset 0 0 50px rgba(60, 0, 30, .45);
+        inset 0 0 35px rgba(60,0,30,.45),
+        inset -15px 0 25px rgba(255,255,255,.08);
 
-    will-change: transform;
+    transform-style:preserve-3d;
 
-    /* QUAN TRỌNG */
-    transform-style: preserve-3d;
+    will-change:
+        transform,
+        border-radius,
+        clip-path;
+
+    overflow:hidden;
 }
 
-/* NẾP VẢI */
-#curtainTransition .curtain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
+/* ================================
+   NẾP VẢI
+================================ */
+
+#curtainTransition .curtain::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
     background:
         repeating-linear-gradient(
             90deg,
-            rgba(255,255,255,.10) 0px,
-            transparent 12px,
-            rgba(60,0,30,.25) 30px,
-            transparent 48px
+            rgba(255,255,255,.16) 0px,
+            rgba(255,255,255,.05) 7px,
+            transparent 15px,
+            rgba(50,0,25,.30) 27px,
+            transparent 40px
         );
+
+    opacity:.8;
+
+    transform:
+        skewX(-2deg)
+        scaleX(1.04);
+
+    transform-origin:center;
+}
+
+/* ánh sáng mềm trên vải */
+
+#curtainTransition .curtain::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(40,0,20,.35),
+            transparent 18%,
+            rgba(255,255,255,.12) 38%,
+            transparent 55%,
+            rgba(50,0,25,.28) 78%,
+            transparent
+        );
+
+    mix-blend-mode:soft-light;
+}
+
+/* ================================
+   TRÁI
+================================ */
+
+#curtainTransition .curtain-left{
+    left:-3%;
+
+    transform-origin:left center;
+
+    border-radius:
+        0
+        35% 35%
+        0;
+}
+
+/* ================================
+   PHẢI
+================================ */
+
+#curtainTransition .curtain-right{
+    right:-3%;
+
+    transform-origin:right center;
+
+    border-radius:
+        35% 0
+        0 35%;
 }
 
 
 /* =========================================
-   🎭 RÈM TRÁI
+   🌊 RÈM TRÁI
+   KÉO → CONG VÀO → LƯỢN S → GIÓ HẤT RA
 ========================================= */
 
-#curtainTransition .curtain-left {
-    left: -2%;
-    transform-origin: left center;
+#curtainTransition.open .curtain-left{
+    animation:
+        curtainLeftWind
+        1.9s
+        cubic-bezier(.18,.75,.25,1)
+        forwards;
 }
 
+@keyframes curtainLeftWind{
 
-/* =========================================
-   🎭 RÈM PHẢI
-========================================= */
-
-#curtainTransition .curtain-right {
-    right: -2%;
-    transform-origin: right center;
-}
-
-
-/* =========================================
-   🌬️ TRÁI:
-   KÉO → UỐN VÀO → CUỘN → BAY RA
-========================================= */
-
-#curtainTransition.open .curtain-left {
-    animation: softCurtainLeft 1.8s forwards;
-}
-
-@keyframes softCurtainLeft {
-
-    /* 初始 */
-    0% {
+    /* bắt đầu */
+    0%{
         transform:
             translateX(0)
             scaleX(1)
             rotateY(0deg)
+            rotateZ(0deg)
             skewY(0deg);
+
+        border-radius:0;
     }
 
-    /* BẮT ĐẦU KÉO */
-    20% {
+
+    /* kéo nhẹ */
+    15%{
         transform:
-            translateX(-18%)
-            scaleX(.94)
-            rotateY(5deg)
+            translateX(-12%)
+            scaleX(.96)
+            rotateY(4deg)
+            rotateZ(-.5deg)
             skewY(1deg);
+
+        border-radius:
+            0 12% 12% 0;
     }
 
-    /* 🌊 UỐN VÀO TRONG */
-    40% {
+
+    /* =================================
+       🌊 UỐN VÀO TRONG
+       phần giữa bị "thắt"
+    ================================= */
+
+    30%{
         transform:
-            translateX(-38%)
+            translateX(-28%)
             scaleX(.82)
-            rotateY(14deg)
+            rotateY(13deg)
+            rotateZ(-1deg)
             skewY(3deg);
+
+        border-radius:
+            0 28% 22% 0;
     }
 
-    /* 🌊 CUỘN MẠNH HƠN */
-    58% {
+
+    /* =================================
+       🌊 LƯỢN VÀO TRONG
+    ================================= */
+
+    43%{
         transform:
-            translateX(-58%)
-            scaleX(.67)
-            rotateY(23deg)
-            skewY(-3deg);
+            translateX(-40%)
+            scaleX(.70)
+            rotateY(24deg)
+            rotateZ(1.5deg)
+            skewY(-4deg);
+
+        border-radius:
+            0 42% 30% 0;
     }
 
-    /* BẮT ĐẦU BAY RA */
-    75% {
+
+    /* =================================
+       🌊 HẤT NGƯỢC RA
+       tạo cảm giác chữ S
+    ================================= */
+
+    55%{
         transform:
-            translateX(-82%)
-            scaleX(.48)
-            rotateY(12deg)
-            skewY(2deg);
+            translateX(-53%)
+            scaleX(.63)
+            rotateY(17deg)
+            rotateZ(-2deg)
+            skewY(5deg);
+
+        border-radius:
+            0 25% 42% 0;
     }
 
-    /* HẤT RA NGOÀI */
-    90% {
+
+    /* =================================
+       💨 GIÓ ĐẨY RA NGOÀI
+    ================================= */
+
+    68%{
         transform:
-            translateX(-108%)
-            scaleX(.28)
-            rotateY(-8deg)
-            skewY(-1deg);
+            translateX(-70%)
+            scaleX(.51)
+            rotateY(-4deg)
+            rotateZ(2.5deg)
+            skewY(-4deg);
+
+        border-radius:
+            0 48% 20% 0;
     }
 
-    /* BIẾN MẤT */
-    100% {
+
+    /* bay ra */
+    80%{
         transform:
-            translateX(-125%)
-            scaleX(.12)
-            rotateY(0deg)
-            skewY(0deg);
-    }
-}
-
-
-/* =========================================
-   🌬️ PHẢI:
-   KÉO → UỐN VÀO → CUỘN → BAY RA
-========================================= */
-
-#curtainTransition.open .curtain-right {
-    animation: softCurtainRight 1.8s forwards;
-}
-
-@keyframes softCurtainRight {
-
-    0% {
-        transform:
-            translateX(0)
-            scaleX(1)
-            rotateY(0deg)
-            skewY(0deg);
-    }
-
-    20% {
-        transform:
-            translateX(18%)
-            scaleX(.94)
-            rotateY(-5deg)
-            skewY(-1deg);
-    }
-
-    /* 🌊 UỐN VÀO TRONG */
-    40% {
-        transform:
-            translateX(38%)
-            scaleX(.82)
-            rotateY(-14deg)
-            skewY(-3deg);
-    }
-
-    /* 🌊 CUỘN */
-    58% {
-        transform:
-            translateX(58%)
-            scaleX(.67)
-            rotateY(-23deg)
+            translateX(-91%)
+            scaleX(.38)
+            rotateY(-13deg)
+            rotateZ(-2deg)
             skewY(3deg);
+
+        border-radius:
+            0 25% 48% 0;
     }
 
-    /* BAY RA */
-    75% {
+
+    /* mép cuối bị gió hất */
+    91%{
         transform:
-            translateX(82%)
-            scaleX(.48)
-            rotateY(-12deg)
+            translateX(-111%)
+            scaleX(.23)
+            rotateY(9deg)
+            rotateZ(3deg)
             skewY(-2deg);
+
+        border-radius:
+            0 55% 15% 0;
     }
 
-    /* HẤT RA NGOÀI */
-    90% {
-        transform:
-            translateX(108%)
-            scaleX(.28)
-            rotateY(8deg)
-            skewY(1deg);
-    }
 
-    /* BIẾN MẤT */
-    100% {
+    /* biến mất */
+    100%{
         transform:
-            translateX(125%)
-            scaleX(.12)
+            translateX(-130%)
+            scaleX(.08)
             rotateY(0deg)
+            rotateZ(0deg)
             skewY(0deg);
+
+        border-radius:0;
     }
 }
+
+
+/* =========================================
+   🌊 RÈM PHẢI
+========================================= */
+
+#curtainTransition.open .curtain-right{
+    animation:
+        curtainRightWind
+        1.9s
+        cubic-bezier(.18,.75,.25,1)
+        forwards;
+}
+
+@keyframes curtainRightWind{
+
+    0%{
+        transform:
+            translateX(0)
+            scaleX(1)
+            rotateY(0deg)
+            rotateZ(0deg)
+            skewY(0deg);
+
+        border-radius:0;
+    }
+
+
+    15%{
+        transform:
+            translateX(12%)
+            scaleX(.96)
+            rotateY(-4deg)
+            rotateZ(.5deg)
+            skewY(-1deg);
+
+        border-radius:
+            12% 0 0 12%;
+    }
+
+
+    /* 🌊 cong vào */
+    30%{
+        transform:
+            translateX(28%)
+            scaleX(.82)
+            rotateY(-13deg)
+            rotateZ(1deg)
+            skewY(-3deg);
+
+        border-radius:
+            28% 0 0 22%;
+    }
+
+
+    /* 🌊 lượn vào */
+    43%{
+        transform:
+            translateX(40%)
+            scaleX(.70)
+            rotateY(-24deg)
+            rotateZ(-1.5deg)
+            skewY(4deg);
+
+        border-radius:
+            42% 0 0 30%;
+    }
+
+
+    /* 🌊 hất ngược */
+    55%{
+        transform:
+            translateX(53%)
+            scaleX(.63)
+            rotateY(-17deg)
+            rotateZ(2deg)
+            skewY(-5deg);
+
+        border-radius:
+            25% 0 0 42%;
+    }
+
+
+    /* 💨 gió */
+    68%{
+        transform:
+            translateX(70%)
+            scaleX(.51)
+            rotateY(4deg)
+            rotateZ(-2.5deg)
+            skewY(4deg);
+
+        border-radius:
+            48% 0 0 20%;
+    }
+
+
+    /* bay */
+    80%{
+        transform:
+            translateX(91%)
+            scaleX(.38)
+            rotateY(13deg)
+            rotateZ(2deg)
+            skewY(-3deg);
+
+        border-radius:
+            25% 0 0 48%;
+    }
+
+
+    /* mép cuối */
+    91%{
+        transform:
+            translateX(111%)
+            scaleX(.23)
+            rotateY(-9deg)
+            rotateZ(-3deg)
+            skewY(2deg);
+
+        border-radius:
+            55% 0 0 15%;
+    }
+
+
+    100%{
+        transform:
+            translateX(130%)
+            scaleX(.08)
+            rotateY(0deg)
+            rotateZ(0deg)
+            skewY(0deg);
+
+        border-radius:0;
+    }
+}
+
