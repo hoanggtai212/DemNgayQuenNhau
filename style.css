@@ -1658,15 +1658,15 @@ html{
 }
 
 /* =====================================================
-   💕 NÚT CLICK ME
+   💕 NÚT CLICK ME - ĐỒNG BỘ VỚI NÚT BẮT ĐẦU
 ===================================================== */
 
 #clickMe{
     position:relative;
 
-    margin-top:20px;
+    margin-top:26px;
 
-    padding:8px 28px;
+    padding:13px 30px;
 
     border:none;
     border-radius:50px;
@@ -1681,14 +1681,15 @@ html{
     color:white;
 
     font-family:'Poppins',sans-serif;
-
-    font-size:12px;
+    font-size:14px;
     font-weight:700;
+
+    letter-spacing:.3px;
 
     cursor:pointer;
 
     box-shadow:
-        0 8px 20px rgba(240,98,134,.35),
+        0 8px 25px rgba(240,98,134,.35),
         inset 0 1px 0 rgba(255,255,255,.4);
 
     z-index:2;
@@ -1702,16 +1703,23 @@ html{
         successButtonFloat 2.5s 1.1s ease-in-out infinite;
 }
 
+
+/* ✨ Hover */
 #clickMe:hover{
-    transform:translateY(-3px) scale(1.05);
+    transform:translateY(-3px) scale(1.04);
 
     box-shadow:
-        0 12px 28px rgba(240,98,134,.45),
-        0 0 20px rgba(255,120,165,.25);
+        0 12px 30px rgba(240,98,134,.45),
+        0 0 20px rgba(255,120,165,.2);
 }
 
+
+/* 💗 Click */
 #clickMe:active{
     transform:scale(.94);
+
+    box-shadow:
+        0 5px 15px rgba(240,98,134,.3);
 }
 
 
@@ -1842,7 +1850,8 @@ html{
     }
 
     #clickMe{
-        padding:8px 26px;
+            padding:12px 27px;
+            font-size:13px;
     }
 }
 
