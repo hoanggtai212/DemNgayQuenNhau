@@ -397,11 +397,10 @@ function showLoveSuccess() {
     const heart2 = document.getElementById("heart2");
     const heart3 = document.getElementById("heart3");
 
-    const successFill =
-        document.querySelector(".success-fill");
-
-    const successPercent =
-        document.getElementById("successPercent");
+    const successFill = document.querySelector(".success-fill");
+    const successPercent = document.getElementById("successPercent");
+    const successTitle = document.querySelector(".success-title");
+    const clickMe = document.getElementById("clickMe");
 
     if (!successFill) return;
 
@@ -413,70 +412,107 @@ function showLoveSuccess() {
 
     successFill.style.width = "0%";
 
-    if(successPercent){
+    if (successPercent) {
         successPercent.textContent = "0%";
     }
 
-    heart1.classList.remove("heart-active");
-    heart2.classList.remove("heart-active");
-    heart3.classList.remove("heart-active");
+    [heart1, heart2, heart3].forEach(heart => {
+        if (heart) {
+            heart.classList.remove("heart-active");
+        }
+    });
 
+    if (successTitle) {
+        successTitle.classList.remove("show");
+        successTitle.style.opacity = "0";
+        successTitle.style.visibility = "hidden";
+    }
+
+    if (clickMe) {
+        clickMe.classList.remove("show");
+        clickMe.style.display = "none";
+        clickMe.style.opacity = "0";
+        clickMe.style.visibility = "hidden";
+        clickMe.style.pointerEvents = "none";
+    }
 
     // =========================
-    // CHẠY THANH %
+    // CHẠY 0% → 100%
     // =========================
 
     const timer = setInterval(() => {
 
         progress++;
 
+        // THANH %
         successFill.style.width = progress + "%";
 
-        if(successPercent){
+        if (successPercent) {
             successPercent.textContent = progress + "%";
         }
 
-
         // =========================
-        // 20% → TIM 1
+        // 20% → TIM 1 SÁNG
         // =========================
 
-        if(progress === 20){
+        if (progress === 20 && heart1) {
             heart1.classList.add("heart-active");
         }
 
-
         // =========================
-        // 50% → TIM 2
+        // 50% → TIM 2 SÁNG
         // =========================
 
-        if(progress === 50){
+        if (progress === 50 && heart2) {
             heart2.classList.add("heart-active");
         }
 
-
         // =========================
-        // 80% → TIM 3
+        // 80% → TIM 3 SÁNG
         // =========================
 
-        if(progress === 80){
+        if (progress === 80 && heart3) {
             heart3.classList.add("heart-active");
         }
-
 
         // =========================
         // 100%
         // =========================
 
-        if(progress >= 100){
+        if (progress >= 100) {
 
             clearInterval(timer);
 
+            progress = 100;
+
             successFill.style.width = "100%";
 
-            if(successPercent){
+            if (successPercent) {
                 successPercent.textContent = "100%";
             }
+
+            // Chờ thanh chạy xong rồi mới hiện chữ
+            setTimeout(() => {
+
+                // OK RỒI ĐÓ
+                if (successTitle) {
+                    successTitle.style.visibility = "visible";
+                    successTitle.classList.add("show");
+                }
+
+                // CLICK HERE
+                if (clickMe) {
+
+                    clickMe.style.display = "block";
+                    clickMe.style.visibility = "visible";
+                    clickMe.style.pointerEvents = "auto";
+
+                    requestAnimationFrame(() => {
+                        clickMe.classList.add("show");
+                    });
+                }
+
+            }, 300);
         }
 
     }, 20);
