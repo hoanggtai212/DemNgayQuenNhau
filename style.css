@@ -1557,88 +1557,69 @@ html{
 
 .success-box{
     position:relative;
-
     width:100%;
     max-width:340px;
     height:22px;
 
     padding:3px;
 
-    border:none;
+    border:1.5px solid rgba(255,255,255,.8);
     border-radius:50px;
 
-    background:rgba(255,255,255,.65);
+    background:rgba(255,255,255,.72);
 
     box-shadow:
         inset 0 2px 5px rgba(160,70,105,.12),
-        0 5px 20px rgba(220,100,145,.12);
+        0 5px 20px rgba(220,100,145,.15);
 
     overflow:hidden;
-
     z-index:2;
 }
 
-
-/* thanh hồng đầy */
-
 .success-fill{
     position:relative;
-
-    left:auto;
-    top:auto;
-
-    width:0%;
+    width:100%;
     height:100%;
 
     border-radius:50px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ff9fbd,
-            #ff6f9f,
-            #ff4f81
-        );
+    background:linear-gradient(
+        90deg,
+        #ff9fbd,
+        #ff6f9f,
+        #ff4f81
+    );
 
     box-shadow:
-        0 0 12px rgba(255,79,129,.55);
+        0 0 12px rgba(255,79,129,.55),
+        0 0 25px rgba(255,79,129,.25);
 
     transform-origin:left;
-
-    animation:successFill .8s ease forwards;
+    animation:successFill 1.8s ease-in-out forwards;
 }
-
-
-/* ánh sáng chạy ngang */
 
 .success-fill::after{
     content:"";
 
     position:absolute;
-
     top:0;
     left:-80px;
 
     width:80px;
     height:100%;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.8),
-            transparent
-        );
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
 
-    animation:successShine 1.3s linear infinite;
+    animation:successShine 1.5s linear infinite;
 }
-
-
-/* chữ */
 
 .success-text{
     position:absolute;
-
     inset:0;
 
     display:flex;
@@ -1648,9 +1629,7 @@ html{
     z-index:5;
 
     color:#fff;
-
     font-family:'Poppins',sans-serif;
-
     font-size:12px;
     font-weight:700;
 
@@ -1658,6 +1637,15 @@ html{
         0 1px 3px rgba(150,40,80,.35);
 }
 
+@keyframes successFill{
+    from{
+        transform:scaleX(0);
+    }
+
+    to{
+        transform:scaleX(1);
+    }
+}
 
 /* =====================================================
    💕 NÚT CLICK ME
