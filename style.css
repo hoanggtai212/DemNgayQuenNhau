@@ -1582,13 +1582,13 @@ html{
 /* thanh hồng đầy */
 
 .success-fill{
-    position:absolute;
+    position:relative;
 
-    left:3px;
-    top:3px;
+    left:auto;
+    top:auto;
 
-    width:calc(100% - 6px);
-    height:calc(100% - 6px);
+    width:0%;
+    height:100%;
 
     border-radius:50px;
 
@@ -1604,6 +1604,7 @@ html{
         0 0 12px rgba(255,79,129,.55);
 
     transform-origin:left;
+
     animation:successFill .8s ease forwards;
 }
 
