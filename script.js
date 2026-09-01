@@ -520,11 +520,31 @@ document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
 document.getElementById("clickMe");
 if(clickMe){
-clickMe.addEventListener("click",()=>{
-document.getElementById(
-"loveSuccess"
-).style.display = "none";
-showAlbum();
+```javascript
+clickMe.addEventListener("click", () => {
+
+    const successPage = document.getElementById("loveSuccess");
+    const curtain = document.getElementById("curtainTransition");
+
+    // Ẩn màn SUCCESS
+    successPage.style.display = "none";
+
+    // Hiện rèm
+    curtain.style.display = "block";
+
+    // Mở sẵn trang album ở phía sau rèm
+    showAlbum();
+
+    // Một chút delay để tạo cảm giác rèm đang chuẩn bị mở
+    setTimeout(() => {
+        curtain.classList.add("open");
+    }, 300);
+
+    // Sau khi rèm mở xong thì xóa rèm
+    setTimeout(() => {
+        curtain.style.display = "none";
+        curtain.classList.remove("open");
+    }, 2100);
 });
 }
 const message =
