@@ -1111,7 +1111,10 @@ MOBILE
         transform .25s ease,
         box-shadow .25s ease;
 
-    animation:buttonFloat 2.5s ease-in-out infinite;
+    /* HIỆU ỨNG XUẤT HIỆN GIỐNG CLICK ME */
+    animation:
+        successButtonIn .7s .1s both,
+        successButtonFloat 2.5s .8s ease-in-out infinite;
 }
 
 #startLoveBtn:hover{
@@ -1125,7 +1128,6 @@ MOBILE
 #startLoveBtn:active{
     transform:scale(.94);
 }
-
 
 /* =====================================================
    ANIMATIONS
