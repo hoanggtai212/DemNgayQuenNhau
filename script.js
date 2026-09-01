@@ -77,19 +77,15 @@ function showLoadingLove(){
 
     const startBtn = document.getElementById("startLoveBtn");
 
-    // =========================
     // RESET
-    // =========================
-
     fill.style.width = "0%";
     text.textContent = "0%";
 
-    // Ẩn nút Bắt đầu khi loading
     if(startBtn){
         startBtn.style.display = "none";
+        startBtn.classList.remove("show");
     }
 
-    // Reset 3 tim
     hearts.forEach(heart => {
         heart.classList.remove("heart-active");
         heart.style.animationPlayState = "running";
@@ -103,46 +99,68 @@ function showLoadingLove(){
 
         progress++;
 
+        // Thanh %
         fill.style.width = progress + "%";
         text.textContent = progress + "%";
 
-        // Tim 1 sáng ở 20%
-        if(progress >= 20){
+
+        // =========================
+        // 20% → TIM 1
+        // =========================
+
+        if(progress === 20){
             hearts[0].classList.add("heart-active");
         }
 
-        // Tim 2 sáng ở 50%
-        if(progress >= 50){
+
+        // =========================
+        // 50% → TIM 2
+        // =========================
+
+        if(progress === 50){
             hearts[1].classList.add("heart-active");
         }
 
-        // Tim 3 sáng ở 80%
-        if(progress >= 80){
+
+        // =========================
+        // 80% → TIM 3
+        // =========================
+
+        if(progress === 80){
             hearts[2].classList.add("heart-active");
         }
 
+
         // =========================
-        // ĐẠT 100%
+        // 100%
         // =========================
 
-if(progress >= 100){
+        if(progress >= 100){
 
-    clearInterval(timer);
+            clearInterval(timer);
 
-    fill.style.width = "100%";
-    text.textContent = "100%";
+            fill.style.width = "100%";
+            text.textContent = "100%";
 
-    if(startBtn){
-        startBtn.style.display = "block";
+            // Hiện nút sau khi loading xong
+            setTimeout(() => {
 
-        requestAnimationFrame(() => {
-            startBtn.classList.add("show");
-        });
-    }
-}
+                if(startBtn){
+
+                    startBtn.style.display = "block";
+
+                    requestAnimationFrame(() => {
+                        startBtn.classList.add("show");
+                    });
+
+                }
+
+            }, 300);
+        }
 
     }, 30);
 }
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const startBtn = document.getElementById("startLoveBtn");
@@ -159,38 +177,34 @@ startBtn.addEventListener("click", () => {
         document.getElementById("loadingHeart3")
     ];
 
-    // =========================
-    // BẤM "BẮT ĐẦU"
-    // =========================
-
-    // Cho tim tiếp tục hoạt động
     hearts.forEach(heart => {
         heart.style.animationPlayState = "running";
     });
 
-    // Nút biến mất MƯỢT
     startBtn.classList.add("button-click-out");
 
-    // Cho tim nhảy một chút
     setTimeout(() => {
 
-        // Khung loading bắt đầu chuyển cảnh
+        // Loading bắt đầu fade out
         loading.classList.add("loading-transition-out");
 
-        // Chuẩn bị Success
+        // Hiện SUCCESS
         const success = document.getElementById("loveSuccess");
 
         success.style.display = "flex";
         success.classList.add("success-transition-in");
 
-        // Đợi loading biến mất
+        // ⬇️ Đợi đúng thời gian FADE-IN xong
+        // rồi chạy thanh %
+        setTimeout(() => {
+            showLoveSuccess();
+        }, 1200);
+
+        // Xóa loading sau
         setTimeout(() => {
 
             loading.style.display = "none";
             loading.classList.remove("loading-transition-out");
-
-            // Chạy hiệu ứng Success
-            showLoveSuccess();
 
         }, 1800);
 
@@ -383,20 +397,23 @@ function showLoveSuccess() {
     const heart2 = document.getElementById("heart2");
     const heart3 = document.getElementById("heart3");
 
-    const successFill = document.querySelector(".success-fill");
-    const successPercent = document.getElementById("successPercent");
+    const successFill =
+        document.querySelector(".success-fill");
+
+    const successPercent =
+        document.getElementById("successPercent");
 
     if (!successFill) return;
+
+    let progress = 0;
 
     // =========================
     // RESET
     // =========================
 
-    let progress = 0;
-
     successFill.style.width = "0%";
 
-    if (successPercent) {
+    if(successPercent){
         successPercent.textContent = "0%";
     }
 
@@ -406,45 +423,63 @@ function showLoveSuccess() {
 
 
     // =========================
-    // SUCCESS CHẠY NHANH
+    // CHẠY THANH %
     // =========================
+
     const timer = setInterval(() => {
+
         progress++;
-        // Thanh chạy theo %
+
         successFill.style.width = progress + "%";
-        // Hiển thị %
-        if (successPercent) {
+
+        if(successPercent){
             successPercent.textContent = progress + "%";
         }
+
+
         // =========================
         // 20% → TIM 1
         // =========================
-        if (progress >= 20) {
+
+        if(progress === 20){
             heart1.classList.add("heart-active");
         }
+
+
         // =========================
         // 50% → TIM 2
         // =========================
-        if (progress >= 50) {
+
+        if(progress === 50){
             heart2.classList.add("heart-active");
         }
+
+
         // =========================
         // 80% → TIM 3
         // =========================
-        if (progress >= 80) {
+
+        if(progress === 80){
             heart3.classList.add("heart-active");
         }
+
+
         // =========================
         // 100%
         // =========================
-        if (progress >= 100) {
+
+        if(progress >= 100){
+
             clearInterval(timer);
+
             successFill.style.width = "100%";
-            if (successPercent) {
+
+            if(successPercent){
                 successPercent.textContent = "100%";
             }
         }
-    }, 12);
+
+    }, 20);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
