@@ -538,10 +538,10 @@ function showLoveSuccess() {
                     });
                 }
 
-            }, 300);
+            }, 600);
         }
 
-    }, 20);
+    }, 30);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
