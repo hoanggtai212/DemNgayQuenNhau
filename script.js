@@ -196,9 +196,7 @@ startBtn.addEventListener("click", () => {
 
         // ⬇️ Đợi đúng thời gian FADE-IN xong
         // rồi chạy thanh %
-        setTimeout(() => {
-            showLoveSuccess();
-        }, 1200);
+        showLoveSuccess();
 
         // Xóa loading sau
         setTimeout(() => {
