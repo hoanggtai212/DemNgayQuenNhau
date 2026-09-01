@@ -1493,8 +1493,12 @@ html{
 .heart-center{
     left:50%;
     top:-5px;
-
+    width:58px;
+    height:58px;
     transform:translateX(-50%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 
