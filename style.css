@@ -1521,6 +1521,22 @@ html{
     animation:successHeartBeatCenter 1.25s ease-in-out infinite;
 }
 
+.heart-right.heart-active{
+    opacity:1;
+
+    transform:scale(1.25);
+
+    filter:none;
+
+    color:#ff4f81;
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+
+    animation:successHeartBeat 1.25s ease-in-out infinite;
+}
 
 /* =====================================================
    🌸 TIM THỨ 3 MỜ
