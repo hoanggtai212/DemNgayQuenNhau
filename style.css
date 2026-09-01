@@ -1113,8 +1113,8 @@ MOBILE
 
     /* HIỆU ỨNG XUẤT HIỆN GIỐNG CLICK ME */
     animation:
-        successButtonIn .7s .1s both,
-        successButtonFloat 2.5s .8s ease-in-out infinite;
+        successButtonIn .7s .4s both,
+        successButtonFloat 2.5s 1.1s ease-in-out infinite;
 }
 
 #startLoveBtn:hover{
