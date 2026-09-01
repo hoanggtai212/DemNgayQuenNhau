@@ -384,39 +384,67 @@ function showLoveSuccess() {
     const heart3 = document.getElementById("heart3");
 
     const successFill = document.querySelector(".success-fill");
+    const successPercent = document.getElementById("successPercent");
 
-    // RESET TIM
+    if (!successFill) return;
+
+    // =========================
+    // RESET
+    // =========================
+
+    let progress = 0;
+
+    successFill.style.width = "0%";
+
+    if (successPercent) {
+        successPercent.textContent = "0%";
+    }
+
     heart1.classList.remove("heart-active");
     heart2.classList.remove("heart-active");
     heart3.classList.remove("heart-active");
 
-    // Nếu không tìm thấy thanh Success thì dừng
-    if (!successFill) return;
-
-    // Lấy thời gian animation của chính thanh Success
-    const style = getComputedStyle(successFill);
-    let duration = parseFloat(style.animationDuration) * 1000;
-
-    // Nếu animation-duration không lấy được
-    if (!duration || isNaN(duration)) {
-        duration = 1800;
-    }
 
     // =========================
-    // TIM SÁNG THEO % THANH SUCCESS
+    // SUCCESS CHẠY NHANH
     // =========================
-
-    setTimeout(() => {
-        heart1.classList.add("heart-active");
-    }, duration * 0.20);
-
-    setTimeout(() => {
-        heart2.classList.add("heart-active");
-    }, duration * 0.50);
-
-    setTimeout(() => {
-        heart3.classList.add("heart-active");
-    }, duration * 0.80);
+    const timer = setInterval(() => {
+        progress++;
+        // Thanh chạy theo %
+        successFill.style.width = progress + "%";
+        // Hiển thị %
+        if (successPercent) {
+            successPercent.textContent = progress + "%";
+        }
+        // =========================
+        // 20% → TIM 1
+        // =========================
+        if (progress >= 20) {
+            heart1.classList.add("heart-active");
+        }
+        // =========================
+        // 50% → TIM 2
+        // =========================
+        if (progress >= 50) {
+            heart2.classList.add("heart-active");
+        }
+        // =========================
+        // 80% → TIM 3
+        // =========================
+        if (progress >= 80) {
+            heart3.classList.add("heart-active");
+        }
+        // =========================
+        // 100%
+        // =========================
+        if (progress >= 100) {
+            clearInterval(timer);
+            successFill.style.width = "100%";
+            if (successPercent) {
+                successPercent.textContent = "100%";
+            }
+        }
+    }, 12);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
