@@ -36,16 +36,44 @@ function showPassword() {
         document.getElementById("counterPage");
     const passwordPage =
         document.getElementById("passwordPage");
-    counterPage.classList.add("fade-out");
+    const curtain =
+        document.getElementById("curtainTransition");
+    /* =================================
+       1. HIỆN RÈM
+    ================================= */
+    curtain.style.display = "block";
+    /* Đảm bảo rèm đang đóng */
+    curtain.classList.remove("open");
+    /* Không cho bấm lung tung lúc chuyển */
+    curtain.style.pointerEvents = "auto";
+    /* =================================
+       2. SAU KHI RÈM ĐÓNG
+          → HIỆN KHUNG PASSWORD PHÍA SAU
+    ================================= */
     setTimeout(() => {
         counterPage.style.display = "none";
         passwordPage.style.display = "flex";
-        passwordPage.classList.add("fade-in");
-        // RESET LED KHI MỞ TRANG
+        passwordPage.classList.remove("fade-in");
         setRunningTextInfinite(
             "💗 ENTER PASSWORD 💗"
         );
-    }, 600);
+        /* =================================
+           3. MỞ RÈM
+        ================================= */
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                curtain.classList.add("open");
+            });
+        });
+    }, 300);
+    /* =================================
+       4. RÈM MỞ XONG → ẨN RÈM
+    ================================= */
+    setTimeout(() => {
+        curtain.style.display = "none";
+        curtain.classList.remove("open");
+        curtain.style.pointerEvents = "none";
+    }, 1900);
 }
 function showAlbum() {
 document.getElementById("passwordPage").style.display = "none";
