@@ -1903,12 +1903,10 @@ html{
    💗 CHUYỂN CẢNH: LOADING → SUCCESS
 ===================================================== */
 
-/* Loading biến mất */
-.loading-transition-out {
-    animation: loadingToSuccess .8s cubic-bezier(.22,1,.36,1) forwards;
+.loading-transition-out { 
+    animation: loadingToSuccess 1s cubic-bezier(.22,1,.36,1) forwards; 
 }
 
-/* Success xuất hiện */
 .success-transition-in { 
     animation: successFromLoading 1s cubic-bezier(.22,1,.36,1) forwards; 
 }
