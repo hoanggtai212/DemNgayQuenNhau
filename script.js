@@ -290,9 +290,32 @@ function showUnlockAnimation() {
     }, 3000);
 }
 function showLoveSuccess(){
-document.getElementById(
-"loveSuccess"
-).style.display = "flex";
+
+    const success = document.getElementById("loveSuccess");
+
+    const heart1 = document.getElementById("heart1");
+    const heart2 = document.getElementById("heart2");
+    const heart3 = document.getElementById("heart3");
+
+    // Hiện màn Success
+    success.style.display = "flex";
+
+    // Reset trạng thái tim
+    heart1.classList.remove("heart-active");
+    heart2.classList.remove("heart-active");
+    heart3.classList.remove("heart-active");
+
+    // 💗 Tim 1 sáng trước
+    setTimeout(() => {
+        heart1.classList.add("heart-active");
+    }, 150);
+
+    // 💗 Tim 2 sáng sau
+    setTimeout(() => {
+        heart2.classList.add("heart-active");
+    }, 350);
+
+    // 💗 Tim 3 vẫn mờ
 }
 document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
