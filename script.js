@@ -377,37 +377,46 @@ function showUnlockAnimation() {
     }, 3000);
 }
 
-function showLoveSuccess(){   
+function showLoveSuccess() {
 
-    const success = document.getElementById("loveSuccess");   
+    const heart1 = document.getElementById("heart1");
+    const heart2 = document.getElementById("heart2");
+    const heart3 = document.getElementById("heart3");
 
-    const heart1 = document.getElementById("heart1");   
-    const heart2 = document.getElementById("heart2");   
-    const heart3 = document.getElementById("heart3");   
+    const successFill = document.querySelector(".success-fill");
 
-    // Reset 3 tim
-    heart1.classList.remove("heart-active");   
-    heart2.classList.remove("heart-active");   
-    heart3.classList.remove("heart-active");   
+    // RESET TIM
+    heart1.classList.remove("heart-active");
+    heart2.classList.remove("heart-active");
+    heart3.classList.remove("heart-active");
 
-    // =====================================
-    // SUCCESS: TIM SÁNG THEO 20% - 50% - 80%
-    // =====================================
+    // Nếu không tìm thấy thanh Success thì dừng
+    if (!successFill) return;
 
-    // 20% → tim trái
-    setTimeout(() => {   
-        heart1.classList.add("heart-active");   
-    }, 360);
+    // Lấy thời gian animation của chính thanh Success
+    const style = getComputedStyle(successFill);
+    let duration = parseFloat(style.animationDuration) * 1000;
 
-    // 50% → tim giữa
-    setTimeout(() => {   
-        heart2.classList.add("heart-active");   
-    }, 900);
+    // Nếu animation-duration không lấy được
+    if (!duration || isNaN(duration)) {
+        duration = 1800;
+    }
 
-    // 80% → tim phải
-    setTimeout(() => {   
-        heart3.classList.add("heart-active");   
-    }, 1440);
+    // =========================
+    // TIM SÁNG THEO % THANH SUCCESS
+    // =========================
+
+    setTimeout(() => {
+        heart1.classList.add("heart-active");
+    }, duration * 0.20);
+
+    setTimeout(() => {
+        heart2.classList.add("heart-active");
+    }, duration * 0.50);
+
+    setTimeout(() => {
+        heart3.classList.add("heart-active");
+    }, duration * 0.80);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
