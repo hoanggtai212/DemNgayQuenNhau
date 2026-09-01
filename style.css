@@ -809,7 +809,7 @@ MOBILE
 
 
 /* =====================================================
-   3 TRÁI TIM
+   💗 3 TRÁI TIM LOADING
 ===================================================== */
 
 .loading-heart-group{
@@ -819,20 +819,15 @@ MOBILE
     margin-bottom:10px;
 }
 
+/* Vị trí 3 tim */
 .loading-heart-left,
 .loading-heart-center,
 .loading-heart-right{
     position:absolute;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    width:58px;
-    height:58px;
-
     font-size:43px;
-
     opacity:.28;
     filter:grayscale(.1);
 
@@ -843,6 +838,101 @@ MOBILE
         text-shadow .5s ease;
 }
 
+/* Tim trái */
+.loading-heart-left{
+    left:0;
+    top:5px;
+}
+
+/* Tim giữa */
+.loading-heart-center{
+    left:50%;
+    top:-5px;
+    transform:translateX(-50%);
+}
+
+/* Tim phải */
+.loading-heart-right{
+    right:0;
+    top:5px;
+}
+
+/* =====================================================
+   💗 TIM ĐANG SÁNG
+===================================================== */
+
+.loading-heart-left.heart-active{
+    opacity:1;
+    color:#ff4f81;
+    filter:none;
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+
+    animation:heartBeatLeft 1.25s ease-in-out infinite;
+}
+
+.loading-heart-center.heart-active{
+    opacity:1;
+    color:#ff4f81;
+    filter:none;
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+
+    animation:heartBeatCenter 1.25s ease-in-out infinite;
+}
+
+.loading-heart-right.heart-active{
+    opacity:1;
+    color:#ff4f81;
+    filter:none;
+
+    text-shadow:
+        0 0 8px rgba(255,105,160,.6),
+        0 0 20px rgba(255,105,160,.5),
+        0 0 40px rgba(255,105,160,.3);
+
+    animation:heartBeatRight 1.25s ease-in-out infinite;
+}
+
+/* =====================================================
+   💓 ANIMATION
+===================================================== */
+
+@keyframes heartBeatLeft{
+    0%,100%{
+        transform:scale(1.18);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+}
+
+@keyframes heartBeatCenter{
+    0%,100%{
+        transform:translateX(-50%) scale(1.18);
+    }
+
+    50%{
+        transform:translateX(-50%) scale(1.3);
+    }
+}
+
+@keyframes heartBeatRight{
+    0%,100%{
+        transform:scale(1.18);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+}
 
 /* vị trí */
 
@@ -860,51 +950,6 @@ MOBILE
 .loading-heart-right{
     right:0;
     top:5px;
-}
-
-
-/* trái tim đang sáng */
-
-.loading-heart-left.heart-active{
-    opacity:1;
-    transform:scale(1.18);
-
-    filter:none;
-
-    text-shadow:
-        0 0 8px rgba(255,105,160,.6),
-        0 0 20px rgba(255,105,160,.5),
-        0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeat 1.25s ease-in-out infinite;
-}
-
-.loading-heart-center.heart-active{
-    opacity:1;
-    color:#ff4f81;
-
-    filter:none;
-
-    text-shadow:
-        0 0 8px rgba(255,105,160,.6),
-        0 0 20px rgba(255,105,160,.5),
-        0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeat 1.25s ease-in-out infinite;
-}
-
-.loading-heart-right.heart-active{
-    opacity:1;
-    transform:scale(1.18);
-
-    filter:none;
-
-    text-shadow:
-        0 0 8px rgba(255,105,160,.6),
-        0 0 20px rgba(255,105,160,.5),
-        0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeat 1.25s ease-in-out infinite;
 }
 
 
@@ -1123,17 +1168,6 @@ MOBILE
 }
 
 
-@keyframes heartBeat{
-    0%,100%{
-        transform:translateX(-50%) scale(1.18);
-    }
-
-    50%{
-        transform:translateX(-50%) scale(1.3);
-    }
-}
-
-
 @keyframes titleGlow{
     0%,100%{
         opacity:.8;
@@ -1262,27 +1296,6 @@ MOBILE
         transform: scale(1);
         filter: blur(0);
     }
-}
-
-.loading-heart-left.heart-active {
-    opacity: 1;
-    transform: scale(1.25);
-    color: #ff4f81;
-    text-shadow: 0 0 12px #ff7aa2;
-}
-
-.loading-heart-center.heart-active {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.25);
-    color: #ff4f81;
-    text-shadow: 0 0 12px #ff7aa2;
-}
-
-.loading-heart-right.heart-active {
-    opacity: 1;
-    transform: scale(1.25);
-    color: #ff4f81;
-    text-shadow: 0 0 12px #ff7aa2;
 }
 
 html{
@@ -1529,17 +1542,22 @@ html{
 .success-box{
     position:relative;
 
-    width:300px;
-    height:32px;
+    width:100%;
+    max-width:340px;
+    height:18px;
 
-    overflow:hidden;
+    padding:3px;
 
-    border:3px solid #444;
+    border:none;
+    border-radius:50px;
 
-    background:#fff;
+    background:rgba(255,255,255,.65);
 
     box-shadow:
-        0 5px 15px rgba(210,90,125,.15);
+        inset 0 2px 5px rgba(160,70,105,.12),
+        0 5px 20px rgba(220,100,145,.12);
+
+    overflow:hidden;
 
     z-index:2;
 }
@@ -1550,11 +1568,13 @@ html{
 .success-fill{
     position:absolute;
 
-    left:0;
-    top:0;
+    left:3px;
+    top:3px;
 
-    width:100%;
-    height:100%;
+    width:calc(100% - 6px);
+    height:calc(100% - 6px);
+
+    border-radius:50px;
 
     background:
         linear-gradient(
@@ -1568,7 +1588,6 @@ html{
         0 0 12px rgba(255,79,129,.55);
 
     transform-origin:left;
-
     animation:successFill .8s ease forwards;
 }
 
