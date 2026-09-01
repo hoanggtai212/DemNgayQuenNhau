@@ -320,13 +320,13 @@ if (actionTimer) {
 }
 document.getElementById("display").value = "";
 const checkingTime = setRunningText(
-    "💗 ĐANG KIỂM TRA TÌNH YÊU... 💗",
+    "💗 ĐANG KỂM TRA TỀNH ÊU... 💗",
     "#ffb300"
 );
 checkTimer = setTimeout(() => {
-    if (password === "0000") {
+    if (password === "0") {
         const successTime = setRunningText(
-            "💗 ĐÚNG RÙI NÈ 💗",
+            "💗 ĐÚM RÙI NÈ 💗",
             "#00cc66"
         );
         actionTimer = setTimeout(() => {
