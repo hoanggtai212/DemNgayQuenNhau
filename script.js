@@ -289,34 +289,36 @@ function showUnlockAnimation() {
         showLoadingLove();
     }, 3000);
 }
-function showLoveSuccess(){
+function showLoveSuccess(){ 
+ 
+    const success = document.getElementById("loveSuccess"); 
+ 
+    const heart1 = document.getElementById("heart1"); 
+    const heart2 = document.getElementById("heart2"); 
+    const heart3 = document.getElementById("heart3"); 
+ 
+    success.style.display = "flex"; 
+ 
+    heart1.classList.remove("heart-active"); 
+    heart2.classList.remove("heart-active"); 
+    heart3.classList.remove("heart-active"); 
+ 
+    // Tim 1 sáng
+    setTimeout(() => { 
+        heart1.classList.add("heart-active"); 
+    }, 150); 
+ 
+    // Tim 2 sáng
+    setTimeout(() => { 
+        heart2.classList.add("heart-active"); 
+    }, 350); 
 
-    const success = document.getElementById("loveSuccess");
-
-    const heart1 = document.getElementById("heart1");
-    const heart2 = document.getElementById("heart2");
-    const heart3 = document.getElementById("heart3");
-
-    // Hiện màn Success
-    success.style.display = "flex";
-
-    // Reset trạng thái tim
-    heart1.classList.remove("heart-active");
-    heart2.classList.remove("heart-active");
-    heart3.classList.remove("heart-active");
-
-    // 💗 Tim 1 sáng trước
-    setTimeout(() => {
-        heart1.classList.add("heart-active");
-    }, 150);
-
-    // 💗 Tim 2 sáng sau
-    setTimeout(() => {
-        heart2.classList.add("heart-active");
-    }, 350);
-
-    // 💗 Tim 3 vẫn mờ
+    // Tim 3 sáng
+    setTimeout(() => { 
+        heart3.classList.add("heart-active"); 
+    }, 550); 
 }
+
 document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
 document.getElementById("clickMe");
