@@ -1645,11 +1645,9 @@ html{
         #ff6f9f,
         #ff4f81
     );
-
     box-shadow:
         0 0 12px rgba(255,79,129,.55),
         0 0 25px rgba(255,79,129,.25);
-
     transform-origin:left;
     animation:successFill 1.8s ease-in-out forwards;
 }
