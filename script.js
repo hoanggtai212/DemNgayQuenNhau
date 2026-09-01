@@ -520,11 +520,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const clickMe =
 document.getElementById("clickMe");
 if(clickMe){
-```javascript
-clickMe.addEventListener("click", () => {
-
-    const successPage = document.getElementById("loveSuccess");
-    const curtain = document.getElementById("curtainTransition");
+    clickMe.addEventListener("click", () => {
+        const successPage = document.getElementById("loveSuccess");
+        const curtain = document.getElementById("curtainTransition");
 
     // Ẩn màn SUCCESS
     successPage.style.display = "none";
