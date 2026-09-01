@@ -1904,11 +1904,11 @@ html{
 ===================================================== */
 
 .loading-transition-out { 
-    animation: loadingToSuccess 1s cubic-bezier(.22,1,.36,1) forwards; 
+    animation: loadingToSuccess 1.8s cubic-bezier(.22,1,.36,1) forwards; 
 }
 
 .success-transition-in { 
-    animation: successFromLoading 1s cubic-bezier(.22,1,.36,1) forwards; 
+    animation: successFromLoading 1.8s cubic-bezier(.22,1,.36,1) forwards; 
 }
 
 @keyframes loadingToSuccess {
