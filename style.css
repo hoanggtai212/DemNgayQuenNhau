@@ -1916,7 +1916,7 @@ html{
 
 /* Loading biến mất */
 .loading-transition-out {
-    animation: loadingToSuccess .8s ease forwards;
+    animation: loadingToSuccess .8s cubic-bezier(.22,1,.36,1) forwards;
 }
 
 /* Success xuất hiện */
@@ -1956,4 +1956,35 @@ html{
         transform: scale(1);
         filter: blur(0);
     }
+}
+
+/* =========================================
+   NÚT BẮT ĐẦU - BIẾN MẤT MƯỢT KHI CLICK
+========================================= */
+
+#startLoveBtn.button-click-out{
+    animation: buttonClickOut .45s ease forwards !important;
+    pointer-events:none;
+}
+
+@keyframes buttonClickOut{
+
+    0%{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+
+    45%{
+        opacity:.8;
+        transform:scale(.96);
+        filter:blur(1px);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(.88);
+        filter:blur(5px);
+    }
+
 }
