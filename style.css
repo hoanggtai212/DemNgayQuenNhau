@@ -1881,33 +1881,22 @@ html{
    💗 SUCCESS WRAPPER - GIỐNG HỆT LOADING CARD
 ===================================================== */
 
-.success-wrapper{
-    position:relative;
-
-    width:min(88vw,430px);
-
-    padding:42px 38px 34px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    text-align:center;
-
-    background:rgba(255,255,255,.32);
-
-    border:1px solid rgba(255,255,255,.65);
-
-    border-radius:32px;
-
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-
-    box-shadow:
-        0 25px 70px rgba(190,80,125,.18),
-        inset 0 1px 0 rgba(255,255,255,.8);
-
-    animation:loadingCardIn 1s cubic-bezier(.22,1,.36,1);
+.success-wrapper{ 
+    position:relative; 
+    width:min(88vw,430px); 
+    padding:42px 38px 34px; 
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    text-align:center; 
+    background:rgba(255,255,255,.32); 
+    border:1px solid rgba(255,255,255,.65); 
+    border-radius:32px; 
+    backdrop-filter:blur(22px); 
+    -webkit-backdrop-filter:blur(22px); 
+    box-shadow: 
+        0 25px 70px rgba(190,80,125,.18), 
+        inset 0 1px 0 rgba(255,255,255,.8); 
 }
 
 /* =====================================================
@@ -1920,8 +1909,8 @@ html{
 }
 
 /* Success xuất hiện */
-.success-transition-in {
-    animation: successFromLoading .9s cubic-bezier(.22,1,.36,1) forwards;
+.success-transition-in { 
+    animation: successFromLoading 1s cubic-bezier(.22,1,.36,1) forwards; 
 }
 
 @keyframes loadingToSuccess {
