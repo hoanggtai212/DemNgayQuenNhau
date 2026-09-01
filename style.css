@@ -59,6 +59,7 @@ body {
     width:100%;
     padding: 0 20px;
 }
+
 .avatar-container{
     display:flex;
     flex-direction:column;
