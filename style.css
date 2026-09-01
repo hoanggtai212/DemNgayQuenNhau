@@ -828,14 +828,15 @@ MOBILE
     justify-content:center;
     align-items:center;
     font-size:43px;
-    opacity:.28;
-    filter:grayscale(.1);
-
+    /* TIM CHƯA ĐƯỢC KÍCH HOẠT */
+    opacity:.25;
+    transform:scale(.85);
+    filter:grayscale(.5);
     transition:
-        opacity .5s ease,
-        transform .5s cubic-bezier(.34,1.56,.64,1),
-        filter .5s ease,
-        text-shadow .5s ease;
+        opacity .8s ease,
+        transform .8s cubic-bezier(.34,1.56,.64,1),
+        filter .8s ease,
+        text-shadow .8s ease;
 }
 
 /* Tim trái */
@@ -861,43 +862,24 @@ MOBILE
    💗 TIM ĐANG SÁNG
 ===================================================== */
 
-.loading-heart-left.heart-active{
-    opacity:1;
-    color:#ff4f81;
-    filter:none;
+/* =========================================
+   💗 TIM ĐƯỢC KÍCH HOẠT
+   MỜ → RÕ + PHÓNG NHẸ
+========================================= */
 
-    text-shadow:
-        0 0 8px rgba(255,105,160,.6),
-        0 0 20px rgba(255,105,160,.5),
-        0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeatLeft 1.25s ease-in-out infinite;
-}
-
-.loading-heart-center.heart-active{
-    opacity:1;
-    color:#ff4f81;
-    filter:none;
-
-    text-shadow:
-        0 0 8px rgba(255,105,160,.6),
-        0 0 20px rgba(255,105,160,.5),
-        0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeatCenter 1.25s ease-in-out infinite;
-}
-
+.loading-heart-left.heart-active,
+.loading-heart-center.heart-active,
 .loading-heart-right.heart-active{
     opacity:1;
     color:#ff4f81;
     filter:none;
 
+    transform:scale(1.12);
+
     text-shadow:
         0 0 8px rgba(255,105,160,.6),
         0 0 20px rgba(255,105,160,.5),
         0 0 40px rgba(255,105,160,.3);
-
-    animation:heartBeatRight 1.25s ease-in-out infinite;
 }
 
 /* =====================================================
