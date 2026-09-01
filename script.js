@@ -149,63 +149,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(!startBtn) return;
 
-    startBtn.addEventListener("click", () => {
+startBtn.addEventListener("click", () => {
 
-        const loading = document.getElementById("loveLoading");
+    const loading = document.getElementById("loveLoading");
 
-        const hearts = [
-            document.getElementById("loadingHeart1"),
-            document.getElementById("loadingHeart2"),
-            document.getElementById("loadingHeart3")
-        ];
+    const hearts = [
+        document.getElementById("loadingHeart1"),
+        document.getElementById("loadingHeart2"),
+        document.getElementById("loadingHeart3")
+    ];
 
-        // =========================
-        // BẤM "BẮT ĐẦU"
-        // =========================
+    // =========================
+    // BẤM "BẮT ĐẦU"
+    // =========================
 
-        // Cho 3 tim bắt đầu nhảy
-        hearts.forEach(heart => {
-            heart.style.animationPlayState = "running";
-        });
+    // Cho tim tiếp tục hoạt động
+    hearts.forEach(heart => {
+        heart.style.animationPlayState = "running";
+    });
 
-        // Ẩn nút
-        startBtn.style.display = "none";
+    // Nút biến mất MƯỢT
+    startBtn.classList.add("button-click-out");
 
-        // Cho tim nhảy khoảng 1 giây
-setTimeout(() => {
-
-    // Loading bắt đầu biến mất
-    loading.classList.add("page-out");
-
-    // Chuẩn bị Success ở trạng thái mờ
-    const success = document.getElementById("loveSuccess");
-
-    success.style.display = "flex";
-    success.classList.add("page-in-start");
-
-    // Đợi loading fade-out gần xong
+    // Cho tim nhảy một chút
     setTimeout(() => {
 
-        // Ẩn loading hoàn toàn
-        loading.style.display = "none";
-        loading.classList.remove("page-out");
+        // Khung loading bắt đầu chuyển cảnh
+        loading.classList.add("loading-transition-out");
 
-        // Cho Success fade-in
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                success.classList.remove("page-in-start");
-                success.classList.add("page-in-active");
-            });
-        });
+        // Chuẩn bị Success
+        const success = document.getElementById("loveSuccess");
 
-        // Chạy hiệu ứng Success
-        showLoveSuccess();
+        success.style.display = "flex";
+        success.classList.add("success-transition-in");
 
-    }, 800);
+        // Đợi loading biến mất
+        setTimeout(() => {
 
-}, 1000);
+            loading.style.display = "none";
+            loading.classList.remove("loading-transition-out");
 
-    });
+            // Chạy hiệu ứng Success
+            showLoveSuccess();
+
+        }, 800);
+
+    }, 350);
+
+});
 
 });
 
