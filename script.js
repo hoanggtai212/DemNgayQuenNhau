@@ -58,23 +58,60 @@ function backHome() {
 location.reload();
 }
 function showLoadingLove(){
-document.getElementById("passwordPage").style.display = "none";
-document.getElementById("loveLoading").style.display = "flex";
-let progress = 0;
-const fill = document.getElementById("progressFill");
-const text = document.getElementById("progressPercent");
-const timer = setInterval(() => {
-    progress++;
-    fill.style.width = progress + "%";
-    text.textContent = progress + "%";
-    if (progress >= 100) {
-        clearInterval(timer);
-        setTimeout(() => {
-            document.getElementById("loveLoading").style.display = "none";
-            showLoveSuccess();
-        }, 500);
-    }
-}, 30);
+    document.getElementById("passwordPage").style.display = "none";
+    const loading = document.getElementById("loveLoading");
+    loading.style.display = "flex";
+    let progress = 0;
+    const fill =
+        document.getElementById("progressFill");
+    const text =
+        document.getElementById("progressPercent");
+    const hearts = [
+        document.getElementById("loadingHeart1"),
+        document.getElementById("loadingHeart2"),
+        document.getElementById("loadingHeart3")
+    ];
+    /* reset */
+    fill.style.width = "0%";
+    text.textContent = "0%";
+    hearts.forEach(heart => {
+        heart.classList.remove("heart-active");
+    });
+    const timer = setInterval(() => {
+        progress++;
+        fill.style.width = progress + "%";
+        text.textContent = progress + "%";
+        /* =====================================
+           💗 KÍCH HOẠT TRÁI TIM THEO TIẾN ĐỘ
+        ===================================== */
+        if(progress >= 20){
+            hearts[0]
+                .classList.add("heart-active");
+        }
+        if(progress >= 50){
+            hearts[1]
+                .classList.add("heart-active");
+        }
+        if(progress >= 80){
+            hearts[2]
+                .classList.add("heart-active");
+        }
+        /* =====================================
+           💗 HOÀN THÀNH
+        ===================================== */
+        if(progress >= 100){
+            clearInterval(timer);
+            text.textContent = "100%";
+            setTimeout(() => {
+                loading.classList.add("love-fade-out");
+                setTimeout(() => {
+                    loading.style.display = "none";
+                    loading.classList.remove("love-fade-out");
+                    showLoveSuccess();
+                }, 700);
+            }, 500);
+        }
+    }, 30);
 }
 let password = "";
 let checkTimer = null;
