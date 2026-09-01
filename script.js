@@ -192,7 +192,7 @@ startBtn.addEventListener("click", () => {
             // Chạy hiệu ứng Success
             showLoveSuccess();
 
-        }, 1000);
+        }, 1800);
 
     }, 350);
 
@@ -377,35 +377,37 @@ function showUnlockAnimation() {
     }, 3000);
 }
 
-function showLoveSuccess(){  
-  
-    const success = document.getElementById("loveSuccess");  
-  
-    const heart1 = document.getElementById("heart1");  
-    const heart2 = document.getElementById("heart2");  
-    const heart3 = document.getElementById("heart3");  
-  
-    // KHÔNG set display ở đây nữa
-    // Vì display đã được xử lý trong hiệu ứng chuyển cảnh
+function showLoveSuccess(){   
 
-    heart1.classList.remove("heart-active");  
-    heart2.classList.remove("heart-active");  
-    heart3.classList.remove("heart-active");  
-  
-    // Tim 1 sáng
-    setTimeout(() => {  
-        heart1.classList.add("heart-active");  
-    }, 150);  
-  
-    // Tim 2 sáng
-    setTimeout(() => {  
-        heart2.classList.add("heart-active");  
-    }, 350);  
+    const success = document.getElementById("loveSuccess");   
 
-    // Tim 3 sáng
-    setTimeout(() => {  
-        heart3.classList.add("heart-active");  
-    }, 550);  
+    const heart1 = document.getElementById("heart1");   
+    const heart2 = document.getElementById("heart2");   
+    const heart3 = document.getElementById("heart3");   
+
+    // Reset 3 tim
+    heart1.classList.remove("heart-active");   
+    heart2.classList.remove("heart-active");   
+    heart3.classList.remove("heart-active");   
+
+    // =====================================
+    // SUCCESS: TIM SÁNG THEO 20% - 50% - 80%
+    // =====================================
+
+    // 20% → tim trái
+    setTimeout(() => {   
+        heart1.classList.add("heart-active");   
+    }, 360);
+
+    // 50% → tim giữa
+    setTimeout(() => {   
+        heart2.classList.add("heart-active");   
+    }, 900);
+
+    // 80% → tim phải
+    setTimeout(() => {   
+        heart3.classList.add("heart-active");   
+    }, 1440);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
