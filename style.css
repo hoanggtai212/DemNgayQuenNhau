@@ -744,7 +744,20 @@ MOBILE
     .love-message{ 
     font-size: 1.0rem; 
     line-height: 1.3; 
-    } 
+    }
+
+    .door-frame{
+    width:58vw;
+    height:58vh;
+    border-width:10px;
+  }
+
+  .door-lock{
+    width:62px;
+    height:62px;
+    font-size:34px;
+  }
+    
 } 
  
 /* ===================================================== 
