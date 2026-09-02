@@ -858,22 +858,21 @@ document.addEventListener("DOMContentLoaded", () => {
             finalScale
         );
 
-        // Bắt đầu zoom + mở cửa
-        introDoor.classList.add("door-start");
+// Bắt đầu zoom + mở cửa
+introDoor.classList.add("door-start");
 
-        // Khi cửa gần phủ kín màn hình -> flash
-        setTimeout(() => {
-            introDoor.classList.add("door-flash-active");
-        }, 2350);
+// 3.4s là toàn bộ thời gian zoom + mở cửa
+// Flash ở khoảng 2.95s, ngay trước khi cửa phủ kín màn hình
+setTimeout(() => {
+    introDoor.classList.add("door-flash-active");
+}, 2950);
 
-        // Hiện password phía sau flash
-        setTimeout(() => {
-
-            if (passwordPage) {
-                passwordPage.style.display = "flex";
-            }
-
-        }, 2500);
+// Hiện password phía sau flash
+setTimeout(() => {
+    if (passwordPage) {
+        passwordPage.style.display = "flex";
+    }
+}, 3150);
 
         // Kết thúc intro
         setTimeout(() => {
