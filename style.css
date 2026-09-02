@@ -2711,33 +2711,17 @@ html{
 }
 
 
-/* ==================================================
-   🚪 INTRO DOOR — MỞ MƯỢT NHƯ RÈM
-================================================== */
-
-/* Cửa tiến lại gần */
 #introDoor.door-start .door-frame {
-    animation: doorApproach 2.5s cubic-bezier(.25,.1,.55,1) forwards;
-    will-change: transform;
+    animation: doorApproach 3.4s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
-/* Cánh trái */
 #introDoor.door-start .door-wing-left {
-    animation: doorLeftOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
-    will-change: transform;
+    animation: doorLeftOpen 3.4s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
-/* Cánh phải */
 #introDoor.door-start .door-wing-right {
-    animation: doorRightOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
-    will-change: transform;
+    animation: doorRightOpen 3.4s cubic-bezier(.25,.1,.55,1) forwards;
 }
-
-
-/* ==================================================
-   🚪 ZOOM CỬA
-   Chỉ 1 đường chuyển động → không bị khựng
-================================================== */
 
 @keyframes doorApproach {
     from {
