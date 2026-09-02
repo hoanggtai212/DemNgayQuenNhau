@@ -130,7 +130,8 @@ body {
 } 
  
 /* TIÊU ĐỀ CHO CHỮ " CHÚNG TA ĐÃ BÊN NHAU " */ 
-.main-title { 
+.main-title {
+    line-height: 0.8
     font-family: 'Great Vibes', cursive; 
     margin-bottom: 20px; 
     font-size: 3.5em;      /* to hơn */ 
