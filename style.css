@@ -143,18 +143,18 @@ body {
 /* dòng 1 cách chữ nhiều */ 
 .line1 { 
     letter-spacing: 9px; 
-    display: inline-block; 
+    display: block; 
 } 
  
 /* dòng 2 cách chữ ít hơn */ 
 .line2 { 
     letter-spacing: 12px; 
-    display: inline-block; 
+    display: block; 
 }
 
 .line3 { 
     letter-spacing: 12px; 
-    display: inline-block; 
+    display: block; 
 }
  
 /* SỐ NGÀY LỚN */ 
