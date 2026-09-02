@@ -2711,132 +2711,81 @@ html{
 }
 
 
-/* =========================================
-   🚪 BẤM KHÓA
-   CỬA TIẾN TỚI + MỞ ĐỒNG THỜI
-   ĐỒNG BỘ VỚI RÈM
-========================================= */
+/* ==================================================
+   🚪 INTRO DOOR — MỞ MƯỢT NHƯ RÈM
+================================================== */
 
+/* Cửa tiến lại gần */
 #introDoor.door-start .door-frame {
     animation: doorApproach 2.5s cubic-bezier(.25,.1,.55,1) forwards;
     will-change: transform;
 }
 
+/* Cánh trái */
 #introDoor.door-start .door-wing-left {
     animation: doorLeftOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
     will-change: transform;
 }
 
+/* Cánh phải */
 #introDoor.door-start .door-wing-right {
     animation: doorRightOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
     will-change: transform;
 }
 
 
-/* =========================================
-   🚪 KHUNG CỬA TIẾN TỚI
-========================================= */
+/* ==================================================
+   🚪 ZOOM CỬA
+   Chỉ 1 đường chuyển động → không bị khựng
+================================================== */
 
 @keyframes doorApproach {
-
-    0% {
+    from {
         transform: scale(1);
     }
 
-    25% {
-        transform: scale(1.12);
-    }
-
-    50% {
-        transform: scale(1.65);
-    }
-
-    75% {
-        transform: scale(2.35);
-    }
-
-    100% {
+    to {
         transform: scale(3.1);
     }
-
 }
 
 
-/* =========================================
-   🚪 CÁNH TRÁI MỞ
-========================================= */
+/* ==================================================
+   🚪 CÁNH TRÁI
+   Di chuyển + xoay liên tục
+================================================== */
 
 @keyframes doorLeftOpen {
-
-    0% {
+    from {
         transform:
             translate3d(0,0,0)
             rotateY(0deg);
     }
 
-    25% {
-        transform:
-            translate3d(-8%,0,0)
-            rotateY(-8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(-30%,0,0)
-            rotateY(-30deg);
-    }
-
-    75% {
-        transform:
-            translate3d(-75%,0,0)
-            rotateY(-65deg);
-    }
-
-    100% {
+    to {
         transform:
             translate3d(-125%,0,0)
             rotateY(-85deg);
     }
-
 }
 
 
-/* =========================================
-   🚪 CÁNH PHẢI MỞ
-========================================= */
+/* ==================================================
+   🚪 CÁNH PHẢI
+================================================== */
 
 @keyframes doorRightOpen {
-
-    0% {
+    from {
         transform:
             translate3d(0,0,0)
             rotateY(0deg);
     }
 
-    25% {
-        transform:
-            translate3d(8%,0,0)
-            rotateY(8deg);
-    }
-
-    50% {
-        transform:
-            translate3d(30%,0,0)
-            rotateY(30deg);
-    }
-
-    75% {
-        transform:
-            translate3d(75%,0,0)
-            rotateY(65deg);
-    }
-
-    100% {
+    to {
         transform:
             translate3d(125%,0,0)
             rotateY(85deg);
     }
-
 }
 
 /* =========================================
