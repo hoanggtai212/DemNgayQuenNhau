@@ -2084,53 +2084,29 @@ html{
 }
 
 #curtainTransition.curtain-open .curtain-left{
-    animation: curtainLeftOpen 4.8s cubic-bezier(.45,0,.25,1) forwards;
+    animation: curtainLeftOpen 3.5s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
 #curtainTransition.curtain-open .curtain-right{
-    animation: curtainRightOpen 4.8s cubic-bezier(.45,0,.25,1) forwards;
+    animation: curtainRightOpen 3.5s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
 @keyframes curtainLeftOpen{
-    0%{
+    from{
         transform:translate3d(0,0,0);
     }
 
-    25%{
-        transform:translate3d(-15%,0,0);
-    }
-
-    50%{
-        transform:translate3d(-48%,0,0);
-    }
-
-    75%{
-        transform:translate3d(-82%,0,0);
-    }
-
-    100%{
+    to{
         transform:translate3d(-102%,0,0);
     }
 }
 
 @keyframes curtainRightOpen{
-    0%{
+    from{
         transform:translate3d(0,0,0);
     }
 
-    25%{
-        transform:translate3d(15%,0,0);
-    }
-
-    50%{
-        transform:translate3d(48%,0,0);
-    }
-
-    75%{
-        transform:translate3d(82%,0,0);
-    }
-
-    100%{
+    to{
         transform:translate3d(102%,0,0);
     }
 }
