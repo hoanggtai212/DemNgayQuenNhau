@@ -857,6 +857,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* ==================================================
+   🚪 ANIME INTRO DOOR
+================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const introDoor = document.getElementById("introDoor");
+    const doorLock = document.getElementById("doorLock");
+
+    if (!introDoor || !doorLock) return;
+
+
+    doorLock.addEventListener("click", () => {
+
+        // chống bấm nhiều lần
+        if (introDoor.classList.contains("door-start")) {
+            return;
+        }
+
+
+        /*
+         * BƯỚC 1
+         * Camera zoom vào cửa
+         */
+
+        introDoor.classList.add("door-start");
+
+
+        /*
+         * BƯỚC 2
+         * Sau khi zoom gần tới cửa
+         * thì hai cánh bắt đầu mở
+         */
+
+        setTimeout(() => {
+
+            introDoor.classList.add("door-open");
+
+        }, 1250);
+
+
+        /*
+         * BƯỚC 3
+         * Cửa mở gần hết -> lóe sáng
+         */
+
+        setTimeout(() => {
+
+            introDoor.classList.add("door-flash-active");
+
+        }, 2150);
+
+
+        /*
+         * BƯỚC 4
+         * Flash xong -> biến intro đi
+         * để lộ counterPage
+         */
+
+        setTimeout(() => {
+
+            introDoor.classList.add("intro-finished");
+
+        }, 2700);
+
+
+        /*
+         * Xóa intro khỏi màn hình
+         */
+
+        setTimeout(() => {
+
+            introDoor.style.display = "none";
+
+        }, 3300);
+
+    });
+
+});
+
 function spawnHeartPhotosCentered() { 
     const totalPhotos = 30; 
     for (let i = 0; i < totalPhotos; i++) { 
