@@ -593,7 +593,7 @@ setTimeout(() => {
     curtain.classList.remove("curtain-open");
     curtain.style.pointerEvents = "none";
 
-}, 3000);
+}, 3300);
 
     });
 
