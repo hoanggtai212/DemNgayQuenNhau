@@ -821,7 +821,6 @@ function spawnHeartPhotosCentered() {
         }, i * 100); 
     } 
 } 
-}); 
 let lastTouchEnd = 0; 
 document.addEventListener("touchend", function (e) { 
     const clickable = e.target.closest( 
