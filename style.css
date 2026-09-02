@@ -300,30 +300,35 @@ PASSWORD PAGE
     outline: none; 
 } 
  
-.display-wrap{ 
-    position:relative; 
-    width:90%; 
-    max-width:250px; 
-    margin:0 auto 22px; 
-    overflow:hidden; 
-} 
- 
-#display{ 
-    width:100%; 
-    margin-bottom:0; 
-} 
- 
+.display-wrap{
+    position:relative;
+    width:90%;
+    max-width:250px;
+    height:55px;
+    margin:0 auto 22px;
+    overflow:hidden;
+}
+
+#display{
+    width:100%;
+    height:55px;
+    margin:0;
+}
+
 #runningText{
     position:absolute;
     top:50%;
     left:0;
-    transform:translateY(-50%);
+
     white-space:nowrap;
+
     color:#e75480;
     font-weight:700;
     letter-spacing:2px;
-    line-height:1;
-    height:auto;
+
+    line-height:55px;
+    height:55px;
+
     margin:0;
     padding:0;
 
