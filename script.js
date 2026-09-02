@@ -274,49 +274,48 @@ function setRunningTextInfinite(text, color = "#e75480") {
     startMarquee(text, color, true); 
 } 
  
-function startMarquee(text, color = "#e75480", loop = true) { 
-const running = 
-    document.getElementById("runningText"); 
-running.getAnimations() 
-       .forEach(a => a.cancel()); 
-running.style.display = "none"; 
-    const wrap = document.querySelector(".display-wrap"); 
- 
-    running.getAnimations().forEach(a => a.cancel()); 
- 
-    running.textContent = text; 
-    running.style.color = color; 
-    running.style.display = "block"; 
- 
-    requestAnimationFrame(() => { 
- 
-        const textWidth = running.offsetWidth; 
-        const wrapWidth = wrap.offsetWidth; 
- 
-        const distance = textWidth + wrapWidth; 
-        const speed = 100; 
-        const duration = (distance / speed) * 1000; 
- 
- running.animate(
-    [
-        {
-            transform:
-                `translate3d(${wrapWidth}px,-50%,0)`
-        },
-        {
-            transform:
-                `translate3d(-${textWidth}px,-50%,0)`
-        }
-    ],
-    {
-        duration,
-        iterations: loop ? Infinity : 1,
-        easing:"linear"
-    }
-);
- 
-    return ((running.offsetWidth + wrap.offsetWidth) / 100) * 1000; 
-} 
+function startMarquee(text, color = "#e75480", loop = true) {
+    const running = document.getElementById("runningText");
+    const wrap = document.querySelector(".display-wrap");
+
+    running.getAnimations().forEach(a => a.cancel());
+
+    running.style.display = "none";
+
+    running.textContent = text;
+    running.style.color = color;
+    running.style.display = "block";
+
+    requestAnimationFrame(() => {
+
+        const textWidth = running.offsetWidth;
+        const wrapWidth = wrap.offsetWidth;
+
+        const distance = textWidth + wrapWidth;
+        const speed = 100;
+        const duration = (distance / speed) * 1000;
+
+        running.animate(
+            [
+                {
+                    transform:
+                        `translate3d(${wrapWidth}px,-50%,0)`
+                },
+                {
+                    transform:
+                        `translate3d(-${textWidth}px,-50%,0)`
+                }
+            ],
+            {
+                duration,
+                iterations: loop ? Infinity : 1,
+                easing: "linear"
+            }
+        );
+    });
+
+    return ((running.offsetWidth + wrap.offsetWidth) / 100) * 1000;
+}
  
 document.addEventListener("DOMContentLoaded", () => { 
     setRunningTextInfinite( 
