@@ -2088,67 +2088,64 @@ html{
    💨 BẮT ĐẦU MỞ
 ===================================================== */
 
-#curtainTransition.curtain-open .curtain-left{
-    animation:curtainLeftSwing 2.8s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-#curtainTransition.curtain-open .curtain-right{
-    animation:curtainRightSwing 2.8s cubic-bezier(.22,.61,.36,1) forwards;
-}
+animation:curtainLeftSwing 3.2s linear forwards;
+animation:curtainRightSwing 3.2s linear forwards;
 
 
 @keyframes curtainLeftSwing{
-    0%   {transform:translate3d(0,0,0);}
+    0%   { transform:translate3d(0,0,0); }
 
-    /* kéo mạnh sang trái */
-    12%  {transform:translate3d(-22%,0,0);}
-    28%  {transform:translate3d(-110%,0,0);}
+    /* kéo ra */
+    12%  { transform:translate3d(-22%,0,0); }
+    28%  { transform:translate3d(-110%,0,0); }
 
-    /* ↩ vào giữa SÂU */
-    42%  {transform:translate3d(-65%,0,0);}
+    /* NHỊP 1 — vô sâu */
+    43%  { transform:translate3d(-50%,0,0); }
 
-    /* ↪ bung ra */
-    54%  {transform:translate3d(-108%,0,0);}
+    /* NHỊP 2 — bung lại */
+    57%  { transform:translate3d(-108%,0,0); }
 
-    /* ↩ vào lần 2 - ít hơn */
-    66%  {transform:translate3d(-78%,0,0);}
+    /* NHỊP 3 — vô vẫn rõ */
+    70%  { transform:translate3d(-63%,0,0); }
 
-    /* ↪ bung ra */
-    76%  {transform:translate3d(-105%,0,0);}
+    /* NHỊP 4 — bung */
+    80%  { transform:translate3d(-105%,0,0); }
 
-    /* ↩ dao động nhỏ dần */
-    85%  {transform:translate3d(-87%,0,0);}
-    92%  {transform:translate3d(-103%,0,0);}
-    97%  {transform:translate3d(-96%,0,0);}
+    /* NHỊP 5 — nhỏ hơn nhưng vẫn thấy */
+    88%  { transform:translate3d(-76%,0,0); }
 
-    100% {transform:translate3d(-102%,0,0);}
+    /* rung cuối */
+    94%  { transform:translate3d(-103%,0,0); }
+    98%  { transform:translate3d(-94%,0,0); }
+    100% { transform:translate3d(-102%,0,0); }
 }
 
 @keyframes curtainRightSwing{
-    0%   {transform:translate3d(0,0,0);}
+    0%   { transform:translate3d(0,0,0); }
 
-    /* kéo mạnh sang phải */
-    12%  {transform:translate3d(22%,0,0);}
-    28%  {transform:translate3d(110%,0,0);}
+    /* kéo ra */
+    12%  { transform:translate3d(22%,0,0); }
+    28%  { transform:translate3d(110%,0,0); }
 
-    /* ↩ vào giữa SÂU */
-    42%  {transform:translate3d(65%,0,0);}
+    /* NHỊP 1 — vô sâu */
+    43%  { transform:translate3d(50%,0,0); }
 
-    /* ↪ bung ra */
-    54%  {transform:translate3d(108%,0,0);}
+    /* NHỊP 2 — bung lại */
+    57%  { transform:translate3d(108%,0,0); }
 
-    /* ↩ vào lần 2 - ít hơn */
-    66%  {transform:translate3d(78%,0,0);}
+    /* NHỊP 3 — vô vẫn rõ */
+    70%  { transform:translate3d(63%,0,0); }
 
-    /* ↪ bung ra */
-    76%  {transform:translate3d(105%,0,0);}
+    /* NHỊP 4 — bung */
+    80%  { transform:translate3d(105%,0,0); }
 
-    /* ↩ dao động nhỏ dần */
-    85%  {transform:translate3d(87%,0,0);}
-    92%  {transform:translate3d(103%,0,0);}
-    97%  {transform:translate3d(96%,0,0);}
+    /* NHỊP 5 — nhỏ hơn nhưng vẫn thấy */
+    88%  { transform:translate3d(76%,0,0); }
 
-    100% {transform:translate3d(102%,0,0);}
+    /* rung cuối */
+    94%  { transform:translate3d(103%,0,0); }
+    98%  { transform:translate3d(94%,0,0); }
+    100% { transform:translate3d(102%,0,0); }
 }
 
 /* =====================================================
