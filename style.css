@@ -2695,23 +2695,32 @@ html{
    🔓 BẮT ĐẦU CHUYỂN CẢNH
 ================================================== */
 
-
-/*
-   Bước 1:
-   camera zoom mạnh vào cửa
-*/
-
-#introDoor.door-start .door-scene {
+/* CAMERA TIẾN THẲNG VÀO CỬA */
+#introDoor.door-start .door-frame {
     animation:
-        cameraZoom 3.1s
-        cubic-bezier(.22,.61,.36,1)
+        cameraPush 2s
+        cubic-bezier(.16,.72,.22,1)
         forwards;
 }
 
+@keyframes cameraPush {
 
-/*
-   ánh sáng bắt đầu xuất hiện
-*/
+    0% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+    75% {
+        transform: scale(2.1);
+    }
+
+    100% {
+        transform: scale(3.4);
+    }
+}
 
 #introDoor.door-start .door-back-light {
 
