@@ -724,13 +724,13 @@ setTimeout(() => {
 spawnHeartPhotosCentered();
 }, 500);
 });
-function createHeartPhotoCentered(idx, total) {
+function createHeartPhotoCentered(idx, total, stage) {
     const photo = document.createElement("img");
 
     photo.src = photoUrls[idx % photoUrls.length];
     photo.className = "photo";
 
-    document.body.appendChild(photo);
+    stage.appendChild(photo);
 
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
@@ -755,54 +755,69 @@ function createHeartPhotoCentered(idx, total) {
             - Math.cos(4 * t)
         );
 
-    // =========================
-    // 1. ẢNH XUẤT HIỆN BÌNH THƯỜNG
-    // =========================
+    // Ảnh bắt đầu ở giữa màn hình
+    photo.style.left = centerX + "px";
+    photo.style.top = centerY + "px";
 
-    photo.style.left = targetX + "px";
-    photo.style.top = targetY + "px";
-
-    // trạng thái ban đầu: nhỏ + mờ
     photo.style.opacity = "0";
     photo.style.transform =
-        "translate(-50%, -50%) scale(0.7)";
-
-    photo.style.pointerEvents = "auto";
+        "translate3d(-50%, -50%, 0) scale(.82)";
 
     requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+        photo.style.opacity = "1";
 
-            // =========================
-            // 2. BAY VÀO VỊ TRÍ BÌNH THƯỜNG
-            // =========================
-
-            photo.style.opacity = "1";
-            photo.style.transform =
-                "translate(-50%, -50%) scale(1)";
-
-            // =========================
-            // 3. SAU KHI ỔN ĐỊNH
-            //    → GIÓ THỔI ĐUNG ĐƯA
-            // =========================
-
-            setTimeout(() => {
-
-                photo.classList.add("wind-sway");
-
-            }, 700 + Math.random() * 500);
-
-        });
+        photo.style.transform =
+            `translate3d(-50%, -50%, 0)
+             translate3d(
+                ${targetX - centerX}px,
+                ${targetY - centerY}px,
+                0
+             )
+             scale(1)`;
     });
 }
+
+
 function spawnHeartPhotosCentered() {
+
     const totalPhotos = 30;
+
+    let stage =
+        document.getElementById("heartPhotoStage");
+
+    // Tạo khung chứa toàn bộ trái tim
+    if (!stage) {
+        stage = document.createElement("div");
+        stage.id = "heartPhotoStage";
+        document.body.appendChild(stage);
+    }
+
+    // Reset nếu chạy lại
+    stage.classList.remove("wind");
+    stage.innerHTML = "";
+
+    // Ảnh lần lượt bay vào
     for (let i = 0; i < totalPhotos; i++) {
+
         setTimeout(() => {
-            createHeartPhotoCentered(i, totalPhotos);
+
+            createHeartPhotoCentered(
+                i,
+                totalPhotos,
+                stage
+            );
+
         }, i * 100);
     }
+
+    // Đợi toàn bộ trái tim ổn định
+    // rồi mới có gió
+    setTimeout(() => {
+
+        stage.classList.add("wind");
+
+    }, 3900);
 }
-});
 let lastTouchEnd = 0;
 document.addEventListener("touchend", function (e) {
     const clickable = e.target.closest(
