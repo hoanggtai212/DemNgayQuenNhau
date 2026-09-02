@@ -36,63 +36,32 @@ function showPassword() {
     const passwordPage = document.getElementById("passwordPage");
     const curtain = document.getElementById("curtainTransition");
 
-    // =================================
-    // 1. HIỆN RÈM
-    // =================================
-
+    // Hiện rèm
     curtain.style.display = "block";
-
-    // 🔥 Dùng class riêng cho rèm
     curtain.classList.remove("curtain-open");
-
-    // Không chặn click xuống password
     curtain.style.pointerEvents = "none";
 
+    // Hiện password ngay phía sau rèm
+    counterPage.style.display = "none";
+    passwordPage.style.display = "flex";
 
-    // =================================
-    // 2. HIỆN PASSWORD PHÍA SAU RÈM
-    // =================================
+    passwordPage.classList.remove("fade-in");
 
-    setTimeout(() => {
+    setRunningTextInfinite("💗 ENTER PASSWORD 💗");
 
-        counterPage.style.display = "none";
-        passwordPage.style.display = "flex";
-
-        passwordPage.classList.remove("fade-in");
-
-        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-
-
-        // =================================
-        // 3. BẮT ĐẦU MỞ RÈM 2 CÁNH
-        // =================================
-
+    // Đợi browser render trạng thái đóng rồi mới mở
+    requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-
-            requestAnimationFrame(() => {
-
-                curtain.classList.add("curtain-open");
-
-            });
-
+            curtain.classList.add("curtain-open");
         });
+    });
 
-    }, 300);
-
-
-    // =================================
-    // 4. RÈM MỞ XONG → ẨN
-    // =================================
-
+    // Animation rèm = 2.8s
     setTimeout(() => {
-
         curtain.style.display = "none";
-
         curtain.classList.remove("curtain-open");
-
         curtain.style.pointerEvents = "none";
-
-    }, 2200);
+    }, 3000);
 }
 
 function showAlbum() {
@@ -611,25 +580,20 @@ document.addEventListener("DOMContentLoaded", () => {
             menuPage.style.display = "flex";
         }
 
-        // 4. MỞ RÈM 2 CÁNH
-        setTimeout(() => {
+// 4. MỞ RÈM 2 CÁNH
+requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+        curtain.classList.add("curtain-open");
+    });
+});
 
-            requestAnimationFrame(() => {
-                curtain.classList.add("curtain-open");
-            });
+setTimeout(() => {
 
-        }, 300);
+    curtain.style.display = "none";
+    curtain.classList.remove("curtain-open");
+    curtain.style.pointerEvents = "none";
 
-        // 5. MỞ XONG → ẨN RÈM
-        setTimeout(() => {
-
-            curtain.style.display = "none";
-
-            curtain.classList.remove("curtain-open");
-
-            curtain.style.pointerEvents = "none";
-
-        }, 2200);
+}, 3000);
 
     });
 
