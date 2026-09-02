@@ -724,21 +724,15 @@ setTimeout(() => {
 spawnHeartPhotosCentered(); 
 }, 500); 
 }); 
-function createHeartPhotoCentered(idx, total, stage) { 
+function createHeartPhotoCentered(idx, total) { 
     const photo = document.createElement("img"); 
- 
     photo.src = photoUrls[idx % photoUrls.length]; 
     photo.className = "photo"; 
- 
-    stage.appendChild(photo); 
- 
+    document.body.appendChild(photo); 
     const centerX = window.innerWidth / 2; 
     const centerY = window.innerHeight / 2; 
- 
     const t = Math.PI * 2 * (idx / total); 
- 
     const scale = window.innerWidth <= 480 ? 14 : 22; 
- 
     const targetX = 
         centerX + 
         scale * 
@@ -754,70 +748,28 @@ function createHeartPhotoCentered(idx, total, stage) {
             - 2 * Math.cos(3 * t) 
             - Math.cos(4 * t) 
         ); 
- 
-    // Ảnh bắt đầu ở giữa màn hình 
     photo.style.left = centerX + "px"; 
     photo.style.top = centerY + "px"; 
- 
-    photo.style.opacity = "0"; 
-    photo.style.transform = 
-        "translate3d(-50%, -50%, 0) scale(.82)"; 
- 
-    requestAnimationFrame(() => { 
+    setTimeout(() => { 
         photo.style.opacity = "1"; 
- 
+        photo.style.pointerEvents = "auto"; 
         photo.style.transform = 
-            `translate3d(-50%, -50%, 0) 
-             translate3d( 
+            `translate(-50%, -50%) 
+             translate( 
                 ${targetX - centerX}px, 
-                ${targetY - centerY}px, 
-                0 
-             ) 
-             scale(1)`; 
-    }); 
+                ${targetY - centerY}px 
+             )`; 
+    }, 100); 
 } 
- 
- 
 function spawnHeartPhotosCentered() { 
- 
     const totalPhotos = 30; 
- 
-    let stage = 
-        document.getElementById("heartPhotoStage"); 
- 
-    // Tạo khung chứa toàn bộ trái tim 
-    if (!stage) { 
-        stage = document.createElement("div"); 
-        stage.id = "heartPhotoStage"; 
-        document.body.appendChild(stage); 
-    } 
- 
-    // Reset nếu chạy lại 
-    stage.classList.remove("wind"); 
-    stage.innerHTML = ""; 
- 
-    // Ảnh lần lượt bay vào 
     for (let i = 0; i < totalPhotos; i++) { 
- 
         setTimeout(() => { 
- 
-            createHeartPhotoCentered( 
-                i, 
-                totalPhotos, 
-                stage 
-            ); 
- 
+            createHeartPhotoCentered(i, totalPhotos); 
         }, i * 100); 
     } 
- 
-    // Đợi toàn bộ trái tim ổn định 
-    // rồi mới có gió 
-    setTimeout(() => { 
- 
-        stage.classList.add("wind"); 
- 
-    }, 3900); 
 } 
+}); 
 let lastTouchEnd = 0; 
 document.addEventListener("touchend", function (e) { 
     const clickable = e.target.closest( 
