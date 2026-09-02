@@ -2083,13 +2083,17 @@ html{
     transform-origin:right center;
 }
 
-
 /* =====================================================
    💨 BẮT ĐẦU MỞ
 ===================================================== */
 
-animation:curtainLeftSwing 3.2s linear forwards;
-animation:curtainRightSwing 3.2s linear forwards;
+#curtainTransition.curtain-open .curtain-left{
+    animation:curtainLeftSwing 3.2s linear forwards;
+}
+
+#curtainTransition.curtain-open .curtain-right{
+    animation:curtainRightSwing 3.2s linear forwards;
+}
 
 
 @keyframes curtainLeftSwing{
