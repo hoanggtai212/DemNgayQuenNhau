@@ -2509,33 +2509,19 @@ html{
 .door-frame {
     position: relative;
 
-    width: min(70vw, 470px);
-    height: min(82vh, 680px);
+    width: min(72vw, 470px);
+    aspect-ratio: 0.8 / 1;
 
-    background:
-        linear-gradient(
-            90deg,
-            #1c080c,
-            #54202d 12%,
-            #8d4a55 50%,
-            #54202d 88%,
-            #1c080c
-        );
+    margin: auto;
 
-    border: 14px solid #1a090c;
+    background: #16090c;
+    border: 8px solid #32151b;
 
     box-shadow:
-        0 0 0 5px rgba(178, 101, 67, .25),
-        0 0 60px rgba(0,0,0,.9),
-        inset 0 0 40px rgba(0,0,0,.8);
+        0 0 0 2px #5a2a2f,
+        0 0 35px rgba(255, 70, 120, .15);
 
-    overflow: visible;
-
-    transform-origin: center center;
-
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    will-change: transform;
+    overflow: hidden;
 }
 
 
@@ -2983,15 +2969,9 @@ html{
 @media (max-width:600px) {
 
     .door-frame {
-
-        width: 42vw;
-        height: 58vh;
-
-        min-width: 170px;
-        min-height: 280px;
-
-        border-width: 10px;
-
+        width: 72vw;
+        aspect-ratio: 0.8 / 1;
+        border-width: 7px;
     }
 
 
