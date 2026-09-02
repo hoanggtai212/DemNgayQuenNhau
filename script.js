@@ -330,7 +330,7 @@ function addNum(num) {
     document.getElementById("runningText") 
         .style.display = "none"; 
     document.getElementById("display") 
-        .value = "*".repeat(password.length); 
+        .value = "*  ".repeat(password.length); 
 } 
 function delNum() { 
     if(checkTimer || actionTimer){ 
@@ -341,7 +341,7 @@ function delNum() {
     const display = 
         document.getElementById("display"); 
     display.value = 
-        "*".repeat(password.length); 
+        "*  ".repeat(password.length); 
     if(password.length === 0){ 
         display.value = ""; 
         setRunningTextInfinite( 
@@ -367,7 +367,7 @@ const checkingTime = setRunningText(
 checkTimer = setTimeout(() => { 
     if (password === "0") { 
         const successTime = setRunningText( 
-            "💗 ĐÚM RÙI NÈ 💗", 
+            "💗 ĐÚM RÙI BÉ UI. HAY QÓ 💗", 
             "#00cc66" 
         ); 
         actionTimer = setTimeout(() => { 
@@ -376,7 +376,7 @@ checkTimer = setTimeout(() => {
         }, successTime); 
     } else { 
         const failTime = setRunningText( 
-            "😜 SAI RÙI NÈ 😜", 
+            "😜 SAI RÙI BÉ UI. LIU LIU 😜", 
             "#ff3333" 
         ); 
         const container = 
