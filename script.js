@@ -891,11 +891,9 @@ document.addEventListener("DOMContentLoaded", () => {
          * thì hai cánh bắt đầu mở
          */
 
-        setTimeout(() => {
-
-            introDoor.classList.add("door-open");
-
-        }, 1250);
+setTimeout(() => {
+    introDoor.classList.add("door-open");
+}, 950);
 
 
         /*
@@ -903,12 +901,9 @@ document.addEventListener("DOMContentLoaded", () => {
          * Cửa mở gần hết -> lóe sáng
          */
 
-        setTimeout(() => {
-
-            introDoor.classList.add("door-flash-active");
-
-        }, 2150);
-
+setTimeout(() => {
+    introDoor.classList.add("door-flash-active");
+}, 2450);
 
         /*
          * BƯỚC 4
@@ -916,22 +911,13 @@ document.addEventListener("DOMContentLoaded", () => {
          * để lộ counterPage
          */
 
-        setTimeout(() => {
+  setTimeout(() => {
+    introDoor.classList.add("intro-finished");
+}, 3000);
 
-            introDoor.classList.add("intro-finished");
-
-        }, 2700);
-
-
-        /*
-         * Xóa intro khỏi màn hình
-         */
-
-        setTimeout(() => {
-
-            introDoor.style.display = "none";
-
-        }, 3300);
+setTimeout(() => {
+    introDoor.style.display = "none";
+}, 3500);
 
     });
 
