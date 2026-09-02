@@ -64,6 +64,11 @@ function showPassword() {
     }, 3000);
 }
 
+// TỰ CHẠY KHI VỪA MỞ WEB
+document.addEventListener("DOMContentLoaded", () => {
+    showPassword();
+});
+
 function showAlbum() {
     const menuPage = document.getElementById("menuPage");
     const passwordPage = document.getElementById("passwordPage");
