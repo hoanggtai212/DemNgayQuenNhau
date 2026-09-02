@@ -2706,12 +2706,15 @@ html{
     perspective: 1400px;
 
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 
 /* =========================================
    🚪 BẤM KHÓA
-   CỬA TIẾN TỚI + MỞ CÙNG LÚC
+   CỬA TIẾN TỚI + MỞ ĐỒNG THỜI
+   ĐỒNG BỘ VỚI RÈM
 ========================================= */
 
 #introDoor.door-start .door-frame {
@@ -2729,44 +2732,30 @@ html{
     will-change: transform;
 }
 
+
+/* =========================================
+   🚪 KHUNG CỬA TIẾN TỚI
+========================================= */
+
 @keyframes doorApproach {
+
     0% {
         transform: scale(1);
     }
 
-    35% {
-        transform: scale(1.18);
+    25% {
+        transform: scale(1.12);
     }
 
-    70% {
-        transform: scale(2.15);
+    50% {
+        transform: scale(1.65);
+    }
+
+    75% {
+        transform: scale(2.35);
     }
 
     100% {
-        transform: scale(3.25);
-    }
-}
-
-#introDoor.door-start .door-left {
-    animation: doorLeftOpen 2.6s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
-    transform-origin: left center;
-    will-change: transform;
-}
-
-#introDoor.door-start .door-right {
-    animation: doorRightOpen 2.6s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
-    transform-origin: right center;
-    will-change: transform;
-}
-
-/* Cửa từ nhỏ → phủ gần kín màn hình */
-@keyframes doorApproach {
-
-    from {
-        transform: scale(1);
-    }
-
-    to {
         transform: scale(3.1);
     }
 
@@ -2774,65 +2763,81 @@ html{
 
 
 /* =========================================
-   🚪 HAI CÁNH MỞ TRONG LÚC ĐANG TIẾN
+   🚪 CÁNH TRÁI MỞ
 ========================================= */
 
-#introDoor.door-start .door-wing-left {
-
-    animation:
-        doorLeftOpen 2.45s
-        cubic-bezier(.16,.72,.20,1)
-        forwards;
-
-}
-
-
-#introDoor.door-start .door-wing-right {
-
-    animation:
-        doorRightOpen 2.45s
-        cubic-bezier(.16,.72,.20,1)
-        forwards;
-
-}
-
-
 @keyframes doorLeftOpen {
+
     0% {
-        transform: translate3d(0, 0, 0) rotateY(0deg);
+        transform:
+            translate3d(0,0,0)
+            rotateY(0deg);
     }
 
-    35% {
-        transform: translate3d(-12%, 0, 0) rotateY(-12deg);
+    25% {
+        transform:
+            translate3d(-8%,0,0)
+            rotateY(-8deg);
     }
 
-    70% {
-        transform: translate3d(-70%, 0, 0) rotateY(-60deg);
+    50% {
+        transform:
+            translate3d(-30%,0,0)
+            rotateY(-30deg);
+    }
+
+    75% {
+        transform:
+            translate3d(-75%,0,0)
+            rotateY(-65deg);
     }
 
     100% {
-        transform: translate3d(-125%, 0, 0) rotateY(-85deg);
+        transform:
+            translate3d(-125%,0,0)
+            rotateY(-85deg);
     }
+
 }
+
+
+/* =========================================
+   🚪 CÁNH PHẢI MỞ
+========================================= */
 
 @keyframes doorRightOpen {
+
     0% {
-        transform: translate3d(0, 0, 0) rotateY(0deg);
+        transform:
+            translate3d(0,0,0)
+            rotateY(0deg);
     }
 
-    35% {
-        transform: translate3d(12%, 0, 0) rotateY(12deg);
+    25% {
+        transform:
+            translate3d(8%,0,0)
+            rotateY(8deg);
     }
 
-    70% {
-        transform: translate3d(70%, 0, 0) rotateY(60deg);
+    50% {
+        transform:
+            translate3d(30%,0,0)
+            rotateY(30deg);
+    }
+
+    75% {
+        transform:
+            translate3d(75%,0,0)
+            rotateY(65deg);
     }
 
     100% {
-        transform: translate3d(125%, 0, 0) rotateY(85deg);
+        transform:
+            translate3d(125%,0,0)
+            rotateY(85deg);
     }
-}
 
+}
 
 /* =========================================
    ✨ ÁNH SÁNG NHẤP NHÁY KHI CỬA MỞ
