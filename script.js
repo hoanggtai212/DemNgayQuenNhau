@@ -297,24 +297,23 @@ running.style.display = "none";
         const speed = 100; 
         const duration = (distance / speed) * 1000; 
  
-        running.animate( 
-            [ 
-                { 
-                    transform: 
-                        `translateY(-50%) translateX(${wrapWidth}px)` 
-                }, 
-                { 
-                    transform: 
-                        `translateY(-50%) translateX(-${textWidth}px)` 
-                } 
-            ], 
-            { 
-                duration, 
-                iterations: loop ? Infinity : 1, 
-                easing: "linear" 
-            } 
-        ); 
-    }); 
+ running.animate(
+    [
+        {
+            transform:
+                `translate3d(${wrapWidth}px,-50%,0)`
+        },
+        {
+            transform:
+                `translate3d(-${textWidth}px,-50%,0)`
+        }
+    ],
+    {
+        duration,
+        iterations: loop ? Infinity : 1,
+        easing:"linear"
+    }
+);
  
     return ((running.offsetWidth + wrap.offsetWidth) / 100) * 1000; 
 } 
