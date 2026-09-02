@@ -726,13 +726,19 @@ spawnHeartPhotosCentered();
 });
 function createHeartPhotoCentered(idx, total) {
     const photo = document.createElement("img");
+
     photo.src = photoUrls[idx % photoUrls.length];
     photo.className = "photo";
+
     document.body.appendChild(photo);
+
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
+
     const t = Math.PI * 2 * (idx / total);
+
     const scale = window.innerWidth <= 480 ? 14 : 22;
+
     const targetX =
         centerX +
         scale *
@@ -748,18 +754,45 @@ function createHeartPhotoCentered(idx, total) {
             - 2 * Math.cos(3 * t)
             - Math.cos(4 * t)
         );
-    photo.style.left = centerX + "px";
-    photo.style.top = centerY + "px";
-    setTimeout(() => {
-        photo.style.opacity = "1";
-        photo.style.pointerEvents = "auto";
-        photo.style.transform =
-            `translate(-50%, -50%)
-             translate(
-                ${targetX - centerX}px,
-                ${targetY - centerY}px
-             )`;
-    }, 100);
+
+    // =========================
+    // 1. ẢNH XUẤT HIỆN BÌNH THƯỜNG
+    // =========================
+
+    photo.style.left = targetX + "px";
+    photo.style.top = targetY + "px";
+
+    // trạng thái ban đầu: nhỏ + mờ
+    photo.style.opacity = "0";
+    photo.style.transform =
+        "translate(-50%, -50%) scale(0.7)";
+
+    photo.style.pointerEvents = "auto";
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+
+            // =========================
+            // 2. BAY VÀO VỊ TRÍ BÌNH THƯỜNG
+            // =========================
+
+            photo.style.opacity = "1";
+            photo.style.transform =
+                "translate(-50%, -50%) scale(1)";
+
+            // =========================
+            // 3. SAU KHI ỔN ĐỊNH
+            //    → GIÓ THỔI ĐUNG ĐƯA
+            // =========================
+
+            setTimeout(() => {
+
+                photo.classList.add("wind-sway");
+
+            }, 700 + Math.random() * 500);
+
+        });
+    });
 }
 function spawnHeartPhotosCentered() {
     const totalPhotos = 30;
