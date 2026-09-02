@@ -2691,129 +2691,89 @@ html{
         scale(.9);
 }
 
-
 /* ==================================================
-   🔓 BẮT ĐẦU CHUYỂN CẢNH
+   🚪 INTRO DOOR — TIẾN + MỞ + CHỚP SÁNG
 ================================================== */
 
-/* CAMERA TIẾN THẲNG VÀO CỬA */
+/* CỬA BAN ĐẦU NHỎ */
+.door-frame {
+    width: min(42vw, 280px);
+    height: min(58vh, 440px);
+
+    transform: scale(1);
+    transform-origin: center center;
+
+    transform-style: preserve-3d;
+    perspective: 1400px;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   🚪 BẤM KHÓA
+   CỬA TIẾN TỚI + MỞ CÙNG LÚC
+========================================= */
+
 #introDoor.door-start .door-frame {
-    animation:
-        cameraPush 2s
-        cubic-bezier(.16,.72,.22,1)
+    animation: doorApproach 2.7s
+        cubic-bezier(.12,.68,.18,1)
         forwards;
 }
 
-@keyframes cameraPush {
 
-    0% {
+/* Cửa từ nhỏ → phủ gần kín màn hình */
+@keyframes doorApproach {
+
+    from {
         transform: scale(1);
     }
 
-    45% {
-        transform: scale(1.15);
+    to {
+        transform: scale(3.1);
     }
 
-    75% {
-        transform: scale(2.1);
-    }
-
-    100% {
-        transform: scale(3.4);
-    }
-}
-
-#introDoor.door-start .door-back-light {
-
-    opacity: .7;
-
-    transform: scale(1);
 }
 
 
-/* ==================================================
-   BƯỚC 2 - CỬA MỞ
-================================================== */
+/* =========================================
+   🚪 HAI CÁNH MỞ TRONG LÚC ĐANG TIẾN
+========================================= */
 
-#introDoor.door-open .door-wing-left {
+#introDoor.door-start .door-wing-left {
+
     animation:
-        doorLeftOpen 1.9s
-        cubic-bezier(.22,.61,.36,1)
+        doorLeftOpen 2.45s
+        cubic-bezier(.16,.72,.20,1)
         forwards;
+
 }
 
-#introDoor.door-open .door-wing-right {
+
+#introDoor.door-start .door-wing-right {
+
     animation:
-        doorRightOpen 1.9s
-        cubic-bezier(.22,.61,.36,1)
+        doorRightOpen 2.45s
+        cubic-bezier(.16,.72,.20,1)
         forwards;
+
 }
 
-/* khóa rung trước khi biến mất */
-
-#introDoor.door-open .door-lock {
-
-    animation:
-        lockShake .35s ease forwards,
-        lockDisappear .4s ease .25s forwards;
-}
-
-
-/* ánh sáng mạnh lên */
-
-#introDoor.door-open .door-back-light {
-
-    opacity: 1;
-
-    transform: scale(1.4);
-}
-
-
-/* ==================================================
-   ✨ FLASH
-================================================== */
-
-.door-flash {
-
-    position: absolute;
-
-    inset: -20%;
-
-    background: white;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    z-index: 100;
-}
-
-
-#introDoor.door-flash-active .door-flash {
-
-    animation:
-        animeFlash .8s
-        cubic-bezier(.2,.8,.2,1)
-        forwards;
-}
-
-/* ==================================================
-   CỬA MỞ
-================================================== */
 
 @keyframes doorLeftOpen {
 
     0% {
         transform:
-            translateX(0)
+            translate3d(0,0,0)
             rotateY(0deg);
     }
 
     100% {
         transform:
-            translateX(-115%)
-            rotateY(-82deg);
+            translate3d(-125%,0,0)
+            rotateY(-85deg);
     }
+
 }
 
 
@@ -2821,59 +2781,84 @@ html{
 
     0% {
         transform:
-            translateX(0)
+            translate3d(0,0,0)
             rotateY(0deg);
     }
 
     100% {
         transform:
-            translateX(115%)
-            rotateY(82deg);
+            translate3d(125%,0,0)
+            rotateY(85deg);
     }
+
 }
 
 
-/* ==================================================
-   KHÓA RUNG
-================================================== */
+/* =========================================
+   ✨ ÁNH SÁNG NHẤP NHÁY KHI CỬA MỞ
+========================================= */
 
-@keyframes lockShake {
+#introDoor.door-start .door-back-light {
+
+    animation:
+        doorLight 2.5s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes doorLight {
 
     0% {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
+        opacity: 0;
+        transform: scale(.5);
     }
 
-    20% {
-        transform:
-            translate(-50%, -50%)
-            rotate(-12deg);
+    25% {
+        opacity: .25;
+        transform: scale(.75);
     }
 
-    40% {
-        transform:
-            translate(-50%, -50%)
-            rotate(12deg);
+    42% {
+        opacity: .75;
+        transform: scale(1);
     }
 
-    60% {
-        transform:
-            translate(-50%, -50%)
-            rotate(-8deg);
+    55% {
+        opacity: .3;
+        transform: scale(1.1);
     }
 
-    80% {
-        transform:
-            translate(-50%, -50%)
-            rotate(6deg);
+    70% {
+        opacity: .9;
+        transform: scale(1.35);
+    }
+
+    82% {
+        opacity: .55;
+        transform: scale(1.5);
     }
 
     100% {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
+        opacity: 1;
+        transform: scale(1.7);
     }
+
+}
+
+
+/* =========================================
+   🔒 KHÓA BIẾN MẤT
+========================================= */
+
+#introDoor.door-start .door-lock {
+
+    animation:
+        lockDisappear .5s
+        ease
+        forwards;
+
 }
 
 
@@ -2890,48 +2875,77 @@ html{
         opacity: 0;
         transform:
             translate(-50%, -50%)
-            scale(1.8);
+            scale(1.6);
     }
+
 }
 
 
-/* ==================================================
-   FLASH KIỂU CHUYỂN CẢNH ANIME
-================================================== */
+/* =========================================
+   💥 FLASH KHI CỬA VỪA CHẠM ĐẦY MÀN HÌNH
+========================================= */
 
-@keyframes animeFlash {
+.door-flash {
+
+    position: absolute;
+    inset: 0;
+
+    background: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+}
+
+
+#introDoor.door-flash-active .door-flash {
+
+    animation:
+        finalDoorFlash .7s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes finalDoorFlash {
 
     0% {
         opacity: 0;
     }
 
-    20% {
-        opacity: .15;
+    30% {
+        opacity: .25;
     }
 
-    45% {
+    48% {
         opacity: 1;
     }
 
     65% {
-        opacity: .75;
+        opacity: 1;
     }
 
     100% {
         opacity: 0;
     }
+
 }
 
 
-/* ==================================================
-   SAU KHI XONG
-================================================== */
+/* =========================================
+   🌸 XÓA INTRO
+========================================= */
 
 #introDoor.intro-finished {
 
     animation:
-        introDisappear .55s ease
+        introDisappear .45s ease
         forwards;
+
 }
 
 
@@ -2945,20 +2959,28 @@ html{
         opacity: 0;
         visibility: hidden;
     }
+
 }
 
 
-/* MOBILE */
+/* =========================================
+   📱 MOBILE
+========================================= */
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
     .door-frame {
 
-        width: 78vw;
-        height: 72vh;
+        width: 42vw;
+        height: 58vh;
+
+        min-width: 170px;
+        min-height: 280px;
 
         border-width: 10px;
+
     }
+
 
     .door-lock {
 
@@ -2966,7 +2988,7 @@ html{
         height: 62px;
 
         font-size: 34px;
+
     }
 
 }
-
