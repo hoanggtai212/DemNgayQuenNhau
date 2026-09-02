@@ -2097,69 +2097,59 @@ html{
 }
 
 
-/* =====================================================
-   🎭 RÈM TRÁI
-
-   Kéo → vượt → quay lại → vượt → quay lại
-   biên độ nhỏ dần
-===================================================== */
-
 @keyframes curtainLeftSwing{
     0%   {transform:translate3d(0,0,0);}
-    
-    /* kéo ra */
+
+    /* kéo mạnh sang trái */
     12%  {transform:translate3d(-22%,0,0);}
     28%  {transform:translate3d(-110%,0,0);}
-    
-    /* quay VÀO giữa sâu */
-    42%  {transform:translate3d(-78%,0,0);}
-    
-    /* bung ra lại */
+
+    /* ↩ vào giữa SÂU */
+    42%  {transform:translate3d(-65%,0,0);}
+
+    /* ↪ bung ra */
     54%  {transform:translate3d(-108%,0,0);}
-    
-    /* quay vào lần 2 */
-    66%  {transform:translate3d(-88%,0,0);}
-    
-    /* bung ra */
+
+    /* ↩ vào lần 2 - ít hơn */
+    66%  {transform:translate3d(-78%,0,0);}
+
+    /* ↪ bung ra */
     76%  {transform:translate3d(-105%,0,0);}
-    
-    /* dao động nhỏ dần */
-    85%  {transform:translate3d(-93%,0,0);}
+
+    /* ↩ dao động nhỏ dần */
+    85%  {transform:translate3d(-87%,0,0);}
     92%  {transform:translate3d(-103%,0,0);}
-    97%  {transform:translate3d(-98%,0,0);}
-    
-    /* đứng yên */
+    97%  {transform:translate3d(-96%,0,0);}
+
     100% {transform:translate3d(-102%,0,0);}
 }
 
 @keyframes curtainRightSwing{
     0%   {transform:translate3d(0,0,0);}
-    
-    /* kéo ra */
+
+    /* kéo mạnh sang phải */
     12%  {transform:translate3d(22%,0,0);}
     28%  {transform:translate3d(110%,0,0);}
-    
-    /* quay VÀO giữa sâu */
-    42%  {transform:translate3d(78%,0,0);}
-    
-    /* bung ra lại */
+
+    /* ↩ vào giữa SÂU */
+    42%  {transform:translate3d(65%,0,0);}
+
+    /* ↪ bung ra */
     54%  {transform:translate3d(108%,0,0);}
-    
-    /* quay vào lần 2 */
-    66%  {transform:translate3d(88%,0,0);}
-    
-    /* bung ra */
+
+    /* ↩ vào lần 2 - ít hơn */
+    66%  {transform:translate3d(78%,0,0);}
+
+    /* ↪ bung ra */
     76%  {transform:translate3d(105%,0,0);}
-    
-    /* dao động nhỏ dần */
-    85%  {transform:translate3d(93%,0,0);}
+
+    /* ↩ dao động nhỏ dần */
+    85%  {transform:translate3d(87%,0,0);}
     92%  {transform:translate3d(103%,0,0);}
-    97%  {transform:translate3d(98%,0,0);}
-    
-    /* đứng yên */
+    97%  {transform:translate3d(96%,0,0);}
+
     100% {transform:translate3d(102%,0,0);}
 }
-
 
 /* =====================================================
    💗 TIM GIỮA
