@@ -825,38 +825,6 @@ function createHeartPhotoCentered(idx, total) {
     }, 100); 
 }
 
-/* ========================================
-   🚪 INTRO DOOR
-======================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const introDoor = document.getElementById("introDoor");
-    const doorLock = document.getElementById("doorLock");
-
-    if (!introDoor || !doorLock) return;
-
-    doorLock.addEventListener("click", () => {
-
-        // Không cho bấm nhiều lần
-        if (introDoor.classList.contains("door-opening")) return;
-
-        // Bắt đầu animation mở cửa
-        introDoor.classList.add("door-opening");
-
-        // Sau khi cửa mở xong -> ẩn màn cửa
-        setTimeout(() => {
-            introDoor.classList.add("door-finished");
-        }, 2400);
-
-        // Xóa hẳn khỏi màn hình
-        setTimeout(() => {
-            introDoor.style.display = "none";
-        }, 3200);
-    });
-
-});
-
 /* ==================================================
    🚪 ANIME INTRO DOOR
 ================================================== */
