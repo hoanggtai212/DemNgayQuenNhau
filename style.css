@@ -2084,11 +2084,11 @@ html{
 }
 
 #curtainTransition.curtain-open .curtain-left{
-    animation: curtainLeftOpen 3.0s cubic-bezier(.25,.1,.55,1) forwards;
+    animation: curtainLeftOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
 #curtainTransition.curtain-open .curtain-right{
-    animation: curtainRightOpen 3.0s cubic-bezier(.25,.1,.55,1) forwards;
+    animation: curtainRightOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
 @keyframes curtainLeftOpen{
