@@ -149,7 +149,8 @@ body {
 /* dòng 2 cách chữ ít hơn */ 
 .line2 { 
     letter-spacing: 12px; 
-    display: block; 
+    display: block;
+    margin-bottom: -2px;
 }
 
 .line3 { 
