@@ -833,59 +833,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const introDoor = document.getElementById("introDoor");
     const doorLock = document.getElementById("doorLock");
+    const doorFrame = introDoor?.querySelector(".door-frame");
+    const passwordPage = document.getElementById("passwordPage");
 
-    if (!introDoor || !doorLock) return;
-
+    if (!introDoor || !doorLock || !doorFrame) return;
 
     doorLock.addEventListener("click", () => {
 
-        // chống bấm nhiều lần
-        if (introDoor.classList.contains("door-start")) {
-            return;
-        }
+        // Chống bấm nhiều lần
+        if (introDoor.classList.contains("door-start")) return;
 
+        // Tính scale để cửa phóng tới vừa phủ màn hình điện thoại
+        const frameWidth = doorFrame.offsetWidth;
+        const frameHeight = doorFrame.offsetHeight;
 
-        /*
-         * BƯỚC 1
-         * Camera zoom vào cửa
-         */
+        const scaleX = window.innerWidth / frameWidth;
+        const scaleY = window.innerHeight / frameHeight;
 
+        // + một chút để chắc chắn phủ kín màn hình
+        const finalScale = Math.max(scaleX, scaleY) * 1.08;
+
+        doorFrame.style.setProperty(
+            "--door-final-scale",
+            finalScale
+        );
+
+        // Bắt đầu zoom + mở cửa
         introDoor.classList.add("door-start");
 
+        // Hai cánh mở sau một chút
+        setTimeout(() => {
+            introDoor.classList.add("door-open");
+        }, 850);
 
-        /*
-         * BƯỚC 2
-         * Sau khi zoom gần tới cửa
-         * thì hai cánh bắt đầu mở
-         */
+        // Khi cửa gần phủ kín màn hình -> flash
+        setTimeout(() => {
+            introDoor.classList.add("door-flash-active");
+        }, 2350);
 
-setTimeout(() => {
-    introDoor.classList.add("door-open");
-}, 950);
+        // Hiện password phía sau flash
+        setTimeout(() => {
 
+            if (passwordPage) {
+                passwordPage.style.display = "flex";
+            }
 
-        /*
-         * BƯỚC 3
-         * Cửa mở gần hết -> lóe sáng
-         */
+        }, 2500);
 
-setTimeout(() => {
-    introDoor.classList.add("door-flash-active");
-}, 2450);
+        // Kết thúc intro
+        setTimeout(() => {
+            introDoor.classList.add("intro-finished");
+        }, 2850);
 
-        /*
-         * BƯỚC 4
-         * Flash xong -> biến intro đi
-         * để lộ counterPage
-         */
-
-  setTimeout(() => {
-    introDoor.classList.add("intro-finished");
-}, 3000);
-
-setTimeout(() => {
-    introDoor.style.display = "none";
-}, 3500);
+        setTimeout(() => {
+            introDoor.style.display = "none";
+        }, 3300);
 
     });
 
