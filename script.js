@@ -434,12 +434,12 @@ function showUnlockAnimation() {
     const front = bigLock.querySelector(".front"); 
     const back = bigLock.querySelector(".back"); 
     overlay.style.display = "flex"; 
-    bigLock.classList.remove("spin", "open"); 
+    bigLock.classList.remove("spin", "lock-open");
     front.textContent = "🔒"; 
     back.textContent = "🔒"; 
     bigLock.classList.add("spin"); 
     setTimeout(() => { 
-        bigLock.classList.add("open"); 
+        bigLock.classList.add("lock-open");
     }, 2000); 
     setTimeout(() => { 
         front.textContent = "🔓"; 
@@ -595,59 +595,37 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuPage =
             document.getElementById("menuPage");
 
-        // ==========================================
         // 1. ẨN SUCCESS
-        // ==========================================
-
         successPage.style.display = "none";
 
-
-        // ==========================================
-        // 2. HIỆN RÈM ĐANG ĐÓNG
-        // ==========================================
-
+        // 2. HIỆN RÈM
         curtain.style.display = "block";
 
-        curtain.classList.remove("open");
+        curtain.classList.remove("curtain-open");
 
-        // 🔥 Quan trọng:
-        // Rèm KHÔNG chặn click xuống menu
+        // Rèm không chặn click xuống menu
         curtain.style.pointerEvents = "none";
 
-
-        // ==========================================
-        // 3. HIỆN MENU PHÍA SAU RÈM
-        // ==========================================
-
+        // 3. HIỆN MENU PHÍA SAU
         if (menuPage) {
             menuPage.style.display = "flex";
         }
 
-
-        // ==========================================
         // 4. MỞ RÈM 2 CÁNH
-        //    ← trái sang trái
-        //    → phải sang phải
-        // ==========================================
-
         setTimeout(() => {
 
             requestAnimationFrame(() => {
-                curtain.classList.add("open");
+                curtain.classList.add("curtain-open");
             });
 
         }, 300);
 
-
-        // ==========================================
-        // 5. MỞ XONG → XÓA RÈM
-        // ==========================================
-
+        // 5. MỞ XONG → ẨN RÈM
         setTimeout(() => {
 
             curtain.style.display = "none";
 
-            curtain.classList.remove("open");
+            curtain.classList.remove("curtain-open");
 
             curtain.style.pointerEvents = "none";
 
@@ -656,6 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
 const message = 
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️"; 
 const photoUrls = [ 
