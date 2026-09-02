@@ -73,8 +73,8 @@ function showPassword() {
         curtain.style.display = "none"; 
         curtain.classList.remove("open"); 
         curtain.style.pointerEvents = "none"; 
-    }, 1900); 
-} 
+    }, 2200); 
+}
 function showAlbum() { 
 document.getElementById("passwordPage").style.display = "none"; 
 document.getElementById("albumPage").style.display = "block"; 
@@ -544,35 +544,87 @@ function showLoveSuccess() {
     }, 30); 
 } 
  
-document.addEventListener('DOMContentLoaded', () => { 
-const clickMe = 
-document.getElementById("clickMe"); 
-if(clickMe){ 
-    clickMe.addEventListener("click", () => { 
-        const successPage = document.getElementById("loveSuccess"); 
-        const curtain = document.getElementById("curtainTransition"); 
- 
-    // Ẩn màn SUCCESS 
-    successPage.style.display = "none"; 
- 
-    // Hiện rèm 
-    curtain.style.display = "block"; 
- 
-    // Mở sẵn trang album ở phía sau rèm 
-    showAlbum(); 
- 
-    // Một chút delay để tạo cảm giác rèm đang chuẩn bị mở 
-    setTimeout(() => { 
-        curtain.classList.add("open"); 
-    }, 300); 
- 
-    // Sau khi rèm mở xong thì xóa rèm 
-    setTimeout(() => { 
-        curtain.style.display = "none"; 
-        curtain.classList.remove("open"); 
-    }, 2100); 
-}); 
-} 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const clickMe = document.getElementById("clickMe");
+
+    if(clickMe){
+
+        clickMe.addEventListener("click", () => {
+
+            const successPage =
+                document.getElementById("loveSuccess");
+
+            const curtain =
+                document.getElementById("curtainTransition");
+
+            const menuPage =
+                document.getElementById("menuPage");
+
+
+            // ==========================================
+            // 1. ẨN MÀN SUCCESS
+            // ==========================================
+
+            successPage.style.display = "none";
+
+
+            // ==========================================
+            // 2. HIỆN RÈM
+            // ==========================================
+
+            curtain.style.display = "block";
+
+            curtain.classList.remove("open");
+
+            curtain.style.pointerEvents = "auto";
+
+
+            // ==========================================
+            // 3. HIỆN MENU PHÍA SAU RÈM
+            // ==========================================
+
+            if(menuPage){
+
+                menuPage.style.display = "flex";
+
+            }
+
+
+            // ==========================================
+            // 4. ĐỢI MỘT CHÚT → MỞ RÈM
+            // ==========================================
+
+            setTimeout(() => {
+
+                requestAnimationFrame(() => {
+
+                    curtain.classList.add("open");
+
+                });
+
+            }, 300);
+
+
+            // ==========================================
+            // 5. RÈM MỞ XONG → ẨN RÈM
+            // ==========================================
+
+            setTimeout(() => {
+
+                curtain.style.display = "none";
+
+                curtain.classList.remove("open");
+
+                curtain.style.pointerEvents = "none";
+
+            }, 2200);
+
+        });
+
+    }
+
+});
 const message = 
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️"; 
 const photoUrls = [ 
