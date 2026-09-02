@@ -2941,19 +2941,18 @@ html{
 }
 
 
-/* =========================================
-   📱 MOBILE
-========================================= */
 @media (max-width: 600px) {
 
-    .door-frame {
-        width: 66vw;
-        height: min(55vh, 420px);
+    #introDoor.door-start .door-frame {
+        animation: doorApproachMobile 3.4s cubic-bezier(.25,.1,.55,1) forwards;
     }
 
-    /* Zoom lâu hơn trên điện thoại */
-    #introDoor.door-start .door-frame {
-        animation: doorApproachMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
+    #introDoor.door-start .door-wing-left {
+        animation: doorLeftOpenMobile 3.4s cubic-bezier(.25,.1,.55,1) forwards;
+    }
+
+    #introDoor.door-start .door-wing-right {
+        animation: doorRightOpenMobile 3.4s cubic-bezier(.25,.1,.55,1) forwards;
     }
 
     @keyframes doorApproachMobile {
@@ -2964,15 +2963,6 @@ html{
         to {
             transform: scale(2.6);
         }
-    }
-
-    /* Cửa mở cùng thời gian với zoom */
-    #introDoor.door-start .door-wing-left {
-        animation: doorLeftOpenMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
-    }
-
-    #introDoor.door-start .door-wing-right {
-        animation: doorRightOpenMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
     }
 
     @keyframes doorLeftOpenMobile {
@@ -2992,6 +2982,29 @@ html{
 
         to {
             transform: translate3d(120%,0,0) rotateY(80deg);
+        }
+    }
+
+    /* LÓE SÁNG KHI CỬA GẦN CHẠM MÉP */
+    #introDoor.door-start .door-flash {
+        animation: mobileDoorFlash 0.65s ease-out 2.75s forwards;
+    }
+
+    @keyframes mobileDoorFlash {
+        0% {
+            opacity: 0;
+        }
+
+        35% {
+            opacity: 1;
+        }
+
+        55% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
         }
     }
 }
