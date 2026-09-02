@@ -50,22 +50,21 @@ function showPassword() {
        2. SAU KHI RÈM ĐÓNG 
           → HIỆN KHUNG PASSWORD PHÍA SAU 
     ================================= */ 
-    setTimeout(() => { 
-        counterPage.style.display = "none"; 
-        passwordPage.style.display = "flex"; 
-        passwordPage.classList.remove("fade-in"); 
-        setRunningTextInfinite( 
-            "💗 ENTER PASSWORD 💗" 
-        ); 
-        /* ================================= 
-           3. MỞ RÈM 
-        ================================= */ 
-        requestAnimationFrame(() => { 
-            requestAnimationFrame(() => { 
-                curtain.classList.add("open"); 
-            }); 
-        }); 
-    }, 300); 
+setTimeout(() => {
+    counterPage.style.display = "none";
+    passwordPage.style.display = "flex";
+    passwordPage.classList.remove("fade-in");
+    setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+
+    // 🔥 Cho phép bấm password ngay khi rèm bắt đầu mở
+    curtain.style.pointerEvents = "none";
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            curtain.classList.add("open");
+        });
+    });
+}, 300);
     /* ================================= 
        4. RÈM MỞ XONG → ẨN RÈM 
     ================================= */ 
@@ -608,18 +607,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // ==========================================
             // 4. ĐỢI MỘT CHÚT → MỞ RÈM
             // ==========================================
+setTimeout(() => {
 
-            setTimeout(() => {
+    // 🔥 Rèm vẫn đang mở nhưng menu đã bấm được
+    curtain.style.pointerEvents = "none";
 
-                requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+        curtain.classList.add("open");
+    });
 
-                    curtain.classList.add("open");
-
-                });
-
-            }, 300);
-
-
+}, 300);
             // ==========================================
             // 5. RÈM MỞ XONG → ẨN RÈM
             // ==========================================
