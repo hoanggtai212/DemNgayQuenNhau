@@ -2229,3 +2229,203 @@ html{
             skewY(0deg); 
     } 
 } 
+
+/* =====================================================
+   💗 MENU PAGE
+===================================================== */
+
+#menuPage{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    width:100vw;
+    height:100dvh;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,255,255,.9) 0%,
+            rgba(255,218,231,.7) 25%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f5 0%,
+            #ffd9e6 50%,
+            #f8c1d6 100%
+        );
+
+    z-index:5000;
+}
+
+
+/* CARD MENU */
+
+.menu-box{
+    position:relative;
+
+    width:min(88vw,430px);
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.35);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(190,80,125,.2),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+    animation:menuAppear .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+
+/* TIÊU ĐỀ */
+
+.menu-box h1{
+    margin-bottom:10px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:2.5rem;
+
+    color:#d94f7c;
+
+    text-shadow:
+        0 3px 10px rgba(217,79,124,.18);
+}
+
+
+/* DÒNG PHỤ */
+
+.menu-box p{
+    margin-bottom:25px;
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:15px;
+
+    color:#9b5f75;
+}
+
+
+/* CÁC NÚT MENU */
+
+.menu-box button{
+    display:block;
+
+    width:100%;
+
+    margin:12px 0;
+
+    padding:14px 20px;
+
+    border:none;
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff91b4,
+            #f45d8c
+        );
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px rgba(240,98,134,.25),
+        inset 0 1px 0 rgba(255,255,255,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* HOVER */
+
+.menu-box button:hover{
+    transform:translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 28px rgba(240,98,134,.4),
+        0 0 20px rgba(255,120,165,.18);
+}
+
+
+/* CLICK */
+
+.menu-box button:active{
+    transform:scale(.95);
+}
+
+
+/* MENU XUẤT HIỆN */
+
+@keyframes menuAppear{
+    from{
+        opacity:0;
+
+        transform:
+            scale(.85)
+            translateY(30px);
+
+        filter:blur(10px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter:blur(0);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .menu-box{
+        width:88vw;
+        padding:34px 22px;
+        border-radius:28px;
+    }
+
+    .menu-box h1{
+        font-size:2.2rem;
+    }
+
+    .menu-box p{
+        font-size:13px;
+    }
+
+    .menu-box button{
+        padding:13px 18px;
+        font-size:14px;
+    }
+}
