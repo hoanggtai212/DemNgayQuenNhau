@@ -191,52 +191,76 @@ function showLoadingLove(){
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const startBtn = document.getElementById("startLoveBtn");
+    const clickMe = document.getElementById("clickMe");
 
-    if(!startBtn) return;
+    if (clickMe) {
 
-startBtn.addEventListener("click", () => {
+        clickMe.addEventListener("click", () => {
 
-    const loading = document.getElementById("loveLoading");
+            const successPage =
+                document.getElementById("loveSuccess");
 
-    const hearts = [
-        document.getElementById("loadingHeart1"),
-        document.getElementById("loadingHeart2"),
-        document.getElementById("loadingHeart3")
-    ];
+            const curtain =
+                document.getElementById("curtainTransition");
 
-    hearts.forEach(heart => {
-        heart.style.animationPlayState = "running";
-    });
 
-    startBtn.classList.add("button-click-out");
+            // =====================================
+            // 1. ẨN TRANG SUCCESS
+            // =====================================
 
-    setTimeout(() => {
+            successPage.style.display = "none";
 
-        // Loading bắt đầu fade out
-        loading.classList.add("loading-transition-out");
 
-        // Hiện SUCCESS
-        const success = document.getElementById("loveSuccess");
+            // =====================================
+            // 2. HIỆN RÈM Ở TRẠNG THÁI ĐÓNG
+            // =====================================
 
-        success.style.display = "flex";
-        success.classList.add("success-transition-in");
+            curtain.style.display = "block";
 
-        // ⬇️ Đợi đúng thời gian FADE-IN xong
-        // rồi chạy thanh %
-        showLoveSuccess();
+            curtain.classList.remove("open");
 
-        // Xóa loading sau
-        setTimeout(() => {
+            curtain.style.pointerEvents = "auto";
 
-            loading.style.display = "none";
-            loading.classList.remove("loading-transition-out");
 
-        }, 1800);
+            // =====================================
+            // 3. HIỆN ALBUM PHÍA SAU RÈM
+            // =====================================
 
-    }, 350);
+            showAlbum();
 
-});
+
+            // =====================================
+            // 4. CHỜ MỘT CHÚT RỒI MỚI KÉO RÈM
+            // =====================================
+
+            setTimeout(() => {
+
+                requestAnimationFrame(() => {
+
+                    curtain.classList.add("open");
+
+                });
+
+            }, 180);
+
+
+            // =====================================
+            // 5. SAU KHI RÈM MỞ XONG → XÓA RÈM
+            // =====================================
+
+            setTimeout(() => {
+
+                curtain.style.display = "none";
+
+                curtain.classList.remove("open");
+
+                curtain.style.pointerEvents = "none";
+
+            }, 2200);
+
+        });
+
+    }
 
 });
 
