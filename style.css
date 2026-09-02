@@ -2715,11 +2715,49 @@ html{
 ========================================= */
 
 #introDoor.door-start .door-frame {
-    animation: doorApproach 2.7s
-        cubic-bezier(.12,.68,.18,1)
-        forwards;
+    animation: doorApproach 2.5s cubic-bezier(.25,.1,.55,1) forwards;
+    will-change: transform;
 }
 
+#introDoor.door-start .door-wing-left {
+    animation: doorLeftOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
+    will-change: transform;
+}
+
+#introDoor.door-start .door-wing-right {
+    animation: doorRightOpen 2.5s cubic-bezier(.25,.1,.55,1) forwards;
+    will-change: transform;
+}
+
+@keyframes doorApproach {
+    0% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.18);
+    }
+
+    70% {
+        transform: scale(2.15);
+    }
+
+    100% {
+        transform: scale(3.25);
+    }
+}
+
+#introDoor.door-start .door-left {
+    animation: doorLeftOpen 2.6s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
+    transform-origin: left center;
+    will-change: transform;
+}
+
+#introDoor.door-start .door-right {
+    animation: doorRightOpen 2.6s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
+    transform-origin: right center;
+    will-change: transform;
+}
 
 /* Cửa từ nhỏ → phủ gần kín màn hình */
 @keyframes doorApproach {
@@ -2760,36 +2798,39 @@ html{
 
 
 @keyframes doorLeftOpen {
-
     0% {
-        transform:
-            translate3d(0,0,0)
-            rotateY(0deg);
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+
+    35% {
+        transform: translate3d(-12%, 0, 0) rotateY(-12deg);
+    }
+
+    70% {
+        transform: translate3d(-70%, 0, 0) rotateY(-60deg);
     }
 
     100% {
-        transform:
-            translate3d(-125%,0,0)
-            rotateY(-85deg);
+        transform: translate3d(-125%, 0, 0) rotateY(-85deg);
     }
-
 }
 
-
 @keyframes doorRightOpen {
-
     0% {
-        transform:
-            translate3d(0,0,0)
-            rotateY(0deg);
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+
+    35% {
+        transform: translate3d(12%, 0, 0) rotateY(12deg);
+    }
+
+    70% {
+        transform: translate3d(70%, 0, 0) rotateY(60deg);
     }
 
     100% {
-        transform:
-            translate3d(125%,0,0)
-            rotateY(85deg);
+        transform: translate3d(125%, 0, 0) rotateY(85deg);
     }
-
 }
 
 
