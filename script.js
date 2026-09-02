@@ -68,23 +68,57 @@ function showAlbum() {
     const menuPage = document.getElementById("menuPage");
     const passwordPage = document.getElementById("passwordPage");
     const albumPage = document.getElementById("albumPage");
-
     if (menuPage) {
         menuPage.style.display = "none";
     }
-
     if (passwordPage) {
         passwordPage.style.display = "none";
     }
-
     if (albumPage) {
         albumPage.style.display = "block";
     }
-
     setTimeout(() => {
         startTyping();
     }, 800);
 }
+
+function showCounterWithCurtain() {
+    const menuPage = document.getElementById("menuPage");
+    const counterPage = document.getElementById("counterPage");
+    const curtain = document.getElementById("curtainTransition");
+
+    // Ẩn Menu
+    if (menuPage) {
+        menuPage.style.display = "none";
+    }
+
+    // Hiện rèm
+    if (curtain) {
+        curtain.style.display = "block";
+        curtain.classList.remove("curtain-open");
+        curtain.style.pointerEvents = "none";
+    }
+
+    // Hiện trang Chúng Ta Đã Bên Nhau phía sau rèm
+    if (counterPage) {
+        counterPage.style.display = "flex";
+    }
+
+    // Đợi rèm ở trạng thái đóng rồi mới mở
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            curtain.classList.add("curtain-open");
+        });
+    });
+
+    // Sau khi mở rèm xong thì ẩn rèm
+    setTimeout(() => {
+        curtain.style.display = "none";
+        curtain.classList.remove("curtain-open");
+        curtain.style.pointerEvents = "none";
+    }, 3000);
+}
+
 function backHome() { 
 location.reload(); 
 } 
