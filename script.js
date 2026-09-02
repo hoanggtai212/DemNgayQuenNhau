@@ -568,35 +568,6 @@ function showLoveSuccess() {
     }, 30);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-const clickMe =
-document.getElementById("clickMe");
-if(clickMe){
-    clickMe.addEventListener("click", () => {
-        const successPage = document.getElementById("loveSuccess");
-        const curtain = document.getElementById("curtainTransition");
-
-    // Ẩn màn SUCCESS
-    successPage.style.display = "none";
-
-    // Hiện rèm
-    curtain.style.display = "block";
-
-    // Mở sẵn trang album ở phía sau rèm
-    showAlbum();
-
-    // Một chút delay để tạo cảm giác rèm đang chuẩn bị mở
-    setTimeout(() => {
-        curtain.classList.add("open");
-    }, 300);
-
-    // Sau khi rèm mở xong thì xóa rèm
-    setTimeout(() => {
-        curtain.style.display = "none";
-        curtain.classList.remove("open");
-    }, 2100);
-});
-}
 const message =
 "Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
 const photoUrls = [
