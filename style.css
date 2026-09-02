@@ -127,7 +127,17 @@ body {
     text-align: center; 
     padding: 5px; 
     border-radius: 10px; 
-} 
+}
+
+.our-little-world {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;
+    font-weight: normal;
+    color: #e75480;
+    -webkit-text-stroke: 1px #e75480;
+    text-shadow: 0 1px 3px rgba(231,84,128,0.15);
+    line-height: 1.1;
+}
  
 /* TIÊU ĐỀ CHO CHỮ " CHÚNG TA ĐÃ BÊN NHAU " */ 
 .main-title {
@@ -709,7 +719,11 @@ MOBILE
     .main-title{ 
         font-size:3rem; 
     } 
- 
+
+    .our-little-world {
+        font-size: 3rem;
+    }
+    
     .avatar{ 
         width: 110px; 
         height: 110px; 
