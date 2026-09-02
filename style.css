@@ -2723,14 +2723,14 @@ html{
     animation: doorRightOpen 3.4s cubic-bezier(.25,.1,.55,1) forwards;
 }
 
-@keyframes doorApproach {
-    from {
-        transform: scale(1);
-    }
+@keyframes doorApproach { 
+    from { 
+        transform: scale(1); 
+    } 
 
-    to {
-        transform: scale(3.1);
-    }
+    to { 
+        transform: scale(var(--door-final-scale, 3.1)); 
+    } 
 }
 
 
@@ -2955,15 +2955,15 @@ html{
         animation: doorRightOpenMobile 3.4s cubic-bezier(.25,.1,.55,1) forwards;
     }
 
-    @keyframes doorApproachMobile {
-        from {
-            transform: scale(1);
-        }
+@keyframes doorApproachMobile { 
+    from { 
+        transform: scale(1); 
+    } 
 
-        to {
-            transform: scale(2.6);
-        }
-    }
+    to { 
+        transform: scale(var(--door-final-scale, 2.6)); 
+    } 
+}
 
     @keyframes doorLeftOpenMobile {
         from {
@@ -2982,29 +2982,6 @@ html{
 
         to {
             transform: translate3d(120%,0,0) rotateY(80deg);
-        }
-    }
-
-    /* LÓE SÁNG KHI CỬA GẦN CHẠM MÉP */
-    #introDoor.door-start .door-flash {
-        animation: mobileDoorFlash 0.65s ease-out 2.75s forwards;
-    }
-
-    @keyframes mobileDoorFlash {
-        0% {
-            opacity: 0;
-        }
-
-        35% {
-            opacity: 1;
-        }
-
-        55% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0;
         }
     }
 }
