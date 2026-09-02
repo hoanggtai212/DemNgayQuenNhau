@@ -861,11 +861,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Bắt đầu zoom + mở cửa
         introDoor.classList.add("door-start");
 
-        // Hai cánh mở sau một chút
-        setTimeout(() => {
-            introDoor.classList.add("door-open");
-        }, 850);
-
         // Khi cửa gần phủ kín màn hình -> flash
         setTimeout(() => {
             introDoor.classList.add("door-flash-active");
