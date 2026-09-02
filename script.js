@@ -75,13 +75,27 @@ function showPassword() {
         curtain.style.pointerEvents = "none"; 
     }, 2200); 
 }
-function showAlbum() { 
-document.getElementById("passwordPage").style.display = "none"; 
-document.getElementById("albumPage").style.display = "block"; 
-setTimeout(() => { 
-startTyping(); 
-}, 800); 
-} 
+function showAlbum() {
+    const menuPage = document.getElementById("menuPage");
+    const passwordPage = document.getElementById("passwordPage");
+    const albumPage = document.getElementById("albumPage");
+
+    if (menuPage) {
+        menuPage.style.display = "none";
+    }
+
+    if (passwordPage) {
+        passwordPage.style.display = "none";
+    }
+
+    if (albumPage) {
+        albumPage.style.display = "block";
+    }
+
+    setTimeout(() => {
+        startTyping();
+    }, 800);
+}
 function backHome() { 
 location.reload(); 
 } 
