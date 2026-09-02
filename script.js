@@ -37,17 +37,22 @@ function showPassword() {
     const curtain = document.getElementById("curtainTransition");
 
     // =================================
-    // 1. HIỆN RÈM - ĐANG ĐÓNG
+    // 1. HIỆN RÈM
     // =================================
-    curtain.style.display = "block";
-    curtain.classList.remove("open");
 
-    // Rèm chỉ để tạo hiệu ứng, không chặn click
+    curtain.style.display = "block";
+
+    // 🔥 Dùng class riêng cho rèm
+    curtain.classList.remove("curtain-open");
+
+    // Không chặn click xuống password
     curtain.style.pointerEvents = "none";
 
+
     // =================================
-    // 2. HIỆN PASSWORD PHÍA SAU
+    // 2. HIỆN PASSWORD PHÍA SAU RÈM
     // =================================
+
     setTimeout(() => {
 
         counterPage.style.display = "none";
@@ -57,28 +62,39 @@ function showPassword() {
 
         setRunningTextInfinite("💗 ENTER PASSWORD 💗");
 
+
         // =================================
-        // 3. BẮT ĐẦU MỞ 2 CÁNH
+        // 3. BẮT ĐẦU MỞ RÈM 2 CÁNH
         // =================================
+
         requestAnimationFrame(() => {
+
             requestAnimationFrame(() => {
-                curtain.classList.add("open");
+
+                curtain.classList.add("curtain-open");
+
             });
+
         });
 
     }, 300);
 
+
     // =================================
     // 4. RÈM MỞ XONG → ẨN
     // =================================
+
     setTimeout(() => {
 
         curtain.style.display = "none";
-        curtain.classList.remove("open");
+
+        curtain.classList.remove("curtain-open");
+
         curtain.style.pointerEvents = "none";
 
     }, 2200);
 }
+
 function showAlbum() {
     const menuPage = document.getElementById("menuPage");
     const passwordPage = document.getElementById("passwordPage");
