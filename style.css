@@ -2960,23 +2960,54 @@ html{
 /* =========================================
    📱 MOBILE
 ========================================= */
-
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
     .door-frame {
-        width: 72vw;
-        aspect-ratio: 0.8 / 1;
-        border-width: 7px;
+        width: 66vw;
+        height: min(55vh, 420px);
     }
 
-
-    .door-lock {
-
-        width: 62px;
-        height: 62px;
-
-        font-size: 34px;
-
+    /* Zoom lâu hơn trên điện thoại */
+    #introDoor.door-start .door-frame {
+        animation: doorApproachMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
     }
 
+    @keyframes doorApproachMobile {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(2.6);
+        }
+    }
+
+    /* Cửa mở cùng thời gian với zoom */
+    #introDoor.door-start .door-wing-left {
+        animation: doorLeftOpenMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
+    }
+
+    #introDoor.door-start .door-wing-right {
+        animation: doorRightOpenMobile 3.2s cubic-bezier(.25,.1,.55,1) forwards;
+    }
+
+    @keyframes doorLeftOpenMobile {
+        from {
+            transform: translate3d(0,0,0) rotateY(0deg);
+        }
+
+        to {
+            transform: translate3d(-120%,0,0) rotateY(-80deg);
+        }
+    }
+
+    @keyframes doorRightOpenMobile {
+        from {
+            transform: translate3d(0,0,0) rotateY(0deg);
+        }
+
+        to {
+            transform: translate3d(120%,0,0) rotateY(80deg);
+        }
+    }
 }
