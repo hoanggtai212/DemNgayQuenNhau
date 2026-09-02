@@ -2105,104 +2105,59 @@ html{
 ===================================================== */
 
 @keyframes curtainLeftSwing{
-
-    /* đóng */
-    0%{
-        transform:translate3d(0,0,0);
-    }
-
-    /* bắt đầu kéo */
-    12%{
-        transform:translate3d(-22%,0,0);
-    }
-
-    /* kéo mạnh ra */
-    28%{
-        transform:translate3d(-108%,0,0);
-    }
-
-    /* QUAY NGƯỢC LẠI */
-    42%{
-        transform:translate3d(-91%,0,0);
-    }
-
-    /* lại văng ra */
-    54%{
-        transform:translate3d(-105%,0,0);
-    }
-
-    /* quay lại lần nữa */
-    65%{
-        transform:translate3d(-97%,0,0);
-    }
-
-    /* dao động nhỏ */
-    75%{
-        transform:translate3d(-102%,0,0);
-    }
-
-    /* gần đứng */
-    84%{
-        transform:translate3d(-99%,0,0);
-    }
-
-    /* rung nhẹ cuối */
-    92%{
-        transform:translate3d(-101%,0,0);
-    }
-
-    /* đứng hẳn */
-    100%{
-        transform:translate3d(-100%,0,0);
-    }
+    0%   {transform:translate3d(0,0,0);}
+    
+    /* kéo ra */
+    12%  {transform:translate3d(-22%,0,0);}
+    28%  {transform:translate3d(-110%,0,0);}
+    
+    /* quay VÀO giữa sâu */
+    42%  {transform:translate3d(-78%,0,0);}
+    
+    /* bung ra lại */
+    54%  {transform:translate3d(-108%,0,0);}
+    
+    /* quay vào lần 2 */
+    66%  {transform:translate3d(-88%,0,0);}
+    
+    /* bung ra */
+    76%  {transform:translate3d(-105%,0,0);}
+    
+    /* dao động nhỏ dần */
+    85%  {transform:translate3d(-93%,0,0);}
+    92%  {transform:translate3d(-103%,0,0);}
+    97%  {transform:translate3d(-98%,0,0);}
+    
+    /* đứng yên */
+    100% {transform:translate3d(-102%,0,0);}
 }
 
-
-/* =====================================================
-   🎭 RÈM PHẢI
-===================================================== */
-
 @keyframes curtainRightSwing{
-
-    0%{
-        transform:translate3d(0,0,0);
-    }
-
-    12%{
-        transform:translate3d(22%,0,0);
-    }
-
-    28%{
-        transform:translate3d(108%,0,0);
-    }
-
-    42%{
-        transform:translate3d(91%,0,0);
-    }
-
-    54%{
-        transform:translate3d(105%,0,0);
-    }
-
-    65%{
-        transform:translate3d(97%,0,0);
-    }
-
-    75%{
-        transform:translate3d(102%,0,0);
-    }
-
-    84%{
-        transform:translate3d(99%,0,0);
-    }
-
-    92%{
-        transform:translate3d(101%,0,0);
-    }
-
-    100%{
-        transform:translate3d(100%,0,0);
-    }
+    0%   {transform:translate3d(0,0,0);}
+    
+    /* kéo ra */
+    12%  {transform:translate3d(22%,0,0);}
+    28%  {transform:translate3d(110%,0,0);}
+    
+    /* quay VÀO giữa sâu */
+    42%  {transform:translate3d(78%,0,0);}
+    
+    /* bung ra lại */
+    54%  {transform:translate3d(108%,0,0);}
+    
+    /* quay vào lần 2 */
+    66%  {transform:translate3d(88%,0,0);}
+    
+    /* bung ra */
+    76%  {transform:translate3d(105%,0,0);}
+    
+    /* dao động nhỏ dần */
+    85%  {transform:translate3d(93%,0,0);}
+    92%  {transform:translate3d(103%,0,0);}
+    97%  {transform:translate3d(98%,0,0);}
+    
+    /* đứng yên */
+    100% {transform:translate3d(102%,0,0);}
 }
 
 
