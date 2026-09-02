@@ -840,48 +840,119 @@ document.addEventListener("DOMContentLoaded", () => {
 
     doorLock.addEventListener("click", () => {
 
-        // Chống bấm nhiều lần
+        // ==========================================
+        // CHỐNG BẤM NHIỀU LẦN
+        // ==========================================
+
         if (introDoor.classList.contains("door-start")) return;
 
-        // Tính scale để cửa phóng tới vừa phủ màn hình điện thoại
+
+        // ==========================================
+        // 1. TÍNH SCALE ĐỂ CỬA PHỦ MÀN HÌNH
+        // ==========================================
+
         const frameWidth = doorFrame.offsetWidth;
         const frameHeight = doorFrame.offsetHeight;
 
-        const scaleX = window.innerWidth / frameWidth;
-        const scaleY = window.innerHeight / frameHeight;
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
 
-        // + một chút để chắc chắn phủ kín màn hình
-        const finalScale = Math.max(scaleX, scaleY) * 1.08;
+        const scaleX = screenWidth / frameWidth;
+        const scaleY = screenHeight / frameHeight;
+
+        // Dư thêm 8% để chắc chắn không còn viền cửa
+        const finalScale =
+            Math.max(scaleX, scaleY) * 1.08;
 
         doorFrame.style.setProperty(
             "--door-final-scale",
             finalScale
         );
 
-// Bắt đầu zoom + mở cửa
-introDoor.classList.add("door-start");
 
-// 3.4s là toàn bộ thời gian zoom + mở cửa
-// Flash ở khoảng 2.95s, ngay trước khi cửa phủ kín màn hình
-setTimeout(() => {
-    introDoor.classList.add("door-flash-active");
-}, 2950);
+        // ==========================================
+        // 2. THỜI GIAN ANIMATION
+        // ==========================================
 
-// Hiện password phía sau flash
-setTimeout(() => {
-    if (passwordPage) {
-        passwordPage.style.display = "flex";
-    }
-}, 3150);
+        const animationDuration = 3400;
 
-        // Kết thúc intro
+
+        // ==========================================
+        // 3. TÍNH THỜI ĐIỂM CỬA GẦN CHẠM MÉP
+        //
+        // Ở khoảng 92% tiến trình zoom:
+        // cửa đã gần phủ kín màn hình
+        // ==========================================
+
+        const flashProgress = 0.92;
+
+        const flashTime =
+            animationDuration * flashProgress;
+
+
+        // ==========================================
+        // 4. BẮT ĐẦU ZOOM + MỞ 2 CÁNH
+        // ==========================================
+
+        introDoor.classList.add("door-start");
+
+
+        // ==========================================
+        // 5. FLASH ĐÚNG THEO TIẾN TRÌNH ZOOM
+        // ==========================================
+
         setTimeout(() => {
-            introDoor.classList.add("intro-finished");
-        }, 2850);
+
+            introDoor.classList.add(
+                "door-flash-active"
+            );
+
+        }, flashTime);
+
+
+        // ==========================================
+        // 6. HIỆN PASSWORD SAU KHI FLASH
+        // ==========================================
+
+        const passwordDelay = flashTime + 180;
 
         setTimeout(() => {
+
+            if (passwordPage) {
+                passwordPage.style.display = "flex";
+            }
+
+        }, passwordDelay);
+
+
+        // ==========================================
+        // 7. KẾT THÚC INTRO
+        // ==========================================
+
+        setTimeout(() => {
+
+            introDoor.classList.add(
+                "intro-finished"
+            );
+
+        }, animationDuration);
+
+
+        // ==========================================
+        // 8. XÓA INTRO KHỎI MÀN HÌNH
+        // ==========================================
+
+        setTimeout(() => {
+
             introDoor.style.display = "none";
-        }, 3300);
+
+            introDoor.classList.remove(
+                "door-start",
+                "door-flash-active",
+                "intro-finished"
+            );
+
+        }, animationDuration + 500);
 
     });
 
