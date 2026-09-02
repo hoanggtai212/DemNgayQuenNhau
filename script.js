@@ -31,48 +31,53 @@ document.title =
 setInterval(updateLoveTimer, 1000); 
 updateLoveTimer(); 
 }); 
-function showPassword() { 
-    const counterPage = 
-        document.getElementById("counterPage"); 
-    const passwordPage = 
-        document.getElementById("passwordPage"); 
-    const curtain = 
-        document.getElementById("curtainTransition"); 
-    /* ================================= 
-       1. HIỆN RÈM 
-    ================================= */ 
-    curtain.style.display = "block"; 
-    /* Đảm bảo rèm đang đóng */ 
-    curtain.classList.remove("open"); 
-    /* Không cho bấm lung tung lúc chuyển */ 
-    curtain.style.pointerEvents = "auto"; 
-    /* ================================= 
-       2. SAU KHI RÈM ĐÓNG 
-          → HIỆN KHUNG PASSWORD PHÍA SAU 
-    ================================= */ 
-setTimeout(() => {
-    counterPage.style.display = "none";
-    passwordPage.style.display = "flex";
-    passwordPage.classList.remove("fade-in");
-    setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+function showPassword() {
+    const counterPage = document.getElementById("counterPage");
+    const passwordPage = document.getElementById("passwordPage");
+    const curtain = document.getElementById("curtainTransition");
 
-    // 🔥 Cho phép bấm password ngay khi rèm bắt đầu mở
+    // =================================
+    // 1. HIỆN RÈM - ĐANG ĐÓNG
+    // =================================
+    curtain.style.display = "block";
+    curtain.classList.remove("open");
+
+    // Rèm chỉ để tạo hiệu ứng, không chặn click
     curtain.style.pointerEvents = "none";
 
-    requestAnimationFrame(() => {
+    // =================================
+    // 2. HIỆN PASSWORD PHÍA SAU
+    // =================================
+    setTimeout(() => {
+
+        counterPage.style.display = "none";
+        passwordPage.style.display = "flex";
+
+        passwordPage.classList.remove("fade-in");
+
+        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+
+        // =================================
+        // 3. BẮT ĐẦU MỞ 2 CÁNH
+        // =================================
         requestAnimationFrame(() => {
-            curtain.classList.add("open");
+            requestAnimationFrame(() => {
+                curtain.classList.add("open");
+            });
         });
-    });
-}, 300);
-    /* ================================= 
-       4. RÈM MỞ XONG → ẨN RÈM 
-    ================================= */ 
-    setTimeout(() => { 
-        curtain.style.display = "none"; 
-        curtain.classList.remove("open"); 
-        curtain.style.pointerEvents = "none"; 
-    }, 2200); 
+
+    }, 300);
+
+    // =================================
+    // 4. RÈM MỞ XONG → ẨN
+    // =================================
+    setTimeout(() => {
+
+        curtain.style.display = "none";
+        curtain.classList.remove("open");
+        curtain.style.pointerEvents = "none";
+
+    }, 2200);
 }
 function showAlbum() {
     const menuPage = document.getElementById("menuPage");
@@ -557,83 +562,82 @@ function showLoveSuccess() {
     }, 30); 
 } 
  
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     const clickMe = document.getElementById("clickMe");
 
-    if(clickMe){
+    if (!clickMe) return;
 
-        clickMe.addEventListener("click", () => {
+    clickMe.addEventListener("click", () => {
 
-            const successPage =
-                document.getElementById("loveSuccess");
+        const successPage =
+            document.getElementById("loveSuccess");
 
-            const curtain =
-                document.getElementById("curtainTransition");
+        const curtain =
+            document.getElementById("curtainTransition");
 
-            const menuPage =
-                document.getElementById("menuPage");
+        const menuPage =
+            document.getElementById("menuPage");
+
+        // ==========================================
+        // 1. ẨN SUCCESS
+        // ==========================================
+
+        successPage.style.display = "none";
 
 
-            // ==========================================
-            // 1. ẨN MÀN SUCCESS
-            // ==========================================
+        // ==========================================
+        // 2. HIỆN RÈM ĐANG ĐÓNG
+        // ==========================================
 
-            successPage.style.display = "none";
+        curtain.style.display = "block";
+
+        curtain.classList.remove("open");
+
+        // 🔥 Quan trọng:
+        // Rèm KHÔNG chặn click xuống menu
+        curtain.style.pointerEvents = "none";
 
 
-            // ==========================================
-            // 2. HIỆN RÈM
-            // ==========================================
+        // ==========================================
+        // 3. HIỆN MENU PHÍA SAU RÈM
+        // ==========================================
 
-            curtain.style.display = "block";
+        if (menuPage) {
+            menuPage.style.display = "flex";
+        }
+
+
+        // ==========================================
+        // 4. MỞ RÈM 2 CÁNH
+        //    ← trái sang trái
+        //    → phải sang phải
+        // ==========================================
+
+        setTimeout(() => {
+
+            requestAnimationFrame(() => {
+                curtain.classList.add("open");
+            });
+
+        }, 300);
+
+
+        // ==========================================
+        // 5. MỞ XONG → XÓA RÈM
+        // ==========================================
+
+        setTimeout(() => {
+
+            curtain.style.display = "none";
 
             curtain.classList.remove("open");
 
-            curtain.style.pointerEvents = "auto";
+            curtain.style.pointerEvents = "none";
 
+        }, 2200);
 
-            // ==========================================
-            // 3. HIỆN MENU PHÍA SAU RÈM
-            // ==========================================
-
-            if(menuPage){
-
-                menuPage.style.display = "flex";
-
-            }
-
-
-            // ==========================================
-            // 4. ĐỢI MỘT CHÚT → MỞ RÈM
-            // ==========================================
-setTimeout(() => {
-
-    // 🔥 Rèm vẫn đang mở nhưng menu đã bấm được
-    curtain.style.pointerEvents = "none";
-
-    requestAnimationFrame(() => {
-        curtain.classList.add("open");
     });
-
-}, 300);
-            // ==========================================
-            // 5. RÈM MỞ XONG → ẨN RÈM
-            // ==========================================
-
-            setTimeout(() => {
-
-                curtain.style.display = "none";
-
-                curtain.classList.remove("open");
-
-                curtain.style.pointerEvents = "none";
-
-            }, 2200);
-
-        });
-
-    }
 
 });
 const message = 
