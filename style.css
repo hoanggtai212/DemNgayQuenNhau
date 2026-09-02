@@ -2083,69 +2083,29 @@ html{
     transform-origin:right center;
 }
 
-/* =====================================================
-   💨 BẮT ĐẦU MỞ
-===================================================== */
-
 #curtainTransition.curtain-open .curtain-left{
-    animation: curtainLeftSwing 4.5s linear forwards;
+    animation: curtainLeftOpen 4.8s cubic-bezier(.45,0,.25,1) forwards;
 }
 
 #curtainTransition.curtain-open .curtain-right{
-    animation: curtainRightSwing 4.5s linear forwards;
+    animation: curtainRightOpen 4.8s cubic-bezier(.45,0,.25,1) forwards;
 }
 
-
-@keyframes curtainLeftSwing{
+@keyframes curtainLeftOpen{
     0%{
         transform:translate3d(0,0,0);
     }
 
-    /* bắt đầu rất chậm */
-    12%{
-        transform:translate3d(-5%,0,0);
+    25%{
+        transform:translate3d(-15%,0,0);
     }
 
-    24%{
-        transform:translate3d(-20%,0,0);
+    50%{
+        transform:translate3d(-48%,0,0);
     }
 
-    /* bắt đầu bung */
-    36%{
-        transform:translate3d(-55%,0,0);
-    }
-
-    48%{
-        transform:translate3d(-105%,0,0);
-    }
-
-    /* quay ngược vào thật mềm */
-    60%{
+    75%{
         transform:translate3d(-82%,0,0);
-    }
-
-    70%{
-        transform:translate3d(-52%,0,0);
-    }
-
-    /* bung ra lần nữa */
-    78%{
-        transform:translate3d(-103%,0,0);
-    }
-
-    /* lắc vào */
-    85%{
-        transform:translate3d(-76%,0,0);
-    }
-
-    /* lắc ra nhẹ */
-    91%{
-        transform:translate3d(-101%,0,0);
-    }
-
-    /* giảm dần */
-    96%{
-        transform:translate3d(-88%,0,0);
     }
 
     100%{
@@ -2153,50 +2113,21 @@ html{
     }
 }
 
-
-@keyframes curtainRightSwing{
+@keyframes curtainRightOpen{
     0%{
         transform:translate3d(0,0,0);
     }
 
-    12%{
-        transform:translate3d(5%,0,0);
+    25%{
+        transform:translate3d(15%,0,0);
     }
 
-    24%{
-        transform:translate3d(20%,0,0);
+    50%{
+        transform:translate3d(48%,0,0);
     }
 
-    36%{
-        transform:translate3d(55%,0,0);
-    }
-
-    48%{
-        transform:translate3d(105%,0,0);
-    }
-
-    60%{
+    75%{
         transform:translate3d(82%,0,0);
-    }
-
-    70%{
-        transform:translate3d(52%,0,0);
-    }
-
-    78%{
-        transform:translate3d(103%,0,0);
-    }
-
-    85%{
-        transform:translate3d(76%,0,0);
-    }
-
-    91%{
-        transform:translate3d(101%,0,0);
-    }
-
-    96%{
-        transform:translate3d(88%,0,0);
     }
 
     100%{
