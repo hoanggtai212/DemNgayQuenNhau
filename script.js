@@ -823,7 +823,40 @@ function createHeartPhotoCentered(idx, total) {
                 ${targetY - centerY}px 
              )`; 
     }, 100); 
-} 
+}
+
+/* ========================================
+   🚪 INTRO DOOR
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const introDoor = document.getElementById("introDoor");
+    const doorLock = document.getElementById("doorLock");
+
+    if (!introDoor || !doorLock) return;
+
+    doorLock.addEventListener("click", () => {
+
+        // Không cho bấm nhiều lần
+        if (introDoor.classList.contains("door-opening")) return;
+
+        // Bắt đầu animation mở cửa
+        introDoor.classList.add("door-opening");
+
+        // Sau khi cửa mở xong -> ẩn màn cửa
+        setTimeout(() => {
+            introDoor.classList.add("door-finished");
+        }, 2400);
+
+        // Xóa hẳn khỏi màn hình
+        setTimeout(() => {
+            introDoor.style.display = "none";
+        }, 3200);
+    });
+
+});
+
 function spawnHeartPhotosCentered() { 
     const totalPhotos = 30; 
     for (let i = 0; i < totalPhotos; i++) { 
@@ -832,7 +865,7 @@ function spawnHeartPhotosCentered() {
         }, i * 100); 
     } 
 } 
-let lastTouchEnd = 0; 
+let lastTouchEnd = 0;
 document.addEventListener("touchend", function (e) { 
     const clickable = e.target.closest( 
         "button, a, input, textarea, select, .btn, .ok" 
