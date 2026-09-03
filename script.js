@@ -67,6 +67,7 @@ if(introDoor.classList.contains("door-start"))return;
 introDoor.classList.add("door-start");
 doorLock.style.pointerEvents="none";
 
+/* cửa kéo đủ 4 giây */
 setTimeout(()=>{
 introDoor.classList.add("door-flash-active");
 
@@ -75,13 +76,15 @@ password="";
 document.getElementById("display").value="";
 setRunningTextInfinite("💗 ENTER PASSWORD 💗");
 
+/* flash chạy 1.8 giây */
 setTimeout(()=>{
 introDoor.style.display="none";
 introDoor.classList.remove("door-start","door-flash-active");
 introDoor.style.pointerEvents="none";
-},1600);
+},1800);
 
-},3800);
+},4000);
+
 };
 });
 
