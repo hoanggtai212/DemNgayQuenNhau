@@ -100,22 +100,24 @@
     box-shadow:0 0 18px rgba(255,220,232,.25),inset 0 0 35px rgba(80,15,45,.22);
   }
   
-  /* Hai cánh cửa */
-  #introDoor .door-wing {
-    position:absolute;
-    top:26%;
-    width:28%;
-    height:57%;
-    background:linear-gradient(145deg,#ffbfd0 0%,#fa91ad 22%,#eb6b92 52%,#d34e78 78%,#b83b65 100%);
-    border:3px solid #ffb5ca;
-    border-radius:10px;
-    box-shadow:inset 8px 0 18px rgba(255,255,255,.25),
-               inset -12px 0 30px rgba(130,20,60,.22),
-               0 10px 25px rgba(20,0,15,.35);
-    transform-style:preserve-3d;
-  }
-  #introDoor .door-wing-left { left:22%; transform-origin:left center; }
-  #introDoor .door-wing-right { right:22%; transform-origin:right center; }
+#introDoor .door-wing {position:absolute;
+  top:18%;          /* hạ xuống thấp hơn để cửa dài hơn */
+  width:34%;        /* mỗi cánh rộng hơn */
+  height:68%;       /* cao hơn, nhìn cân đối */
+  background:linear-gradient(145deg,#ffbfd0 0%,#fa91ad 22%,#eb6b92 52%,#d34e78 78%,#b83b65 100%);
+  border:3px solid #ffb5ca;
+  border-radius:12px;
+  box-shadow:inset 8px 0 18px rgba(255,255,255,.25),
+             inset -12px 0 30px rgba(130,20,60,.22),
+             0 10px 25px rgba(20,0,15,.35);
+  transform-style:preserve-3d;
+}
+#introDoor .door-wing-left { left:16%; transform-origin:left center; }
+#introDoor .door-wing-right { right:16%; transform-origin:right center; }
+#introDoor {
+  background: radial-gradient(ellipse at 50% 52%, rgba(255,145,190,.25) 0%, rgba(80,20,60,.45) 75%),
+              linear-gradient(90deg,#160916 0%,#281025 8%,#4a1b3b 18%,#6b294f 31%,#7f355d 43%,#6e2a50 56%,#7d3459 69%,#4b1a3b 83%,#281025 94%,#160916 100%);
+}
   
   /* Trái tim */
   #introDoor .door-heart {
