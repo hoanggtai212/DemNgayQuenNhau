@@ -205,26 +205,40 @@ html{font-size:calc(14px + .25vw)}
 
 #introDoor .door-camera{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform:scale(1);will-change:transform}
 #introDoor .door-scene{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-
 #introDoor .door-back-light{position:absolute;width:55vw;height:75vh;min-width:300px;opacity:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse,rgba(255,105,35,.55),rgba(180,30,10,.32) 28%,rgba(80,5,5,.15) 55%,transparent 75%);filter:blur(18px);transform:scale(.45)}
-
 #introDoor .door-frame{position:absolute;inset:0;width:100%;height:100%;margin:0;background:transparent;border:none;box-shadow:none;z-index:5;overflow:visible}
-
-#introDoor .door-wing{position:absolute;top:3%;width:50%;height:94%;background:linear-gradient(90deg,#6e183d,#b82e66 18%,#8f2450 50%,#d94f7c 82%,#641535);border:3px solid #4d102b;border-radius:6px;box-shadow:inset 0 0 18px rgba(70,0,35,.7),0 0 15px rgba(231,84,128,.15);z-index:3;will-change:transform}
-#introDoor .door-wing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,rgba(120,65,35,.08) 2px,transparent 5px,transparent 22px)}
-#introDoor .door-wing::after{content:"";position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(transparent,rgba(180,70,30,.5),transparent)}
+#introDoor .door-wing {
+  background: linear-gradient(135deg, #ff9bb3, #ff6f9f 40%, #ff4f81 80%);
+  border: 3px solid #e75480;
+  border-radius: 12px;
+  box-shadow: inset 0 0 18px rgba(255, 120, 165, .6),
+              0 0 25px rgba(255, 150, 190, .4);
+}
+#introDoor .door-wing::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,.08) 0px,
+    transparent 12px,
+    rgba(255,200,220,.15) 24px,
+    transparent 36px
+  );
+}
+#introDoor .door-decoration {
+  background: linear-gradient(90deg, transparent, #ffb6c1, #ff4f81, #ffb6c1, transparent);
+  box-shadow: 0 100px 0 #ff8fa3;
+  opacity:.85;
+}
 #introDoor .door-wing-left{left:0}
 #introDoor .door-wing-right{right:0}
-
 #introDoor .door-decoration{position:absolute;left:50%;top:25%;width:72%;height:8px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#68452c,#a87945,#68452c,transparent);box-shadow:0 100px 0 #68452c;opacity:.75}
 #introDoor .door-decoration::before{content:"";position:absolute;inset:-5px 0;height:18px;border-top:2px solid rgba(190,140,80,.5);border-bottom:2px solid rgba(190,140,80,.25)}
-
 #introDoor .door-lock{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border:2px solid #8c6038;border-radius:50%;background:radial-gradient(circle,#3a2115,#160907 65%,#090303);color:white;font-size:29px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;box-shadow:0 0 0 3px rgba(35,15,8,.9),0 0 18px rgba(255,150,70,.2)}
-
 #introDoor .door-lock::before,#introDoor .door-lock::after{position:fixed;top:50%;font-size:34px;filter:drop-shadow(0 0 7px rgba(255,90,20,.8));animation:doorTorch 1.1s ease-in-out infinite alternate;pointer-events:none}
 #introDoor .door-lock::before{content:"🔥";left:calc(50% - 190px)}
 #introDoor .door-lock::after{content:"🔥";right:calc(50% - 190px)}
-
 @keyframes doorTorch{from{opacity:.75;transform:translateY(-90%) scale(.92)}to{opacity:1;transform:translateY(-90%) scale(1.08)}}
 
 /* KÉO RÈM: CHẬM → NHANH → CHẬM */
