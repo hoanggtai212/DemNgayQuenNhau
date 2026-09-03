@@ -227,18 +227,8 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.door-start .door-camera{animation:doorCamera 3.2s linear forwards}
 #introDoor.door-start .door-wing-left{animation:doorLeft 3.2s cubic-bezier(.4,0,.2,1) forwards}
 #introDoor.door-start .door-wing-right{animation:doorRight 3.2s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes doorLeft{
-  0%{transform:translateX(0)}
-  15%{transform:translateX(-3%)}
-  65%{transform:translateX(-65%)}
-  100%{transform:translateX(-105%)}
-}
-@keyframes doorRight{
-  0%{transform:translateX(0)}
-  15%{transform:translateX(3%)}
-  65%{transform:translateX(65%)}
-  100%{transform:translateX(105%)}
-}
+@keyframes doorLeft{from{transform:translateX(0)}to{transform:translateX(-115%)}}
+@keyframes doorRight{from{transform:translateX(0)}to{transform:translateX(115%)}}
 #introDoor.door-start .door-back-light{animation:doorLight 2.8s linear forwards}
 @keyframes doorLight{from{opacity:0;transform:scale(.45);filter:blur(18px)}to{opacity:1;transform:scale(1.8);filter:blur(4px)}}
 #introDoor.door-start .door-lock{animation:lockOut .5s ease forwards}
@@ -263,8 +253,8 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-lock::before{left:calc(50% - 42vw);font-size:28px}
 #introDoor .door-lock::after{right:calc(50% - 42vw);font-size:28px}
 #introDoor.door-start .door-camera{animation:doorCameraMobile 3.2s linear forwards}
-#introDoor.door-start .door-wing-left{animation:doorLeft 3.2s cubic-bezier(.22,1,.36,1) forwards}
-#introDoor.door-start .door-wing-right{animation:doorRight 3.2s cubic-bezier(.22,1,.36,1) forwards}
+#introDoor.door-start .door-wing-left{animation:doorLeft 3.2s cubic-bezier(.25,.1,.25,1) forwards}
+#introDoor.door-start .door-wing-right{animation:doorRight 3.2s cubic-bezier(.25,.1,.25,1) forwards}
 @keyframes doorCameraMobile{to{transform:scale(1.15)}}
 }
 @media(max-width:600px){
