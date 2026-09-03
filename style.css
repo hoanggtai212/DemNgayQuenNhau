@@ -256,7 +256,6 @@ to{transform:translateX(100%)}
 #introDoor.door-start .door-lock{animation:lockOut .5s ease forwards}
 @keyframes lockOut{to{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
 
-/* FLASH */
 #introDoor .door-flash{
 position:absolute;
 inset:0;
@@ -272,7 +271,7 @@ animation:doorFlash 4.3s linear forwards
 
 @keyframes doorFlash{
 
-/* 0 → 1s: cửa mở nhưng CHƯA chớp */
+/* 0 → 1s: chỉ mở cửa */
 0%{opacity:0}
 23%{opacity:0}
 
@@ -288,8 +287,10 @@ animation:doorFlash 4.3s linear forwards
 65%{opacity:.75}
 68%{opacity:0}
 
-/* 4s: MỞ FULL → BÙM */
+/* gần mở hết */
 88%{opacity:0}
+
+/* BÙM */
 92%{opacity:1}
 100%{opacity:1}
 }
