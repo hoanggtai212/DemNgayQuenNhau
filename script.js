@@ -57,7 +57,28 @@ if(albumBtn)albumBtn.addEventListener("click",()=>{albumBtn.style.display="none"
 
 function createHeartPhotoCentered(index,total){const photo=document.createElement("img");photo.src=photoUrls[index%photoUrls.length];photo.className="photo";document.body.appendChild(photo);const centerX=window.innerWidth/2,centerY=window.innerHeight/2,t=Math.PI*2*(index/total),scale=window.innerWidth<=480?14:22,targetX=centerX+scale*16*Math.pow(Math.sin(t),3),targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));photo.style.left=centerX+"px";photo.style.top=centerY+"px";setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100)}
 
-document.addEventListener("DOMContentLoaded",()=>{const door=document.getElementById("introDoor"),lock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");if(!door||!lock)return;lock.addEventListener("click",()=>{if(door.classList.contains("door-start"))return;door.classList.add("door-start");lock.style.pointerEvents="none";setTimeout(()=>{if(!passwordPage)return;passwordPage.style.display="flex";password="";const display=document.getElementById("display");if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")},3800);setTimeout(()=>{door.style.display="none";door.classList.remove("door-start");door.style.pointerEvents="none"},3900)})});
+document.addEventListener("DOMContentLoaded",()=>{const door=document.getElementById("introDoor"),lock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");if(!door||!lock)return;lock.addEventListener("click",()=>{
+  if(door.classList.contains("door-start"))return;
+  door.classList.add("door-start");
+  lock.style.pointerEvents="none";
+
+  // Ẩn cửa trước
+  setTimeout(()=>{
+    door.style.display="none";
+    door.classList.remove("door-start");
+    door.style.pointerEvents="none";
+
+    // Sau đó hiện trang pass
+    if(passwordPage){
+      passwordPage.style.display="flex";
+      password="";
+      const display=document.getElementById("display");
+      if(display)display.value="";
+      setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+    }
+  },3900);
+});
+
 
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 
