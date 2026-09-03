@@ -218,11 +218,11 @@ html{font-size:calc(14px + .25vw)}
 .door-scene::before,.door-scene::after{content:"";position:absolute;top:50%;width:48px;height:45%;transform:translateY(-32%);background:repeating-linear-gradient(180deg,#75451f 0px,#a26834 35px,#68401e 38px,#875329 72px,#593319 76px);border:5px solid #351a10;box-shadow:inset 5px 0 8px rgba(255,175,80,.15),inset -7px 0 10px rgba(0,0,0,.5),0 0 15px rgba(0,0,0,.7);z-index:1;pointer-events:none}
 .door-scene::before{left:calc(50% - 150px);border-radius:7px 3px 0 0}
 .door-scene::after{right:calc(50% - 150px);border-radius:3px 7px 0 0}
-.door-wing{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(90deg,#120706 0%,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504 100%);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:2;will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.door-wing{position:absolute;top:50%;width:min(21vw,140px);height:min(47vh,330px);background:linear-gradient(90deg,#120706 0%,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504 100%);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:2;will-change:transform;transform:translateY(-50%);transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
 .door-wing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0px,rgba(120,65,35,.08) 2px,transparent 5px,transparent 22px);opacity:.8;pointer-events:none}
 .door-wing::after{content:"";position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(transparent,rgba(180,70,30,.5),transparent);opacity:.5;pointer-events:none}
-.door-wing-left{left:0;transform-origin:right center}
-.door-wing-right{right:0;transform-origin:left center}
+.door-wing-left{left:calc(50% - min(21vw,140px));transform-origin:right center}
+.door-wing-right{right:calc(50% - min(21vw,140px));transform-origin:left center}
 .door-decoration{position:absolute;left:50%;top:25%;width:72%;height:8px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#68452c,#a87945,#68452c,transparent);box-shadow:0 100px 0 #68452c;opacity:.75}
 .door-decoration::before{content:"";position:absolute;left:0;right:0;top:-5px;height:18px;border-top:2px solid rgba(190,140,80,.5);border-bottom:2px solid rgba(190,140,80,.25)}
 .door-lock{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border:2px solid #8c6038;border-radius:50%;background:radial-gradient(circle,#3a2115 0%,#160907 65%,#090303 100%);color:white;font-size:29px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;box-shadow:0 0 0 3px rgba(35,15,8,.9),0 0 18px rgba(255,150,70,.2);transition:transform .2s ease,box-shadow .2s ease}
@@ -235,8 +235,8 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.2s ease-out forwards}
 #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.2s ease-out forwards}
 @keyframes cameraPushIn{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,0,0) scale(1.65)}}
-@keyframes doorLeftOpen{from{transform:rotateY(0deg)}to{transform:rotateY(-78deg)}}
-@keyframes doorRightOpen{from{transform:rotateY(0deg)}to{transform:rotateY(78deg)}}
+@keyframes doorLeftOpen{from{transform:translateY(-50%) rotateY(0deg)}to{transform:translateY(-50%) rotateY(-78deg)}}
+@keyframes doorRightOpen{from{transform:translateY(-50%) rotateY(0deg)}to{transform:translateY(-50%) rotateY(78deg)}}
 #introDoor.door-start .door-back-light{animation:doorLight 2.8s ease-out forwards}
 @keyframes doorLight{from{opacity:0;transform:scale(.45);filter:blur(18px)}to{opacity:1;transform:scale(1.8);filter:blur(4px)}}
 #introDoor.door-start .door-lock{animation:lockDisappear .5s ease forwards}
@@ -247,42 +247,17 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.intro-finished{animation:introDisappear .45s ease forwards}
 @keyframes introDisappear{from{opacity:1}to{opacity:0;visibility:hidden}}
 
-
 /* MOBILE */
 @media(max-width:600px){
-.photo{width:65px;height:65px}
-.main-content h1{font-size:1.5rem}
-.message{font-size:16px;padding:0 10px}
-.love-counter-container{width:92%;padding:15px 20px}
-.container{width:92%;padding:15px 20px}
-.avatar-container{width:90px}
-.couple-display{justify-content:space-between;padding:0 20px;gap:15px}
-.main-title{font-size:3rem}
-.our-little-world{font-size:3rem}
-.avatar{width:110px;height:110px}
-.heart{font-size:3.5rem;margin:0 20px;position:relative;top:-30px}
-.time-box span#love-days{font-size:6rem}
-.love-message{font-size:1rem;line-height:1.3}
-.door-frame{width:58vw;height:58vh;border-width:10px}
-.success-wrapper,.loading-wrapper{width:88vw;padding:34px 22px 28px;border-radius:28px}
-.heart-group,.loading-heart-group{width:250px}
-.heart-left,.heart-center,.heart-right,.loading-heart-left,.loading-heart-center,.loading-heart-right{font-size:38px}
-.success-box{width:300px}
-.success-title{font-size:13px;letter-spacing:3px}
-#clickMe{padding:12px 27px;font-size:13px}
-.progress-box{width:100%;height:22px}
-.loading-title{font-size:13px;letter-spacing:3px}
-#startLoveBtn{padding:12px 27px;font-size:13px}
-.menu-box{width:88vw;padding:34px 22px;border-radius:28px}
-.menu-box h1{font-size:2.2rem}
-.menu-box p{font-size:13px}
-.menu-box button{padding:13px 18px;font-size:14px}
 #introDoor .door-frame{width:58vw;height:auto;aspect-ratio:.8/1;border-width:8px}
 .door-scene::before,.door-scene::after{width:34px;height:42%}
 .door-scene::before{left:calc(50% - 32vw)}
 .door-scene::after{right:calc(50% - 32vw)}
 .door-frame::before{left:-13px;right:-13px;top:-32px;height:78px;border-width:5px}
 .door-frame::after{top:-5px;height:62px}
+.door-wing{width:29vw;height:49vh;top:50%;transform:translateY(-50%)}
+.door-wing-left{left:calc(50% - 29vw);transform-origin:right center}
+.door-wing-right{right:calc(50% - 29vw);transform-origin:left center}
 .door-lock{width:58px;height:58px;font-size:27px}
 .door-lock::before{left:calc(50% - 42vw);font-size:28px}
 .door-lock::after{right:calc(50% - 42vw);font-size:28px}
@@ -290,6 +265,6 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.door-start .door-wing-left{animation:doorLeftOpenMobile 3.2s ease-out forwards}
 #introDoor.door-start .door-wing-right{animation:doorRightOpenMobile 3.2s ease-out forwards}
 @keyframes cameraPushInMobile{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,0,0) scale(1.5)}}
-@keyframes doorLeftOpenMobile{from{transform:rotateY(0deg)}to{transform:rotateY(-72deg)}}
-@keyframes doorRightOpenMobile{from{transform:rotateY(0deg)}to{transform:rotateY(72deg)}}
+@keyframes doorLeftOpenMobile{from{transform:translateY(-50%) rotateY(0deg)}to{transform:translateY(-50%) rotateY(-72deg)}}
+@keyframes doorRightOpenMobile{from{transform:translateY(-50%) rotateY(0deg)}to{transform:translateY(-50%) rotateY(72deg)}}
 }
