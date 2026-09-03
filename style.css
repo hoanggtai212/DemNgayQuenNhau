@@ -276,166 +276,298 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-arch{position:absolute;left:12%;right:12%;top:18%;bottom:9%;border:clamp(8px,1vw,14px) solid #a84e70;border-bottom-width:12px;border-radius:125px 125px 18px 18px;background:linear-gradient(90deg,rgba(255,180,205,.05),rgba(255,255,255,.04),rgba(255,180,205,.05));box-shadow:inset 0 0 18px rgba(255,220,232,.25),inset 0 0 35px rgba(80,15,45,.22),0 0 0 2px rgba(255,180,205,.12),0 12px 35px rgba(0,0,0,.42);pointer-events:none}
 #introDoor .door-arch::before{content:"";position:absolute;inset:13px;border:2px solid rgba(255,181,208,.28);border-radius:110px 110px 10px 10px;box-shadow:inset 0 0 12px rgba(255,210,225,.18);pointer-events:none}
 
+/* =====================================================
+   3D LOVE DOOR
+   ===================================================== */
+
+#introDoor .door-camera{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+
+    /* Camera 3D */
+    perspective:1100px;
+    perspective-origin:50% 50%;
+}
+
+#introDoor .door-scene{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    transform-style:preserve-3d;
+}
+
+/* Khung cửa cũng nằm trong không gian 3D */
+#introDoor .door-frame{
+    position:absolute;
+    inset:0;
+    z-index:10;
+
+    overflow:visible;
+    pointer-events:none;
+
+    transform-style:preserve-3d;
+}
+
+/* ===============================
+   CÁNH CỬA
+   =============================== */
+
 #introDoor .door-wing{
     position:absolute;
+
     top:26%;
     width:28%;
     height:57%;
+
     z-index:12;
 
     overflow:visible;
 
+    /* Màu mặt cửa */
     background:
         linear-gradient(
             145deg,
-            #ffbfd0 0%,
+            #ffc7d7 0%,
             #fa91ad 22%,
             #eb6b92 52%,
             #d34e78 78%,
-            #b83b65 100%
+            #a93660 100%
         );
 
     border:3px solid #ffb5ca;
     border-radius:10px;
 
+    /* CỰC KỲ QUAN TRỌNG CHO 3D */
     transform-style:preserve-3d;
+    backface-visibility:visible;
+    -webkit-backface-visibility:visible;
 
+    /* Đổ bóng theo chiều sâu */
     box-shadow:
         inset 8px 0 18px rgba(255,255,255,.25),
-        inset -12px 0 30px rgba(130,20,60,.22),
+        inset -12px 0 30px rgba(120,15,55,.25),
         inset 0 0 35px rgba(255,220,235,.20),
-        0 10px 25px rgba(20,0,15,.35);
+        0 15px 30px rgba(20,0,15,.42);
 
     will-change:transform;
-    backface-visibility:visible;
 
     transition:none;
 }
+
+
+/* Cửa trái: bản lề ở mép trái */
 #introDoor .door-wing-left{
     left:22%;
     transform-origin:left center;
 }
+
+/* Cửa phải: bản lề ở mép phải */
 #introDoor .door-wing-right{
     right:22%;
     transform-origin:right center;
 }
-#introDoor .door-wing-left::after,
-#introDoor .door-wing-right::after{
-    content:"";
-    position:absolute;
-    top:8%;
-    bottom:8%;
-    width:7px;
-    border-radius:6px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #8d4c20,
-            #e6aa55 20%,
-            #ffe0a0 50%,
-            #c57a29 75%,
-            #713912
-        );
+
+/* =====================================================
+   KHUNG PANEL TRÊN CỬA
+   ===================================================== */
+
+#introDoor .door-wing::before{
+    content:"";
+
+    position:absolute;
+    left:7%;
+    right:7%;
+    top:7%;
+    bottom:7%;
+
+    border:2px solid rgba(255,220,232,.50);
+    border-radius:7px;
 
     box-shadow:
-        0 0 5px rgba(255,190,100,.5),
-        inset 1px 0 2px rgba(255,255,255,.6);
+        inset 0 0 15px rgba(255,255,255,.16),
+        0 0 5px rgba(255,210,225,.12);
 
-    opacity:.9;
     pointer-events:none;
 }
 
+
+/* =====================================================
+   HIỆU ỨNG ĐỘ DÀY CÁNH CỬA
+   ===================================================== */
+
+#introDoor .door-wing::after{
+    content:"";
+
+    position:absolute;
+
+    top:2%;
+    bottom:2%;
+
+    width:12px;
+
+    border-radius:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #71334c 0%,
+            #a94d6d 35%,
+            #d87895 65%,
+            #71334c 100%
+        );
+
+    box-shadow:
+        inset 2px 0 3px rgba(255,255,255,.25),
+        0 4px 10px rgba(0,0,0,.25);
+
+    pointer-events:none;
+
+    opacity:.95;
+}
+
+
+/* Độ dày ở phía bản lề */
 #introDoor .door-wing-left::after{
-    left:-6px;
+    left:-10px;
 }
 
 #introDoor .door-wing-right::after{
-    right:-6px;
+    right:-10px;
 }
-#introDoor .door-wing::before{content:"";position:absolute;left:7%;right:7%;top:7%;bottom:7%;border:2px solid rgba(255,218,230,.45);border-radius:7px;box-shadow:inset 0 0 12px rgba(255,255,255,.13),0 0 5px rgba(255,210,225,.10);pointer-events:none}
-#introDoor .door-wing::after{content:"";position:absolute;left:14%;right:14%;top:18%;bottom:13%;border:2px solid rgba(255,204,220,.30);border-radius:5px;box-shadow:inset 0 0 16px rgba(255,255,255,.10);pointer-events:none}
 
-#introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.88);z-index:8;font-family:Arial,sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,235,242,.95);text-shadow:0 0 3px #fff,0 0 9px rgba(255,235,242,.95),0 0 20px rgba(255,139,180,.65),0 0 35px rgba(255,91,150,.28);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none}
 
-#introDoor .door-handle{position:absolute;top:51%;width:13px;height:30px;z-index:15;border-radius:8px;background:linear-gradient(90deg,#8d4e19,#f7c56d 28%,#ffe2a0 48%,#c6812e 70%,#77400f);border:1px solid rgba(255,220,145,.9);box-shadow:0 0 5px rgba(255,196,90,.65),0 2px 5px rgba(70,25,0,.35),inset 1px 0 2px rgba(255,255,255,.65)}
-#introDoor .door-handle::after{content:"";position:absolute;top:10px;width:27px;height:7px;border-radius:10px;background:linear-gradient(180deg,#ffe1a0,#d58b32 55%,#92541c);box-shadow:0 1px 3px rgba(80,30,0,.35)}
-#introDoor .door-wing-left .door-handle{right:8%}
-#introDoor .door-wing-left .door-handle::after{right:-20px}
-#introDoor .door-wing-right .door-handle{left:8%}
-#introDoor .door-wing-right .door-handle::after{left:-20px}
+/* =====================================================
+   BÓNG 3D
+   ===================================================== */
 
-#introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:white;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:transform .25s ease,box-shadow .25s ease;pointer-events:auto}
-#introDoor .door-lock:hover{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 22px rgba(255,195,110,.70),0 0 45px rgba(255,90,150,.35)}
+#introDoor .door-wing-left{
+    filter:
+        drop-shadow(18px 18px 18px rgba(20,0,15,.42));
+}
 
-#introDoor .door-torch{position:absolute;top:49%;z-index:20;font-size:clamp(27px,3.2vw,44px);line-height:1;filter:drop-shadow(0 0 4px #ff6200) drop-shadow(0 0 10px #ff8d22) drop-shadow(0 0 22px rgba(255,60,0,.75));animation:torchFloat 1.15s ease-in-out infinite alternate;pointer-events:none}
-#introDoor .door-torch-left{left:6%}
-#introDoor .door-torch-right{right:6%}
-@keyframes torchFloat{from{transform:translateY(3px) scale(.94)}to{transform:translateY(-4px) scale(1.08)}}
+#introDoor .door-wing-right{
+    filter:
+        drop-shadow(-18px 18px 18px rgba(20,0,15,.42));
+}
 
-#introDoor .door-frame::before{content:"♥   ✦   ♥       ✦       ♥   ✦   ♥";position:absolute;left:50%;top:14%;transform:translateX(-50%);width:80%;text-align:center;color:rgba(255,157,195,.85);font-family:Arial,sans-serif;font-size:clamp(14px,2vw,24px);letter-spacing:clamp(7px,2vw,22px);text-shadow:0 0 8px rgba(255,130,180,.85),0 0 18px rgba(255,100,160,.55);opacity:.75;pointer-events:none;animation:floatingHearts 2.8s ease-in-out infinite alternate}
-@keyframes floatingHearts{from{transform:translateX(-50%) translateY(7px);opacity:.45}to{transform:translateX(-50%) translateY(-7px);opacity:.9}}
 
-#introDoor .door-light-gap{position:absolute;left:50%;top:26%;width:3px;height:57%;transform:translateX(-50%);z-index:18;background:#fff;opacity:.65;filter:blur(2px);box-shadow:0 0 8px #fff,0 0 18px #fff,0 0 35px rgba(255,164,200,.95);pointer-events:none}
+/* =====================================================
+   ANIMATION MỞ CỬA 3D
+   ===================================================== */
 
-#introDoor.door-start .door-back-light{animation:doorLightOpen 3.6s cubic-bezier(.22,.61,.36,1) forwards}
-#introDoor.door-start .door-glow{animation:centerGlowOpen 3.6s cubic-bezier(.22,.61,.36,1) forwards}
-#introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.6s cubic-bezier(.20,.65,.25,1) forwards}
-#introDoor.door-start .door-wing-right{animation:doorRightOpen 3.6s cubic-bezier(.20,.65,.25,1) forwards}
-#introDoor.door-start .door-lock{animation:lockDisappear .65s ease forwards}
-#introDoor.door-start .door-light-gap{animation:gapLightOpen 3.5s ease forwards}
+#introDoor.door-start .door-wing-left{
+    animation:
+        doorLeftOpen
+        3.6s
+        cubic-bezier(.20,.65,.25,1)
+        forwards;
+}
+
+#introDoor.door-start .door-wing-right{
+    animation:
+        doorRightOpen
+        3.6s
+        cubic-bezier(.20,.65,.25,1)
+        forwards;
+}
+
+
+/* =====================================================
+   CỬA TRÁI
+   ===================================================== */
 
 @keyframes doorLeftOpen{
 
     0%{
-        transform:rotateY(0deg);
+        transform:
+            rotateY(0deg)
+            translateZ(0);
     }
 
-    20%{
-        transform:rotateY(-12deg);
+    18%{
+        transform:
+            rotateY(-8deg)
+            translateZ(4px);
     }
 
-    45%{
-        transform:rotateY(-32deg);
+    40%{
+        transform:
+            rotateY(-16deg)
+            translateZ(8px);
     }
 
-    70%{
-        transform:rotateY(-52deg);
+    65%{
+        transform:
+            rotateY(-23deg)
+            translateZ(12px);
     }
 
-    88%{
-        transform:rotateY(-63deg);
+    82%{
+        transform:
+            rotateY(-27deg)
+            translateZ(15px);
     }
 
     100%{
-        transform:rotateY(-68deg);
+        transform:
+            rotateY(-30deg)
+            translateZ(18px);
     }
 }
+
+
+/* =====================================================
+   CỬA PHẢI
+   ===================================================== */
 
 @keyframes doorRightOpen{
 
     0%{
-        transform:rotateY(0deg);
+        transform:
+            rotateY(0deg)
+            translateZ(0);
     }
 
-    20%{
-        transform:rotateY(12deg);
+    18%{
+        transform:
+            rotateY(8deg)
+            translateZ(4px);
     }
 
-    45%{
-        transform:rotateY(32deg);
+    40%{
+        transform:
+            rotateY(16deg)
+            translateZ(8px);
     }
 
-    70%{
-        transform:rotateY(52deg);
+    65%{
+        transform:
+            rotateY(23deg)
+            translateZ(12px);
     }
 
-    88%{
-        transform:rotateY(63deg);
+    82%{
+        transform:
+            rotateY(27deg)
+            translateZ(15px);
     }
 
     100%{
-        transform:rotateY(68deg);
+        transform:
+            rotateY(30deg)
+            translateZ(18px);
     }
 }
 #introDoor .door-wing-left::before,
@@ -528,24 +660,67 @@ html{font-size:calc(14px + .25vw)}
 @keyframes doorFlash{0%,45%{opacity:0}60%{opacity:.05}72%{opacity:.16}82%{opacity:.34}90%{opacity:.65}96%{opacity:1;filter:brightness(3) blur(7px)}100%{opacity:1;filter:brightness(1) blur(0)}}
 
 @media(max-width:600px){
-#introDoor .door-arch{left:12%;right:12%;top:17%;bottom:8%;border-width:9px;border-radius:70px 70px 14px 14px}
-#introDoor .door-arch::before{inset:9px;border-radius:62px 62px 8px 8px}
-#introDoor .door-wing{top:27%;width:27%;height:56%;border-width:3px}
-#introDoor .door-wing-left{left:23%}
-#introDoor .door-wing-right{right:23%}
-#introDoor .door-wing::before{left:7%;right:7%;top:7%;bottom:7%}
-#introDoor .door-wing::after{left:14%;right:14%;top:18%;bottom:13%}
-#introDoor .door-heart{top:28%;font-size:46px;-webkit-text-stroke:1.6px rgba(255,240,245,.95)}
-#introDoor .door-handle{top:51%;width:10px;height:25px}
-#introDoor .door-handle::after{top:8px;width:22px;height:6px}
-#introDoor .door-wing-left .door-handle::after{right:-16px}
-#introDoor .door-wing-right .door-handle::after{left:-16px}
-#introDoor .door-lock{width:62px;height:62px;font-size:27px;border-width:3px}
-#introDoor .door-torch{top:48%;font-size:30px}
-#introDoor .door-torch-left{left:5%}
-#introDoor .door-torch-right{right:5%}
-#introDoor .door-light-gap{top:27%;height:55%}
-#introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
+
+    #introDoor .door-camera{
+        perspective:900px;
+        perspective-origin:50% 50%;
+    }
+
+    #introDoor .door-wing{
+        top:27%;
+        width:27%;
+        height:56%;
+        border-width:3px;
+
+        transform-style:preserve-3d;
+    }
+
+    #introDoor .door-wing-left{
+        left:23%;
+        transform-origin:left center;
+    }
+
+    #introDoor .door-wing-right{
+        right:23%;
+        transform-origin:right center;
+    }
+
+    #introDoor .door-wing::after{
+        width:8px;
+    }
+
+    #introDoor .door-wing-left::after{
+        left:-7px;
+    }
+
+    #introDoor .door-wing-right::after{
+        right:-7px;
+    }
+
+    #introDoor .door-heart{
+        top:28%;
+        font-size:46px;
+        -webkit-text-stroke:1.6px rgba(255,240,245,.95);
+    }
+
+    #introDoor .door-handle{
+        top:51%;
+        width:10px;
+        height:25px;
+    }
+
+    #introDoor .door-handle::after{
+        top:8px;
+        width:22px;
+        height:6px;
+    }
+
+    #introDoor .door-lock{
+        width:62px;
+        height:62px;
+        font-size:27px;
+        border-width:3px;
+    }
 }
 
 @media(max-width:600px) and (min-height:800px){
