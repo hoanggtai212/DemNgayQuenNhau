@@ -107,7 +107,6 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .progress-fill{transition:width .2s linear}
 .progress-fill::after,.success-fill::after{content:"";position:absolute;top:0;left:-80px;width:80px;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);animation:progressShine 1.3s linear infinite}
 .success-fill::after{animation:successShine 1.5s linear infinite}
-
 #progressPercent,#successPercent{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#d94f7c;pointer-events:none}
 #startLoveBtn,#clickMe{margin-top:26px;padding:13px 30px;border:none;border-radius:50px;background:linear-gradient(135deg,#ff91b4,#f45d8c);color:white;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 25px rgba(240,98,134,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .25s ease,box-shadow .25s ease}
 #startLoveBtn{animation:successButtonIn .7s .4s both,successButtonFloat 2.5s 1.1s ease-in-out infinite}
