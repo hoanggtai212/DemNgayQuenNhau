@@ -233,13 +233,8 @@ html{font-size:calc(14px + .25vw)}
 animation:none
 }
 
-#introDoor.door-start .door-wing-left{
-animation:curtainLeft 3.4s linear forwards
-}
-
-#introDoor.door-start .door-wing-right{
-animation:curtainRight 3.4s linear forwards
-}
+#introDoor.door-start .door-wing-left{animation:curtainLeft 2.8s linear forwards}
+#introDoor.door-start .door-wing-right{animation:curtainRight 2.8s linear forwards}
 
 @keyframes curtainLeft{
 from{transform:translateX(0)}
