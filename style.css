@@ -271,26 +271,35 @@ animation:doorFlash 4.3s linear forwards
 
 @keyframes doorFlash{
 
-/* 0 → 1s: chỉ mở cửa */
+/* 0 → 1s: chưa chớp */
 0%{opacity:0}
 23%{opacity:0}
 
 /* CHỚP 1 */
-25%{opacity:.4}
-28%{opacity:0}
+25%{opacity:.35}
+27%{opacity:0}
 
 /* CHỚP 2 */
-45%{opacity:.55}
-48%{opacity:0}
+35%{opacity:.48}
+37%{opacity:0}
 
 /* CHỚP 3 */
-65%{opacity:.75}
-68%{opacity:0}
+45%{opacity:.58}
+47%{opacity:0}
 
-/* gần mở hết */
+/* CHỚP 4 */
+55%{opacity:.68}
+57%{opacity:0}
+
+/* CHỚP 5 */
+65%{opacity:.78}
+67%{opacity:0}
+
+/* giữ tối một chút trước cú cuối */
+68%{opacity:0}
 88%{opacity:0}
 
-/* BÙM */
+/* BÙM CUỐI */
 92%{opacity:1}
 100%{opacity:1}
 }
