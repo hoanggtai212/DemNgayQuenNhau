@@ -133,7 +133,7 @@ body{font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#fde7f0 
 .fade-out{animation:fadeOut .6s ease forwards}
 .fade-in{animation:fadeIn .6s ease forwards}
 @keyframes fadeOut{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.98)}}
-@keyframes fadeIn{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeIn {from { opacity:0; transform:scale(1.02); }to{ opacity:1; transform:scale(1);}}
 
 /* ==================== LOVE SUCCESS ==================== */
 #loveSuccess{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:999999;overflow:hidden;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%);animation:successBackground 8s ease-in-out infinite alternate}
@@ -257,4 +257,9 @@ body{font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#fde7f0 
     #introDoor .door-wing{top:20%;height:67%}
     #introDoor .door-heart{top:25%;font-size:42px}
     #introDoor .door-lock{top:51%}
+}
+#passwordPage { display:none; }
+#passwordPage.show { 
+  display: flex !important; 
+  animation: fadeIn .8s ease forwards; /* thêm hiệu ứng mượt */
 }
