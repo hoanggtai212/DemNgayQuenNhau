@@ -243,12 +243,12 @@ animation:curtainRight 3.4s linear forwards
 
 @keyframes curtainLeft{
 from{transform:translateX(0)}
-to{transform:translateX(-100vw)}
+to{transform:translateX(-100%)}
 }
 
 @keyframes curtainRight{
 from{transform:translateX(0)}
-to{transform:translateX(100vw)}
+to{transform:translateX(100%)}
 }
 
 /* ÁNH SÁNG */
