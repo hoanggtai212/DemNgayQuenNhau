@@ -513,7 +513,7 @@ pointer-events:none;
   /* Cánh cửa vừa phải, không quá hẹp */
   #introDoor .door-wing {
     top:27%;
-    width:27%;   /* 👈 độ rộng cánh cửa */
+    width:40%;   /* 👈 độ rộng cánh cửa */
     height:56%;  /* 👈 chiều cao */
     border-width:3px;
   }
