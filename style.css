@@ -210,7 +210,7 @@ html{font-size:calc(14px + .25vw)}
 
 #introDoor .door-frame{position:absolute;inset:0;width:100%;height:100%;margin:0;background:transparent;border:none;box-shadow:none;z-index:5;overflow:visible}
 
-#introDoor .door-wing{position:absolute;top:0;width:50%;height:100%;background:linear-gradient(90deg,#120706,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:3;will-change:transform}
+#introDoor .door-wing{position:absolute;top:3%;width:50%;height:94%;background:linear-gradient(90deg,#120706,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504);border:3px solid #100504;border-radius:6px;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:3;will-change:transform}
 #introDoor .door-wing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,rgba(120,65,35,.08) 2px,transparent 5px,transparent 22px)}
 #introDoor .door-wing::after{content:"";position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(transparent,rgba(180,70,30,.5),transparent)}
 #introDoor .door-wing-left{left:0}
