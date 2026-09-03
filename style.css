@@ -255,14 +255,11 @@ pointer-events:none;
 #introDoor .door-arch::before{content:"";position:absolute;inset:13px;border:2px solid rgba(255,181,208,.28);border-radius:110px 110px 10px 10px;box-shadow:0 0 12px rgba(255,210,225,.18);pointer-events:none}
 #introDoor .door-wing{
 position:absolute;
-top:26%;
-width:28%;
+top:22%;
+width:36%;
 height:57%;
 z-index:12;
-
-
 overflow:visible;
-
 background:
     linear-gradient(
         145deg,
@@ -272,24 +269,17 @@ background:
         #d34e78 78%,
         #b83b65 100%
     );
-
 border:3px solid #ffb5ca;
 border-radius:10px;
-
 transform-style:preserve-3d;
-
 box-shadow:
     inset 8px 0 18px rgba(255,255,255,.25),
     inset -12px 0 30px rgba(130,20,60,.22),
     inset 0 0 35px rgba(255,220,235,.20),
     0 10px 25px rgba(20,0,15,.35);
-
 will-change:transform;
 backface-visibility:visible;
-
 transition:none;
-
-
 }
 #introDoor .door-wing-left{
 left:22%;
