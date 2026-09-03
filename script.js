@@ -55,6 +55,16 @@ introDoor.style.pointerEvents="none";
 },4300);
 };
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const doorLock = document.getElementById('doorLock');
+  const introDoor = document.getElementById('introDoor');
+
+  if (doorLock && introDoor) {
+    doorLock.addEventListener('click', () => {
+      introDoor.classList.add('door-start');
+    });
+  }
+});
 
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
