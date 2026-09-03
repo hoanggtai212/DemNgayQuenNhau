@@ -560,9 +560,9 @@ pointer-events:none;
     border-width:3px;
   }
   /* Ngọn đuốc hai bên */
-  #introDoor .door-torch { top:48%; font-size:30px; }
-  #introDoor .door-torch-left { left:5%; }
-  #introDoor .door-torch-right { right:5%; }
+  #introDoor .door-torch { top:48%; font-size:36px; }
+  #introDoor .door-torch-left { left:10%; }
+  #introDoor .door-torch-right { right:10%; }
   /* Khoảng sáng giữa cửa */
   #introDoor .door-light-gap { top:27%; height:55%; }
 }
