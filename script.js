@@ -30,42 +30,32 @@ function showFirework(){const container=document.getElementById("fireworkContain
 albumBtn.addEventListener("click",()=>{albumBtn.style.display="none";showConfetti();showFirework();setTimeout(()=>spawnHeartPhotosCentered(),500)});
 function createHeartPhotoCentered(idx,total){const photo=document.createElement("img");photo.src=photoUrls[idx%photoUrls.length];photo.className="photo";document.body.appendChild(photo);const centerX=window.innerWidth/2,centerY=window.innerHeight/2,t=Math.PI*2*(idx/total),scale=window.innerWidth<=480?14:22,targetX=centerX+scale*16*Math.pow(Math.sin(t),3),targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));photo.style.left=centerX+"px";photo.style.top=centerY+"px";setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100)}
 document.addEventListener("DOMContentLoaded",()=>{
-const introDoor=document.getElementById("introDoor"),
-doorLock=document.getElementById("doorLock"),
-passwordPage=document.getElementById("passwordPage");
-if(!introDoor||!doorLock)return;
-doorLock.onclick=()=>{
-if(introDoor.classList.contains("door-start"))return;
-introDoor.classList.add("door-start");
-doorLock.style.pointerEvents="none";
-
-/* Cửa chạy đủ 4 giây */
-setTimeout(()=>{
-passwordPage.style.display="flex";
-password="";
-document.getElementById("display").value="";
-setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-},4000);
-
-/* Giữ cú BÙM trắng thêm 0.3s */
-setTimeout(()=>{
-introDoor.style.display="none";
-introDoor.classList.remove("door-start");
-introDoor.style.pointerEvents="none";
-},4300);
-};
+  const door=document.getElementById("introDoor");
+  const lock=document.getElementById("doorLock");
+  const passwordPage=document.getElementById("passwordPage");
+  if(!door||!lock)return;
+  lock.addEventListener("click",()=>{
+    if(door.classList.contains("door-start"))return;
+    door.classList.add("door-start");
+    lock.style.pointerEvents="none";
+    // Sau khi cửa mở xong → hiện trang nhập mật khẩu
+    setTimeout(()=>{
+      if(passwordPage){
+        passwordPage.style.display="flex";
+        password="";
+        const display=document.getElementById("display");
+        if(display)display.value="";
+        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+      }
+    },4000);
+    // Tắt màn cửa sau flash
+    setTimeout(()=>{
+      door.style.display="none";
+      door.classList.remove("door-start");
+      door.style.pointerEvents="none";
+    },4300);
+  });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const doorLock = document.getElementById('doorLock');
-  const introDoor = document.getElementById('introDoor');
-
-  if (doorLock && introDoor) {
-    doorLock.addEventListener('click', () => {
-      introDoor.classList.add('door-start');
-    });
-  }
-});
-
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
