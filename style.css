@@ -519,15 +519,12 @@ pointer-events:none;
 #introDoor .door-light-gap{top:27%;height:55%}
 #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
 }
-@media(max-width:600px) and (min-height:800px){
-#introDoor .door-arch{top:17%;bottom:7%}
-#introDoor .door-wing{top:27%;height:57%}
-}
-@media(max-width:600px) and (max-height:700px){
-#introDoor .door-arch{top:11%;bottom:7%}
-#introDoor .door-wing{top:20%;height:67%}
-#introDoor .door-heart{top:25%;font-size:42px}
-#introDoor .door-lock{top:51%}
+/* Áp dụng cho màn hình ngang ≤ 600px và cao từ 600px đến 800px */
+@media (max-width:600px) and (min-height:600px) and (max-height:800px) {
+  #introDoor .door-arch { top:15%; bottom:8%; }
+  #introDoor .door-wing { top:22%;width:32%; height:65%; }
+  #introDoor .door-heart { top:26%; font-size:46px; }
+  #introDoor .door-lock { top:52%; width:60px; height:60px; font-size:26px; }
 }
 @media(max-width:600px){
 #passwordPage .container{width:100vw - 24px;max-width:360px;padding:28px 14px 25px;margin:0 auto}
