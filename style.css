@@ -269,37 +269,30 @@ z-index:999
 animation:doorFlash 4.3s linear forwards
 }
 
-@keyframes doorFlash {
-  /* Khởi đầu: Ẩn hoàn toàn */
-  0%, 25% { opacity: 0; }
-
-  /* CHỚP 1: Nhẹ, khoảng nghỉ dài */
-  35% { opacity: 0.2; }
-  39% { opacity: 0; }
-
-  /* CHỚP 2: Mạnh hơn một chút, nghỉ ngắn hơn */
-  49% { opacity: 0.4; }
-  52% { opacity: 0; }
-
-  /* CHỚP 3: Mạnh hơn nữa, dồn dập hơn */
-  61% { opacity: 0.6; }
-  63% { opacity: 0; }
-
-  /* CHỚP 4: Rất nhanh và sáng */
-  71% { opacity: 0.8; }
-  72.5% { opacity: 0; }
-
-  /* CHỚP 5: Cực nhanh (chớp liên tục) */
-  79% { opacity: 0.95; }
-  80% { opacity: 0; }
-
-  /* CHỚP 6: Dồn dập ngay trước khi bùng nổ */
-  85% { opacity: 1; }
-  85.5% { opacity: 0; }
-
-  /* BÙM CUỐI: Sáng rực và giữ nguyên */
-  90%, 100% { opacity: 1; }
+@keyframes cinematicDoorFlash {
+  0%, 20% {
+    opacity: 0;
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+  32% { opacity: 0.25; filter: brightness(1.2) blur(1px); }
+  36% { opacity: 0; filter: brightness(1) blur(0px); }
+  46% { opacity: 0.45; filter: brightness(1.5) blur(1px); }
+  49% { opacity: 0; }
+  58% { opacity: 0.65; filter: brightness(2) blur(2px); }
+  60.5% { opacity: 0; }
+  68% { opacity: 0.85; filter: brightness(2.5) blur(3px); transform: scale(1.005); }
+  69.5% { opacity: 0; transform: scale(1); }
+  76% { opacity: 0.95; filter: brightness(3) blur(4px); }
+  77% { opacity: 0; }
+  82% { opacity: 1; filter: brightness(3.5) blur(5px); transform: scale(1.01); }
+  82.8% { opacity: 0.1; }
+  84% { opacity: 1; filter: brightness(4) blur(6px); }
+  84.5% { opacity: 0; transform: scale(1); }
+  89% { opacity: 1; filter: brightness(5) blur(10px); transform: scale(1.02); }
+  100% { opacity: 1; filter: brightness(1.5) blur(0px); transform: scale(1); }
 }
+
 
 /* MOBILE */
 
