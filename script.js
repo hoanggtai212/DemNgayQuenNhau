@@ -79,9 +79,9 @@ setTimeout(()=>{
 introDoor.style.display="none";
 introDoor.classList.remove("door-start","door-flash-active");
 introDoor.style.pointerEvents="none";
-},350);
+},1600);
 
-},2000);
+},2800);
 };
 });
 
