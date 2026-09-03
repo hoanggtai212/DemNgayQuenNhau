@@ -266,7 +266,7 @@ z-index:999
 }
 
 #introDoor.door-start .door-flash{
-animation:doorFlash 4.3s linear forwards
+animation:cinematicDoorFlash 4.3s linear forwards
 }
 
 @keyframes cinematicDoorFlash {
