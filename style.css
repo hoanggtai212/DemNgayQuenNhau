@@ -214,8 +214,8 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-wing{position:absolute;top:0;height:100%;width:50%;background:linear-gradient(90deg,#120706,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:3;transform:rotateY(0deg);transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform}
 #introDoor .door-wing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,rgba(120,65,35,.08) 2px,transparent 5px,transparent 22px);opacity:.8}
 #introDoor .door-wing::after{content:"";position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(transparent,rgba(180,70,30,.5),transparent);opacity:.5}
-#introDoor .door-wing-left{left:calc(50% - min(17.5vw,140px));width:min(17.5vw,140px);transform-origin:right center;}
-#introDoor .door-wing-right{ right:calc(50% - min(17.5vw,140px));width:min(17.5vw,140px);transform-origin:left center;}
+#introDoor .door-wing-left{left:0;width:50%}
+#introDoor .door-wing-right{right:0;width:50%}
 #introDoor .door-decoration{position:absolute;left:50%;top:25%;width:72%;height:8px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#68452c,#a87945,#68452c,transparent);box-shadow:0 100px 0 #68452c;opacity:.75;z-index:7}
 #introDoor .door-decoration::before{content:"";position:absolute;inset:-5px 0;height:18px;border-top:2px solid rgba(190,140,80,.5);border-bottom:2px solid rgba(190,140,80,.25)}
 #introDoor .door-lock{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border:2px solid #8c6038;border-radius:50%;background:radial-gradient(circle,#3a2115,#160907 65%,#090303);color:white;font-size:29px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;box-shadow:0 0 0 3px rgba(35,15,8,.9),0 0 18px rgba(255,150,70,.2);transition:transform .2s ease,box-shadow .2s ease}
@@ -225,10 +225,20 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-lock::after{content:"🔥";right:calc(50% - 190px)}
 @keyframes doorTorch{from{opacity:.75;transform:translateY(-90%) scale(.92)}to{opacity:1;transform:translateY(-90%) scale(1.08)}}
 #introDoor.door-start .door-camera{animation:doorCamera 3.2s linear forwards}
-#introDoor.door-start .door-wing-left{animation:doorLeft 3.2s linear forwards}
-#introDoor.door-start .door-wing-right{animation:doorRight 3.2s linear forwards}
-@keyframes doorLeft{from{transform:rotateY(0deg)}to{transform:rotateY(-82deg)}}
-@keyframes doorRight{from{transform:rotateY(0deg)}to{transform:rotateY(82deg)}}
+#introDoor.door-start .door-wing-left{animation:doorLeft 3.2s cubic-bezier(.4,0,.2,1) forwards}
+#introDoor.door-start .door-wing-right{animation:doorRight 3.2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes doorLeft{
+  0%{transform:translateX(0)}
+  15%{transform:translateX(-3%)}
+  65%{transform:translateX(-65%)}
+  100%{transform:translateX(-105%)}
+}
+@keyframes doorRight{
+  0%{transform:translateX(0)}
+  15%{transform:translateX(3%)}
+  65%{transform:translateX(65%)}
+  100%{transform:translateX(105%)}
+}
 #introDoor.door-start .door-back-light{animation:doorLight 2.8s linear forwards}
 @keyframes doorLight{from{opacity:0;transform:scale(.45);filter:blur(18px)}to{opacity:1;transform:scale(1.8);filter:blur(4px)}}
 #introDoor.door-start .door-lock{animation:lockOut .5s ease forwards}
@@ -258,4 +268,10 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.door-start .door-wing-right{animation:doorRightMobile 3.2s linear forwards}
 @keyframes doorLeftMobile{from{transform:rotateY(0deg)}to{transform:rotateY(-82deg)}}
 @keyframes doorRightMobile{from{transform:rotateY(0deg)}to{transform:rotateY(82deg)}}
+}
+@media(max-width:600px){
+#passwordPage .container{width:calc(100vw - 24px);max-width:360px;padding:28px 14px 25px;margin:0 auto}
+#passwordPage .keypad{grid-template-columns:repeat(3,64px);gap:10px}
+#passwordPage .btn{width:60px;height:60px;font-size:22px}
+#passwordPage .ok{width:58px;height:58px;font-size:29px;margin-top:14px}
 }
