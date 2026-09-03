@@ -276,28 +276,27 @@ animation:doorFlash 4.3s linear forwards
 23%{opacity:0}
 
 /* CHỚP 1 */
-25%{opacity:.35}
-27%{opacity:0}
+34%{opacity:.38}
+38%{opacity:0}
 
 /* CHỚP 2 */
-35%{opacity:.48}
-37%{opacity:0}
+44%{opacity:.48}
+48%{opacity:0}
 
 /* CHỚP 3 */
-45%{opacity:.58}
-47%{opacity:0}
+56%{opacity:.58}
+60%{opacity:0}
 
 /* CHỚP 4 */
-55%{opacity:.68}
-57%{opacity:0}
+68%{opacity:.68}
+72%{opacity:0}
 
 /* CHỚP 5 */
 65%{opacity:.78}
 67%{opacity:0}
 
-/* giữ tối một chút trước cú cuối */
-68%{opacity:0}
-88%{opacity:0}
+80%{opacity:88}
+84%{opacity:0}
 
 /* BÙM CUỐI */
 92%{opacity:1}
