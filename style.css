@@ -201,3 +201,31 @@
   @media(max-width:600px) and (min-height:800px){#introDoor .door-arch{top:17%;bottom:7%}#introDoor .door-wing{top:27%;height:57%}}
   
   @media(max-width:600px) and (max-height:700px){#introDoor .door-arch{top:11%;bottom:7%}#introDoor .door-wing{top:20%;height:67%}#introDoor .door-heart{top:25%;font-size:42px}#introDoor .door-lock{top:51%}
+@keyframes lockDisappear {
+  0% { opacity:1; transform:scale(1); }
+  100% { opacity:0; transform:scale(.6); }
+}
+#introDoor.door-start .door-wing-left {
+  animation: romanticDoorLeft 3.5s ease forwards;
+}
+#introDoor.door-start .door-wing-right {
+  animation: romanticDoorRight 3.5s ease forwards;
+}
+ .door-light-gap {
+  position:absolute;
+  left:50%;
+  top:0;
+  width:6px;
+  height:100%;
+  transform:translateX(-50%);
+  background: radial-gradient(circle, rgba(255,200,220,.8) 0%, transparent 70%);
+  opacity:0;
+}
+#introDoor.door-start .door-light-gap {
+  animation: gapLightOpen 3.5s ease forwards;
+}
+@keyframes gapLightOpen {
+  0% { opacity:0; }
+  50% { opacity:.6; }
+  100% { opacity:1; }
+}
