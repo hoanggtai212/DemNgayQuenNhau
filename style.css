@@ -251,8 +251,26 @@ pointer-events:none;
 #introDoor .door-back-light{position:absolute;left:50%;top:54%;width:min(54vw,560px);height:min(72vh,950px);z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.35);pointer-events:none;background:radial-gradient(ellipse at center,#fff 0%,#fff8fb 12%,rgba(255,224,237,.96) 27%,rgba(255,155,194,.72) 46%,rgba(255,87,150,.32) 63%,transparent 78%);filter:blur(28px);will-change:transform,opacity,filter}
 #introDoor .door-glow{position:absolute;left:50%;top:25%;width:3px;height:55%;z-index:16;transform:translateX(-50%);opacity:.20;pointer-events:none;background(180deg,transparent,rgba(255,255,255,.65) 8%,#fff 25%,#fff 75%,rgba(255,255,255,.65) 92%,transparent);filter:blur(2px);box-shadow:0 0 10px #fff,0 0 25px #fff,0 0 55px rgba(255,150,195,.9)}
 #introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none}
-#introDoor .door-arch{position:absolute;left:12%;right:12%;top:18%;bottom:9%;border:clamp(8px,1vw,14px) solid #a84e70;border-bottom-width:12px;border-radius:125px 125px 18px 18px;background(90deg,rgba(255,180,205,.05),rgba(255,255,255,.04),rgba(255,180,205,.05));box-shadow:0 0 18px rgba(255,220,232,.25),inset 0 0 35px rgba(80,15,45,.22),0 0 0 2px rgba(255,180,205,.12),0 12px 35px rgba(0,0,0,.42);pointer-events:none}
-#introDoor .door-arch::before{content:"";position:absolute;inset:13px;border:2px solid rgba(255,181,208,.28);border-radius:110px 110px 10px 10px;box-shadow:0 0 12px rgba(255,210,225,.18);pointer-events:none}
+#introDoor .door-arch {
+  position:absolute;          /* đặt khung vòm tuyệt đối trong introDoor */
+  left:9%; right:9%;          /* cách mép trái/phải màn hình 9% → tạo độ rộng */
+  top:15%; bottom:12%;        /* cách mép trên 15%, mép dưới 12% → tạo chiều cao */
+  border:clamp(14px,1vw,20px) solid #a84e70; /* viền khung vòm, dày từ 8–14px tùy màn hình */
+  border-bottom-width:16px;   /* riêng cạnh dưới dày hơn (12px) */
+  border-radius:125px 125px 18px 18px; /* bo cong: trên cong nhiều, dưới cong ít */
+  background(90deg,rgba(...));/* nền khung vòm (gradient nhẹ) */
+  box-shadow:...;             /* đổ bóng để tạo chiều sâu */
+  pointer-events:none;        /* không cho click vào khung vòm */
+}
+#introDoor .door-arch::before {
+  content:"";                 /* pseudo-element để thêm lớp viền phụ */
+  position:absolute;
+  inset:15px;                 /* thu nhỏ vào trong 13px so với khung chính */
+  border:2px solid rgba(...); /* viền phụ mỏng, màu hồng nhạt */
+  border-radius:110px 110px 10px 10px; /* bo cong bên trong */
+  box-shadow:0 0 12px rgba(...);       /* bóng nhẹ bên trong */
+  pointer-events:none;        /* không cho click */
+}
 #introDoor .door-wing{
 position:absolute;
 top:22%;
