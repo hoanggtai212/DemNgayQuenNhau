@@ -54,7 +54,33 @@ albumBtn.addEventListener("click",()=>{albumBtn.style.display="none";showConfett
 
 function createHeartPhotoCentered(idx,total){const photo=document.createElement("img");photo.src=photoUrls[idx%photoUrls.length];photo.className="photo";document.body.appendChild(photo);const centerX=window.innerWidth/2,centerY=window.innerHeight/2,t=Math.PI*2*(idx/total),scale=window.innerWidth<=480?14:22,targetX=centerX+scale*16*Math.pow(Math.sin(t),3),targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));photo.style.left=centerX+"px";photo.style.top=centerY+"px";setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100)}
 
-document.addEventListener("DOMContentLoaded",()=>{const introDoor=document.getElementById("introDoor"),doorLock=document.getElementById("doorLock"),doorFrame=introDoor?.querySelector(".door-frame"),passwordPage=document.getElementById("passwordPage");if(!introDoor||!doorLock||!doorFrame)return;doorLock.addEventListener("click",()=>{if(introDoor.classList.contains("door-start"))return;introDoor.classList.add("door-start");doorLock.style.pointerEvents="none";const animationDuration=3200,flashProgress=.92,flashTime=animationDuration*flashProgress;setTimeout(()=>introDoor.classList.add("door-flash-active"),flashTime);const passwordDelay=flashTime+180;setTimeout(()=>{if(passwordPage){passwordPage.style.display="flex";passwordPage.classList.remove("fade-in");password="";const display=document.getElementById("display");if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")}},passwordDelay);setTimeout(()=>introDoor.classList.add("intro-finished"),animationDuration);setTimeout(()=>{introDoor.style.display="none";introDoor.classList.remove("door-start","door-flash-active","intro-finished");introDoor.style.pointerEvents="none"},animationDuration+500)})});
+document.addEventListener("DOMContentLoaded",()=>{
+const introDoor=document.getElementById("introDoor"),doorLock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");
+if(!introDoor||!doorLock)return;
+
+doorLock.onclick=()=>{
+if(introDoor.classList.contains("door-start"))return;
+introDoor.classList.add("door-start");
+doorLock.style.pointerEvents="none";
+
+setTimeout(()=>{
+introDoor.classList.add("door-flash-active");
+setTimeout(()=>{
+passwordPage.style.display="flex";
+password="";
+document.getElementById("display").value="";
+setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+},120);
+},3400);
+
+setTimeout(()=>introDoor.classList.add("intro-finished"),3750);
+setTimeout(()=>{
+introDoor.style.display="none";
+introDoor.className="";
+introDoor.style.pointerEvents="none";
+},4200);
+};
+});
 
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 
