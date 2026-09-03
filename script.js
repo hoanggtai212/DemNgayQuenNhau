@@ -70,8 +70,8 @@ passwordPage.style.display="flex";
 password="";
 document.getElementById("display").value="";
 setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-},120);
-},3400);
+},100);
+},3050);
 
 setTimeout(()=>introDoor.classList.add("intro-finished"),3750);
 setTimeout(()=>{
