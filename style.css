@@ -70,7 +70,18 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .back-btn{top:20px;left:20px}
 .floating-heart{position:absolute;bottom:-50px;font-size:24px;animation:floatHeart linear infinite;pointer-events:none;z-index:1}
 @keyframes floatHeart{from{transform:translateY(0);opacity:0}10%{opacity:1}to{transform:translateY(-120vh);opacity:0}}
-
+#introDoor::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.6) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: sparkle 3s linear infinite;
+}
+@keyframes sparkle {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
 .photo{position:absolute;width:75px;height:75px;object-fit:cover;border-radius:15px;border:3px solid white;box-shadow:0 8px 20px rgba(0,0,0,.15);opacity:0;transition:all 1s ease;z-index:20;pointer-events:none}
 .confetti{position:fixed;width:12px;height:12px;animation:confettiFall 1.2s ease-out forwards;z-index:999}
 .confetti.heart{clip-path:path("M6,2 C6,-1 12,-1 12,3 C12,7 6,11 6,11 C6,11 0,7 0,3 C0,-1 6,-1 6,2")}
@@ -201,7 +212,7 @@ html{font-size:calc(14px + .25vw)}
 
 /* ==================== INTRO DOOR ==================== */
 
-#introDoor{position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:99999999;background:radial-gradient(ellipse at center 45%,rgba(110,25,10,.42),rgba(35,5,5,.72) 35%,#050202 75%)}
+#introDoor{position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:99999999; background: radial-gradient(circle at center, #ffe4ec 0%, #ffd1dc 40%, #f8c1d6 100%);overflow: hidden;}
 
 #introDoor .door-camera{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform:scale(1);will-change:transform}
 #introDoor .door-scene{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
@@ -253,9 +264,19 @@ html{font-size:calc(14px + .25vw)}
     transparent 36px
   );
 }
+#introDoor .door-wing::after {
+  content: "💗";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #ff4f81;
+  text-shadow: 0 0 12px rgba(255,120,165,.6);
+}
+
 #introDoor .door-wing-left{left:0}
 #introDoor .door-wing-right{right:0}
-#introDoor .door-decoration::before{content:"";position:absolute;inset:-5px 0;height:18px;border-top:2px solid rgba(190,140,80,.5);border-bottom:2px solid rgba(190,140,80,.25)}
 #introDoor .door-lock{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border:2px solid #8c6038;border-radius:50%;background:radial-gradient(circle,#3a2115,#160907 65%,#090303);color:white;font-size:29px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;box-shadow:0 0 0 3px rgba(35,15,8,.9),0 0 18px rgba(255,150,70,.2)}
 #introDoor .door-lock::before,#introDoor .door-lock::after{position:fixed;top:50%;font-size:34px;filter:drop-shadow(0 0 7px rgba(255,90,20,.8));animation:doorTorch 1.1s ease-in-out infinite alternate;pointer-events:none}
 #introDoor .door-lock::before{content:"🔥";left:calc(50% - 190px)}
