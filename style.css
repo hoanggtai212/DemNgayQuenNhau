@@ -2698,13 +2698,9 @@ html{
 .door-frame {
     width: min(42vw, 280px);
     height: min(58vh, 440px);
-
     transform: scale(1);
     transform-origin: center center;
-
     transform-style: preserve-3d;
-    perspective: 1400px;
-
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
