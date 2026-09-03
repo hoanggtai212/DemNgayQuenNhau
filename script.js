@@ -308,22 +308,32 @@ function spawnHeartPhotosCentered(){
 
 /* ==================== INTRO DOOR ==================== */
 document.addEventListener("DOMContentLoaded",()=>{
-    const door=document.getElementById("introDoor"),lock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");
-    if(!door||!lock)return;
-    lock.addEventListener("click",()=>{
-        if(door.classList.contains("door-start"))return;
-        door.classList.add("door-start");lock.style.pointerEvents="none";
-        setTimeout(()=>{
-            door.style.display="none";door.classList.remove("door-start");door.style.pointerEvents="none";
-            if(passwordPage){
-                passwordPage.style.display="flex";password="";
-                const display=document.getElementById("display");
-                if(display)display.value="";
-                setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-            }
-        },3900);
-    });
+  const door=document.getElementById("introDoor"),
+        lock=document.getElementById("doorLock"),
+        passwordPage=document.getElementById("passwordPage"),
+        display=document.getElementById("display");
+  if(!door||!lock)return;
+
+  lock.addEventListener("click",()=>{
+    if(door.classList.contains("door-start"))return;
+    door.classList.add("door-start");
+    lock.style.pointerEvents="none";
+
+    setTimeout(()=>{
+      door.style.display="none";
+      door.classList.remove("door-start");
+      door.style.pointerEvents="none";
+
+      if(passwordPage){
+        passwordPage.classList.add("show"); // dùng class thay vì style
+        password="";
+        if(display) display.value="";
+        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+      }
+    },3800); // khớp với animation cửa
+  });
 });
+
 
 /* ==================== TOUCH ==================== */
 let lastTouchEnd=0;
