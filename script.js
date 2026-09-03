@@ -1,86 +1,336 @@
-document.addEventListener("DOMContentLoaded",()=>{const startDate="2026-05-23 00:00:00";function updateLoveTimer(){const startDateObj=new Date(startDate),currentDate=new Date(),timeDifference=currentDate.getTime()-startDateObj.getTime(),daysDifference=Math.floor(timeDifference/(1e3*60*60*24)),hours=Math.floor(timeDifference%(1e3*60*60*24)/(1e3*60*60)),minutes=Math.floor(timeDifference%(1e3*60*60)/(1e3*60)),seconds=Math.floor(timeDifference%(1e3*60)/1e3),daysElement=document.getElementById("love-days"),timeElement=document.getElementById("love-hours");if(daysElement)daysElement.textContent=daysDifference;if(timeElement)timeElement.textContent=`${String(hours).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;document.title=`${daysDifference} Ngày Yêu ❤️`}setInterval(updateLoveTimer,1e3);updateLoveTimer()});
+/* ==================== LOVE TIMER ==================== */
+document.addEventListener("DOMContentLoaded",()=>{
+    const startDate="2026-05-23 00:00:00";
+    function updateLoveTimer(){
+        const startDateObj=new Date(startDate),currentDate=new Date();
+        const timeDifference=currentDate.getTime()-startDateObj.getTime();
+        const daysDifference=Math.floor(timeDifference/(1e3*60*60*24));
+        const hours=Math.floor(timeDifference%(1e3*60*60*24)/(1e3*60*60));
+        const minutes=Math.floor(timeDifference%(1e3*60*60)/(1e3*60));
+        const seconds=Math.floor(timeDifference%(1e3*60)/1e3);
+        const daysElement=document.getElementById("love-days"),timeElement=document.getElementById("love-hours");
+        if(daysElement)daysElement.textContent=daysDifference;
+        if(timeElement)timeElement.textContent=`${String(hours).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+        document.title=`${daysDifference} Ngày Yêu ❤️`;
+    }
+    setInterval(updateLoveTimer,1e3);updateLoveTimer();
+});
 
-function showPassword(){const counterPage=document.getElementById("counterPage"),passwordPage=document.getElementById("passwordPage"),curtain=document.getElementById("curtainTransition");if(!counterPage||!passwordPage||!curtain)return;curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none";counterPage.style.display="none";passwordPage.style.display="flex";passwordPage.classList.remove("fade-in");setRunningTextInfinite("💗 ENTER PASSWORD 💗");requestAnimationFrame(()=>requestAnimationFrame(()=>curtain.classList.add("curtain-open")));setTimeout(()=>{curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"},3e3)}
+/* ==================== PASSWORD PAGE ==================== */
+function showPassword(){
+    const counterPage=document.getElementById("counterPage"),passwordPage=document.getElementById("passwordPage"),curtain=document.getElementById("curtainTransition");
+    if(!counterPage||!passwordPage||!curtain)return;
+    curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none";
+    counterPage.style.display="none";passwordPage.style.display="flex";passwordPage.classList.remove("fade-in");
+    setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+    requestAnimationFrame(()=>requestAnimationFrame(()=>curtain.classList.add("curtain-open")));
+    setTimeout(()=>{curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"},3e3);
+}
 
-function showAlbum(){const menuPage=document.getElementById("menuPage"),passwordPage=document.getElementById("passwordPage"),albumPage=document.getElementById("albumPage");if(menuPage)menuPage.style.display="none";if(passwordPage)passwordPage.style.display="none";if(albumPage)albumPage.style.display="block";setTimeout(()=>startTyping(),800)}
+/* ==================== ALBUM ==================== */
+function showAlbum(){
+    const menuPage=document.getElementById("menuPage"),passwordPage=document.getElementById("passwordPage"),albumPage=document.getElementById("albumPage");
+    if(menuPage)menuPage.style.display="none";
+    if(passwordPage)passwordPage.style.display="none";
+    if(albumPage)albumPage.style.display="block";
+    setTimeout(()=>startTyping(),800);
+}
 
-function showCounterWithCurtain(){const menuPage=document.getElementById("menuPage"),counterPage=document.getElementById("counterPage"),curtain=document.getElementById("curtainTransition");if(menuPage)menuPage.style.display="none";if(curtain){curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}if(counterPage)counterPage.style.display="flex";requestAnimationFrame(()=>requestAnimationFrame(()=>{if(curtain)curtain.classList.add("curtain-open")}));setTimeout(()=>{if(curtain){curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}},3e3)}
+function showCounterWithCurtain(){
+    const menuPage=document.getElementById("menuPage"),counterPage=document.getElementById("counterPage"),curtain=document.getElementById("curtainTransition");
+    if(menuPage)menuPage.style.display="none";
+    if(curtain){curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}
+    if(counterPage)counterPage.style.display="flex";
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{if(curtain)curtain.classList.add("curtain-open")}));
+    setTimeout(()=>{if(curtain){curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}},3e3);
+}
 
 function backHome(){location.reload()}
 
-function showLoadingLove(){const passwordPage=document.getElementById("passwordPage"),loading=document.getElementById("loveLoading");if(!loading)return;if(passwordPage)passwordPage.style.display="none";loading.style.display="flex";let progress=0;const fill=document.getElementById("progressFill"),text=document.getElementById("progressPercent"),hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")],startBtn=document.getElementById("startLoveBtn");if(fill)fill.style.width="0%";if(text)text.textContent="0%";if(startBtn){startBtn.style.display="none";startBtn.classList.remove("show")}hearts.forEach(heart=>{if(heart){heart.classList.remove("heart-active");heart.style.animationPlayState="running"}});const timer=setInterval(()=>{progress++;if(fill)fill.style.width=progress+"%";if(text)text.textContent=progress+"%";if(progress===20&&hearts[0])hearts[0].classList.add("heart-active");if(progress===50&&hearts[1])hearts[1].classList.add("heart-active");if(progress===80&&hearts[2])hearts[2].classList.add("heart-active");if(progress>=100){clearInterval(timer);if(fill)fill.style.width="100%";if(text)text.textContent="100%";setTimeout(()=>{if(startBtn){startBtn.style.display="block";requestAnimationFrame(()=>startBtn.classList.add("show"))}},300)}},30)}
+/* ==================== LOVE LOADING ==================== */
+function showLoadingLove(){
+    const passwordPage=document.getElementById("passwordPage"),loading=document.getElementById("loveLoading");
+    if(!loading)return;
+    if(passwordPage)passwordPage.style.display="none";loading.style.display="flex";
+    let progress=0;
+    const fill=document.getElementById("progressFill"),text=document.getElementById("progressPercent");
+    const hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")];
+    const startBtn=document.getElementById("startLoveBtn");
+    if(fill)fill.style.width="0%";if(text)text.textContent="0%";
+    if(startBtn){startBtn.style.display="none";startBtn.classList.remove("show")}
+    hearts.forEach(heart=>{if(heart){heart.classList.remove("heart-active");heart.style.animationPlayState="running"}});
+    const timer=setInterval(()=>{
+        progress++;
+        if(fill)fill.style.width=progress+"%";if(text)text.textContent=progress+"%";
+        if(progress===20&&hearts[0])hearts[0].classList.add("heart-active");
+        if(progress===50&&hearts[1])hearts[1].classList.add("heart-active");
+        if(progress===80&&hearts[2])hearts[2].classList.add("heart-active");
+        if(progress>=100){
+            clearInterval(timer);if(fill)fill.style.width="100%";if(text)text.textContent="100%";
+            setTimeout(()=>{if(startBtn){startBtn.style.display="block";requestAnimationFrame(()=>startBtn.classList.add("show"))}},300);
+        }
+    },30);
+}
 
-document.addEventListener("DOMContentLoaded",()=>{const startBtn=document.getElementById("startLoveBtn");if(!startBtn)return;startBtn.addEventListener("click",()=>{const loading=document.getElementById("loveLoading"),hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")];hearts.forEach(heart=>{if(heart)heart.style.animationPlayState="running"});startBtn.classList.add("button-click-out");setTimeout(()=>{if(loading)loading.classList.add("loading-transition-out");const success=document.getElementById("loveSuccess");if(success){success.style.display="flex";success.classList.add("success-transition-in");showLoveSuccess()}setTimeout(()=>{if(loading){loading.style.display="none";loading.classList.remove("loading-transition-out")}},1800)},350)})});
+document.addEventListener("DOMContentLoaded",()=>{
+    const startBtn=document.getElementById("startLoveBtn");
+    if(!startBtn)return;
+    startBtn.addEventListener("click",()=>{
+        const loading=document.getElementById("loveLoading");
+        const hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")];
+        hearts.forEach(heart=>{if(heart)heart.style.animationPlayState="running"});
+        startBtn.classList.add("button-click-out");
+        setTimeout(()=>{
+            if(loading)loading.classList.add("loading-transition-out");
+            const success=document.getElementById("loveSuccess");
+            if(success){success.style.display="flex";success.classList.add("success-transition-in");showLoveSuccess()}
+            setTimeout(()=>{if(loading){loading.style.display="none";loading.classList.remove("loading-transition-out")}},1800);
+        },350);
+    });
+});
 
+/* ==================== PASSWORD ==================== */
 let password="",checkTimer=null,actionTimer=null;
 
-function cancelCurrentAction(){if(checkTimer){clearTimeout(checkTimer);checkTimer=null}if(actionTimer){clearTimeout(actionTimer);actionTimer=null}const runningText=document.getElementById("runningText"),display=document.getElementById("display");if(runningText)runningText.getAnimations().forEach(animation=>animation.cancel());password="";if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")}
+function cancelCurrentAction(){
+    if(checkTimer){clearTimeout(checkTimer);checkTimer=null}
+    if(actionTimer){clearTimeout(actionTimer);actionTimer=null}
+    const runningText=document.getElementById("runningText"),display=document.getElementById("display");
+    if(runningText)runningText.getAnimations().forEach(animation=>animation.cancel());
+    password="";if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+}
 
 function setRunningText(text,color="#e75480"){return startMarquee(text,color,false)}
 function setRunningTextInfinite(text,color="#e75480"){startMarquee(text,color,true)}
 
-function startMarquee(text,color="#e75480",loop=true){const running=document.getElementById("runningText"),wrap=document.querySelector(".display-wrap");if(!running||!wrap)return 0;running.getAnimations().forEach(animation=>animation.cancel());running.style.display="none";running.textContent=text;running.style.color=color;running.style.display="block";return new Promise(resolve=>{requestAnimationFrame(()=>{const textWidth=running.offsetWidth,wrapWidth=wrap.offsetWidth,distance=textWidth+wrapWidth,speed=100,duration=distance/speed*1e3;running.animate([{transform:`translate3d(${wrapWidth}px,-50%,0)`},{transform:`translate3d(-${textWidth}px,-50%,0)`}],{duration,iterations:loop?Infinity:1,easing:"linear"});resolve(duration)})})}
+function startMarquee(text,color="#e75480",loop=true){
+    const running=document.getElementById("runningText"),wrap=document.querySelector(".display-wrap");
+    if(!running||!wrap)return 0;
+    running.getAnimations().forEach(animation=>animation.cancel());
+    running.style.display="none";running.textContent=text;running.style.color=color;running.style.display="block";
+    return new Promise(resolve=>{
+        requestAnimationFrame(()=>{
+            const textWidth=running.offsetWidth,wrapWidth=wrap.offsetWidth;
+            const distance=textWidth+wrapWidth,speed=100,duration=distance/speed*1e3;
+            running.animate([
+                {transform:`translate3d(${wrapWidth}px,-50%,0)`},
+                {transform:`translate3d(-${textWidth}px,-50%,0)`}
+            ],{duration,iterations:loop?Infinity:1,easing:"linear"});
+            resolve(duration);
+        });
+    });
+}
 
 document.addEventListener("DOMContentLoaded",()=>setRunningTextInfinite("💗 ENTER PASSWORD 💗"));
 
-function addNum(num){if(checkTimer||actionTimer)cancelCurrentAction();password+=num;const runningText=document.getElementById("runningText"),display=document.getElementById("display");if(runningText)runningText.style.display="none";if(display)display.value="• ".repeat(password.length)}
+function addNum(num){
+    if(checkTimer||actionTimer)cancelCurrentAction();
+    password+=num;
+    const runningText=document.getElementById("runningText"),display=document.getElementById("display");
+    if(runningText)runningText.style.display="none";if(display)display.value="• ".repeat(password.length);
+}
 
-function delNum(){if(checkTimer||actionTimer){cancelCurrentAction();return}password=password.slice(0,-1);const display=document.getElementById("display");if(display){display.value="• ".repeat(password.length);if(password.length===0){display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")}}}
-
-function checkPassword(){if(checkTimer){clearTimeout(checkTimer);checkTimer=null}if(actionTimer){clearTimeout(actionTimer);actionTimer=null}const display=document.getElementById("display");if(display)display.value="";const checkingTime=setRunningText("💗 ĐANG KIỂM TRA TÌNH YÊU... 💗","#ffb300");Promise.resolve(checkingTime).then(duration=>{checkTimer=setTimeout(()=>{if(password==="0"){const successTime=setRunningText("💗 ĐÚNG RÙI BÉ UI. HAY QÓ 💗","#00cc66");Promise.resolve(successTime).then(successDuration=>{actionTimer=setTimeout(()=>{showUnlockAnimation();actionTimer=null},successDuration)})}else{const failTime=setRunningText("😜 SAI RÙI BÉ UI. LIU LIU 😜","#ff3333"),container=document.querySelector(".container");if(container)container.classList.add("shake");Promise.resolve(failTime).then(failDuration=>{actionTimer=setTimeout(()=>{if(container)container.classList.remove("shake");password="";if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗");actionTimer=null},failDuration)})}checkTimer=null},duration)})}
-
-function showUnlockAnimation(){const overlay=document.getElementById("unlock-overlay");if(!overlay)return;const bigLock=overlay.querySelector(".big-lock");if(!bigLock)return;const front=bigLock.querySelector(".front"),back=bigLock.querySelector(".back");overlay.style.display="flex";bigLock.classList.remove("spin","lock-open");if(front)front.textContent="🔒";if(back)back.textContent="🔒";bigLock.classList.add("spin");setTimeout(()=>bigLock.classList.add("lock-open"),2e3);setTimeout(()=>{if(front)front.textContent="🔓";if(back)back.textContent="🔓"},2400);setTimeout(()=>{overlay.style.display="none";showLoadingLove()},3e3)}
-
-function showLoveSuccess(){const heart1=document.getElementById("heart1"),heart2=document.getElementById("heart2"),heart3=document.getElementById("heart3"),successFill=document.querySelector(".success-fill"),successPercent=document.getElementById("successPercent"),successTitle=document.querySelector(".success-title"),clickMe=document.getElementById("clickMe");if(!successFill)return;let progress=0;successFill.style.width="0%";if(successPercent)successPercent.textContent="0%";[heart1,heart2,heart3].forEach(heart=>{if(heart)heart.classList.remove("heart-active")});if(successTitle){successTitle.classList.remove("show");successTitle.style.opacity="0";successTitle.style.visibility="hidden"}if(clickMe){clickMe.classList.remove("show");clickMe.style.display="none";clickMe.style.opacity="0";clickMe.style.visibility="hidden";clickMe.style.pointerEvents="none"}const timer=setInterval(()=>{progress++;successFill.style.width=progress+"%";if(successPercent)successPercent.textContent=progress+"%";if(progress===20&&heart1)heart1.classList.add("heart-active");if(progress===50&&heart2)heart2.classList.add("heart-active");if(progress===80&&heart3)heart3.classList.add("heart-active");if(progress>=100){clearInterval(timer);progress=100;successFill.style.width="100%";if(successPercent)successPercent.textContent="100%";setTimeout(()=>{if(successTitle){successTitle.style.visibility="visible";successTitle.classList.add("show")}if(clickMe){clickMe.style.display="block";clickMe.style.visibility="visible";clickMe.style.pointerEvents="auto";requestAnimationFrame(()=>clickMe.classList.add("show"))}},600)}},30)}
-
-document.addEventListener("DOMContentLoaded",()=>{const clickMe=document.getElementById("clickMe");if(!clickMe)return;clickMe.addEventListener("click",()=>{const successPage=document.getElementById("loveSuccess"),curtain=document.getElementById("curtainTransition"),menuPage=document.getElementById("menuPage");if(successPage)successPage.style.display="none";if(curtain){curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}if(menuPage)menuPage.style.display="flex";requestAnimationFrame(()=>requestAnimationFrame(()=>{if(curtain)curtain.classList.add("curtain-open")}));setTimeout(()=>{if(curtain){curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}},3300)})});
-
-const message="Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
-
-const photoUrls=Array.from({length:30},(_,i)=>`img/anh${i+1}.jpg`);
-const music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn"),albumBtn=document.getElementById("albumBtn"),typingDiv=document.getElementById("typing");if(!albumBtn)console.warn("albumBtn not found");let idx=0;
-
-window.startTyping=function(){idx=0;if(typingDiv)typingDiv.textContent="";if(albumBtn)albumBtn.classList.remove("visible");type()};
-
-function type(){if(!typingDiv||!albumBtn)return;if(idx<message.length){typingDiv.textContent+=message[idx++];setTimeout(type,50)}else albumBtn.classList.add("visible")}
-
-const heartColors=["#ffb6c1","#ffd1dc","#ff69b4","#ffc0cb","#ff77aa"];
-for(let i=0;i<25;i++){const heart=document.createElement("div");heart.className="floating-heart";heart.textContent="💗";heart.style.left=Math.random()*100+"vw";heart.style.color=heartColors[Math.floor(Math.random()*heartColors.length)];heart.style.animationDelay=Math.random()*10+"s";heart.style.animationDuration=7+Math.random()*8+"s";document.body.appendChild(heart)}
-
-if(musicBtn&&music)musicBtn.addEventListener("click",()=>{if(music.paused){music.play().catch(error=>console.warn("Không thể phát nhạc:",error));musicBtn.innerHTML="🔊"}else{music.pause();musicBtn.innerHTML="🔇"}});
-
-function showConfetti(){const confettiColors=["#ff6f91","#ff9671","#ffc75f","#f9f871","#ff3c78"];for(let i=0;i<100;i++){const confetti=document.createElement("div");confetti.className="confetti";if(i%2===0)confetti.classList.add("heart");confetti.style.backgroundColor=confettiColors[Math.floor(Math.random()*confettiColors.length)];confetti.style.setProperty("--x",Math.random()*500-250+"px");confetti.style.setProperty("--y",Math.random()*-500+"px");confetti.style.left=window.innerWidth/2+"px";confetti.style.top=window.innerHeight/2+"px";document.body.appendChild(confetti);setTimeout(()=>confetti.remove(),1200)}}
-
-function showFirework(){const container=document.getElementById("fireworkContainer");if(!container)return;container.innerHTML="";container.style.opacity="1";for(let i=0;i<30;i++){const fw=document.createElement("div");fw.className="firework";fw.style.transform=`rotate(${i*12}deg) translateY(-40px)`;container.appendChild(fw)}setTimeout(()=>container.style.opacity="0",1e3)}
-
-if(albumBtn)albumBtn.addEventListener("click",()=>{albumBtn.style.display="none";showConfetti();showFirework();setTimeout(()=>spawnHeartPhotosCentered(),500)});
-
-function createHeartPhotoCentered(index,total){const photo=document.createElement("img");photo.src=photoUrls[index%photoUrls.length];photo.className="photo";document.body.appendChild(photo);const centerX=window.innerWidth/2,centerY=window.innerHeight/2,t=Math.PI*2*(index/total),scale=window.innerWidth<=480?14:22,targetX=centerX+scale*16*Math.pow(Math.sin(t),3),targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));photo.style.left=centerX+"px";photo.style.top=centerY+"px";setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100)}
-
-document.addEventListener("DOMContentLoaded",()=>{const door=document.getElementById("introDoor"),lock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");if(!door||!lock)return;lock.addEventListener("click",()=>{
-  if(door.classList.contains("door-start"))return;
-  door.classList.add("door-start");
-  lock.style.pointerEvents="none";
-
-  // Ẩn cửa trước
-  setTimeout(()=>{
-    door.style.display="none";
-    door.classList.remove("door-start");
-    door.style.pointerEvents="none";
-
-    // Sau đó hiện trang pass
-    if(passwordPage){
-      passwordPage.style.display="flex";
-      password="";
-      const display=document.getElementById("display");
-      if(display)display.value="";
-      setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+function delNum(){
+    if(checkTimer||actionTimer){cancelCurrentAction();return}
+    password=password.slice(0,-1);
+    const display=document.getElementById("display");
+    if(display){
+        display.value="• ".repeat(password.length);
+        if(password.length===0){display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")}
     }
-  },3900);
+}
+
+function checkPassword(){
+    if(checkTimer){clearTimeout(checkTimer);checkTimer=null}
+    if(actionTimer){clearTimeout(actionTimer);actionTimer=null}
+    const display=document.getElementById("display");
+    if(display)display.value="";
+    const checkingTime=setRunningText("💗 ĐANG KIỂM TRA TÌNH YÊU... 💗","#ffb300");
+    Promise.resolve(checkingTime).then(duration=>{
+        checkTimer=setTimeout(()=>{
+            if(password==="0"){
+                const successTime=setRunningText("💗 ĐÚNG RÙI BÉ UI. HAY QÓ 💗","#00cc66");
+                Promise.resolve(successTime).then(successDuration=>{
+                    actionTimer=setTimeout(()=>{showUnlockAnimation();actionTimer=null},successDuration);
+                });
+            }else{
+                const failTime=setRunningText("😜 SAI RÙI BÉ UI. LIU LIU 😜","#ff3333");
+                const container=document.querySelector(".container");
+                if(container)container.classList.add("shake");
+                Promise.resolve(failTime).then(failDuration=>{
+                    actionTimer=setTimeout(()=>{
+                        if(container)container.classList.remove("shake");
+                        password="";if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗");actionTimer=null;
+                    },failDuration)});
+            }
+            checkTimer=null;
+        },duration)});
+}
+
+/* ==================== UNLOCK ==================== */
+function showUnlockAnimation(){
+    const overlay=document.getElementById("unlock-overlay");
+    if(!overlay)return;
+    const bigLock=overlay.querySelector(".big-lock");
+    if(!bigLock)return;
+    const front=bigLock.querySelector(".front"),back=bigLock.querySelector(".back");
+    overlay.style.display="flex";bigLock.classList.remove("spin","lock-open");
+    if(front)front.textContent="🔒";if(back)back.textContent="🔒";
+    bigLock.classList.add("spin");
+    setTimeout(()=>bigLock.classList.add("lock-open"),2e3);
+    setTimeout(()=>{if(front)front.textContent="🔓";if(back)back.textContent="🔓"},2400);
+    setTimeout(()=>{overlay.style.display="none";showLoadingLove()},3e3);
+}
+
+/* ==================== LOVE SUCCESS ==================== */
+function showLoveSuccess(){
+    const heart1=document.getElementById("heart1"),heart2=document.getElementById("heart2"),heart3=document.getElementById("heart3");
+    const successFill=document.querySelector(".success-fill"),successPercent=document.getElementById("successPercent");
+    const successTitle=document.querySelector(".success-title"),clickMe=document.getElementById("clickMe");
+    if(!successFill)return;
+    let progress=0;
+    successFill.style.width="0%";if(successPercent)successPercent.textContent="0%";
+    [heart1,heart2,heart3].forEach(heart=>{if(heart)heart.classList.remove("heart-active")});
+    if(successTitle){successTitle.classList.remove("show");successTitle.style.opacity="0";successTitle.style.visibility="hidden"}
+    if(clickMe){clickMe.classList.remove("show");clickMe.style.display="none";clickMe.style.opacity="0";clickMe.style.visibility="hidden";clickMe.style.pointerEvents="none"}
+    const timer=setInterval(()=>{
+        progress++;successFill.style.width=progress+"%";if(successPercent)successPercent.textContent=progress+"%";
+        if(progress===20&&heart1)heart1.classList.add("heart-active");
+        if(progress===50&&heart2)heart2.classList.add("heart-active");
+        if(progress===80&&heart3)heart3.classList.add("heart-active");
+        if(progress>=100){
+            clearInterval(timer);progress=100;successFill.style.width="100%";if(successPercent)successPercent.textContent="100%";
+            setTimeout(()=>{
+                if(successTitle){successTitle.style.visibility="visible";successTitle.classList.add("show")}
+                if(clickMe){clickMe.style.display="block";clickMe.style.visibility="visible";clickMe.style.pointerEvents="auto";requestAnimationFrame(()=>clickMe.classList.add("show"))}
+            },600);
+        }
+    },30);
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const clickMe=document.getElementById("clickMe");
+    if(!clickMe)return;
+    clickMe.addEventListener("click",()=>{
+        const successPage=document.getElementById("loveSuccess"),curtain=document.getElementById("curtainTransition"),menuPage=document.getElementById("menuPage");
+        if(successPage)successPage.style.display="none";
+        if(curtain){curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}
+        if(menuPage)menuPage.style.display="flex";
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{if(curtain)curtain.classList.add("curtain-open")}));
+        setTimeout(()=>{if(curtain){curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}},3300);
+    });
 });
 
+/* ==================== ALBUM DATA ==================== */
+const message="Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
+const photoUrls=Array.from({length:30},(_,i)=>`img/anh${i+1}.jpg`);
+const music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn"),albumBtn=document.getElementById("albumBtn"),typingDiv=document.getElementById("typing");
+if(!albumBtn)console.warn("albumBtn not found");
+let idx=0;
 
-function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
+window.startTyping=function(){
+    idx=0;if(typingDiv)typingDiv.textContent="";if(albumBtn)albumBtn.classList.remove("visible");type();
+};
 
+function type(){
+    if(!typingDiv||!albumBtn)return;
+    if(idx<message.length){typingDiv.textContent+=message[idx++];setTimeout(type,50)}
+    else albumBtn.classList.add("visible");
+}
+
+/* ==================== FLOATING HEART ==================== */
+const heartColors=["#ffb6c1","#ffd1dc","#ff69b4","#ffc0cb","#ff77aa"];
+for(let i=0;i<25;i++){
+    const heart=document.createElement("div");
+    heart.className="floating-heart";heart.textContent="💗";
+    heart.style.left=Math.random()*100+"vw";heart.style.color=heartColors[Math.floor(Math.random()*heartColors.length)];
+    heart.style.animationDelay=Math.random()*10+"s";heart.style.animationDuration=7+Math.random()*8+"s";
+    document.body.appendChild(heart);
+}
+
+/* ==================== MUSIC ==================== */
+if(musicBtn&&music){
+    musicBtn.addEventListener("click",()=>{
+        if(music.paused){
+            music.play().catch(error=>console.warn("Không thể phát nhạc:",error));musicBtn.innerHTML="🔊";
+        }else{music.pause();musicBtn.innerHTML="🔇"}
+    });
+}
+
+/* ==================== CONFETTI ==================== */
+function showConfetti(){
+    const confettiColors=["#ff6f91","#ff9671","#ffc75f","#f9f871","#ff3c78"];
+    for(let i=0;i<100;i++){
+        const confetti=document.createElement("div");
+        confetti.className="confetti";if(i%2===0)confetti.classList.add("heart");
+        confetti.style.backgroundColor=confettiColors[Math.floor(Math.random()*confettiColors.length)];
+        confetti.style.setProperty("--x",Math.random()*500-250+"px");confetti.style.setProperty("--y",Math.random()*-500+"px");
+        confetti.style.left=window.innerWidth/2+"px";confetti.style.top=window.innerHeight/2+"px";
+        document.body.appendChild(confetti);setTimeout(()=>confetti.remove(),1200);
+    }
+}
+
+/* ==================== FIREWORK ==================== */
+function showFirework(){
+    const container=document.getElementById("fireworkContainer");
+    if(!container)return;
+    container.innerHTML="";container.style.opacity="1";
+    for(let i=0;i<30;i++){
+        const fw=document.createElement("div");
+        fw.className="firework";fw.style.transform=`rotate(${i*12}deg) translateY(-40px)`;container.appendChild(fw);
+    }
+    setTimeout(()=>container.style.opacity="0",1e3);
+}
+
+if(albumBtn){
+    albumBtn.addEventListener("click",()=>{
+        albumBtn.style.display="none";showConfetti();showFirework();
+        setTimeout(()=>spawnHeartPhotosCentered(),500);
+    });
+}
+
+/* ==================== HEART PHOTOS ==================== */
+function createHeartPhotoCentered(index,total){
+    const photo=document.createElement("img");
+    photo.src=photoUrls[index%photoUrls.length];photo.className="photo";document.body.appendChild(photo);
+    const centerX=window.innerWidth/2,centerY=window.innerHeight/2;
+    const t=Math.PI*2*(index/total),scale=window.innerWidth<=480?14:22;
+    const targetX=centerX+scale*16*Math.pow(Math.sin(t),3);
+    const targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));
+    photo.style.left=centerX+"px";photo.style.top=centerY+"px";
+    setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100);
+}
+
+function spawnHeartPhotosCentered(){
+    const totalPhotos=30;
+    for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100);
+}
+
+/* ==================== INTRO DOOR ==================== */
+document.addEventListener("DOMContentLoaded",()=>{
+    const door=document.getElementById("introDoor"),lock=document.getElementById("doorLock"),passwordPage=document.getElementById("passwordPage");
+    if(!door||!lock)return;
+    lock.addEventListener("click",()=>{
+        if(door.classList.contains("door-start"))return;
+        door.classList.add("door-start");lock.style.pointerEvents="none";
+        setTimeout(()=>{
+            door.style.display="none";door.classList.remove("door-start");door.style.pointerEvents="none";
+            if(passwordPage){
+                passwordPage.style.display="flex";password="";
+                const display=document.getElementById("display");
+                if(display)display.value="";
+                setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+            }
+        },3900);
+    });
+});
+
+/* ==================== TOUCH ==================== */
 let lastTouchEnd=0;
-document.addEventListener("touchend",event=>{const clickable=event.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)event.preventDefault();lastTouchEnd=now},{passive:false});
+document.addEventListener("touchend",event=>{
+    const clickable=event.target.closest("button,a,input,textarea,select,.btn,.ok");
+    if(clickable)return;
+    const now=Date.now();
+    if(now-lastTouchEnd<300)event.preventDefault();
+    lastTouchEnd=now;
+},{passive:false});
