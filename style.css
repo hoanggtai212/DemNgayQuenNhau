@@ -233,14 +233,14 @@ html{font-size:calc(14px + .25vw)}
 @keyframes torchFlicker{from{opacity:.75;transform:translateY(-90%) scale(.92)}to{opacity:1;transform:translateY(-90%) scale(1.08)}}
 
 /* OPEN DOOR */
-#introDoor.door-start .door-camera{animation:cameraPushIn 3.2s cubic-bezier(.22,.61,.36,1) forwards}
-#introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.2s cubic-bezier(.22,.61,.36,1) forwards}
-#introDoor.door-start .door-wing-right{animation:doorRightOpen 3.2s cubic-bezier(.22,.61,.36,1) forwards}
-@keyframes cameraPushIn{0%{transform:translate3d(0,0,0) scale(1)}35%{transform:translate3d(0,0,0) scale(1.06)}60%{transform:translate3d(0,0,0) scale(1.18)}80%{transform:translate3d(0,0,0) scale(1.38)}100%{transform:translate3d(0,0,0) scale(1.65)}}
-@keyframes doorLeftOpen{0%{transform:translate3d(0,0,0) rotateY(0deg)}65%{transform:translate3d(-65%,0,0) rotateY(-55deg)}100%{transform:translate3d(-115%,0,0) rotateY(-78deg)}}
-@keyframes doorRightOpen{0%{transform:translate3d(0,0,0) rotateY(0deg)}65%{transform:translate3d(65%,0,0) rotateY(55deg)}100%{transform:translate3d(115%,0,0) rotateY(78deg)}}
-#introDoor.door-start .door-back-light{animation:doorLight 2.8s cubic-bezier(.22,.61,.36,1) forwards}
-@keyframes doorLight{0%{opacity:0;transform:scale(.45);filter:blur(18px)}35%{opacity:.12;transform:scale(.7);filter:blur(16px)}60%{opacity:.35;transform:scale(1);filter:blur(12px)}80%{opacity:.7;transform:scale(1.35);filter:blur(8px)}100%{opacity:1;transform:scale(1.8);filter:blur(4px)}}
+#introDoor.door-start .door-camera{animation:cameraPushIn 3.2s ease-out forwards}
+#introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.2s ease-out forwards}
+#introDoor.door-start .door-wing-right{animation:doorRightOpen 3.2s ease-out forwards}
+@keyframes cameraPushIn{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,0,0) scale(1.65)}}
+@keyframes doorLeftOpen{from{transform:translate3d(0,0,0) rotateY(0deg)}to{transform:translate3d(-115%,0,0) rotateY(-78deg)}}
+@keyframes doorRightOpen{from{transform:translate3d(0,0,0) rotateY(0deg)}to{transform:translate3d(115%,0,0) rotateY(78deg)}}
+#introDoor.door-start .door-back-light{animation:doorLight 2.8s ease-out forwards}
+@keyframes doorLight{from{opacity:0;transform:scale(.45);filter:blur(18px)}to{opacity:1;transform:scale(1.8);filter:blur(4px)}}
 #introDoor.door-start .door-lock{animation:lockDisappear .5s ease forwards}
 @keyframes lockDisappear{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
 .door-flash{position:absolute;inset:0;background:white;opacity:0;pointer-events:none;z-index:999}
@@ -292,6 +292,9 @@ html{font-size:calc(14px + .25vw)}
 #introDoor.door-start .door-wing-left{animation:doorLeftOpenMobile 3.2s cubic-bezier(.22,.61,.36,1) forwards}
 #introDoor.door-start .door-wing-right{animation:doorRightOpenMobile 3.2s cubic-bezier(.22,.61,.36,1) forwards}
 @keyframes cameraPushInMobile{0%{transform:translate3d(0,0,0) scale(1)}35%{transform:translate3d(0,0,0) scale(1.05)}60%{transform:translate3d(0,0,0) scale(1.14)}80%{transform:translate3d(0,0,0) scale(1.3)}100%{transform:translate3d(0,0,0) scale(1.5)}}
-@keyframes doorLeftOpenMobile{0%{transform:translate3d(0,0,0) rotateY(0deg)}65%{transform:translate3d(-60%,0,0) rotateY(-50deg)}100%{transform:translate3d(-110%,0,0) rotateY(-72deg)}}
-@keyframes doorRightOpenMobile{0%{transform:translate3d(0,0,0) rotateY(0deg)}65%{transform:translate3d(60%,0,0) rotateY(50deg)}100%{transform:translate3d(110%,0,0) rotateY(72deg)}}
-}
+#introDoor.door-start .door-camera{animation:cameraPushInMobile 3.2s ease-out forwards}
+#introDoor.door-start .door-wing-left{animation:doorLeftOpenMobile 3.2s ease-out forwards}
+#introDoor.door-start .door-wing-right{animation:doorRightOpenMobile 3.2s ease-out forwards}
+@keyframes cameraPushInMobile{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,0,0) scale(1.5)}}
+@keyframes doorLeftOpenMobile{from{transform:translate3d(0,0,0) rotateY(0deg)}to{transform:translate3d(-110%,0,0) rotateY(-72deg)}}
+@keyframes doorRightOpenMobile{from{transform:translate3d(0,0,0) rotateY(0deg)}to{transform:translate3d(110%,0,0) rotateY(72deg)}}
