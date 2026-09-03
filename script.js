@@ -81,7 +81,7 @@ introDoor.classList.remove("door-start","door-flash-active");
 introDoor.style.pointerEvents="none";
 },350);
 
-},3050);
+},2000);
 };
 });
 
