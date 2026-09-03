@@ -211,7 +211,7 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-scene::before,#introDoor .door-scene::after{content:"";position:absolute;top:calc(50% - 140px);width:42px;height:280px;background:repeating-linear-gradient(180deg,#75451f 0,#a26834 35px,#68401e 38px,#875329 72px,#593319 76px);border:5px solid #351a10;box-shadow:inset 5px 0 8px rgba(255,175,80,.15),inset -7px 0 10px rgba(0,0,0,.5),0 0 15px rgba(0,0,0,.7);z-index:1;pointer-events:none}
 #introDoor .door-scene::before{left:calc(50% - 164px);border-radius:7px 3px 0 0}
 #introDoor .door-scene::after{right:calc(50% - 164px);border-radius:3px 7px 0 0}
-#introDoor .door-wing{position:absolute;top:0;height:100%;width:50%;background:linear-gradient(90deg,#120706,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:3;transform:rotateY(0deg);transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform}
+#introDoor .door-wing{position:absolute;top:0;height:100%;width:50%;background:linear-gradient(90deg,#120706,#2a120d 18%,#1b0b08 50%,#32150e 82%,#100504);border:3px solid #100504;box-shadow:inset 0 0 16px rgba(0,0,0,.7);z-index:3;transform:translateX(0);transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform}
 #introDoor .door-wing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,rgba(120,65,35,.08) 2px,transparent 5px,transparent 22px);opacity:.8}
 #introDoor .door-wing::after{content:"";position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(transparent,rgba(180,70,30,.5),transparent);opacity:.5}
 #introDoor .door-wing-left{left:0;width:50%}
@@ -256,18 +256,16 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-scene::before,#introDoor .door-scene::after{width:34px;height:42%}
 #introDoor .door-scene::before{left:calc(50% - 32vw)}
 #introDoor .door-scene::after{right:calc(50% - 32vw)}
-#introDoor .door-wing{width:50%}
-#introDoor .door-wing-left{left:calc(50% - 29vw); width:29vw;transform-origin:right center;}
-#introDoor .door-wing-right{right:calc(50% - 29vw);width:29vw;transform-origin:left center;}
+#introDoor .door-wing{width:50%;transform:translateX(0)}
+#introDoor .door-wing-left{left:0}
+#introDoor .door-wing-right{right:0}
 #introDoor .door-lock{width:58px;height:58px;font-size:27px}
 #introDoor .door-lock::before{left:calc(50% - 42vw);font-size:28px}
 #introDoor .door-lock::after{right:calc(50% - 42vw);font-size:28px}
 #introDoor.door-start .door-camera{animation:doorCameraMobile 3.2s linear forwards}
-@keyframes doorCameraMobile{from{transform:scale(1)}to{transform:scale(1.5)}}
-#introDoor.door-start .door-wing-left{animation:doorLeftMobile 3.2s linear forwards}
-#introDoor.door-start .door-wing-right{animation:doorRightMobile 3.2s linear forwards}
-@keyframes doorLeftMobile{from{transform:rotateY(0deg)}to{transform:rotateY(-82deg)}}
-@keyframes doorRightMobile{from{transform:rotateY(0deg)}to{transform:rotateY(82deg)}}
+#introDoor.door-start .door-wing-left{animation:doorLeft 3.2s cubic-bezier(.22,1,.36,1) forwards}
+#introDoor.door-start .door-wing-right{animation:doorRight 3.2s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes doorCameraMobile{to{transform:scale(1.15)}}
 }
 @media(max-width:600px){
 #passwordPage .container{width:calc(100vw - 24px);max-width:360px;padding:28px 14px 25px;margin:0 auto}
