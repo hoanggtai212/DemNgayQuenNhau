@@ -67,23 +67,20 @@ if(introDoor.classList.contains("door-start"))return;
 introDoor.classList.add("door-start");
 doorLock.style.pointerEvents="none";
 
-/* cửa kéo đủ 4 giây */
+/* Cửa chạy đủ 4 giây */
 setTimeout(()=>{
-introDoor.classList.add("door-flash-active");
-
 passwordPage.style.display="flex";
 password="";
 document.getElementById("display").value="";
 setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+},4000);
 
-/* flash chạy 1.8 giây */
+/* Giữ cú BÙM trắng thêm 0.3s */
 setTimeout(()=>{
 introDoor.style.display="none";
-introDoor.classList.remove("door-start","door-flash-active");
+introDoor.classList.remove("door-start");
 introDoor.style.pointerEvents="none";
-},1800);
-
-},4000);
+},4300);
 
 };
 });
