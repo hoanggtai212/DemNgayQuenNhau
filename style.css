@@ -257,7 +257,6 @@ to{transform:translateX(100%)}
 @keyframes lockOut{to{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
 
 /* FLASH */
-
 #introDoor .door-flash{
 position:absolute;
 inset:0;
@@ -267,35 +266,32 @@ pointer-events:none;
 z-index:999
 }
 
-#introDoor.door-flash-active .door-flash{
-animation:doorFlash 1.8s linear forwards
+#introDoor.door-start .door-flash{
+animation:doorFlash 4.3s linear forwards
 }
 
 @keyframes doorFlash{
-/* bắt đầu */
+
+/* 0 → 1s: cửa mở nhưng CHƯA chớp */
 0%{opacity:0}
+23%{opacity:0}
 
 /* CHỚP 1 */
-22%{opacity:0}
-25%{opacity:.45}
+25%{opacity:.4}
 28%{opacity:0}
 
 /* CHỚP 2 */
-40%{opacity:0}
-43%{opacity:.65}
-46%{opacity:0}
+45%{opacity:.55}
+48%{opacity:0}
 
 /* CHỚP 3 */
-58%{opacity:0}
-61%{opacity:.85}
-64%{opacity:0}
+65%{opacity:.75}
+68%{opacity:0}
 
-/* LÓE CHÓI CUỐI */
-78%{opacity:0}
-84%{opacity:.8}
-89%{opacity:1}
-96%{opacity:1}
-100%{opacity:0}
+/* 4s: MỞ FULL → BÙM */
+88%{opacity:0}
+92%{opacity:1}
+100%{opacity:1}
 }
 
 /* MOBILE */
