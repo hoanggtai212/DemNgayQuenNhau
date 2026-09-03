@@ -508,7 +508,7 @@ pointer-events:none;
 #introDoor .door-arch::before {
     inset:9px;
     border-radius:62px 62px 8px 8px;
-    border:2px solid rgba(255,181,208,.28);
+    border:5px solid rgba(255,181,208,.28);
     background:rgba(255,255,255,.03); /* nền mờ để dễ thấy */
 }
 
@@ -545,8 +545,8 @@ pointer-events:none;
   }
   /* Ngọn đuốc hai bên */
   #introDoor .door-torch { top:48%; font-size:36px; }
-  #introDoor .door-torch-left { left:10%; }
-  #introDoor .door-torch-right { right:10%; }
+  #introDoor .door-torch-left { left:2.5%; }
+  #introDoor .door-torch-right { right:2.5%; }
   /* Khoảng sáng giữa cửa */
   #introDoor .door-light-gap { top:27%; height:55%; }
 }
