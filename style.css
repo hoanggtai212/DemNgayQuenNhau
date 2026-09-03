@@ -276,300 +276,182 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-arch{position:absolute;left:12%;right:12%;top:18%;bottom:9%;border:clamp(8px,1vw,14px) solid #a84e70;border-bottom-width:12px;border-radius:125px 125px 18px 18px;background:linear-gradient(90deg,rgba(255,180,205,.05),rgba(255,255,255,.04),rgba(255,180,205,.05));box-shadow:inset 0 0 18px rgba(255,220,232,.25),inset 0 0 35px rgba(80,15,45,.22),0 0 0 2px rgba(255,180,205,.12),0 12px 35px rgba(0,0,0,.42);pointer-events:none}
 #introDoor .door-arch::before{content:"";position:absolute;inset:13px;border:2px solid rgba(255,181,208,.28);border-radius:110px 110px 10px 10px;box-shadow:inset 0 0 12px rgba(255,210,225,.18);pointer-events:none}
 
-/* =====================================================
-   3D LOVE DOOR
-   ===================================================== */
+/* ===== FIX 3D CỬA MỞ ===== */
 
-#introDoor .door-camera{
-    position:absolute;
-    inset:0;
-    z-index:2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-
-    /* Camera 3D */
-    perspective:1100px;
-    perspective-origin:50% 50%;
+#introDoor .door-camera {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
 }
 
-#introDoor .door-scene{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-
-    transform-style:preserve-3d;
+#introDoor .door-scene {
+    transform-style: preserve-3d;
 }
 
-/* Khung cửa cũng nằm trong không gian 3D */
-#introDoor .door-frame{
-    position:absolute;
-    inset:0;
-    z-index:10;
-
-    overflow:visible;
-    pointer-events:none;
-
-    transform-style:preserve-3d;
+/* CÁNH CỬA */
+#introDoor .door-wing {
+    top: 27%;
+    width: 27%;
+    height: 56%;
+    overflow: visible;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    background: linear-gradient(135deg, #ffd1df 0%, #fa9ab5 25%, #ed7096 55%, #d9577f 100%);
+    border: 3px solid #ffb6cc;
+    border-radius: 9px;
+    box-shadow: inset 6px 0 15px rgba(255,255,255,.25), inset -10px 0 20px rgba(100,15,50,.25), 0 12px 25px rgba(20,0,15,.45);
 }
 
-/* ===============================
-   CÁNH CỬA
-   =============================== */
-
-#introDoor .door-wing{
-    position:absolute;
-
-    top:26%;
-    width:28%;
-    height:57%;
-
-    z-index:12;
-
-    overflow:visible;
-
-    /* Màu mặt cửa */
-    background:
-        linear-gradient(
-            145deg,
-            #ffc7d7 0%,
-            #fa91ad 22%,
-            #eb6b92 52%,
-            #d34e78 78%,
-            #a93660 100%
-        );
-
-    border:3px solid #ffb5ca;
-    border-radius:10px;
-
-    /* CỰC KỲ QUAN TRỌNG CHO 3D */
-    transform-style:preserve-3d;
-    backface-visibility:visible;
-    -webkit-backface-visibility:visible;
-
-    /* Đổ bóng theo chiều sâu */
-    box-shadow:
-        inset 8px 0 18px rgba(255,255,255,.25),
-        inset -12px 0 30px rgba(120,15,55,.25),
-        inset 0 0 35px rgba(255,220,235,.20),
-        0 15px 30px rgba(20,0,15,.42);
-
-    will-change:transform;
-
-    transition:none;
+/* CỬA TRÁI */
+#introDoor .door-wing-left {
+    left: 23%;
+    transform-origin: left center;
 }
 
-
-/* Cửa trái: bản lề ở mép trái */
-#introDoor .door-wing-left{
-    left:22%;
-    transform-origin:left center;
+/* CỬA PHẢI */
+#introDoor .door-wing-right {
+    right: 23%;
+    transform-origin: right center;
 }
 
-/* Cửa phải: bản lề ở mép phải */
-#introDoor .door-wing-right{
-    right:22%;
-    transform-origin:right center;
+/* VIỀN PANEL */
+#introDoor .door-wing::before {
+    content: "";
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top: 7%;
+    bottom: 7%;
+    border: 2px solid rgba(255,225,235,.5);
+    border-radius: 7px;
+    pointer-events: none;
 }
 
-
-/* =====================================================
-   KHUNG PANEL TRÊN CỬA
-   ===================================================== */
-
-#introDoor .door-wing::before{
-    content:"";
-
-    position:absolute;
-    left:7%;
-    right:7%;
-    top:7%;
-    bottom:7%;
-
-    border:2px solid rgba(255,220,232,.50);
-    border-radius:7px;
-
-    box-shadow:
-        inset 0 0 15px rgba(255,255,255,.16),
-        0 0 5px rgba(255,210,225,.12);
-
-    pointer-events:none;
+/* CẠNH DÀY 3D */
+#introDoor .door-wing::after {
+    content: "";
+    position: absolute;
+    top: 2%;
+    bottom: 2%;
+    width: 8px;
+    background: linear-gradient(90deg, #71344d, #c26683, #e18ba4, #71344d);
+    border-radius: 4px;
+    pointer-events: none;
 }
 
-
-/* =====================================================
-   HIỆU ỨNG ĐỘ DÀY CÁNH CỬA
-   ===================================================== */
-
-#introDoor .door-wing::after{
-    content:"";
-
-    position:absolute;
-
-    top:2%;
-    bottom:2%;
-
-    width:12px;
-
-    border-radius:4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #71334c 0%,
-            #a94d6d 35%,
-            #d87895 65%,
-            #71334c 100%
-        );
-
-    box-shadow:
-        inset 2px 0 3px rgba(255,255,255,.25),
-        0 4px 10px rgba(0,0,0,.25);
-
-    pointer-events:none;
-
-    opacity:.95;
+#introDoor .door-wing-left::after {
+    left: -7px;
 }
 
-
-/* Độ dày ở phía bản lề */
-#introDoor .door-wing-left::after{
-    left:-10px;
+#introDoor .door-wing-right::after {
+    right: -7px;
 }
 
-#introDoor .door-wing-right::after{
-    right:-10px;
+/* ===== GIỮ KHÓA Ở GIỮA ===== */
+
+#introDoor .door-lock {
+    position: absolute !important;
+    left: 50% !important;
+    top: 53% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 100 !important;
 }
 
+/* ===== GIỮ LỬA ĐÚNG VỊ TRÍ ===== */
 
-/* =====================================================
-   BÓNG 3D
-   ===================================================== */
-
-#introDoor .door-wing-left{
-    filter:
-        drop-shadow(18px 18px 18px rgba(20,0,15,.42));
+#introDoor .door-torch {
+    position: absolute !important;
+    top: 48% !important;
+    transform: none !important;
+    z-index: 50 !important;
 }
 
-#introDoor .door-wing-right{
-    filter:
-        drop-shadow(-18px 18px 18px rgba(20,0,15,.42));
+#introDoor .door-torch-left {
+    left: 5% !important;
 }
 
-
-/* =====================================================
-   ANIMATION MỞ CỬA 3D
-   ===================================================== */
-
-#introDoor.door-start .door-wing-left{
-    animation:
-        doorLeftOpen
-        3.6s
-        cubic-bezier(.20,.65,.25,1)
-        forwards;
+#introDoor .door-torch-right {
+    right: 5% !important;
 }
 
-#introDoor.door-start .door-wing-right{
-    animation:
-        doorRightOpen
-        3.6s
-        cubic-bezier(.20,.65,.25,1)
-        forwards;
+/* ===== ANIMATION 3D ===== */
+
+#introDoor.door-start .door-wing-left {
+    animation: openLeft3D 3.6s cubic-bezier(.2,.7,.25,1) forwards;
 }
 
+#introDoor.door-start .door-wing-right {
+    animation: openRight3D 3.6s cubic-bezier(.2,.7,.25,1) forwards;
+}
 
-/* =====================================================
-   CỬA TRÁI
-   ===================================================== */
-
-@keyframes doorLeftOpen{
-
-    0%{
-        transform:
-            rotateY(0deg)
-            translateZ(0);
+/* CỬA TRÁI XOAY VỀ BÊN TRÁI */
+@keyframes openLeft3D {
+    0% {
+        transform: rotateY(0deg);
     }
-
-    18%{
-        transform:
-            rotateY(-8deg)
-            translateZ(4px);
+    30% {
+        transform: rotateY(-15deg);
     }
-
-    40%{
-        transform:
-            rotateY(-16deg)
-            translateZ(8px);
+    60% {
+        transform: rotateY(-35deg);
     }
-
-    65%{
-        transform:
-            rotateY(-23deg)
-            translateZ(12px);
-    }
-
-    82%{
-        transform:
-            rotateY(-27deg)
-            translateZ(15px);
-    }
-
-    100%{
-        transform:
-            rotateY(-30deg)
-            translateZ(18px);
+    100% {
+        transform: rotateY(-55deg);
     }
 }
 
-
-/* =====================================================
-   CỬA PHẢI
-   ===================================================== */
-
-@keyframes doorRightOpen{
-
-    0%{
-        transform:
-            rotateY(0deg)
-            translateZ(0);
+/* CỬA PHẢI XOAY VỀ BÊN PHẢI */
+@keyframes openRight3D {
+    0% {
+        transform: rotateY(0deg);
     }
-
-    18%{
-        transform:
-            rotateY(8deg)
-            translateZ(4px);
+    30% {
+        transform: rotateY(15deg);
     }
-
-    40%{
-        transform:
-            rotateY(16deg)
-            translateZ(8px);
+    60% {
+        transform: rotateY(35deg);
     }
-
-    65%{
-        transform:
-            rotateY(23deg)
-            translateZ(12px);
-    }
-
-    82%{
-        transform:
-            rotateY(27deg)
-            translateZ(15px);
-    }
-
-    100%{
-        transform:
-            rotateY(30deg)
-            translateZ(18px);
+    100% {
+        transform: rotateY(55deg);
     }
 }
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    #introDoor .door-camera {
+        perspective: 850px;
+    }
+
+    #introDoor .door-wing {
+        top: 27%;
+        width: 27%;
+        height: 56%;
+    }
+
+    #introDoor .door-wing-left {
+        left: 23%;
+        transform-origin: left center;
+    }
+
+    #introDoor .door-wing-right {
+        right: 23%;
+        transform-origin: right center;
+    }
+
+    #introDoor .door-lock {
+        width: 62px !important;
+        height: 62px !important;
+        left: 50% !important;
+        top: 53% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    #introDoor .door-torch {
+        top: 48% !important;
+        font-size: 30px;
+    }
+}
+
 #introDoor .door-wing-left::before,
 #introDoor .door-wing-right::before{
     content:"";
