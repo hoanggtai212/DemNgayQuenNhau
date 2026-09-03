@@ -848,28 +848,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         // ==========================================
-        // 1. TÍNH SCALE ĐỂ CỬA PHỦ TOÀN MÀN HÌNH
-        // ==========================================
-
-        const frameWidth = doorFrame.offsetWidth;
-        const frameHeight = doorFrame.offsetHeight;
-
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-
-        const scaleX = screenWidth / frameWidth;
-        const scaleY = screenHeight / frameHeight;
-
-        const finalScale =
-            Math.max(scaleX, scaleY) * 1.08;
-
-        doorFrame.style.setProperty(
-            "--door-final-scale",
-            finalScale
-        );
-
-
-        // ==========================================
         // 2. THỜI GIAN
         // ==========================================
 
