@@ -13,7 +13,6 @@
 
 <body>
 
-<section id="counterPage" style="display:none">
   <div class="love-counter-container">
     <h1 class="main-title"><span class="line1">Chúng Ta</span><span class="line2">Đã</span><span class="line3">Bên Nhau</span></h1>
     <div class="couple-display">
@@ -35,30 +34,22 @@
   </div>
 </section>
 
-<section id="passwordPage"
+<section id="passwordPage">
   <div class="container">
     <div class="pass-title">
       <span class="pass-line1">Nhập Pass Đi</span>
       <span class="pass-line2">Ngừi Đẹp 💗</span>
     </div>
-
     <div class="subtitle">Gợi ý: Sinh nhật của em đó 😘💗<br>(Ngày / Tháng / Năm)</div>
-
     <div class="display-wrap">
       <input id="display" type="text" readonly>
       <div id="runningText">💗 ENTER PASSWORD 💗</div>
     </div>
-
     <div class="keypad">
-      <button class="btn" onclick="addNum('1')">1</button><button class="btn" onclick="addNum('2')">2</button><button class="btn" onclick="addNum('3')">3</button>
-      <button class="btn" onclick="addNum('4')">4</button><button class="btn" onclick="addNum('5')">5</button><button class="btn" onclick="addNum('6')">6</button>
-      <button class="btn" onclick="addNum('7')">7</button><button class="btn" onclick="addNum('8')">8</button><button class="btn" onclick="addNum('9')">9</button>
-      <button class="btn empty"></button><button class="btn" onclick="addNum('0')">0</button><button class="btn delete" onclick="delNum()">X</button>
+      <!-- keypad buttons -->
     </div>
-
     <button class="ok" onclick="checkPassword()">✓</button>
   </div>
-
   <div id="unlock-overlay">
     <div class="big-lock">
       <div class="front">🔒</div>
@@ -67,7 +58,6 @@
   </div>
 </section>
 
-<section id="albumPage" style="display:none">
   <audio id="music" loop src="music.mp3"></audio>
   <button class="music-btn" id="musicBtn"><i class="fa-solid fa-music"></i></button>
   <button class="back-btn" onclick="backHome()"><i class="fa-solid fa-arrow-left"></i></button>
@@ -117,7 +107,6 @@
   </div>
 </div>
 
-<div id="menuPage" style="display:none">
   <div class="menu-box">
     <h1>💗 OUR LITTLE WORLD 💗</h1>
     <p>Chọn một nơi để khám phá nha</p>
