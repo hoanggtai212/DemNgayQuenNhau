@@ -248,7 +248,7 @@ to{transform:translateX(100%)}
 
 /* ÁNH SÁNG */
 
-#introDoor.door-start .door-back-light{animation:doorLight 3s cubic-bezier(.22,1,.36,1) forwards}
+#introDoor.door-start .door-back-light{animation:doorLight 4s linear forwards}
 @keyframes doorLight{0%{opacity:0;transform:scale(.45);filter:blur(18px)}55%{opacity:.35;transform:scale(.9);filter:blur(12px)}80%{opacity:.7;transform:scale(1.35);filter:blur(7px)}100%{opacity:1;transform:scale(1.8);filter:blur(4px)}}
 
 /* KHÓA */
