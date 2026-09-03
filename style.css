@@ -274,8 +274,10 @@ to{transform:translateX(100vw)}
 /* MOBILE */
 
 @media(max-width:600px){
-animation:curtainLeft 3.4s ease-in-out forwards;
-@keyframes doorCameraMobile{to{transform:scale(1.04)}}
+#introDoor .door-frame{width:58vw;border-width:8px}
+#introDoor .door-lock{width:58px;height:58px;font-size:27px}
+#introDoor .door-lock::before{left:calc(50% - 42vw);font-size:28px}
+#introDoor .door-lock::after{right:calc(50% - 42vw);font-size:28px}
 }
 
 @media(max-width:600px){
