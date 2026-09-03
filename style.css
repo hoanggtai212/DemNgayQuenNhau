@@ -257,15 +257,14 @@ html{font-size:calc(14px + .25vw)}
 #introDoor .door-lock{width:58px;height:58px;font-size:27px}
 #introDoor .door-lock::before{left:calc(50% - 42vw);font-size:28px}
 #introDoor .door-lock::after{right:calc(50% - 42vw);font-size:28px}
-
 #introDoor.door-start .door-camera{animation:doorCameraMobile 3.2s cubic-bezier(.22,1,.36,1) forwards}
 #introDoor.door-start .door-wing-left{animation:doorLeftMobile 3.2s cubic-bezier(.22,1,.36,1) forwards}
 #introDoor.door-start .door-wing-right{animation:doorRightMobile 3.2s cubic-bezier(.22,1,.36,1) forwards}
-
 @keyframes doorCameraMobile{from{transform:scale(1)}to{transform:scale(1.06)}}
 @keyframes doorLeftMobile{0%{transform:translate3d(0,0,0)}15%{transform:translate3d(-5%,0,0)}55%{transform:translate3d(-70%,0,0)}100%{transform:translate3d(-115%,0,0)}}
 @keyframes doorRightMobile{0%{transform:translate3d(0,0,0)}15%{transform:translate3d(5%,0,0)}55%{transform:translate3d(70%,0,0)}100%{transform:translate3d(115%,0,0)}}
 }
+
 @media(max-width:600px){
 #passwordPage .container{width:calc(100vw - 24px);max-width:360px;padding:28px 14px 25px;margin:0 auto}
 #passwordPage .keypad{grid-template-columns:repeat(3,64px);gap:10px}
