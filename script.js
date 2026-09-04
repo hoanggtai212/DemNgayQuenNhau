@@ -107,32 +107,48 @@ document.addEventListener("touchend",e=>{
     lastTouchEnd=now;
 },{passive:false});
 /* ===== INTRO DOOR ===== */
-document.addEventListener("DOMContentLoaded", () => {
-    const door = document.getElementById("introDoor");
-    const passwordPage = document.getElementById("passwordPage");
-    if (!door) {
-        console.log("❌ Không tìm thấy introDoor");
-        return;
-    }
-    console.log("🚪 INTRO DOOR ĐÃ SẴN SÀNG");
+const door = document.getElementById("introDoor");
+const passwordPage = document.getElementById("passwordPage");
+
+if (door) {
     door.addEventListener("pointerdown", (e) => {
         e.preventDefault();
+        e.stopPropagation();
+
         if (door.classList.contains("door-start")) return;
+
         console.log("🚪 ĐÃ BẤM VÀO CỬA!");
+
         door.classList.add("door-start");
+
         setTimeout(() => {
-            console.log("💗 CHUYỂN SANG PASSWORD");
-            door.style.display = "none";
-            door.style.pointerEvents = "none";
+            console.log("💗 CHUYỂN SANG PASSWORD!");
+
+            // ẨN VÀ XÓA HẲN CÁNH CỬA
+            door.style.setProperty("display", "none", "important");
+            door.style.setProperty("visibility", "hidden", "important");
+            door.style.setProperty("opacity", "0", "important");
+            door.style.setProperty("pointer-events", "none", "important");
+
             if (passwordPage) {
-                passwordPage.style.display = "flex";
-                passwordPage.style.visibility = "visible";
-                passwordPage.style.opacity = "1";
+                passwordPage.style.setProperty("display", "flex", "important");
+                passwordPage.style.setProperty("visibility", "visible", "important");
+                passwordPage.style.setProperty("opacity", "1", "important");
+                passwordPage.style.setProperty("z-index", "100000000", "important");
             }
+
             password = "";
+
             const display = document.getElementById("display");
             if (display) display.value = "";
+
             setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-        }, 3800);
+
+            // XÓA INTRO DOOR KHỎI HTML
+            setTimeout(() => {
+                if (door) door.remove();
+            }, 100);
+
+        }, 4500);
     }, true);
-});
+}
