@@ -338,15 +338,17 @@
     #introDoor .door-light-gap{position:absolute;left:50%;top:26%;width:3px;height:57%;transform:translateX(-50%);z-index:18;background:#fff;opacity:.65;filter:blur(2px);box-shadow:0 0 8px #fff,0 0 18px #fff,0 0 35px rgba(255,164,200,.95);pointer-events:none}
     #introDoor.door-start .door-back-light{animation:doorLightOpen 3.6s cubic-bezier(.22,.61,.36,1) forwards}
 #introDoor.door-start .door-wing-left{
-  animation:doorLeftOpen 3.8s cubic-bezier(.20,.65,.25,1) forwards;
+  animation:doorLeftOpen 3.8s cubic-bezier(.22,.65,.25,1) forwards;
 }
 #introDoor.door-start .door-wing-right{
-  animation:doorRightOpen 3.8s cubic-bezier(.20,.65,.25,1) forwards;
+  animation:doorRightOpen 3.8s cubic-bezier(.22,.65,.25,1) forwards;
 }
 #introDoor.door-start .door-flash{
   animation:doorFlash 3.8s ease-in forwards;
 }
-    #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.6s cubic-bezier(.20,.65,.25,1) forwards}
+#introDoor.door-start .door-glow{
+  animation:centerGlowOpen 3.8s cubic-bezier(.22,.61,.36,1) forwards;
+}
     #introDoor.door-start .door-lock{animation:lockDisappear .65s ease forwards}
     #introDoor.door-start .door-light-gap{animation:gapLightOpen 3.5s ease forwards}
 @keyframes doorLeftOpen{
