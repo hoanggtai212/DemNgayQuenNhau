@@ -539,6 +539,18 @@
         width:45px; height:45px;
         font-size:25px;
         border-width:3px;
+.door-torch {
+  position:absolute;
+  font-size:2rem;   /* kích thước ngọn lửa */
+  top:15%;          /* chỉnh vị trí cao hơn (mặc định thường ~25–30%) */
+  z-index:20;
+}
+.door-torch-left {
+  left:12%;         /* khoảng cách từ mép trái khung */
+}
+.door-torch-right {
+  right:12%;        /* khoảng cách từ mép phải khung */
+}
       /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
       #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
