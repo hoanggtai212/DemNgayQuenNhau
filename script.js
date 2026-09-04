@@ -51,29 +51,50 @@ function createHeartPhotoCentered(idx,total){const photo=document.createElement(
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
-/* ==================== INTRO DOOR =================== */
+/* ==================== INTRO DOOR ==================== */
+
 document.addEventListener("click", function(e) {
-  const trigger = e.target.closest("#introDoor .door-trigger");
-  if (!trigger) return;
-  const door = document.getElementById("introDoor");
-  const passwordPage = document.getElementById("passwordPage");
-  if (!door) return;
-  if (door.classList.contains("door-start")) return;
-  console.log("🚪 ĐÃ BẤM CỬA!");
-  door.classList.add("door-start");
-  setTimeout(() => {
-    if (passwordPage) {
-      passwordPage.style.display = "flex";
-    }
-    password = "";
-    const display = document.getElementById("display");
-    if (display) {
-      display.value = "";
-    }
-    setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-  }, 3500);
-  setTimeout(() => {
-    door.style.display = "none";
-    door.style.pointerEvents = "none";
-  }, 3800);
+
+    // Bấm vào BẤT KỲ phần nào của 1 trong 2 cánh cửa
+    const wing = e.target.closest("#introDoor .door-wing");
+
+    if (!wing) return;
+
+    const door = document.getElementById("introDoor");
+    const passwordPage = document.getElementById("passwordPage");
+
+    if (!door || !passwordPage) return;
+
+    // Không cho bấm nhiều lần
+    if (door.classList.contains("door-start")) return;
+
+    console.log("🚪 CLICK CỬA");
+
+    // Bắt đầu animation mở cửa
+    door.classList.add("door-start");
+
+    // Chuyển sang màn password
+    setTimeout(function() {
+
+        console.log("💗 CHUYỂN SANG PASSWORD");
+
+        door.style.display = "none";
+        door.style.pointerEvents = "none";
+
+        passwordPage.style.display = "flex";
+        passwordPage.style.visibility = "visible";
+        passwordPage.style.opacity = "1";
+
+        password = "";
+
+        const display = document.getElementById("display");
+
+        if (display) {
+            display.value = "";
+        }
+
+        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+
+    }, 3800);
+
 });
