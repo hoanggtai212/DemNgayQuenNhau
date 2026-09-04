@@ -115,31 +115,29 @@ document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
 
     door.classList.add("door-start");
 
-    // hiệu ứng flash
     const flash = document.querySelector(".door-flash");
-if(flash){
-  let count = 0;
-  const flashInterval = setInterval(() => {
-    flash.classList.add("flash-active");
-    setTimeout(() => flash.classList.remove("flash-active"), 400);
-    count++;
-    if (count >= 3) { // lóe 3 lần
-      clearInterval(flashInterval);
-    }
-  }, 700);
-}
+    if (flash) {
+      let count = 0;
+      const flashInterval = setInterval(() => {
+        flash.classList.add("flash-active");
+        setTimeout(() => flash.classList.remove("flash-active"), 400);
+        count++;
+        if (count >= 3) { // lóe 3 lần
+          clearInterval(flashInterval);
 
-    // sau 4.5s ẩn cửa và hiện trang pass
-    setTimeout(() => {
-      door.style.display = "none";
-      if(passwordPage){
-        passwordPage.style.display = "flex";
-      }
-      password = "";
-      const display = document.getElementById("display");
-      if(display) display.value = "";
-      setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-    }, 4500);
+          // chuyển sang trang pass ngay sau lần lóe cuối
+          door.style.display = "none";
+          if (passwordPage) {
+            passwordPage.style.display = "flex";
+          }
+          password = "";
+          const display = document.getElementById("display");
+          if (display) display.value = "";
+          setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+        }
+      }, 700);
+    }
   });
 });
+
 
