@@ -495,6 +495,7 @@
     /* Áp dụng cho màn hình ngang ≤ 600px và cao từ 600px đến 800px */
     @media (max-width:600px) and (min-height:600px) and (max-height:800px) {
       #introDoor .door-arch {
+        left:0; right:0;
         top:13%; bottom:13%;
         border-width:10px;
         border-radius:70px 70px 14px 14px;
@@ -514,7 +515,6 @@
       }
       #introDoor .door-wing-left { left:4%; }
       #introDoor .door-wing-right { right:4%; }
-      /* Trái tim nhỏ gọn hơn */
       #introDoor .door-heart {
         top:28%;
         font-size:36px;
@@ -522,19 +522,7 @@
       }
       #introDoor .door-wing-left .door-handle::after { right:-16px; }
       #introDoor .door-wing-right .door-handle::after { left:-16px; }
-.door-torch {
-  position:absolute;
-  font-size:5rem;   /* kích thước ngọn lửa */
-  top:2%;          /* chỉnh vị trí cao hơn (mặc định thường ~25–30%) */
-  z-index:20;
-}
-.door-torch-left {
-  left:12%;         /* khoảng cách từ mép trái khung */
-}
-.door-torch-right {
-  right:12%;        /* khoảng cách từ mép phải khung */
-}
-      /* Khoảng sáng giữa cửa */
+   /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
       #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
     }
