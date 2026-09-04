@@ -543,14 +543,15 @@
       }
       /* Ngọn đuốc hai bên */
       #introDoor .door-torch { top:48%; font-size:36px; }
-      #introDoor .door-torch-left { left:2.5%; }
-      #introDoor .door-torch-right { right:2.5%; }
+      #introDoor .door-torch-left { left:1%; }
+      #introDoor .door-torch-right { right:1%; }
         
       /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
+      #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
     }
-    #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
-    }
+
+
     @media(max-width:600px){
     #passwordPage .container{width:100vw - 24px;max-width:360px;padding:28px 14px 25px;margin:0 auto}
     #passwordPage .keypad{grid-template-columns(3,64px);gap:10px}
