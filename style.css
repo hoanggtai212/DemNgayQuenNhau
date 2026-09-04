@@ -541,8 +541,8 @@
         border-width:3px;
 .door-torch {
   position:absolute;
-  font-size:2rem;   /* kích thước ngọn lửa */
-  top:15%;          /* chỉnh vị trí cao hơn (mặc định thường ~25–30%) */
+  font-size:5rem;   /* kích thước ngọn lửa */
+  top:2%;          /* chỉnh vị trí cao hơn (mặc định thường ~25–30%) */
   z-index:20;
 }
 .door-torch-left {
