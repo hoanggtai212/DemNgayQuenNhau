@@ -23,7 +23,7 @@ function startMarquee(text,color="#e75480",loop=true){const running=document.get
 
 document.addEventListener("DOMContentLoaded",()=>setRunningTextInfinite("💗 ENTER PASSWORD 💗"));
 
-function addNum(num){if(checkTimer||actionTimer)cancelCurrentAction();password+=num;const running=document.getElementById("runningText"),display=document.getElementById("display");if(running)running.style.display="none";if(display)display.value="  ".repeat(password.length)}
+function addNum(num){if(checkTimer||actionTimer)cancelCurrentAction();password+=num;const running=document.getElementById("runningText"),display=document.getElementById("display");if(running)running.style.display="none";if(display)display.value="*  ".repeat(password.length)}
 
 function delNum(){if(checkTimer||actionTimer){cancelCurrentAction();return}password=password.slice(0,-1);const display=document.getElementById("display");if(display)display.value="*  ".repeat(password.length);if(password.length===0){if(display)display.value="";setRunningTextInfinite("💗 ENTER PASSWORD 💗")}}
 
