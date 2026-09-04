@@ -308,8 +308,8 @@
         inset 0 0 35px rgba(255,220,235,.20),
         0 10px 25px rgba(20,0,15,.35);
     will-change:transform;backface-visibility:visible;transition:none;}
-    #introDoor .door-wing-left{left:22%;transform-origin center;}
-    #introDoor .door-wing-right{right:22%;transform-origin center;}
+#introDoor .door-wing-left{left:22%;transform-origin:right center;}
+#introDoor .door-wing-right{right:22%;transform-origin:left center;}
     #introDoor .door-wing-left::after,
     #introDoor .door-wing-right::after{
     content:"";position:absolute;opacity:.9;pointer-events:none;
@@ -319,10 +319,8 @@
     }
 #introDoor .door-wing-left::after {left: auto;right: 25px;}
 #introDoor .door-wing-right::after {right: auto;left: 25px;}
-#introDoor .door-trigger{position:absolute;
-  top:15%;bottom:15%;width:34px;z-index:50;
-  cursor:pointer;pointer-events:auto;background:transparent;
-}
+#introDoor .door-trigger{position:absolute;top:15%;bottom:15%;width:40px;z-index:50;
+  cursor:pointer;pointer-events:auto;background:transparent;touch-action:manipulation;}
 #introDoor .door-wing-left .door-trigger{right:14px;}
 #introDoor .door-wing-right .door-trigger{left:14px;}
     #introDoor .door-wing::before{content:"";position:absolute;left:7%;right:7%;top:7%;bottom:7%;border:2px solid rgba(255,218,230,.45);border-radius:7px;box-shadow:0 0 12px rgba(255,255,255,.13),0 0 5px rgba(255,210,225,.10);pointer-events:none}
@@ -401,12 +399,8 @@
         0 0 5px rgba(255,210,225,.10);
     pointer-events:none;
     }
-    #introDoor .door-wing-left{
-    filter(18px 18px 18px rgba(25,0,18,.38));
-    }
-    #introDoor .door-wing-right{
-    filter(-18px 18px 18px rgba(25,0,18,.38));
-    }
+#introDoor .door-wing-left{filter:drop-shadow(18px 18px 18px rgba(25,0,18,.38));}
+#introDoor .door-wing-right{filter:drop-shadow(-18px 18px 18px rgba(25,0,18,.38));}
     #introDoor .door-back-light{
     position:absolute;
     left:50%;
@@ -460,9 +454,9 @@
     @keyframes centerGlowOpen{0%{opacity:.15;width:3px;filter:blur(3px)}35%{opacity:.35;width:8px}60%{opacity:.65;width:28px}80%{opacity:.90;width:90px;filter:blur(9px)}100%{opacity:1;width:24vw;filter:blur(7px)}}
     @keyframes gapLightOpen{0%{opacity:.65;width:3px}45%{opacity:.85;width:8px}75%{opacity:1;width:28px}100%{opacity:0;width:80px;filter:blur(15px)}}
     @keyframes lockDisappear{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:blur(7px)}}
-    #introDoor .door-flash{position:absolute;inset:0;z-index:100;background:radial-gradient(circle at 50% 55%,#fff 0%,#fff 20%,rgba(255,239,246,.96) 38%,rgba(255,180,210,.60) 65%,transparent 100%);opacity:0;pointer-events:none;mix-blend-mode}
+    #introDoor .door-flash{position:absolute;inset:0;z-index:100;background:radial-gradient(circle at 50% 55%,#fff 0%,#fff 20%,rgba(255,239,246,.96) 38%,rgba(255,180,210,.60) 65%,transparent 100%);opacity:0;pointer-events:none;mix-blend-mode:screen;}
     #introDoor.door-start .door-flash{animation:doorFlash 3.8s linear forwards}
-    @keyframes doorFlash{0%,45%{opacity:0}60%{opacity:.05}72%{opacity:.16}82%{opacity:.34}90%{opacity:.65}96%{opacity:1;filter:blur(3) blur(7px)}100%{opacity:1;filter:blur(1) blur(0)}}
+    @keyframes doorFlash{0%,45%{opacity:0}60%{opacity:.05}72%{opacity:.16}82%{opacity:.34}90%{opacity:.65}96%{opacity:1;filter:blur(3px) blur(7px)}100%{opacity:1;filter:blur(1px) blur(0)}}
  
     /* Áp dụng cho màn hình ngang ≤ 600px và cao từ 600px đến 800px */
     @media (max-width:600px) and (min-height:600px) and (max-height:800px) {
