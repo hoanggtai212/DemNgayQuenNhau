@@ -72,11 +72,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
   });
 });
-const flash = document.querySelector(".door-flash");
-if(flash){
-  flash.classList.add("flash-active");
-  setTimeout(()=>flash.classList.remove("flash-active"),1000);
-}
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
