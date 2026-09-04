@@ -46,7 +46,16 @@
     .ok{width:65px;height:65px;border:none;border-radius:50%;display:flex;justify-content:center;align-items:center;padding:0;line-height:1;background:linear-gradient(135deg,#ff6b9a,#e75480);color:#fff;font-size:32px;font-family:sans-serif;margin:18px auto 0;cursor:pointer;box-shadow:0 10px 25px rgba(231,84,128,.45)}
     .ok{transform:scale(.92)}
     .empty{visibility:hidden}
-    #unlock-overlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:center;z-index:99999;perspective:1500px}
+#unlock-overlay{
+  display:none;
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  perspective:1500px;
+}
     .big-lock{position:absolute;width:160px;height:160px;transform-style:preserve-3d}
     .big-lock .front,.big-lock .back{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:150px;backface-visibility:hidden}
     .big-lock .back{transform:rotate(180deg)}
@@ -86,7 +95,19 @@
     @keyframes confettiFall{from{transform:translate(0,0) rotate(0);opacity:1}to{transform(var(--x),var(--y)) rotate(720deg);opacity:0}}
     .firework-container{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:center;align-items:center;opacity:0;transition:.3s;z-index:999}
     .firework{position:absolute;width:4px;height:120px;background:linear-gradient(to top,#ff5b93,transparent)}
-    #loveLoading{display:none;position:absolute;inset:0;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:999999;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%);animation 8s ease-in-out infinite alternate}
+#loveLoading{
+  display:none;
+  position:absolute;
+  inset:0;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  z-index:999999;
+  background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),
+             radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),
+             radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),
+             linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%);
+}
     #loveLoading::before,#loveLoading::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(5px)}
     #loveLoading::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation 6s ease-in-out infinite}
     #loveLoading::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation 8s ease-in-out infinite reverse}
