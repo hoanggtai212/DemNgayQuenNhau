@@ -284,6 +284,7 @@
   pointer-events:none;
 }
     #introDoor .door-wing{
+    pointer-events:auto;
     position:absolute;
     top:22%;
     width:36%;
@@ -319,10 +320,26 @@
     }
 #introDoor .door-wing-left::after {left: auto;right: 25px;}
 #introDoor .door-wing-right::after {right: auto;left: 25px;}
-#introDoor .door-trigger{position:absolute;top:15%;bottom:15%;width:40px;z-index:50;
-  cursor:pointer;pointer-events:auto;background:transparent;touch-action:manipulation;}
-#introDoor .door-wing-left .door-trigger{right:14px;}
-#introDoor .door-wing-right .door-trigger{left:14px;}
+/* ===== VÙNG BẤM CỬA ===== */
+/* ===== VÙNG BẤM TOÀN BỘ CÁNH CỬA ===== */
+#introDoor .door-trigger{
+  position:absolute;
+  inset:0;
+  width:auto;
+  height:auto;
+  z-index:99999;
+  cursor:pointer;
+  pointer-events:auto;
+  background:transparent;
+  touch-action:manipulation;
+}
+#introDoor .door-wing{
+  pointer-events:auto;
+  cursor:pointer;
+}
+#introDoor .door-wing:hover{
+  cursor:pointer;
+}
     #introDoor .door-wing::before{content:"";position:absolute;left:7%;right:7%;top:7%;bottom:7%;border:2px solid rgba(255,218,230,.45);border-radius:7px;box-shadow:0 0 12px rgba(255,255,255,.13),0 0 5px rgba(255,210,225,.10);pointer-events:none}
     #introDoor .door-heart {position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px); line-height:1;color:#ff4f81; /* hồng đậm */-webkit-text-stroke:1.5px #fff; /* viền trắng nhẹ */
     text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6), 0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate;}
@@ -353,37 +370,31 @@
     #introDoor.door-start .door-light-gap{animation:gapLightOpen 3.5s ease forwards}
 @keyframes doorLeftOpen{
   0%{
-    transform:translateZ(0) rotateY(0deg);
+    transform:rotateY(0deg);
   }
-
   35%{
-    transform:translateZ(-15px) rotateY(-10deg);
+    transform:rotateY(-12deg);
   }
-
   70%{
-    transform:translateZ(-35px) rotateY(-28deg);
+    transform:rotateY(-30deg);
   }
-
   100%{
-    transform:translateZ(-60px) rotateY(-48deg);
+    transform:rotateY(-48deg);
   }
 }
 
 @keyframes doorRightOpen{
   0%{
-    transform:translateZ(0) rotateY(0deg);
+    transform:rotateY(0deg);
   }
-
   35%{
-    transform:translateZ(-15px) rotateY(10deg);
+    transform:rotateY(12deg);
   }
-
   70%{
-    transform:translateZ(-35px) rotateY(28deg);
+    transform:rotateY(30deg);
   }
-
   100%{
-    transform:translateZ(-60px) rotateY(48deg);
+    transform:rotateY(48deg);
   }
 }
     #introDoor .door-wing-left::before,
