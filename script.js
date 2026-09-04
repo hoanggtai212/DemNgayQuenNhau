@@ -55,46 +55,13 @@ document.addEventListener("touchend",e=>{const clickable=e.target.closest("butto
 
 document.addEventListener("click", function(e) {
 
-    // Bấm vào BẤT KỲ phần nào của 1 trong 2 cánh cửa
     const wing = e.target.closest("#introDoor .door-wing");
 
     if (!wing) return;
 
-    const door = document.getElementById("introDoor");
-    const passwordPage = document.getElementById("passwordPage");
+    // TEST
+    alert("🚪 ĐÃ BẤM ĐƯỢC CỬA!");
 
-    if (!door || !passwordPage) return;
-
-    // Không cho bấm nhiều lần
-    if (door.classList.contains("door-start")) return;
-
-    console.log("🚪 CLICK CỬA");
-
-    // Bắt đầu animation mở cửa
-    door.classList.add("door-start");
-
-    // Chuyển sang màn password
-    setTimeout(function() {
-
-        console.log("💗 CHUYỂN SANG PASSWORD");
-
-        door.style.display = "none";
-        door.style.pointerEvents = "none";
-
-        passwordPage.style.display = "flex";
-        passwordPage.style.visibility = "visible";
-        passwordPage.style.opacity = "1";
-
-        password = "";
-
-        const display = document.getElementById("display");
-
-        if (display) {
-            display.value = "";
-        }
-
-        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-
-    }, 3800);
+    console.log("🚪 CLICK CỬA THÀNH CÔNG!");
 
 });
