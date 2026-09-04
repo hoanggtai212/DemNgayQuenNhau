@@ -106,41 +106,41 @@ document.addEventListener("touchend",e=>{
     }
     lastTouchEnd=now;
 },{passive:false});
-// Khai báo biến để dùng trong sự kiện
+/* ===== INTRO DOOR ===== */
 const door = document.getElementById("introDoor");
 const passwordPage = document.getElementById("passwordPage");
 
-document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
-  wing.addEventListener("click", () => {
-    if (door.classList.contains("door-start")) return;
+if (door) {
+    door.addEventListener("click", () => {
 
-    door.classList.add("door-start");
+        if (door.classList.contains("door-start")) return;
 
-    const flash = document.querySelector(".door-flash");
-    if (flash) {
-      let count = 0;
-      const flashInterval = setInterval(() => {
-        flash.classList.add("flash-active");
-        setTimeout(() => flash.classList.remove("flash-active"), 400);
-        count++;
-        if (count >= 3) { // lóe 3 lần
-          clearInterval(flashInterval);
+        console.log("🚪 MỞ CỬA");
 
-          // Ẩn hẳn introDoor bằng class hidden
-          door.classList.add("hidden");
+        door.classList.add("door-start");
 
-          // Hiện trang nhập pass
-          if (passwordPage) {
-            passwordPage.style.display = "flex";
-          }
+        setTimeout(() => {
 
-          // Reset password input
-          password = "";
-          const display = document.getElementById("display");
-          if (display) display.value = "";
-          setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-        }
-      }, 700);
-    }
-  });
-});
+            console.log("💗 ẨN CỬA - HIỆN PASSWORD");
+
+            // XÓA HẲN CỬA
+            door.remove();
+
+            // HIỆN PASSWORD
+            if (passwordPage) {
+                passwordPage.style.display = "flex";
+                passwordPage.style.visibility = "visible";
+                passwordPage.style.opacity = "1";
+                passwordPage.style.zIndex = "100000000";
+            }
+
+            password = "";
+
+            const display = document.getElementById("display");
+            if (display) display.value = "";
+
+            setRunningTextInfinite("💗 ENTER PASSWORD 💗");
+
+        }, 4000);
+    });
+}
