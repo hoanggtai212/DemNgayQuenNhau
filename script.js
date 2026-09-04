@@ -35,7 +35,6 @@ function showUnlockAnimation(){const overlay=document.getElementById("unlock-ove
 function showLoveSuccess(){const heart1=document.getElementById("heart1"),heart2=document.getElementById("heart2"),heart3=document.getElementById("heart3"),successFill=document.querySelector(".success-fill"),successPercent=document.getElementById("successPercent"),successTitle=document.querySelector(".success-title"),clickMe=document.getElementById("clickMe");if(!successFill)return;let progress=0;successFill.style.width="0%";if(successPercent)successPercent.textContent="0%";[heart1,heart2,heart3].forEach(heart=>{if(heart)heart.classList.remove("heart-active")});if(successTitle){successTitle.classList.remove("show");successTitle.style.opacity="0";successTitle.style.visibility="hidden"}if(clickMe){clickMe.classList.remove("show");clickMe.style.display="none";clickMe.style.opacity="0";clickMe.style.visibility="hidden";clickMe.style.pointerEvents="none"}const timer=setInterval(()=>{progress++;successFill.style.width=progress+"%";if(successPercent)successPercent.textContent=progress+"%";if(progress===20&&heart1)heart1.classList.add("heart-active");if(progress===50&&heart2)heart2.classList.add("heart-active");if(progress===80&&heart3)heart3.classList.add("heart-active");if(progress>=100){clearInterval(timer);progress=100;successFill.style.width="100%";if(successPercent)successPercent.textContent="100%";setTimeout(()=>{if(successTitle){successTitle.style.visibility="visible";successTitle.classList.add("show")}if(clickMe){clickMe.style.display="block";clickMe.style.visibility="visible";clickMe.style.pointerEvents="auto";requestAnimationFrame(()=>clickMe.classList.add("show"))}},600)}},30)}
 
 document.addEventListener("DOMContentLoaded",()=>{const clickMe=document.getElementById("clickMe");if(!clickMe)return;clickMe.addEventListener("click",()=>{const successPage=document.getElementById("loveSuccess"),curtain=document.getElementById("curtainTransition"),menuPage=document.getElementById("menuPage");if(successPage)successPage.style.display="none";if(curtain){curtain.style.display="block";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}if(menuPage)menuPage.style.display="flex";requestAnimationFrame(()=>requestAnimationFrame(()=>{if(curtain)curtain.classList.add("curtain-open")}));setTimeout(()=>{if(curtain){curtain.style.display="none";curtain.classList.remove("curtain-open");curtain.style.pointerEvents="none"}},3300)})});
-
 const message="Hành trình của chúng ta bắt đầu từ hôm nay. Mỗi khoảnh khắc bên nhau sẽ là một viên gạch xây nên ngôi nhà hạnh phúc. Cùng nhau, chúng ta sẽ viết nên một câu chuyện tình yêu vĩnh cửu. ❤️";
 const photoUrls=["img/anh1.jpg","img/anh2.jpg","img/anh3.jpg","img/anh4.jpg","img/anh5.jpg","img/anh6.jpg","img/anh7.jpg","img/anh8.jpg","img/anh9.jpg","img/anh10.jpg","img/anh11.jpg","img/anh12.jpg","img/anh13.jpg","img/anh14.jpg","img/anh15.jpg","img/anh16.jpg","img/anh17.jpg","img/anh18.jpg","img/anh19.jpg","img/anh20.jpg","img/anh21.jpg","img/anh22.jpg","img/anh23.jpg","img/anh24.jpg","img/anh25.jpg","img/anh26.jpg","img/anh27.jpg","img/anh28.jpg","img/anh29.jpg","img/anh30.jpg"];
 const music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn"),albumBtn=document.getElementById("albumBtn"),typingDiv=document.getElementById("typing");
@@ -50,28 +49,26 @@ function showConfetti(){const confettiColors=["#ff6f91","#ff9671","#ffc75f","#f9
 function showFirework(){const container=document.getElementById("fireworkContainer");if(!container)return;container.innerHTML="";container.style.opacity=1;for(let i=0;i<30;i++){const fw=document.createElement("div");fw.className="firework";fw.style.transform=`rotate(${i*12}deg) translateY(-40px)`;container.appendChild(fw)}setTimeout(()=>container.style.opacity=0,1000)}
 if(albumBtn){albumBtn.addEventListener("click",()=>{albumBtn.style.display="none";showConfetti();showFirework();setTimeout(()=>spawnHeartPhotosCentered(),500)})
 function createHeartPhotoCentered(idx,total){const photo=document.createElement("img");photo.src=photoUrls[idx%photoUrls.length];photo.className="photo";document.body.appendChild(photo);const centerX=window.innerWidth/2,centerY=window.innerHeight/2,t=Math.PI*2*(idx/total),scale=window.innerWidth<=480?14:22,targetX=centerX+scale*16*Math.pow(Math.sin(t),3),targetY=centerY-scale*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));photo.style.left=centerX+"px";photo.style.top=centerY+"px";setTimeout(()=>{photo.style.opacity="1";photo.style.pointerEvents="auto";photo.style.transform=`translate(-50%,-50%) translate(${targetX-centerX}px,${targetY-centerY}px)`},100)}
-
-/* ==================== INTRO DOOR ==================== */
-document.addEventListener("DOMContentLoaded",()=>{
-  const door = document.getElementById("introDoor");
-  const passwordPage = document.getElementById("passwordPage");
-  const triggers = document.querySelectorAll("#introDoor .door-trigger");
-  if(!door || !passwordPage || !triggers.length) return;
-  triggers.forEach(trigger => {trigger.addEventListener("click",()=>{if(door.classList.contains("door-start")) return;door.classList.add("door-start");
-      setTimeout(()=>{passwordPage.style.display = "flex";password = "";
-        const display = document.getElementById("display");
-        if(display) display.value = "";
-        setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-      },3800);
-      /* Ẩn cửa */
-      setTimeout(()=>{
-        door.style.display = "none";
-        door.classList.remove("door-start");
-        door.style.pointerEvents = "none";
-      },3900);
-    });
-  });
-});
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
+             /* ==================== INTRO DOOR ==================== */ 
+document.addEventListener("DOMContentLoaded",()=>{ 
+  const door = document.getElementById("introDoor"); 
+  const passwordPage = document.getElementById("passwordPage"); 
+  const triggers = document.querySelectorAll("#introDoor .door-trigger"); 
+  if(!door || !passwordPage || !triggers.length) return; 
+  triggers.forEach(trigger => {trigger.addEventListener("click",()=>{if(door.classList.contains("door-start")) return;door.classList.add("door-start"); 
+      setTimeout(()=>{passwordPage.style.display = "flex";password = ""; 
+        const display = document.getElementById("display"); 
+        if(display) display.value = ""; 
+        setRunningTextInfinite("💗 ENTER PASSWORD 💗"); 
+      },3800); 
+      setTimeout(()=>{ 
+        door.style.display = "none"; 
+        door.classList.remove("door-start"); 
+        door.style.pointerEvents = "none"; 
+      },3900); 
+    }); 
+  }); 
+});
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
