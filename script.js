@@ -106,6 +106,9 @@ document.addEventListener("touchend",e=>{
     }
     lastTouchEnd=now;
 },{passive:false});
+// Khai báo biến để dùng trong sự kiện
+const door = document.getElementById("introDoor");
+const passwordPage = document.getElementById("passwordPage");
 document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
   wing.addEventListener("click", () => {
     if (door.classList.contains("door-start")) return;
