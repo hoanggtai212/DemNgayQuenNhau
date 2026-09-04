@@ -320,19 +320,6 @@
     }
 #introDoor .door-wing-left::after {left: auto;right: 25px;}
 #introDoor .door-wing-right::after {right: auto;left: 25px;}
-/* ===== VÙNG BẤM CỬA ===== */
-/* ===== VÙNG BẤM TOÀN BỘ CÁNH CỬA ===== */
-#introDoor .door-trigger{
-  position:absolute;
-  inset:0;
-  width:auto;
-  height:auto;
-  z-index:99999;
-  cursor:pointer;
-  pointer-events:auto;
-  background:transparent;
-  touch-action:manipulation;
-}
 #introDoor .door-wing{
   pointer-events:auto;
   cursor:pointer;
