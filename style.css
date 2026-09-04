@@ -505,6 +505,7 @@
     #passwordPage .btn{width:60px;height:60px;font-size:22px}
     #passwordPage .ok{width:58px;height:58px;font-size:29px;margin-top:14px}
     }
+/* Hiệu ứng lóe sáng */
 .door-flash {
   position:absolute;
   inset:0;
@@ -521,6 +522,13 @@
   50% { opacity:1; }
   to { opacity:0; }
 }
+
+/* Ẩn hẳn introDoor khi thêm class hidden */
 #introDoor.hidden {
-  display: none !important;
+  display:none !important;
+}
+
+/* Đảm bảo passwordPage nổi lên */
+#passwordPage {
+  z-index:100000000;
 }
