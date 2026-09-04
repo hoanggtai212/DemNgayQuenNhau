@@ -539,12 +539,6 @@
         width:45px; height:45px;
         font-size:25px;
         border-width:3px;
-      }
-      /* Ngọn đuốc hai bên */
-      #introDoor .door-torch { top:48%; font-size:36px; }
-      #introDoor .door-torch-left { left:0%; }
-      #introDoor .door-torch-right { right:0%; }
-        
       /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
       #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}
