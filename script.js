@@ -109,6 +109,7 @@ document.addEventListener("touchend",e=>{
 // Khai báo biến để dùng trong sự kiện
 const door = document.getElementById("introDoor");
 const passwordPage = document.getElementById("passwordPage");
+
 document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
   wing.addEventListener("click", () => {
     if (door.classList.contains("door-start")) return;
@@ -125,11 +126,15 @@ document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
         if (count >= 3) { // lóe 3 lần
           clearInterval(flashInterval);
 
-          // chuyển sang trang pass ngay sau lần lóe cuối
-          door.style.display = "none";
+          // Ẩn hẳn introDoor bằng class hidden
+          door.classList.add("hidden");
+
+          // Hiện trang nhập pass
           if (passwordPage) {
             passwordPage.style.display = "flex";
           }
+
+          // Reset password input
           password = "";
           const display = document.getElementById("display");
           if (display) display.value = "";
@@ -139,5 +144,3 @@ document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
     }
   });
 });
-
-
