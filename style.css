@@ -319,6 +319,18 @@
     }
 #introDoor .door-wing-left::after {left: auto;right: 25px;}
 #introDoor .door-wing-right::after {right: auto;left: 25px;}
+.door-trigger {
+  position:absolute;
+  top:20%;
+  bottom:20%;
+  width:12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,#8d4c20,#e6aa55 20%,#ffe0a0 50%,#c57a29 75%,#713912);
+  border-radius:6px;
+  cursor:pointer; /* quan trọng để click được */
+  z-index:20;
+}
 #introDoor .door-trigger{position:absolute;top:15%;bottom:15%;width:40px;z-index:50;
   cursor:pointer;pointer-events:auto;background:transparent;touch-action:manipulation;}
 #introDoor .door-wing-left .door-trigger{right:14px;}
@@ -452,7 +464,23 @@
     @keyframes doorLightOpen{0%{opacity:0;transform:translate(-50%,-50%) scale(.25);filter:blur(30px)}28%{opacity:.08;transform:translate(-50%,-50%) scale(.48)}50%{opacity:.22;transform:translate(-50%,-50%) scale(.72)}70%{opacity:.48;transform:translate(-50%,-50%) scale(1.02)}86%{opacity:.78;transform:translate(-50%,-50%) scale(1.32);filter:blur(12px)}100%{opacity:1;transform:translate(-50%,-50%) scale(1.75);filter:blur(3px)}}
     @keyframes centerGlowOpen{0%{opacity:.15;width:3px;filter:blur(3px)}35%{opacity:.35;width:8px}60%{opacity:.65;width:28px}80%{opacity:.90;width:90px;filter:blur(9px)}100%{opacity:1;width:24vw;filter:blur(7px)}}
     @keyframes gapLightOpen{0%{opacity:.65;width:3px}45%{opacity:.85;width:8px}75%{opacity:1;width:28px}100%{opacity:0;width:80px;filter:blur(15px)}}
-    @keyframes lockDisappear{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:blur(7px)}}
+    .door-flash {
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, rgba(255,255,255,.8), transparent 70%);
+  opacity:0;
+  pointer-events:none;
+}
+.door-flash.flash-active {
+  animation:flash 0.8s ease forwards;
+}
+@keyframes flash {
+  from { opacity:0; }
+  50% { opacity:1; }
+  to { opacity:0; }
+}
+
+      @keyframes lockDisappear{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:blur(7px)}}
     #introDoor .door-flash{position:absolute;inset:0;z-index:100;background:radial-gradient(circle at 50% 55%,#fff 0%,#fff 20%,rgba(255,239,246,.96) 38%,rgba(255,180,210,.60) 65%,transparent 100%);opacity:0;pointer-events:none;mix-blend-mode:screen;}
     #introDoor.door-start .door-flash{animation:doorFlash 3.8s linear forwards}
     @keyframes doorFlash{0%,45%{opacity:0}60%{opacity:.05}72%{opacity:.16}82%{opacity:.34}90%{opacity:.65}96%{opacity:1;filter:blur(3px) blur(7px)}100%{opacity:1;filter:blur(1px) blur(0)}}
