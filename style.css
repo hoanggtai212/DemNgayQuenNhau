@@ -521,3 +521,6 @@
   50% { opacity:1; }
   to { opacity:0; }
 }
+#introDoor.hidden {
+  display: none !important;
+}
