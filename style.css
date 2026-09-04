@@ -187,18 +187,16 @@
     @keyframes buttonClickOut{0%{opacity:1;transform:scale(1);filter:blur(0)}45%{opacity:.8;transform:scale(.96);filter:blur(1px)}100%{opacity:0;transform:scale(.88);filter:blur(5px)}}
     #clickMe{opacity:0;visibility:hidden;pointer-events:none;transform:translateX(10px) scale(.9)}
     #clickMe.show{visibility:hidden;pointer-events:none;animation .7s .4s both,successButtonFloat 2.5s 1.1s ease-in-out infinite}
-    /* CURTAIN */
-    #curtainTransition{position:absolute;inset:0;width:100vw;height:100dvh;display:flex;overflow:hidden;z-index:1000000;pointer-events:none}
-    #curtainTransition .curtain{position:absolute;top:-2%;width:51%;height:104%;background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px);box-shadow:0 0 45px rgba(60,0,30,.35);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translate(0,0,0)}
-    #curtainTransition .curtain::after{content:"";position:absolute;inset:0;background(90deg,rgba(255,255,255,.08) 0px,transparent 14px,rgba(60,0,30,.20) 32px,transparent 50px);pointer-events:none}
-    #curtainTransition .curtain-left{left:0;transform-origin center}
-    #curtainTransition .curtain-right{right:0;transform-origin center}
-    #curtainTransition.curtain-open .curtain-left{animation 2.5s cubic-bezier(.25,.1,.55,1) forwards}
-    #curtainTransition.curtain-open .curtain-right{animation 2.5s cubic-bezier(.25,.1,.55,1) forwards}
-    @keyframes curtainLeftOpen{from{transform:translate(0,0,0)}to{transform:translate(-102%,0,0)}}
-    @keyframes curtainRightOpen{from{transform:translate(0,0,0)}to{transform:translate(102%,0,0)}}
-    #curtainTransition .curtain-heart{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(40px,7vw,80px);z-index:5;pointer-events:none;filter(0 0 10px rgba(255,80,150,.8)) drop-shadow(0 0 25px rgba(255,120,180,.6));opacity:1;transition .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-    #curtainTransition.curtain-open .curtain-heart{opacity:0;transform:translate(-50%,-50%) scale(.65)}
+/* CURTAIN */
+#curtainTransition{position;inset:0;width:100vw;height:100dvh;display;overflow;z-index:1000000;pointer-events}
+#curtainTransition .curtain{position;top:-2%;width:51%;height:104%;background(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px);box-shadow 0 0 45px rgba(60,0,30,.35);will-change;backface-visibility;-webkit-backface-visibility;transform(0,0,0)}
+#curtainTransition .curtain::after{content:"";position;inset:0;background(90deg,rgba(255,255,255,.08) 0px,transparent 14px,rgba(60,0,30,.20) 32px,transparent 50px);pointer-events}
+#curtainTransition .curtain-left{left:0;transform-origin center}
+#curtainTransition .curtain-right{right:0;transform-origin center}
+#curtainTransition.curtain-open .curtain-left{animation 2.5s cubic-bezier(.25,.1,.55,1) forwards}
+#curtainTransition.curtain-open .curtain-right{animation 2.5s cubic-bezier(.25,.1,.55,1) forwards}
+@keyframes curtainLeftOpen{from{transform(0,0,0)}to{transform(-102%,0,0)}}
+@keyframes curtainRightOpen{from{transform(0,0,0)}to{transform(102%,0,0)}}
     /* MENU */
     #menuPage{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;width:100vw;height:100dvh;overflow:hidden;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.7) 25%,transparent 55%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 50%,#f8c1d6 100%);z-index:5000}
     .menu-box{position:absolute;width:min(88vw,430px);padding:40px 30px;text-align:center;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.7);border-radius:32px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 25px 70px rgba(190,80,125,.2),inset 0 1px 0 rgba(255,255,255,.8)}
