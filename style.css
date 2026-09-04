@@ -324,9 +324,9 @@
     #introDoor .door-wing-right::after{
     content:"";
     position:absolute;
-    top:8%;
-    bottom:8%;
-    width:7px;
+    top:18%;
+    bottom:18%;
+    width:12px;
     border-radius:6px;
     background:
         linear-gradient(
