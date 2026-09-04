@@ -188,7 +188,7 @@
     .menu-box button{transform:scale(.95)}
     @keyframes menuAppear{from{opacity:0;transform:scale(.85) translateY(30px);filter:blur(10px)}to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
     #introDoor{position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:99999999;isolation:isolate;background:radial-gradient(ellipse at 50% 52%,rgba(255,145,190,.20) 0%,rgba(150,55,105,.12) 35%,rgba(20,5,22,.45) 75%),linear-gradient(90deg,#160916 0%,#281025 8%,#4a1b3b 18%,#6b294f 31%,#7f355d 43%,#6e2a50 56%,#7d3459 69%,#4b1a3b 83%,#281025 94%,#160916 100%)}
-    #introDoor::before{content:"";position:absolute;inset:-3%;z-index:0;pointer-events:none;background(90deg,rgba(17,4,19,.62) 0px,rgba(17,4,19,.40) 30px,rgba(255,174,205,.10) 52px,rgba(255,174,205,.16) 70px,rgba(38,8,31,.42) 91px,rgba(10,2,15,.48) 115px);box-shadow:0 0 100px rgba(0,0,0,.70),inset 0 0 220px rgba(20,0,20,.65);transform:scale(1.02)}
+    #introDoor::before{content:"";position:absolute;inset:-3%;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(17,4,19,.62) 0px,rgba(17,4,19,.40) 30px,rgba(255,174,205,.10) 52px,rgba(255,174,205,.16) 70px,rgba(38,8,31,.42) 91px,rgba(10,2,15,.48) 115px);box-shadow:0 0 100px rgba(0,0,0,.70),inset 0 0 220px rgba(20,0,20,.65);transform:scale(1.02)}
     #introDoor::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,rgba(255,154,195,.22) 0%,rgba(255,116,169,.12) 28%,transparent 58%),radial-gradient(circle at 50% 72%,rgba(255,108,165,.20),transparent 35%)}
     #introDoor .door-camera{
     position:absolute;
@@ -210,7 +210,7 @@
     overflow:hidden;
     transform-style:preserve-3d;
     }
-    #introDoor .door-scene::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1.3px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.65) 0 1px,transparent 2px);background-size:73px 91px,117px 137px;background-position:10px 15px,40px 60px;opacity:.42;animation 5s linear infinite}
+    #introDoor .door-scene::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1.3px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.65) 0 1px,transparent 2px);background-size:73px 91px,117px 137px;background-position:10px 15px,40px 60px;opacity:.42;animation:sparkle 5s linear infinite;}
     #introDoor .door-scene::after{
     content:"";
     position:absolute;
@@ -246,7 +246,7 @@
     }
     @keyframes doorParticles{from{transform:scale(0)}to{transform:translateX(-55px)}}
     #introDoor .door-back-light{position:absolute;left:50%;top:54%;width:min(54vw,560px);height:min(72vh,950px);z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.35);pointer-events:none;background:radial-gradient(ellipse at center,#fff 0%,#fff8fb 12%,rgba(255,224,237,.96) 27%,rgba(255,155,194,.72) 46%,rgba(255,87,150,.32) 63%,transparent 78%);filter:blur(28px);will-change:transform,opacity,filter}
-    #introDoor .door-glow{position:absolute;left:50%;top:25%;width:3px;height:55%;z-index:16;transform:translateX(-50%);opacity:.20;pointer-events:none;background(180deg,transparent,rgba(255,255,255,.65) 8%,#fff 25%,#fff 75%,rgba(255,255,255,.65) 92%,transparent);filter:blur(2px);box-shadow:0 0 10px #fff,0 0 25px #fff,0 0 55px rgba(255,150,195,.9)}
+    #introDoor .door-glow{position:absolute;left:50%;top:25%;width:3px;height:55%;z-index:16;transform:translateX(-50%);opacity:.20;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,255,255,.65) 8%,#fff 25%,#fff 75%,rgba(255,255,255,.65) 92%,transparent);filter:blur(2px);box-shadow:0 0 10px #fff,0 0 25px #fff,0 0 55px rgba(255,150,195,.9)}
 #introDoor .door-glow-left,
 #introDoor .door-glow-right {
   position:absolute;
@@ -342,50 +342,49 @@
     #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.6s cubic-bezier(.20,.65,.25,1) forwards}
     #introDoor.door-start .door-lock{animation:lockDisappear .65s ease forwards}
     #introDoor.door-start .door-light-gap{animation:gapLightOpen 3.5s ease forwards}
-    @keyframes doorLeftOpen{
-    0%{
-        transform:rotateY(0deg);
-    }
-    20%{
-        transform:rotateY(-12deg);
-    }
-    45%{
-        transform:rotateY(-32deg);
-    }
-    70%{
-        transform:rotateY(-52deg);
-    }
-    88%{
-        transform:rotateY(-63deg);
-    }
-    100%{
-        transform:rotateY(-68deg);
-    }
-    }
-    @keyframes doorRightOpen{
-    0%{
-        transform:rotateY(0deg);
-    }
-    20%{
-        transform:rotateY(12deg);
-    }
-    45%{
-        transform:rotateY(32deg);
-    }
-    
-    70%{
-        transform:rotateY(52deg);
-    }
-    
-    88%{
-        transform:rotateY(63deg);
-    }
-    
-    100%{
-        transform:rotateY(68deg);
-    }
-    
-    
+   @keyframes doorLeftOpen{
+  0%{
+    transform:translateZ(0) rotateY(0deg);
+  }
+
+  25%{
+    transform:translateZ(-25px) rotateY(-8deg);
+  }
+
+  50%{
+    transform:translateZ(-70px) rotateY(-20deg);
+  }
+
+  75%{
+    transform:translateZ(-130px) rotateY(-35deg);
+  }
+
+  100%{
+    transform:translateZ(-220px) rotateY(-48deg);
+  }
+}
+
+@keyframes doorRightOpen{
+  0%{
+    transform:translateZ(0) rotateY(0deg);
+  }
+
+  25%{
+    transform:translateZ(-25px) rotateY(8deg);
+  }
+
+  50%{
+    transform:translateZ(-70px) rotateY(20deg);
+  }
+
+  75%{
+    transform:translateZ(-130px) rotateY(35deg);
+  }
+
+  100%{
+    transform:translateZ(-220px) rotateY(48deg);
+  }
+}
     }
     #introDoor .door-wing-left::before,
     #introDoor .door-wing-right::before{
