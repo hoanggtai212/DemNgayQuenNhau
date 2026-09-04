@@ -117,10 +117,17 @@ document.querySelectorAll("#introDoor .door-wing").forEach(wing => {
 
     // hiệu ứng flash
     const flash = document.querySelector(".door-flash");
-    if(flash){
-      flash.classList.add("flash-active");
-      setTimeout(()=>flash.classList.remove("flash-active"),1000);
+if(flash){
+  let count = 0;
+  const flashInterval = setInterval(() => {
+    flash.classList.add("flash-active");
+    setTimeout(() => flash.classList.remove("flash-active"), 400);
+    count++;
+    if (count >= 3) { // lóe 3 lần
+      clearInterval(flashInterval);
     }
+  }, 700);
+}
 
     // sau 4.5s ẩn cửa và hiện trang pass
     setTimeout(() => {
