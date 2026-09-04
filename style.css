@@ -536,8 +536,8 @@
       #introDoor .door-wing-right .door-handle::after { left:-16px; }
       /* Ổ khóa vừa tay */
       #introDoor .door-lock {
-        width:62px; height:62px;
-        font-size:27px;
+        width:45px; height:45px;
+        font-size:25px;
         border-width:3px;
       }
       /* Ngọn đuốc hai bên */
