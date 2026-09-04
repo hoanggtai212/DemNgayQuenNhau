@@ -512,12 +512,12 @@
       /* Cánh cửa vừa phải, không quá hẹp */
       #introDoor .door-wing {
         top:27%;
-        width:40%;   /* 👈 độ rộng cánh cửa */
+        width:50%;   /* 👈 độ rộng cánh cửa */
         height:56%;  /* 👈 chiều cao */
         border-width:3px;
       }
-      #introDoor .door-wing-left { left:10%; }
-      #introDoor .door-wing-right { right:10%; }
+      #introDoor .door-wing-left { left:0%; }
+      #introDoor .door-wing-right { right:0%; }
       /* Trái tim nhỏ gọn hơn */
       #introDoor .door-heart {
         top:28%;
@@ -542,8 +542,8 @@
       }
       /* Ngọn đuốc hai bên */
       #introDoor .door-torch { top:48%; font-size:36px; }
-      #introDoor .door-torch-left { left:1%; }
-      #introDoor .door-torch-right { right:1%; }
+      #introDoor .door-torch-left { left:0%; }
+      #introDoor .door-torch-right { right:0%; }
         
       /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
