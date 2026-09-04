@@ -247,13 +247,22 @@
     @keyframes doorParticles{from{transform:scale(0)}to{transform:translateX(-55px)}}
     #introDoor .door-back-light{position:absolute;left:50%;top:54%;width:min(54vw,560px);height:min(72vh,950px);z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.35);pointer-events:none;background:radial-gradient(ellipse at center,#fff 0%,#fff8fb 12%,rgba(255,224,237,.96) 27%,rgba(255,155,194,.72) 46%,rgba(255,87,150,.32) 63%,transparent 78%);filter:blur(28px);will-change:transform,opacity,filter}
     #introDoor .door-glow{position:absolute;left:50%;top:25%;width:3px;height:55%;z-index:16;transform:translateX(-50%);opacity:.20;pointer-events:none;background(180deg,transparent,rgba(255,255,255,.65) 8%,#fff 25%,#fff 75%,rgba(255,255,255,.65) 92%,transparent);filter:blur(2px);box-shadow:0 0 10px #fff,0 0 25px #fff,0 0 55px rgba(255,150,195,.9)}
-    #introDoor .door-glow-left,
-   #introDoor .door-glow-right {position:absolute;top:25%;width:3px;height:55%;
-background:linear-gradient(180deg, transparent, rgba(255,255,255,.7), transparent);
-  box-shadow:0 0 15px rgba(255,255,255,.6);filter:blur(2px);z-index:16;pointer-events:none;}
-/* Vệt sáng sát mép trong của mỗi cánh cửa */
-#introDoor .door-glow-left {left:calc(50% - 18%);   /* lệch sang trái */}
-#introDoor .door-glow-right {right:calc(50% - 18%);  /* lệch sang phải */}
+#introDoor .door-glow-left,
+#introDoor .door-glow-right {
+  position:absolute;
+  top:25%;
+  width:3px;
+  height:55%;
+  background:linear-gradient(180deg, transparent, rgba(255,255,255,.7), transparent);
+  box-shadow:0 0 15px rgba(255,255,255,.6);
+  filter:blur(2px);
+  z-index:16;
+  pointer-events:none;
+}
+/* Vệt sáng dính sát khe giữa */
+#introDoor .door-glow-left { left:calc(50% - 2px); }
+#introDoor .door-glow-right { left:calc(50% + 2px); }
+
       #introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none}
     #introDoor .door-arch {
       position:absolute;          /* đặt khung vòm tuyệt đối trong introDoor */
