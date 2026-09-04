@@ -505,3 +505,19 @@
     #passwordPage .btn{width:60px;height:60px;font-size:22px}
     #passwordPage .ok{width:58px;height:58px;font-size:29px;margin-top:14px}
     }
+.door-flash {
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, rgba(255,255,255,.8), transparent 70%);
+  opacity:0;
+  pointer-events:none;
+  z-index:99999;
+}
+.door-flash.flash-active {
+  animation:flash 0.4s ease forwards;
+}
+@keyframes flash {
+  from { opacity:0; }
+  50% { opacity:1; }
+  to { opacity:0; }
+}
