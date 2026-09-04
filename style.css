@@ -532,7 +532,7 @@
         font-size:36px;
         -webkit-text-stroke:1.6px rgba(255,240,245,.95);
       }
-      #introDoor .door-wing-left .door-handle::after { right:-16px; }
+      #introDoor .door-wing-left .door-handle::after { right:16px; }
       #introDoor .door-wing-right .door-handle::after { left:-16px; }
    /* Khoảng sáng giữa cửa */
       #introDoor .door-light-gap { top:27%; height:55%; }
