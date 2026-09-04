@@ -51,17 +51,27 @@ function createHeartPhotoCentered(idx,total){const photo=document.createElement(
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++)setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}
 let lastTouchEnd=0;
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
-/* ==================== INTRO DOOR ==================== */
+/* ==================== TEST CLICK CỬA ==================== */
 
-document.addEventListener("click", function(e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const wing = e.target.closest("#introDoor .door-wing");
+    const triggers = document.querySelectorAll("#introDoor .door-trigger");
 
-    if (!wing) return;
+    console.log("🚪 SỐ VÙNG CLICK CỬA:", triggers.length);
 
-    // TEST
-    alert("🚪 ĐÃ BẤM ĐƯỢC CỬA!");
+    triggers.forEach(function(trigger) {
 
-    console.log("🚪 CLICK CỬA THÀNH CÔNG!");
+        trigger.addEventListener("pointerdown", function(e) {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            alert("🚪 ĐÃ BẤM ĐƯỢC CỬA!");
+
+            console.log("🚪🚪🚪 CLICK CỬA THÀNH CÔNG!");
+
+        });
+
+    });
 
 });
