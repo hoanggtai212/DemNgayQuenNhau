@@ -259,11 +259,10 @@
   z-index:16;
   pointer-events:none;
 }
-/* Vệt sáng dính sát khe giữa */
-#introDoor .door-glow-left { left:calc(50% - 2px); }
-#introDoor .door-glow-right { left:calc(50% + 2px); }
-
-      #introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none}
+/* Vệt sáng sát khe giữa */
+#introDoor .door-glow-left { left:calc(50% - 2px); }   /* bên trái khe */
+#introDoor .door-glow-right { right:calc(50% - 2px); } /* bên phải khe */
+   #introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none}
     #introDoor .door-arch {
       position:absolute;          /* đặt khung vòm tuyệt đối trong introDoor */
       left:9%; right:9%;          /* cách mép trái/phải màn hình 9% → tạo độ rộng */
