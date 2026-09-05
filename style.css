@@ -2142,7 +2142,7 @@ box-shadow:
     }
 }
 
-@media (max-width:600px) and (max-height:700px){
+@media (max-width:600px) and (min-height:600px) and (max-height:800px){
 
     #introDoor .door-arch{
         top:11%;
@@ -2151,7 +2151,7 @@ box-shadow:
 
     #introDoor .door-wing{
         top:20%;
-        height:67%;
+        height:80%;
     }
 
     #introDoor .door-heart{
