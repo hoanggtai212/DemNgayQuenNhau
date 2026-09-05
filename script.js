@@ -68,16 +68,17 @@ document.addEventListener("touchend",e=>{const clickable=e.target.closest("butto
 /* ===== INTRO DOOR ===== */
 const door=document.getElementById("introDoor");
 const passwordPage=document.getElementById("passwordPage");
-
 if(door){
     door.addEventListener("click",()=>{
         if(door.classList.contains("door-start"))return;
         console.log("🚪 MỞ CỬA");
+        // Bắt đầu animation cửa + ánh sáng
         door.classList.add("door-start");
         door.style.pointerEvents="none";
-
+        // Hiện Password khi màn hình đang bị ánh sáng che
         setTimeout(()=>{
             console.log("💗 HIỆN PASSWORD");
+
             if(passwordPage){
                 passwordPage.style.display="flex";
                 passwordPage.style.visibility="visible";
@@ -88,8 +89,8 @@ if(door){
             const display=document.getElementById("display");
             if(display)display.value="";
             setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-        },3800);
-
+        },3700);
+        // Sau khi Password đã nằm phía sau ánh sáng → bỏ cửa
         setTimeout(()=>{
             console.log("🚪 XÓA INTRO DOOR");
             door.remove();
