@@ -1628,14 +1628,14 @@ body{
 }
 
 #introDoor .door-wing-left{
-    left:22%;
-    transform-origin:right center;
+    left:18%;
+    transform-origin:left center;
     filter:drop-shadow(18px 18px 18px rgba(25,0,18,.38));
 }
 
 #introDoor .door-wing-right{
-    right:22%;
-    transform-origin:left center;
+    right:18%;
+    transform-origin:right center;
     filter:drop-shadow(-18px 18px 18px rgba(25,0,18,.38));
 }
 
@@ -1845,55 +1845,19 @@ body{
 }
 
 @keyframes doorLeftOpen{
-    0%{
-        transform:rotateY(0deg);
-    }
-
-    25%{
-        transform:rotateY(-18deg);
-    }
-
-    50%{
-        transform:rotateY(-48deg);
-    }
-
-    72%{
-        transform:rotateY(-78deg);
-    }
-
-    88%{
-        transform:rotateY(-98deg);
-    }
-
-    100%{
-        transform:rotateY(-110deg);
-    }
+    0%{transform:rotateY(0deg)}
+    30%{transform:rotateY(28deg)}
+    60%{transform:rotateY(58deg)}
+    82%{transform:rotateY(78deg)}
+    100%{transform:rotateY(88deg)}
 }
 
 @keyframes doorRightOpen{
-    0%{
-        transform:rotateY(0deg);
-    }
-
-    25%{
-        transform:rotateY(18deg);
-    }
-
-    50%{
-        transform:rotateY(48deg);
-    }
-
-    72%{
-        transform:rotateY(78deg);
-    }
-
-    88%{
-        transform:rotateY(98deg);
-    }
-
-    100%{
-        transform:rotateY(110deg);
-    }
+    0%{transform:rotateY(0deg)}
+    30%{transform:rotateY(-28deg)}
+    60%{transform:rotateY(-58deg)}
+    82%{transform:rotateY(-78deg)}
+    100%{transform:rotateY(-88deg)}
 }
 
 @keyframes doorLightOpen{
