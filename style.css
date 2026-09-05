@@ -1487,11 +1487,11 @@ body{
 #introDoor .door-back-light{
     position:absolute;
     left:50%;
-    top:22%;
-    width:74%;
-    height:61%;
+    top:18%;
+    width:110%;
+    height:70%;
     z-index:4;
-
+    border-radius:45% 45% 8% 8%;
     opacity:0;
     transform:translate3d(-50%,0,0) scaleX(.02);
     transform-origin:center center;
@@ -1500,22 +1500,23 @@ body{
 
     background:
         radial-gradient(
-            ellipse at 50% 45%,
+            ellipse at 50% 48%,
             #ffffff 0%,
-            #ffffff 10%,
-            rgba(255,250,253,.98) 24%,
-            rgba(255,220,237,.85) 43%,
-            rgba(255,150,195,.45) 65%,
-            rgba(255,100,165,.15) 82%,
+            #ffffff 18%,
+            rgba(255,252,255,1) 30%,
+            rgba(255,235,244,.98) 45%,
+            rgba(255,195,220,.88) 60%,
+            rgba(255,135,180,.58) 75%,
+            rgba(255,90,150,.25) 88%,
             transparent 100%
         );
 
-    filter:blur(14px);
+    filter:blur(10px);
 
     box-shadow:
-        0 0 40px rgba(255,255,255,.85),
-        0 0 90px rgba(255,150,195,.65),
-        0 0 160px rgba(255,100,165,.35);
+        0 0 60px rgba(255,255,255,1),
+        0 0 120px rgba(255,165,205,.9),
+        0 0 220px rgba(255,100,165,.65);
 
     will-change:transform,opacity;
 }
@@ -1899,13 +1900,39 @@ body{
 }
 
 @keyframes doorLightOpen{
+
     0%{
         opacity:0;
         transform:translate3d(-50%,0,0) scaleX(.02);
     }
 
+    10%{
+        opacity:.22;
+        transform:translate3d(-50%,0,0) scaleX(.10);
+    }
+
+    25%{
+        opacity:.48;
+        transform:translate3d(-50%,0,0) scaleX(.28);
+    }
+
+    45%{
+        opacity:.72;
+        transform:translate3d(-50%,0,0) scaleX(.52);
+    }
+
+    65%{
+        opacity:.88;
+        transform:translate3d(-50%,0,0) scaleX(.75);
+    }
+
+    82%{
+        opacity:.96;
+        transform:translate3d(-50%,0,0) scaleX(.92);
+    }
+
     100%{
-        opacity:.95;
+        opacity:1;
         transform:translate3d(-50%,0,0) scaleX(1);
     }
 }
