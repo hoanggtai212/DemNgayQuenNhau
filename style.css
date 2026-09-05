@@ -1819,11 +1819,11 @@ body{
 }
 
 #introDoor.door-start .door-wing-left{
-    animation:doorLeftOpen 2.8s cubic-bezier(.22,.61,.36,1) forwards;
+    animation: doorLeftOpen 3.4s ease-in-out forwards;
 }
 
 #introDoor.door-start .door-wing-right{
-    animation:doorRightOpen 2.8s cubic-bezier(.22,.61,.36,1) forwards;
+    animation: doorRightOpen 3.4s ease-in-out forwards;
 }
 
 #introDoor.door-start .door-flash{
@@ -1843,37 +1843,19 @@ body{
 }
 
 @keyframes doorLeftOpen{
-    0%{
+    from{
         transform:translateX(0);
     }
-
-    30%{
-        transform:translateX(-35%);
-    }
-
-    65%{
-        transform:translateX(-75%);
-    }
-
-    100%{
+    to{
         transform:translateX(-115%);
     }
 }
 
 @keyframes doorRightOpen{
-    0%{
+    from{
         transform:translateX(0);
     }
-
-    30%{
-        transform:translateX(35%);
-    }
-
-    65%{
-        transform:translateX(75%);
-    }
-
-    100%{
+    to{
         transform:translateX(115%);
     }
 }
