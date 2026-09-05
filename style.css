@@ -1827,7 +1827,7 @@ body{
 }
 
 #introDoor.door-start .door-flash{
-    animation:doorFlash .8s ease-out 2.8s forwards;
+    animation:doorFlash .55s ease-out 3s forwards;
 }
 
 #introDoor.door-start .door-glow{
@@ -1862,39 +1862,51 @@ body{
 
 @keyframes doorLightOpen{
     0%{
-        opacity:0;
-        transform:translate(-50%,-50%) scale(.15);
-        filter:blur(35px);
-    }
-
-    20%{
-        opacity:.05;
-        transform:translate(-50%,-50%) scale(.30);
+        opacity:.08;
+        transform:translate(-50%,-50%) scale(.18);
         filter:blur(30px);
     }
 
-    45%{
+    15%{
         opacity:.16;
-        transform:translate(-50%,-50%) scale(.60);
-        filter:blur(24px);
+        transform:translate(-50%,-50%) scale(.30);
+        filter:blur(27px);
     }
 
-    65%{
-        opacity:.38;
+    30%{
+        opacity:.28;
+        transform:translate(-50%,-50%) scale(.48);
+        filter:blur(23px);
+    }
+
+    45%{
+        opacity:.42;
+        transform:translate(-50%,-50%) scale(.70);
+        filter:blur(19px);
+    }
+
+    60%{
+        opacity:.60;
         transform:translate(-50%,-50%) scale(.95);
-        filter:blur(18px);
+        filter:blur(14px);
     }
 
-    82%{
-        opacity:.72;
-        transform:translate(-50%,-50%) scale(1.35);
+    75%{
+        opacity:.78;
+        transform:translate(-50%,-50%) scale(1.25);
         filter:blur(10px);
     }
 
-    94%{
-        opacity:.95;
-        transform:translate(-50%,-50%) scale(1.75);
-        filter:blur(5px);
+    88%{
+        opacity:.92;
+        transform:translate(-50%,-50%) scale(1.55);
+        filter:blur(6px);
+    }
+
+    96%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1.9);
+        filter:blur(3px);
     }
 
     100%{
@@ -1903,7 +1915,6 @@ body{
         filter:blur(0);
     }
 }
-
 @keyframes centerGlowOpen{
     0%{
         opacity:.12;
@@ -2004,17 +2015,17 @@ body{
         filter:blur(18px);
     }
 
-    45%{
+    35%{
         opacity:.35;
         filter:blur(10px);
     }
 
     65%{
-        opacity:.85;
+        opacity:.75;
         filter:blur(5px);
     }
 
-    78%{
+    85%{
         opacity:1;
         filter:blur(2px);
     }
