@@ -1491,7 +1491,7 @@ body{
     width:110%;
     height:70%;
     z-index:4;
-    border-radius:45% 45% 8% 8%;
+    border-radius:50%;
     opacity:0;
     transform:translate3d(-50%,0,0) scaleX(.02);
     transform-origin:center center;
