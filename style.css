@@ -1419,8 +1419,8 @@ body{
     align-items:center;
     justify-content:center;
     overflow:hidden;
-    perspective:1400px;
-    perspective-origin:50% 48%;
+    perspective:900px;
+    perspective-origin:50% 50%;
 }
 
 #introDoor .door-scene{
@@ -1821,11 +1821,13 @@ body{
 }
 
 #introDoor.door-start .door-wing-left{
-    animation:doorLeftOpen 3.8s cubic-bezier(.16,.72,.24,1) forwards;
+    animation:
+        doorLeftOpen 3.8s cubic-bezier(.16,.72,.24,1) forwards;
 }
 
 #introDoor.door-start .door-wing-right{
-    animation:doorRightOpen 3.8s cubic-bezier(.16,.72,.24,1) forwards;
+    animation:
+        doorRightOpen 3.8s cubic-bezier(.16,.72,.24,1) forwards;
 }
 
 #introDoor.door-start .door-flash{
@@ -1845,19 +1847,55 @@ body{
 }
 
 @keyframes doorLeftOpen{
-    0%{transform:rotateY(0deg)}
-    30%{transform:rotateY(28deg)}
-    60%{transform:rotateY(58deg)}
-    82%{transform:rotateY(78deg)}
-    100%{transform:rotateY(88deg)}
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    20%{
+        transform:rotateY(12deg);
+    }
+
+    45%{
+        transform:rotateY(38deg);
+    }
+
+    70%{
+        transform:rotateY(68deg);
+    }
+
+    88%{
+        transform:rotateY(82deg);
+    }
+
+    100%{
+        transform:rotateY(90deg);
+    }
 }
 
 @keyframes doorRightOpen{
-    0%{transform:rotateY(0deg)}
-    30%{transform:rotateY(-28deg)}
-    60%{transform:rotateY(-58deg)}
-    82%{transform:rotateY(-78deg)}
-    100%{transform:rotateY(-88deg)}
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    20%{
+        transform:rotateY(-12deg);
+    }
+
+    45%{
+        transform:rotateY(-38deg);
+    }
+
+    70%{
+        transform:rotateY(-68deg);
+    }
+
+    88%{
+        transform:rotateY(-82deg);
+    }
+
+    100%{
+        transform:rotateY(-90deg);
+    }
 }
 
 @keyframes doorLightOpen{
@@ -1898,27 +1936,37 @@ body{
 
 @keyframes centerGlowOpen{
     0%{
-        opacity:.15;
+        opacity:.12;
         width:3px;
         filter:blur(3px);
     }
-    35%{
-        opacity:.35;
-        width:8px;
+
+    30%{
+        opacity:.28;
+        width:6px;
     }
-    60%{
-        opacity:.65;
-        width:28px;
+
+    55%{
+        opacity:.55;
+        width:18px;
     }
-    80%{
-        opacity:.90;
-        width:90px;
-        filter:blur(9px);
-    }
-    100%{
-        opacity:1;
-        width:24vw;
+
+    75%{
+        opacity:.85;
+        width:55px;
         filter:blur(7px);
+    }
+
+    90%{
+        opacity:.55;
+        width:100px;
+        filter:blur(12px);
+    }
+
+    100%{
+        opacity:0;
+        width:150px;
+        filter:blur(18px);
     }
 }
 
@@ -1981,18 +2029,26 @@ body{
 }
 
 @keyframes doorFlash{
-    0%,45%{opacity:0}
-    60%{opacity:.05}
-    72%{opacity:.16}
-    82%{opacity:.34}
-    90%{opacity:.65}
-    96%{
+    0%{
+        opacity:0;
+    }
+
+    20%{
+        opacity:.15;
+    }
+
+    45%{
+        opacity:.65;
+    }
+
+    65%{
         opacity:1;
         filter:blur(7px);
     }
+
     100%{
-        opacity:1;
-        filter:blur(0);
+        opacity:0;
+        filter:blur(14px);
     }
 }
 
