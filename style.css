@@ -1513,10 +1513,11 @@ body{
 
     filter:blur(10px);
 
-    box-shadow:
-        0 0 60px rgba(255,255,255,1),
-        0 0 120px rgba(255,165,205,.9),
-        0 0 220px rgba(255,100,165,.65);
+box-shadow:
+    0 0 80px rgba(255,255,255,1),
+    0 0 160px rgba(255,190,220,1),
+    0 0 280px rgba(255,120,175,.95),
+    0 0 400px rgba(255,80,150,.7);
 
     will-change:transform,opacity;
 }
