@@ -1900,40 +1900,14 @@ body{
 }
 
 @keyframes doorLightOpen{
-
-    0%{
+    from{
         opacity:0;
-        transform:translate3d(-50%,0,0) scaleX(.02);
+        transform:translate3d(-50%,0,0);
     }
 
-    10%{
-        opacity:.22;
-        transform:translate3d(-50%,0,0) scaleX(.10);
-    }
-
-    25%{
-        opacity:.48;
-        transform:translate3d(-50%,0,0) scaleX(.28);
-    }
-
-    45%{
-        opacity:.72;
-        transform:translate3d(-50%,0,0) scaleX(.52);
-    }
-
-    65%{
-        opacity:.88;
-        transform:translate3d(-50%,0,0) scaleX(.75);
-    }
-
-    82%{
-        opacity:.96;
-        transform:translate3d(-50%,0,0) scaleX(.92);
-    }
-
-    100%{
+    to{
         opacity:1;
-        transform:translate3d(-50%,0,0) scaleX(1);
+        transform:translate3d(-50%,0,0);
     }
 }
 
