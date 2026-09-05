@@ -66,34 +66,34 @@ document.addEventListener("touchend",e=>{const clickable=e.target.closest("butto
 
 
 /* ===== INTRO DOOR ===== */
-const door=document.getElementById("introDoor");
-const passwordPage=document.getElementById("passwordPage");
+const door = document.getElementById("introDoor");
+const passwordPage = document.getElementById("passwordPage");
 if(door){
     door.addEventListener("click",()=>{
-        if(door.classList.contains("door-start"))return;
+        if(door.classList.contains("door-start")) return;
         console.log("🚪 MỞ CỬA");
-        // Bắt đầu animation cửa + ánh sáng
+        // Cửa + ánh sáng bắt đầu NGAY LẬP TỨC
         door.classList.add("door-start");
-        door.style.pointerEvents="none";
-        // Hiện Password khi màn hình đang bị ánh sáng che
+        door.style.pointerEvents = "none";
+        // Khi ánh sáng đã lóe gần kín màn hình → hiện Password
         setTimeout(()=>{
             console.log("💗 HIỆN PASSWORD");
-
             if(passwordPage){
-                passwordPage.style.display="flex";
-                passwordPage.style.visibility="visible";
-                passwordPage.style.opacity="1";
-                passwordPage.style.zIndex="100000000";
+                passwordPage.style.display = "flex";
+                passwordPage.style.visibility = "visible";
+                passwordPage.style.opacity = "1";
+                passwordPage.style.zIndex = "100000000";
             }
-            password="";
-            const display=document.getElementById("display");
-            if(display)display.value="";
+            password = "";
+            const display = document.getElementById("display");
+            if(display) display.value = "";
+
             setRunningTextInfinite("💗 ENTER PASSWORD 💗");
-        },3700);
-        // Sau khi Password đã nằm phía sau ánh sáng → bỏ cửa
+        },3500);
+        // Bỏ intro ngay sau khi chuyển cảnh
         setTimeout(()=>{
             console.log("🚪 XÓA INTRO DOOR");
             door.remove();
-        },3900);
+        },3600);
     });
 }
