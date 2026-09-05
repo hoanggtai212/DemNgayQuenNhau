@@ -97,3 +97,7 @@ if(door){
         },3600);
     });
 }
+alert(
+    `📱 Kích thước màn hình:\n\n` +
+    `${window.innerWidth}px × ${window.innerHeight}px`
+);
