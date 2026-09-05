@@ -1637,7 +1637,7 @@ box-shadow:
     content:"";
     position:absolute;
     inset:5px;
-    border:4px solid rgba(255,190,215,.55);
+    border:5px solid rgba(255,190,215,.55);
     border-radius:50% 50% 0 0 / 22% 22% 0 0;
     background:rgba(255,255,255,.035);
     box-shadow:
