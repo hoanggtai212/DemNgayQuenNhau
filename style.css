@@ -229,7 +229,6 @@ background:linear-gradient(135deg,
     transparent 70%);
   pointer-events:none;
 }
-#introDoor .door-wing-left::after,#introDoor .door-wing-right::after{content:"";position:absolute;opacity:.9;pointer-events:none;top:18%;bottom:18%;width:12px;border-radius:6px;background:linear-gradient(180deg,#8d4c20,#e6aa55 20%,#ffe0a0 50%,#c57a29 75%,#713912);box-shadow:0 0 5px rgba(255,190,100,.5),inset 1px 0 2px rgba(255,255,255,.6)}
 #introDoor .door-wing-left::after{right:25px}
 #introDoor .door-wing-right::after{left:25px}
 @keyframes borderFlow {
