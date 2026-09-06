@@ -8,7 +8,23 @@ function showCounterWithCurtain(){const menuPage=document.getElementById("menuPa
 
 function backHome(){location.reload()}
 
-function showLoadingLove(){const passwordPage=document.getElementById("passwordPage"),loading=document.getElementById("loveLoading");if(passwordPage)passwordPage.style.display="none";if(!loading)return;loading.style.display="flex";let progress=0;const fill=document.getElementById("progressFill"),text=document.getElementById("progressPercent"),hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")],startBtn=document.getElementById("startLoveBtn");if(!fill||!text)return;fill.style.width="0%";text.textContent="0%";if(startBtn){startBtn.style.display="none";startBtn.classList.remove("show")}hearts.forEach(heart=>{if(heart){heart.classList.remove("heart-active");heart.style.animationPlayState="running"}});const timer=setInterval(()=>{progress++;fill.style.width=progress+"%";text.textContent=progress+"%";if(progress===20&&hearts[0])hearts[0].classList.add("heart-active");if(progress===50&&hearts[1])hearts[1].classList.add("heart-active");if(progress===80&&hearts[2])hearts[2].classList.add("heart-active");if(progress>=100){clearInterval(timer);fill.style.width="100%";text.textContent="100%";setTimeout(()=>{if(startBtn){startBtn.style.display="block";requestAnimationFrame(()=>startBtn.classList.add("show"))}},300)}},30)}
+function showLoadingLove(){const passwordPage=document.getElementById("passwordPage"),loading=document.getElementById("loveLoading");if(passwordPage)passwordPage.style.display="none";if(!loading)return;loading.style.display="flex";let progress=0;const fill=document.getElementById("progressFill"),text=document.getElementById("progressPercent"),hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")],startBtn=document.getElementById("startLoveBtn");if(!fill||!text)return;fill.style.width="0%";text.textContent="0%";if(startBtn){startBtn.style.display="none";startBtn.classList.remove("show")}hearts.forEach(heart=>{if(heart){heart.classList.remove("heart-active");heart.style.animationPlayState="running"}});const timer=setInterval(()=>{progress++;fill.style.width=progress+"%";text.textContent=progress+"%";if(progress===20&&hearts[0])hearts[0].classList.add("heart-active");if(progress===50&&hearts[1])hearts[1].classList.add("heart-active");if(progress===80&&hearts[2])hearts[2].classList.add("heart-active");if(progress>=100){
+    clearInterval(timer);
+    fill.style.width="100%";
+    text.textContent="100%";
+
+    setTimeout(()=>{
+        if(startBtn){
+            startBtn.style.display="block";
+            startBtn.style.visibility="visible";
+            startBtn.style.pointerEvents="auto";
+
+            requestAnimationFrame(()=>{
+                startBtn.classList.add("show");
+            });
+        }
+    },300);
+}},30)}
 
 document.addEventListener("DOMContentLoaded",()=>{const startBtn=document.getElementById("startLoveBtn");if(!startBtn)return;startBtn.addEventListener("click",()=>{const loading=document.getElementById("loveLoading"),hearts=[document.getElementById("loadingHeart1"),document.getElementById("loadingHeart2"),document.getElementById("loadingHeart3")];hearts.forEach(heart=>{if(heart)heart.style.animationPlayState="running"});startBtn.classList.add("button-click-out");setTimeout(()=>{if(loading)loading.classList.add("loading-transition-out");const success=document.getElementById("loveSuccess");if(success){success.style.display="flex";success.classList.add("success-transition-in");showLoveSuccess()}setTimeout(()=>{if(loading){loading.style.display="none";loading.classList.remove("loading-transition-out")}},1800)},350)})});
 
