@@ -399,16 +399,10 @@ body{
         inset 0 2px 4px rgba(0,0,0,.08);
 }
 
+.ok,
 .delete{
-    background:linear-gradient(135deg,#ff6b9a,#e75480);
-    color:#fff;
-    font-weight:700;
-    box-shadow:0 8px 18px rgba(231,84,128,.4);
-}
-
-.ok{
-    width:65px;
-    height:65px;
+    width:60px;
+    height:60px;
     border:none;
     border-radius:50%;
     display:flex;
@@ -420,10 +414,10 @@ body{
     color:#fff;
     font-size:32px;
     font-family:sans-serif;
-    margin:18px auto 0;
+    margin:0;
     cursor:pointer;
     box-shadow:0 10px 25px rgba(231,84,128,.45);
-    transform:scale(.92);
+    transform:none;
 }
 
 .empty{
@@ -2064,11 +2058,11 @@ box-shadow:
         margin:0 auto;
     }
 
-    #passwordPage .keypad{
-        grid-template-columns:repeat(3,66px);
-        column-gap:20px;
-        row-gap:13px;
-    }
+#passwordPage .keypad{
+    grid-template-columns:repeat(3,60px);
+    column-gap:20px;
+    row-gap:13px;
+}
 
     #passwordPage .btn{
         width:60px;
@@ -2076,12 +2070,13 @@ box-shadow:
         font-size:22px;
     }
 
-#passwordPage .ok{
+#passwordPage .ok,
+#passwordPage .delete{
     width:60px;
     height:60px;
     font-size:32px;
     margin:0;
-    align-self:center;
+    transform:none;
 }
 
     /* ===== INTRO DOOR ===== */
