@@ -205,7 +205,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 }
 /* Cửa trái */
 #introDoor .door-wing-left {
-  left:18%;
+  left:16%;
   transform-origin:center center;
   background:linear-gradient(45deg,
     #ffbfd0 0%,
@@ -217,7 +217,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 }
 /* Cửa phải */
 #introDoor .door-wing-right {
-  right:18%;
+  right:16%;
   transform-origin:center center;
   background:linear-gradient(-45deg,
     #ffbfd0 0%,
