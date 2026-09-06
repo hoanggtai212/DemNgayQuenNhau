@@ -2063,21 +2063,22 @@ box-shadow:
         margin:0 auto;
     }
 
-    #passwordPage .keypad{
-        grid-template-columns:repeat(3,60px);
-        gap:10px;
-    }
+#passwordPage .keypad{
+    grid-template-columns:repeat(3,60px);
+    column-gap:18px;
+    row-gap:10px;
+}
 
     #passwordPage .btn{
         width:60px;
         height:60px;
-        font-size:22px;
+        font-size:24px;
     }
 
     #passwordPage .ok{
         width:58px;
         height:58px;
-        font-size:29px;
+        font-size:30px;
         margin-top:14px;
     }
 
