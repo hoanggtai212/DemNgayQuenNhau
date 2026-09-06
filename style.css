@@ -269,7 +269,7 @@ body{
     box-shadow:0 8px 32px rgba(220,150,180,.37); 
     padding:40px 50px; 
     text-align:center; 
-    transform:scale(1); 
+    transform:none;
 } 
  
 .pass-title{ 
@@ -428,15 +428,18 @@ body{
 /* ========================= 
    UNLOCK 
 ========================= */ 
-#unlock-overlay{ 
-    display:none; 
-    position:absolute; 
-    inset:0; 
-    background:rgba(0,0,0,.55); 
-    justify-content:center; 
-    align-items:center; 
-    z-index:99999; 
-    perspective:1500px; 
+#unlock-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100dvh;
+    background:rgba(0,0,0,.18);
+    justify-content:center;
+    align-items:center;
+    z-index:999999999;
+    perspective:1500px;
+    pointer-events:none;
 } 
  
 .big-lock{ 
