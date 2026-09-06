@@ -181,8 +181,11 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-glow-left,#introDoor .door-glow-right{top:25%;width:3px;height:55%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7),transparent);box-shadow:0 0 15px rgba(255,255,255,.6);filter:blur(2px)}
 #introDoor .door-glow-left{left:calc(50% - 2px)}
 #introDoor .door-glow-right{right:calc(50% - 2px)}
-#introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}
-#introDoor .door-arch{position:absolute;left:9%;right:9%;top:15%;bottom:12%;border:clamp(14px,1vw,20px) solid #a84e70;border-bottom-width:16px;border-radius:50% 50% 0 0 / 24% 24% 0 0;background:rgba(255,255,255,.03);box-shadow:0 0 18px rgba(255,150,190,.25),inset 0 0 18px rgba(255,210,225,.15)}
+#introDoor .door-frame{  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}
+#introDoor .door-arch{gap:6%;justify-content:center;align-items:center;display:flex;position:absolute;left:9%;right:9%;top:15%;bottom:12%;border:clamp(14px,1vw,20px) solid #a84e70;border-bottom-width:16px;border-radius:50% 50% 0 0 / 24% 24% 0 0;background:rgba(255,255,255,.03);box-shadow:0 0 18px rgba(255,150,190,.25),inset 0 0 18px rgba(255,210,225,.15)}
 #introDoor .door-arch::before{content:"";position:absolute;inset:5px;border:5px solid rgba(255,190,215,.55);border-radius:50% 50% 0 0 / 22% 22% 0 0;background:rgba(255,255,255,.035);box-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(255,180,215,.3),inset 0 0 8px rgba(255,220,235,.12);pointer-events:none}
 #introDoor .door-wing{margin:0 3%;pointer-events:auto;cursor:pointer;position:relative;width:32%;height:50%;z-index:12;overflow:visible;border:3px solid #ffb5ca;border-radius:10px;transform-style:preserve-3d;box-shadow:inset 8px 0 18px rgba(255,255,255,.25),inset -12px 0 30px rgba(130,20,60,.22),inset 0 0 35px rgba(255,220,235,.20),0 10px 25px rgba(20,0,15,.35);will-change:transform;backface-visibility:visible;transition:none}
 @keyframes pinkPurpleGlow {
