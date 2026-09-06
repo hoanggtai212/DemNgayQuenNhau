@@ -2065,8 +2065,8 @@ box-shadow:
    
 #passwordPage .keypad{
     grid-template-columns:repeat(3,66px);
-    column-gap:14px;
-    row-gap:11px;
+    column-gap:20px;
+    row-gap:13px;
 }
 
 #passwordPage .btn{
