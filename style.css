@@ -103,6 +103,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .success-fill::after{animation:progressShine 1.5s linear infinite}
 #progressPercent,#successPercent{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#d94f7c;pointer-events:none}
 #startLoveBtn,#clickMe{margin-top:26px;padding:13px 30px;border:none;border-radius:50px;background:linear-gradient(135deg,#ff91b4,#f45d8c);color:#fff;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 25px rgba(240,98,134,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:.25s ease}
+@keyframes fadeUp {from {opacity: 0;transform: translateY(30px);}to {opacity: 1;transform: translateY(0);}}
+#startLoveBtn {animation: fadeUp 0.8s ease forwards;}
 #startLoveBtn:hover,#clickMe:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 30px rgba(240,98,134,.45),0 0 20px rgba(255,120,165,.2)}
 #startLoveBtn.button-click-out{animation:buttonClickOut .45s ease forwards !important;pointer-events:none}
 #clickMe{opacity:0;visibility:hidden;pointer-events:none;transform:translateX(10px) scale(.9)}
