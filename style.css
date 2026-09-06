@@ -185,54 +185,75 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-arch{position:absolute;left:9%;right:9%;top:15%;bottom:12%;border:clamp(14px,1vw,20px) solid #a84e70;border-bottom-width:16px;border-radius:50% 50% 0 0 / 24% 24% 0 0;background:rgba(255,255,255,.03);box-shadow:0 0 18px rgba(255,150,190,.25),inset 0 0 18px rgba(255,210,225,.15)}
 #introDoor .door-arch::before{content:"";position:absolute;inset:5px;border:5px solid rgba(255,190,215,.55);border-radius:50% 50% 0 0 / 22% 22% 0 0;background:rgba(255,255,255,.035);box-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(255,180,215,.3),inset 0 0 8px rgba(255,220,235,.12);pointer-events:none}
 #introDoor .door-wing{pointer-events:auto;cursor:pointer;position:absolute;top:22%;width:32%;height:57%;z-index:12;overflow:visible;border:3px solid #ffb5ca;border-radius:10px;transform-style:preserve-3d;box-shadow:inset 8px 0 18px rgba(255,255,255,.25),inset -12px 0 30px rgba(130,20,60,.22),inset 0 0 35px rgba(255,220,235,.20),0 10px 25px rgba(20,0,15,.35);will-change:transform;backface-visibility:visible;transition:none}
-/* Hiệu ứng glow đổi màu + thở ánh sáng */
-@keyframes breathingColorGlow {
+@keyframes pinkPurpleGlow {
   0% {
-    box-shadow:0 0 12px rgba(255,120,165,.6),
-               0 0 25px rgba(255,120,165,.4);
-    transform:scale(1);
+    box-shadow:0 0 25px rgba(255,100,170,.9),
+               0 0 50px rgba(200,60,140,.7);
   }
   50% {
-    box-shadow:0 0 28px rgba(180,100,255,.8),
-               0 0 50px rgba(180,100,255,.5);
-    transform:scale(1.04);
+    box-shadow:0 0 30px rgba(180,80,255,.9),
+               0 0 60px rgba(150,50,200,.7);
   }
   100% {
-    box-shadow:0 0 12px rgba(255,120,165,.6),
-               0 0 25px rgba(255,120,165,.4);
-    transform:scale(1);
+    box-shadow:0 0 25px rgba(255,100,170,.9),
+               0 0 50px rgba(200,60,140,.7);
   }
 }
 /* Cửa trái */
 #introDoor .door-wing-left {
   left:16%;
   z-index:12;
-  transform-origin:center center;
   background:linear-gradient(45deg,
     #ffbfd0 0%,
-    #fa91ad 22%,
-    #eb6b92 52%,
-    #d34e78 78%,
-    #b83b65 100%);
-  animation:breathingColorGlow 5s ease-in-out infinite;
+    #ff6fa0 25%,
+    #e23b80 55%,
+    #b02060 85%,
+    #9010a0 100%);
+  animation:pinkPurpleGlow 4s ease-in-out infinite;
 }
-/* Cửa phải */
 #introDoor .door-wing-right {
   right:16%;
   z-index:11;
-  transform-origin:center center;
   background:linear-gradient(-45deg,
     #ffbfd0 0%,
-    #fa91ad 22%,
-    #eb6b92 52%,
-    #d34e78 78%,
-    #b83b65 100%);
-  animation:breathingColorGlow 5s ease-in-out infinite;
+    #ff6fa0 25%,
+    #e23b80 55%,
+    #b02060 85%,
+    #9010a0 100%);
+  animation:pinkPurpleGlow 4s ease-in-out infinite;
+}
+#introDoor .door-wing::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  background:radial-gradient(circle at 50% 50%,
+    rgba(255,255,255,.35) 0%,
+    rgba(255,180,210,.25) 40%,
+    transparent 70%);
+  pointer-events:none;
 }
 #introDoor .door-wing-left::after,#introDoor .door-wing-right::after{content:"";position:absolute;opacity:.9;pointer-events:none;top:18%;bottom:18%;width:12px;border-radius:6px;background:linear-gradient(180deg,#8d4c20,#e6aa55 20%,#ffe0a0 50%,#c57a29 75%,#713912);box-shadow:0 0 5px rgba(255,190,100,.5),inset 1px 0 2px rgba(255,255,255,.6)}
 #introDoor .door-wing-left::after{right:25px}
 #introDoor .door-wing-right::after{left:25px}
-#introDoor .door-wing::before{content:"";position:absolute;left:7%;right:7%;top:7%;bottom:7%;border:2px solid rgba(255,218,230,.45);border-radius:7px;box-shadow:0 0 12px rgba(255,255,255,.13),0 0 5px rgba(255,210,225,.10);pointer-events:none}
+@keyframes borderFlow {
+  from { background-position:0% 0%; }
+  to   { background-position:200% 0%; }
+}
+#introDoor .door-wing::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  border:2px solid transparent;
+  background:linear-gradient(90deg,
+    rgba(255,100,170,.8),
+    rgba(180,80,255,.8),
+    rgba(255,100,170,.8));
+  background-size:200% 100%;
+  animation:borderFlow 4s linear infinite;
+  pointer-events:none;
+}
 #introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}
 @keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}
 #introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:#fff;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:.25s ease;pointer-events:none}
