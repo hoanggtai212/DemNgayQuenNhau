@@ -184,7 +184,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-frame{position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}
 #introDoor .door-arch{position:absolute;left:9%;right:9%;top:15%;bottom:12%;border:clamp(14px,1vw,20px) solid #a84e70;border-bottom-width:16px;border-radius:50% 50% 0 0 / 24% 24% 0 0;background:rgba(255,255,255,.03);box-shadow:0 0 18px rgba(255,150,190,.25),inset 0 0 18px rgba(255,210,225,.15)}
 #introDoor .door-arch::before{content:"";position:absolute;inset:5px;border:5px solid rgba(255,190,215,.55);border-radius:50% 50% 0 0 / 22% 22% 0 0;background:rgba(255,255,255,.035);box-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(255,180,215,.3),inset 0 0 8px rgba(255,220,235,.12);pointer-events:none}
-#introDoor .door-wing{pointer-events:auto;cursor:pointer;position:absolute;top:22%;width:32%;height:57%;z-index:12;overflow:visible;border:3px solid #ffb5ca;border-radius:10px;transform-style:preserve-3d;box-shadow:inset 8px 0 18px rgba(255,255,255,.25),inset -12px 0 30px rgba(130,20,60,.22),inset 0 0 35px rgba(255,220,235,.20),0 10px 25px rgba(20,0,15,.35);will-change:transform;backface-visibility:visible;transition:none}
+#introDoor .door-wing{pointer-events:auto;cursor:pointer;position:absolute;top:22%;width:32%;height:50%;z-index:12;overflow:visible;border:3px solid #ffb5ca;border-radius:10px;transform-style:preserve-3d;box-shadow:inset 8px 0 18px rgba(255,255,255,.25),inset -12px 0 30px rgba(130,20,60,.22),inset 0 0 35px rgba(255,220,235,.20),0 10px 25px rgba(20,0,15,.35);will-change:transform;backface-visibility:visible;transition:none}
 @keyframes pinkPurpleGlow {
   0% {
     box-shadow:0 0 25px rgba(255,100,170,.9),
@@ -250,27 +250,29 @@ background:linear-gradient(90deg,
   animation:borderFlow 4s linear infinite;
   pointer-events:none;
 }
+/* Hoa văn dọc mép cửa trái */
 #introDoor .door-wing-left::before {
-  content:"♥ ✦ ♥ ✦ ♥";
+  content:"❦ ❧ ❦ ❧ ❦";
   position:absolute;
-  top:20%;
-  left:50%;
-  transform:translateX(-50%);
+  writing-mode:vertical-rl;
+  top:10%;
+  left:8px;
   font-family:'Great Vibes',cursive;
-  font-size:clamp(22px,3vw,36px);
+  font-size:clamp(18px,2.5vw,28px);
   color:#ffb5d0;
   text-shadow:0 0 6px rgba(255,120,180,.7),
               0 0 14px rgba(180,80,255,.6);
   pointer-events:none;
 }
+/* Hoa văn dọc mép cửa phải */
 #introDoor .door-wing-right::before {
-  content:"✦ ♥ ✦ ♥ ✦";
+  content:"❧ ❦ ❧ ❦ ❧";
   position:absolute;
-  top:20%;
-  left:50%;
-  transform:translateX(-50%);
+  writing-mode:vertical-rl;
+  top:10%;
+  right:8px;
   font-family:'Great Vibes',cursive;
-  font-size:clamp(22px,3vw,36px);
+  font-size:clamp(18px,2.5vw,28px);
   color:#ffb5d0;
   text-shadow:0 0 6px rgba(255,120,180,.7),
               0 0 14px rgba(180,80,255,.6);
