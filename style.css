@@ -2062,26 +2062,25 @@ box-shadow:
         padding:28px 14px 25px;
         margin:0 auto;
     }
-
+   
 #passwordPage .keypad{
-    grid-template-columns:repeat(3,60px);
-    column-gap:18px;
-    row-gap:10px;
+    grid-template-columns:repeat(3,66px);
+    column-gap:14px;
+    row-gap:11px;
 }
 
-    #passwordPage .btn{
-        width:60px;
-        height:60px;
-        font-size:24px;
-    }
+#passwordPage .btn{
+    width:66px;
+    height:66px;
+    font-size:25px;
+}
 
-    #passwordPage .ok{
-        width:58px;
-        height:58px;
-        font-size:30px;
-        margin-top:14px;
-    }
-
+#passwordPage .ok{
+    width:64px;
+    height:64px;
+    font-size:31px;
+    margin-top:15px;
+}
     #introDoor .door-arch{
         left:0;
         right:0;
