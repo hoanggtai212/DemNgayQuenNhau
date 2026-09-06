@@ -1,15 +1,11 @@
-/* =========================
-   RESET + BODY
-========================= */
+/* RESET + BODY */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden}
 html{font-size:calc(14px + .25vw);-webkit-text-size-adjust:100%;text-size-adjust:100%}
 #display::placeholder{color:#e75480;opacity:.8}
 body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg,#fde7f0 0%,#f8c8dc 100%);color:#5c3e4a;touch-action:manipulation}
 
-/* =========================
-   COUNTER / HOME
-========================= */
+/* COUNTER / HOME */
 #counterPage{display:flex;justify-content:center;align-items:center;height:100dvh;overflow:hidden}
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}
 .love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:24px 20px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:min(92vw,520px);transition:.3s ease}
@@ -35,11 +31,9 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .memories-link a{margin-top:20px;display:flex;justify-content:center;align-items:center;padding:14px 35px;background:#e75480;color:#fff;text-decoration:none;border-radius:50px;font-weight:700;transition:.3s ease;box-shadow:0 5px 15px rgba(231,84,128,.4)}
 .memories-link a:hover{background-color:#c8416d;transform:translateX(-3px);box-shadow:0 8px 20px rgba(231,84,128,.6)}
 
-/* =========================
-   PASSWORD
-========================= */
+/* PASSWORD */
 #passwordPage{display:flex;justify-content:center;align-items:center;width:100%;height:100%;min-height:100dvh;overflow:hidden;background:linear-gradient(135deg,#fde7f0 0%,#f8c8dc 100%);z-index:100000000}
-.container{width:min(92vw,420px);margin:20px auto;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);padding:40px 50px;text-align:center;transform:none}
+.container{width:min(92vw,420px);margin:20px auto;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);padding:40px 50px;text-align:center;transform:scale(1)}
 .pass-title{font-family:'Great Vibes',cursive;text-align:center;font-size:2.5rem;font-weight:1000;color:#c2185b;margin-bottom:10px;letter-spacing:1px;text-shadow:0 2px 6px rgba(0,0,0,.2)}
 .pass-title .pass-line1{display:flex;justify-content:center;letter-spacing:7px;margin-bottom:4px;white-space:nowrap}
 .pass-title .pass-line2{display:flex;justify-content:center;letter-spacing:10px;white-space:nowrap}
@@ -56,10 +50,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .ok,.delete{width:60px;height:60px;border:none;border-radius:50%;display:flex;justify-content:center;align-items:center;padding:0;line-height:1;background:linear-gradient(135deg,#ff6b9a,#e75480);color:#fff;font-size:32px;font-family:sans-serif;margin:0;cursor:pointer;box-shadow:0 10px 25px rgba(231,84,128,.45);transform:none}
 .empty{visibility:hidden}
 
-/* =========================
-   UNLOCK
-========================= */
-#unlock-overlay{display:none;position:fixed;inset:0;width:100vw;height:100dvh;background:rgba(0,0,0,.18);justify-content:center;align-items:center;z-index:999999999;perspective:1500px;pointer-events:none}
+/* UNLOCK */
+#unlock-overlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,.55);justify-content:center;align-items:center;z-index:99999;perspective:1500px}
 .big-lock{position:absolute;width:160px;height:160px;transform-style:preserve-3d}
 .big-lock .front,.big-lock .back{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:150px;backface-visibility:hidden}
 .big-lock .back{transform:rotateY(180deg)}
@@ -70,9 +62,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .shake{animation:shake .4s}
 @keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-10px)}50%{transform:translateX(10px)}75%{transform:translateX(-10px)}100%{transform:translateX(0)}}
 
-/* =========================
-   ALBUM
-========================= */
+/* ALBUM */
 #albumPage{position:absolute;inset:0;background:linear-gradient(135deg,#ffe4ec,#ffd1dc);overflow:hidden;text-align:center;padding:20px;box-sizing:border-box}
 .main-content{position:absolute;z-index:10;margin-top:90px}
 .main-content h1{color:#ff4f81;font-size:2rem;margin-bottom:20px}
@@ -90,9 +80,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .firework-container{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:center;align-items:center;opacity:0;transition:.3s;z-index:999}
 .firework{position:absolute;width:4px;height:120px;background:linear-gradient(to top,#ff5b93,transparent)}
 
-/* =========================
-   LOADING
-========================= */
+/* LOADING */
 #loveLoading{display:none;position:absolute;inset:0;justify-content:center;align-items:center;overflow:hidden;z-index:999999;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%)}
 #loveLoading::before,#loveLoading::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(5px)}
 #loveLoading::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite}
@@ -155,9 +143,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes successButtonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes buttonClickOut{0%{opacity:1;transform:scale(1);filter:blur(0)}45%{opacity:.8;transform:scale(.96);filter:blur(1px)}100%{opacity:0;transform:scale(.88);filter:blur(5px)}}
 
-/* =========================
-   CURTAIN
-========================= */
+/* CURTAIN */
 #curtainTransition{display:none;position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;z-index:1000000;pointer-events:none}
 #curtainTransition .curtain{position:absolute;top:-2%;width:51%;height:104%;background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px);box-shadow:0 0 45px rgba(60,0,30,.35);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translate3d(0,0,0)}
 #curtainTransition .curtain::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.08) 0px,transparent 14px,rgba(60,0,30,.20) 32px,transparent 50px);pointer-events:none}
@@ -168,9 +154,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes curtainLeftOpen{from{transform:translate3d(0,0,0)}to{transform:translate3d(-102%,0,0)}}
 @keyframes curtainRightOpen{from{transform:translate3d(0,0,0)}to{transform:translate3d(102%,0,0)}}
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 #menuPage{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;width:100vw;height:100dvh;overflow:hidden;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.7) 25%,transparent 55%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 50%,#f8c1d6 100%);z-index:5000}
 .menu-box{position:absolute;width:min(88vw,430px);padding:40px 30px;text-align:center;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.7);border-radius:32px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 25px 70px rgba(190,80,125,.2),inset 0 1px 0 rgba(255,255,255,.8)}
 .menu-box h1{margin-bottom:10px;font-family:'Great Vibes',cursive;font-size:2.5rem;color:#d94f7c;text-shadow:0 3px 10px rgba(217,79,124,.18)}
@@ -179,9 +163,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .menu-box button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 28px rgba(240,98,134,.4),0 0 20px rgba(255,120,165,.18)}
 @keyframes menuAppear{from{opacity:0;transform:scale(.85) translateY(30px);filter:blur(10px)}to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
 
-/* =========================================================
-   INTRO DOOR — BẢN MỚI
-========================================================= */
+/* INTRO DOOR */
 #introDoor{position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:99999999;isolation:isolate;background:radial-gradient(ellipse at 50% 52%,rgba(255,145,190,.20) 0%,rgba(150,55,105,.12) 35%,rgba(20,5,22,.45) 75%),linear-gradient(90deg,#160916 0%,#281025 8%,#4a1b3b 18%,#6b294f 31%,#7f355d 43%,#6e2a50 56%,#7d3459 69%,#4b1a3b 83%,#281025 94%,#160916 100%)}
 #introDoor::before{content:"";position:absolute;inset:-3%;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(17,4,19,.62) 0px,rgba(17,4,19,.40) 30px,rgba(255,174,205,.10) 52px,rgba(255,174,205,.16) 70px,rgba(38,8,31,.42) 91px,rgba(10,2,15,.48) 115px);box-shadow:0 0 100px rgba(0,0,0,.70),inset 0 0 220px rgba(20,0,20,.65);transform:scale(1.02)}
 #introDoor::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,rgba(255,154,195,.22) 0%,rgba(255,116,169,.12) 28%,transparent 58%),radial-gradient(circle at 50% 72%,rgba(255,108,165,.20),transparent 35%)}
@@ -216,9 +198,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-frame::before{content:"♥   ✦   ♥       ✦       ♥   ✦   ♥";position:absolute;left:50%;top:14%;transform:translateX(-50%);width:80%;text-align:center;color:rgba(255,157,195,.85);font-family:sans-serif;font-size:clamp(14px,2vw,24px);letter-spacing:7px;text-shadow:0 0 8px rgba(255,130,180,.85),0 0 18px rgba(255,100,160,.55);opacity:.75;pointer-events:none}
 #introDoor .door-light-gap{position:absolute;left:50%;top:23%;width:2px;height:59%;transform:translateX(-50%);z-index:18;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.95) 35%,#ffffff 50%,rgba(255,255,255,.95) 65%,transparent 100%);opacity:1;filter:blur(2px);box-shadow:0 0 8px #ffffff,0 0 20px #ffffff,0 0 45px rgba(255,180,215,.95),0 0 90px rgba(255,100,170,.75);pointer-events:none}
 
-/* =========================
-   DOOR ANIMATIONS
-========================= */
+/* DOOR ANIMATIONS */
 #introDoor.door-start .door-back-light{animation:doorLightOpen 3.4s ease-in-out forwards}
 #introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.4s ease-in-out forwards}
 #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.4s ease-in-out forwards}
@@ -233,15 +213,11 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes centerGlowOpen{0%{opacity:.65;width:2px;filter:blur(2px)}35%{opacity:.8;width:4px;filter:blur(3px)}65%{opacity:.45;width:6px;filter:blur(5px)}85%{opacity:.2;width:8px;filter:blur(7px)}100%{opacity:0;width:10px;filter:blur(10px)}}
 @keyframes lockDisappear{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:blur(7px)}}
 
-/* =========================
-   FLASH
-========================= */
+/* FLASH */
 #introDoor .door-flash{position:absolute;inset:0;z-index:100;background:radial-gradient(circle at 50% 55%,#fff 0%,#fff 20%,rgba(255,239,246,.96) 38%,rgba(255,180,210,.60) 65%,transparent 100%);opacity:0;pointer-events:none;mix-blend-mode:screen}
 @keyframes doorFlash{0%{opacity:0;filter:blur(18px)}35%{opacity:.35;filter:blur(10px)}65%{opacity:.75;filter:blur(5px)}85%{opacity:1;filter:blur(2px)}100%{opacity:1;filter:blur(0)}}
 
-/* =========================
-   MOBILE 600–800px HEIGHT
-========================= */
+/* MOBILE */
 @media (max-width:600px) and (min-height:600px) and (max-height:800px){
 #passwordPage .container{width:calc(100vw - 24px);max-width:360px;padding:28px 14px 25px;margin:0 auto}
 #passwordPage .keypad{grid-template-columns:repeat(3,60px);column-gap:25px;row-gap:14px}
@@ -261,8 +237,6 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-torch-right{right:5%}
 }
 
-/* =========================
-   TRẠNG THÁI BAN ĐẦU
-========================= */
+/* TRẠNG THÁI BAN ĐẦU */
 #unlock-overlay,#loveLoading,#loveSuccess,#curtainTransition{display:none}
 #introDoor.hidden{display:none !important}
