@@ -870,6 +870,42 @@ body{
         0 0 20px rgba(255,120,165,.2);
 }
 
+#startLoveBtn.show{
+    position:relative;
+    overflow:visible;
+}
+
+#startLoveBtn.show::before{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border-radius:50px;
+    border:2px solid rgba(255,255,255,.6);
+    opacity:0;
+    pointer-events:none;
+    animation:buttonRing .9s ease-out .15s forwards;
+}
+
+@keyframes buttonRing{
+    0%{
+        opacity:0;
+        transform:scale(.75);
+        filter:blur(5px);
+    }
+
+    40%{
+        opacity:1;
+        transform:scale(1.03);
+        filter:blur(1px);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.18);
+        filter:blur(4px);
+    }
+}
+
 #startLoveBtn.button-click-out{
     animation:buttonClickOut .45s ease forwards !important;
     pointer-events:none;
