@@ -187,95 +187,30 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
   justify-content:center;position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}
 #introDoor .door-arch{gap:6%;justify-content:center;align-items:center;display:flex;position:absolute;left:9%;right:9%;top:15%;bottom:12%;border:clamp(14px,1vw,20px) solid #a84e70;border-bottom-width:16px;border-radius:50% 50% 0 0 / 24% 24% 0 0;background:rgba(255,255,255,.03);box-shadow:0 0 18px rgba(255,150,190,.25),inset 0 0 18px rgba(255,210,225,.15)}
 #introDoor .door-arch::before{content:"";position:absolute;inset:5px;border:5px solid rgba(255,190,215,.55);border-radius:50% 50% 0 0 / 22% 22% 0 0;background:rgba(255,255,255,.035);box-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(255,180,215,.3),inset 0 0 8px rgba(255,220,235,.12);pointer-events:none}
-#introDoor .door-wing{margin:0 3%;pointer-events:auto;cursor:pointer;position:relative;width:32%;height:50%;z-index:12;overflow:visible;border:3px solid #ffb5ca;border-radius:10px;transform-style:preserve-3d;box-shadow:inset 8px 0 18px rgba(255,255,255,.25),inset -12px 0 30px rgba(130,20,60,.22),inset 0 0 35px rgba(255,220,235,.20),0 10px 25px rgba(20,0,15,.35);will-change:transform;backface-visibility:visible;transition:none}
-@keyframes pinkPurpleGlow {
-  0% {
-    box-shadow:0 0 25px rgba(255,100,170,.9),
-               0 0 50px rgba(200,60,140,.7);
-  }
-  50% {
-    box-shadow:0 0 30px rgba(180,80,255,.9),
-               0 0 60px rgba(150,50,200,.7);
-  }
-  100% {
-    box-shadow:0 0 25px rgba(255,100,170,.9),
-               0 0 50px rgba(200,60,140,.7);
-  }
-}
-/* Cửa trái */
-#introDoor .door-wing-left {
-background:linear-gradient(135deg,
-  #ffe6f0 0%,
-  #f8a0c8 40%,
-  #d060a0 100%);
-  animation:pinkPurpleGlow 4s ease-in-out infinite;
-}
-#introDoor .door-wing-right {
-background:linear-gradient(135deg,
-  #ffe6f0 0%,
-  #f8a0c8 40%,
-  #d060a0 100%);
-  animation:pinkPurpleGlow 4s ease-in-out infinite;
-}
-#introDoor .door-wing::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:10px;
-  background:radial-gradient(circle at 50% 50%,
-    rgba(255,255,255,.35) 0%,
-    rgba(255,180,210,.25) 40%,
-    transparent 70%);
-  pointer-events:none;
-}
-#introDoor .door-wing-left::after{right:25px}
-#introDoor .door-wing-right::after{left:25px}
-@keyframes borderFlow {
-  from { background-position:0% 0%; }
-  to   { background-position:200% 0%; }
-}
-#introDoor .door-wing::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:10px;
-  border:2px solid transparent;
-background:linear-gradient(90deg,
-  rgba(255,180,210,.8),
-  rgba(180,100,255,.8),
-  rgba(255,180,210,.8));
-  background-size:200% 100%;
-  animation:borderFlow 4s linear infinite;
-  pointer-events:none;
-}
-/* Hoa văn dọc mép cửa trái */
-#introDoor .door-wing-left::before {
-  content:"❦ ❧ ❦ ❧ ❦";
-  position:absolute;
-  writing-mode:vertical-rl;
-  top:10%;
-  left:8px;
-  font-family:'Great Vibes',cursive;
-  font-size:clamp(18px,2.5vw,28px);
-  color:#ffb5d0;
-  text-shadow:0 0 6px rgba(255,120,180,.7),
-              0 0 14px rgba(180,80,255,.6);
-  pointer-events:none;
-}
-/* Hoa văn dọc mép cửa phải */
-#introDoor .door-wing-right::before {
-  content:"❧ ❦ ❧ ❦ ❧";
-  position:absolute;
-  writing-mode:vertical-rl;
-  top:10%;
-  right:8px;
-  font-family:'Great Vibes',cursive;
-  font-size:clamp(18px,2.5vw,28px);
-  color:#ffb5d0;
-  text-shadow:0 0 6px rgba(255,120,180,.7),
-              0 0 14px rgba(180,80,255,.6);
-  pointer-events:none;
-}
+/* CÁNH CỬA — GIỮ NGUYÊN KÍCH THƯỚC + CÁCH MỞ */
+#introDoor .door-wing{margin:0 3%;pointer-events:auto;cursor:pointer;position:relative;width:32%;height:50%;z-index:12;overflow:visible;transform-style:preserve-3d;border:3px solid rgba(255,218,231,.95);border-radius:16px;background:radial-gradient(ellipse at 50% 48%,rgba(255,255,255,.58) 0%,rgba(255,190,225,.25) 30%,transparent 68%),radial-gradient(circle at 8% 8%,rgba(255,255,255,.75) 0%,transparent 22%),radial-gradient(circle at 92% 92%,rgba(255,255,255,.42) 0%,transparent 25%),linear-gradient(135deg,#ffdce9 0%,#f5b5dc 18%,#d98bea 45%,#c66be1 65%,#f18fc4 86%,#ffd7e7 100%);box-shadow:0 0 8px rgba(255,220,240,.95),0 0 18px rgba(255,150,205,.75),0 0 38px rgba(225,90,180,.45),inset 0 0 0 2px rgba(255,255,255,.72),inset 0 0 0 7px rgba(255,174,215,.18),inset 0 0 25px rgba(255,255,255,.28),inset 12px 0 28px rgba(255,255,255,.22),inset -14px 0 30px rgba(130,40,150,.18),0 12px 28px rgba(35,0,30,.38);will-change:transform;backface-visibility:visible;transition:none;outline:1px solid rgba(255,240,245,.35)}
+
+#introDoor .door-wing::after{content:"";position:absolute;inset:10px;border-radius:10px;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.48) 0%,transparent 14%,transparent 72%,rgba(255,255,255,.18) 100%),radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.22) 0%,rgba(255,185,225,.10) 38%,transparent 72%);box-shadow:inset 0 0 12px rgba(255,255,255,.7),inset 0 0 28px rgba(255,150,210,.35),inset 0 0 45px rgba(170,70,190,.20);border:2px solid rgba(255,235,245,.75)}
+
+#introDoor .door-wing::before{content:"";position:absolute;inset:17px;border-radius:7px;pointer-events:none;border:2px solid rgba(255,224,196,.92);box-shadow:0 0 3px rgba(255,255,255,.9),0 0 7px rgba(255,200,220,.7),inset 0 0 4px rgba(255,255,255,.65),inset 0 0 10px rgba(255,180,210,.25)}
+
+#introDoor .door-wing-left{background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.42) 0%,rgba(255,184,225,.18) 28%,transparent 62%),linear-gradient(135deg,#ffe5ef 0%,#f5b9dc 20%,#d98bea 48%,#c86dde 70%,#ef91c4 88%,#ffdce9 100%);border-right-color:rgba(255,235,242,.95);animation:doorLuxuryGlow 4s ease-in-out infinite}
+
+#introDoor .door-wing-right{background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.42) 0%,rgba(255,184,225,.18) 28%,transparent 62%),linear-gradient(225deg,#ffe5ef 0%,#f5b9dc 20%,#d98bea 48%,#c86dde 70%,#ef91c4 88%,#ffdce9 100%);border-left-color:rgba(255,235,242,.95);animation:doorLuxuryGlow 4s ease-in-out infinite}
+
+@keyframes doorLuxuryGlow{0%,100%{filter:brightness(1);box-shadow:0 0 8px rgba(255,220,240,.9),0 0 18px rgba(255,150,205,.65),0 0 35px rgba(225,90,180,.35),inset 0 0 0 2px rgba(255,255,255,.7),inset 0 0 25px rgba(255,255,255,.25),0 12px 28px rgba(35,0,30,.38)}50%{filter:brightness(1.08);box-shadow:0 0 10px rgba(255,255,255,1),0 0 25px rgba(255,170,220,.9),0 0 50px rgba(220,90,190,.55),inset 0 0 0 2px rgba(255,255,255,.95),inset 0 0 32px rgba(255,255,255,.38),0 12px 28px rgba(35,0,30,.38)}}
+
+/* HOA VĂN MÉP NGOÀI */
+#introDoor .door-wing-left::before{content:"❦  ✦  ❧  ✦  ❦";writing-mode:vertical-rl;top:10%;left:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1d6;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65);font-weight:600}
+
+#introDoor .door-wing-right::before{content:"❧  ✦  ❦  ✦  ❧";writing-mode:vertical-rl;top:10%;right:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1d6;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65);font-weight:600}
+
+/* MỞ CỬA — GIỮ NGUYÊN */
+#introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.4s ease-in-out forwards}
+#introDoor.door-start .door-wing-right{animation:doorRightOpen 3.4s ease-in-out forwards}
+
+@keyframes doorLeftOpen{from{transform:translateX(0)}to{transform:translateX(-115%)}}
+@keyframes doorRightOpen{from{transform:translateX(0)}to{transform:translateX(115%)}}
 #introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}
 @keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}
 #introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:#fff;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:.25s ease;pointer-events:none}
