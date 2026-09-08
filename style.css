@@ -193,6 +193,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-wing-right{transform:rotateY(-2deg);border-left-color:rgba(255,220,235,.90)} 
 #introDoor .door-wing-left::after{content:"❦ ✦ ❧ ✦ ❦";writing-mode:vertical-rl;position:absolute;top:10%;left:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)} 
 #introDoor .door-wing-right::after{content:"❧ ✦ ❦ ✦ ❧";writing-mode:vertical-rl;position:absolute;top:10%;right:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)} 
+
 /* MỞ CỬA — GIỮ NGUYÊN */ 
 #introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.4s ease-in-out forwards} 
 #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.4s ease-in-out forwards} 
