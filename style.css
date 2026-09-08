@@ -5,7 +5,6 @@ html{font-size:calc(14px + .25vw);-webkit-text-size-adjust:100%;text-size-adjust
 #display::placeholder{color:#e75480;opacity:.8} 
 body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg,#fde7f0 0%,#f8c8dc 100%);color:#5c3e4a;touch-action:manipulation} 
  
-/* COUNTER / HOME */ 
 #counterPage{display:flex;justify-content:center;align-items:center;height:100dvh;overflow:hidden} 
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%} 
 .love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:24px 20px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:min(92vw,520px);transition:.3s ease} 
