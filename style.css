@@ -72,8 +72,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .music-btn,.back-btn{position:absolute;width:50px;height:50px;border:none;border-radius:50%;background:#ff5b93;color:#fff;cursor:pointer;z-index:1000;font-size:20px;box-shadow:0 5px 15px rgba(0,0,0,.15)}  
 .music-btn{top:20px;right:20px}  
 .back-btn{top:20px;left:20px}  
-.floating-{position:absolute;bottom:-50px;font-size:24px;animation:float linear infinite;pointer-events:none;z-index:1}  
-@keyframes float{from{transform:scale(0);opacity:0}10%{opacity:1}to{transform:translateY(-120vh);opacity:0}}  
+.floating-heart{position:absolute;bottom:-50px;font-size:24px;animation:floatHeart linear infinite;pointer-events:none;z-index:1}  
+@keyframes floatHeart{from{transform:scale(0);opacity:0}10%{opacity:1}to{transform:translateY(-120vh);opacity:0}}  
 .photo{position:absolute;width:75px;height:75px;object-fit:cover;border-radius:15px;border:3px solid white;box-shadow:0 8px 20px rgba(0,0,0,.15);opacity:0;transition:1s ease;z-index:20;pointer-events:none}  
 .confetti{position:absolute;width:12px;height:12px;animation:confettiFall 1.2s ease-out forwards;z-index:999}  
 @keyframes confettiFall{from{transform:translate(0,0) rotate(0);opacity:1}to{transform:translate(var(--x),var(--y)) rotate(720deg);opacity:0}}  
@@ -173,27 +173,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-camera{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;perspective:900px;perspective-origin:50% 50%}  
 #introDoor .door-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;transform-style:preserve-3d}  
 #introDoor .door-scene::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1.3px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.65) 0 1px,transparent 2px);background-size:73px 91px,117px 137px;background-position:10px 15px,40px 60px;opacity:.42;animation:sparkle 5s linear infinite}  
-#introDoor .door-scene::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:100%;
-  height:25%; /* thấp hơn để giống sàn */
-  transform:translateX(-50%) perspective(900px) rotateX(80deg);
-  transform-origin:bottom;
-  background:linear-gradient(to top,
-    rgba(40,10,30,.85) 0%,
-    rgba(255,150,190,.25) 40%,
-    rgba(255,200,220,.12) 70%,
-    transparent 100%);
-  border-top:2px solid rgba(255,255,255,.5);
-  box-shadow:inset 0 8px 18px rgba(0,0,0,.25),
-             0 0 25px rgba(255,120,180,.35);
-  filter:blur(.6px);
-  pointer-events:none;
-  clip-path: polygon(15% 100%,85% 100%,100% 0%,0% 0%);
-}
+#introDoor .door-scene::after{content:"";position:absolute;left:50%;bottom:7%;width:96%;height:55%;z-index:5;transform:translateX(-50%) perspective(700px) rotateX(63deg);transform-origin:bottom;background:radial-gradient(ellipse at 50% 8%,rgba(255,255,255,1) 0%,rgba(255,255,255,.92) 6%,rgba(255,210,230,.72) 15%,transparent 35%),radial-gradient(ellipse at 50% 25%,rgba(255,130,180,.65) 0%,rgba(255,100,165,.32) 28%,transparent 65%),linear-gradient(180deg,rgba(255,190,215,.38) 0%,rgba(180,55,110,.28) 35%,rgba(45,8,32,.55) 100%);border-top:1px solid rgba(255,255,255,.7);box-shadow:0 -2px 8px rgba(255,255,255,.8),0 -12px 30px rgba(255,120,175,.55),0 -25px 65px rgba(255,80,150,.32),inset 0 8px 18px rgba(255,255,255,.38),inset 0 1px 3px rgba(255,255,255,.9),inset 0 -18px 35px rgba(50,5,30,.35);filter:blur(.2px);pointer-events:none}  
 @keyframes sparkle{from{transform:translateY(0)}to{transform:translateY(-20px)}}  
 #introDoor .door-back-light{position:absolute;left:50%;top:18%;width:110%;height:70%;z-index:4;border-radius:50%;opacity:0;transform:translate3d(-50%,0,0) scaleX(.02);transform-origin:center center;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,#ffffff 0%,#ffffff 18%,rgba(255,252,255,1) 30%,rgba(255,235,244,.98) 45%,rgba(255,195,220,.88) 60%,rgba(255,135,180,.58) 75%,rgba(255,90,150,.25) 88%,transparent 100%);filter:blur(10px);box-shadow:0 0 80px rgba(255,255,255,1),0 0 160px rgba(255,190,220,1),0 0 280px rgba(255,120,175,.95),0 0 400px rgba(255,80,150,.7);will-change:transform,opacity}  
 #introDoor .door-glow,#introDoor .door-glow-left,#introDoor .door-glow-right{position:absolute;z-index:16;pointer-events:none}  
@@ -207,29 +187,19 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
   justify-content:center;position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}  
 #introDoor .door-arch{display:flex;justify-content:center;align-items:center;gap:2%;position:absolute;left:9%;right:9%;top:15%;bottom:36%;border:clamp(14px,1vw,20px) solid #d46a9e;border-bottom-width:18px;border-radius:50% 50% 0 0/24% 24% 0 0;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,180,210,.12) 20%,rgba(255,255,255,.18) 50%,rgba(255,180,210,.12) 80%,rgba(255,255,255,.25));box-shadow:inset 0 8px 18px rgba(255,255,255,.35),inset 0 -8px 18px rgba(80,0,60,.25),0 0 25px rgba(255,120,175,.65),0 0 45px rgba(255,90,160,.45)}  
 #introDoor .door-arch::before{content:"";position:absolute;inset:6px;border:5px solid rgba(255,175,210,.72);border-radius:50% 50% 0 0/22% 22% 0 0;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent);box-shadow:inset 0 6px 12px rgba(255,255,255,.45),inset 0 -6px 12px rgba(80,0,60,.25),0 0 12px rgba(255,120,180,.65)}  
-#introDoor .door-wing {
-  border: 3px solid rgba(255,170,210,.72);
-  border-radius: 16px;
-  background: linear-gradient(145deg,
-    #ffb6d5 0%,   /* hồng nhạt */
-    #e75480 50%,  /* hồng đậm */
-    #b82e66 100%  /* tím hồng */
-  );
-  box-shadow: inset 8px 8px 18px rgba(255,255,255,.25),
-              inset -10px -10px 20px rgba(60,0,40,.25),
-              0 12px 28px rgba(35,0,30,.35);
-}
-
+#introDoor .door-wing{position:relative;width:32%;height:50%;border-radius:16px;border:3px solid rgba(255,170,210,.72);background:linear-gradient(145deg,#d99ab2 0%,#b96588 55%,#9e5374 100%);box-shadow:inset 10px 10px 22px rgba(255,255,255,.15),inset -12px -12px 24px rgba(60,0,40,.38),0 12px 28px rgba(35,0,30,.40);transform-style:preserve-3d} 
 #introDoor .door-wing::before{content:"";position:absolute;inset:25px;border-radius:10px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.12),transparent 70%);border:1.5px solid rgba(255,210,225,.22);box-shadow:inset 0 0 16px rgba(0,0,0,.25)} 
-#introDoor .door-wing-left{margin-right: 5px;transform:rotateY(2deg);border-right-color:rgba(255,220,235,.90)}  
-#introDoor .door-wing-right{margin-left: 5px;transform:rotateY(-2deg);border-left-color:rgba(255,220,235,.90)}  
+#introDoor .door-wing-left{transform:rotateY(2deg);border-right-color:rgba(255,220,235,.90)}  
+#introDoor .door-wing-right{transform:rotateY(-2deg);border-left-color:rgba(255,220,235,.90)}  
+#introDoor .door-wing-left::after{content:"❦ ✦ ❧ ✦ ❦";writing-mode:vertical-rl;position:absolute;top:10%;left:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}  
+#introDoor .door-wing-right::after{content:"❧ ✦ ❦ ✦ ❧";writing-mode:vertical-rl;position:absolute;top:10%;right:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}  
 /* MỞ CỬA — GIỮ NGUYÊN */  
 #introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.4s ease-in-out forwards}  
 #introDoor.door-start .door-wing-right{animation:doorRightOpen 3.4s ease-in-out forwards}  
   
 @keyframes doorLeftOpen{from{transform:translateX(0)}to{transform:translateX(-115%)}}  
 @keyframes doorRightOpen{from{transform:translateX(0)}to{transform:translateX(115%)}}  
-#introDoor .door-heart{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(1.2);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}  
+#introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}  
 @keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}  
 #introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:#fff;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:.25s ease;pointer-events:none}  
 #introDoor .door-torch{position:absolute;display:none !important;top:49%;z-index:20;font-size:clamp(27px,3.2vw,44px);line-height:1;filter:drop-shadow(0 0 4px #ff6200) drop-shadow(0 0 10px #ff8d22) drop-shadow(0 0 22px rgba(255,60,0,.75));animation:torchFloat 1.15s ease-in-out infinite alternate;pointer-events:none}  
@@ -263,11 +233,11 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #passwordPage .keypad{grid-template-columns:repeat(3,60px);column-gap:25px;row-gap:14px}  
 #passwordPage .btn{width:60px;height:60px;font-size:22px}  
 #passwordPage .ok,#passwordPage .delete{width:60px;height:60px;font-size:32px;margin:0;transform:none}  
-#introDoor .door-arch{left:0;right:0;top:11%;bottom:16%;border-width:10px;border-radius:50% 50% 0 0 / 20% 20% 0 0}  
+#introDoor .door-arch{left:0;right:0;top:11%;bottom:36%;border-width:10px;border-radius:50% 50% 0 0 / 20% 20% 0 0}  
 #introDoor .door-arch::before{inset:9px;border-radius:50% 50% 0 0 / 18% 18% 0 0;border:4px solid rgba(255,181,208,.28)}  
-#introDoor .door-wing{width:46%;height:50%;border-width:4px}  
-#introDoor .door-wing-left{left:2%}  
-#introDoor .door-wing-right{right:2%}  
+#introDoor .door-wing{width:49%;height:50%;border-width:3px}  
+#introDoor .door-wing-left{left:1%}  
+#introDoor .door-wing-right{right:1%}  
 #introDoor .door-heart{top:25%;font-size:42px}  
 #introDoor .door-light-gap{top:27%;height:55%}  
 #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px}  
