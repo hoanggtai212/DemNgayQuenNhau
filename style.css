@@ -222,8 +222,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes doorLightOpen{from{opacity:0;transform:translate3d(-50%,0,0)}to{opacity:1;transform:translate3d(-50%,0,0)}} 
 @keyframes centerGlowOpen{0%{opacity:.65;width:2px;filter:blur(2px)}35%{opacity:.8;width:4px;filter:blur(3px)}65%{opacity:.45;width:6px;filter:blur(5px)}85%{opacity:.2;width:8px;filter:blur(7px)}100%{opacity:0;width:10px;filter:blur(10px)}} 
 @keyframes lockDisappear{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:blur(7px)}} 
- 
-/* FLASH */ 
+  
 #introDoor .door-flash{position:absolute;inset:0;z-index:100;background:radial-gradient(circle at 50% 55%,#fff 0%,#fff 20%,rgba(255,239,246,.96) 38%,rgba(255,180,210,.60) 65%,transparent 100%);opacity:0;pointer-events:none;mix-blend-mode:screen} 
 @keyframes doorFlash{0%{opacity:0;filter:blur(18px)}35%{opacity:.35;filter:blur(10px)}65%{opacity:.75;filter:blur(5px)}85%{opacity:1;filter:blur(2px)}100%{opacity:1;filter:blur(0)}} 
  
