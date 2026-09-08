@@ -173,7 +173,29 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-camera{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;perspective:900px;perspective-origin:50% 50%}  
 #introDoor .door-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;transform-style:preserve-3d}  
 #introDoor .door-scene::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1.3px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.65) 0 1px,transparent 2px);background-size:73px 91px,117px 137px;background-position:10px 15px,40px 60px;opacity:.42;animation:sparkle 5s linear infinite}  
-#introDoor .door-scene::after{content:"";position:absolute;left:50%;bottom:0;width:100%;height:30%;transform:translateX(-50%) perspective(900px) rotateX(75deg);transform-origin:bottom;background:radial-gradient(ellipse at 50% 80%,rgba(255,255,255,.25) 0%,rgba(255,180,220,.18) 25%,rgba(120,40,90,.12) 55%,transparent 100%);border-top:1px solid rgba(255,255,255,.4);box-shadow:0 -8px 25px rgba(255,120,175,.45),0 -18px 55px rgba(255,80,150,.25),inset 0 12px 28px rgba(255,255,255,.25);filter:blur(1px);pointer-events:none;clip-path:polygon(20% 100%,80% 100%,100% 0%,0% 0%)}
+#introDoor .door-scene::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:100%;
+  height:40%; /* tăng độ cao để nhìn dày hơn */
+  transform:translateX(-50%) perspective(900px) rotateX(70deg);
+  transform-origin:bottom;
+  background:
+    radial-gradient(ellipse at 50% 90%, rgba(255,255,255,.35) 0%, rgba(255,200,230,.25) 25%, rgba(255,120,180,.15) 55%, transparent 100%),
+    linear-gradient(180deg, rgba(255,180,220,.25) 0%, rgba(180,55,110,.25) 50%, rgba(45,8,32,.55) 100%);
+  border-top:2px solid rgba(255,255,255,.6);
+  box-shadow:
+    0 -10px 25px rgba(255,120,175,.45),
+    0 -25px 65px rgba(255,80,150,.25),
+    inset 0 15px 35px rgba(255,255,255,.25),
+    inset 0 -15px 35px rgba(255,120,180,.25);
+  filter:blur(1.2px);
+  opacity:.95;
+  pointer-events:none;
+  clip-path:polygon(15% 100%,85% 100%,100% 0%,0% 0%);
+}
 @keyframes sparkle{from{transform:translateY(0)}to{transform:translateY(-20px)}}  
 #introDoor .door-back-light{position:absolute;left:50%;top:18%;width:110%;height:70%;z-index:4;border-radius:50%;opacity:0;transform:translate3d(-50%,0,0) scaleX(.02);transform-origin:center center;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,#ffffff 0%,#ffffff 18%,rgba(255,252,255,1) 30%,rgba(255,235,244,.98) 45%,rgba(255,195,220,.88) 60%,rgba(255,135,180,.58) 75%,rgba(255,90,150,.25) 88%,transparent 100%);filter:blur(10px);box-shadow:0 0 80px rgba(255,255,255,1),0 0 160px rgba(255,190,220,1),0 0 280px rgba(255,120,175,.95),0 0 400px rgba(255,80,150,.7);will-change:transform,opacity}  
 #introDoor .door-glow,#introDoor .door-glow-left,#introDoor .door-glow-right{position:absolute;z-index:16;pointer-events:none}  
