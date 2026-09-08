@@ -72,8 +72,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .music-btn,.back-btn{position:absolute;width:50px;height:50px;border:none;border-radius:50%;background:#ff5b93;color:#fff;cursor:pointer;z-index:1000;font-size:20px;box-shadow:0 5px 15px rgba(0,0,0,.15)}  
 .music-btn{top:20px;right:20px}  
 .back-btn{top:20px;left:20px}  
-.floating-heart{position:absolute;bottom:-50px;font-size:24px;animation:floatHeart linear infinite;pointer-events:none;z-index:1}  
-@keyframes floatHeart{from{transform:scale(0);opacity:0}10%{opacity:1}to{transform:translateY(-120vh);opacity:0}}  
+.floating-{position:absolute;bottom:-50px;font-size:24px;animation:float linear infinite;pointer-events:none;z-index:1}  
+@keyframes float{from{transform:scale(0);opacity:0}10%{opacity:1}to{transform:translateY(-120vh);opacity:0}}  
 .photo{position:absolute;width:75px;height:75px;object-fit:cover;border-radius:15px;border:3px solid white;box-shadow:0 8px 20px rgba(0,0,0,.15);opacity:0;transition:1s ease;z-index:20;pointer-events:none}  
 .confetti{position:absolute;width:12px;height:12px;animation:confettiFall 1.2s ease-out forwards;z-index:999}  
 @keyframes confettiFall{from{transform:translate(0,0) rotate(0);opacity:1}to{transform:translate(var(--x),var(--y)) rotate(720deg);opacity:0}}  
@@ -197,7 +197,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
   
 @keyframes doorLeftOpen{from{transform:translateX(0)}to{transform:translateX(-115%)}}  
 @keyframes doorRightOpen{from{transform:translateX(0)}to{transform:translateX(115%)}}  
-#introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}  
+#introDoor .door-heart{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(1.2);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}  
 @keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}  
 #introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:#fff;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:.25s ease;pointer-events:none}  
 #introDoor .door-torch{position:absolute;display:none !important;top:49%;z-index:20;font-size:clamp(27px,3.2vw,44px);line-height:1;filter:drop-shadow(0 0 4px #ff6200) drop-shadow(0 0 10px #ff8d22) drop-shadow(0 0 22px rgba(255,60,0,.75));animation:torchFloat 1.15s ease-in-out infinite alternate;pointer-events:none}  
