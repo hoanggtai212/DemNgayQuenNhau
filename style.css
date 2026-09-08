@@ -179,30 +179,30 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
   left:50%;
   bottom:0;
   width:100%;
-  height:42%; /* tăng độ cao để nhìn dày hơn */
+  height:46%; /* dày hơn */
   transform:translateX(-50%) perspective(900px) rotateX(72deg);
   transform-origin:bottom;
 
-  /* lớp nền nhiều gradient để tạo chiều sâu */
+  /* gradient nhiều lớp để giống ảnh */
   background:
-    radial-gradient(ellipse at 50% 95%, rgba(255,255,255,.55) 0%, rgba(255,200,230,.35) 20%, rgba(255,120,180,.25) 45%, transparent 80%),
-    linear-gradient(180deg, rgba(255,180,220,.25) 0%, rgba(180,55,110,.25) 50%, rgba(45,8,32,.55) 100%);
+    radial-gradient(ellipse at 50% 95%, rgba(255,255,255,.65) 0%, rgba(255,210,235,.45) 18%, rgba(255,150,200,.32) 40%, rgba(120,40,90,.22) 65%, transparent 100%),
+    linear-gradient(180deg, rgba(255,190,220,.28) 0%, rgba(180,55,110,.25) 50%, rgba(45,8,32,.55) 100%);
 
-  border-top:2px solid rgba(255,255,255,.7);
+  border-top:2px solid rgba(255,255,255,.85);
 
-  /* bóng đổ để tạo cảm giác nổi khối */
+  /* bóng đổ nổi khối */
   box-shadow:
-    0 -12px 28px rgba(255,120,175,.45),
-    0 -28px 65px rgba(255,80,150,.28),
-    inset 0 18px 35px rgba(255,255,255,.25),
-    inset 0 -18px 35px rgba(255,120,180,.25);
+    0 -15px 35px rgba(255,120,175,.55),
+    0 -35px 75px rgba(255,80,150,.35),
+    inset 0 22px 45px rgba(255,255,255,.28),
+    inset 0 -22px 45px rgba(255,120,180,.28);
 
-  filter:blur(1.2px);
-  opacity:.92;
+  filter:blur(1.5px);
+  opacity:.9;
   pointer-events:none;
 
-  /* hình thang rộng hơn để giống mặt sàn */
-  clip-path:polygon(12% 100%,88% 100%,100% 0%,0% 0%);
+  /* hình thang rộng để giống mặt sàn */
+  clip-path:polygon(10% 100%,90% 100%,100% 0%,0% 0%);
 }
 @keyframes sparkle{from{transform:translateY(0)}to{transform:translateY(-20px)}}  
 #introDoor .door-back-light{position:absolute;left:50%;top:18%;width:110%;height:70%;z-index:4;border-radius:50%;opacity:0;transform:translate3d(-50%,0,0) scaleX(.02);transform-origin:center center;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,#ffffff 0%,#ffffff 18%,rgba(255,252,255,1) 30%,rgba(255,235,244,.98) 45%,rgba(255,195,220,.88) 60%,rgba(255,135,180,.58) 75%,rgba(255,90,150,.25) 88%,transparent 100%);filter:blur(10px);box-shadow:0 0 80px rgba(255,255,255,1),0 0 160px rgba(255,190,220,1),0 0 280px rgba(255,120,175,.95),0 0 400px rgba(255,80,150,.7);will-change:transform,opacity}  
