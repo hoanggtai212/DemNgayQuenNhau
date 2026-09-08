@@ -166,72 +166,18 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .menu-box button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 28px rgba(240,98,134,.4),0 0 20px rgba(255,120,165,.18)}  
 @keyframes menuAppear{from{opacity:0;transform:scale(.85) translateY(30px);filter:blur(10px)}to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}  
   
-/* INTRO DOOR */  
-#introDoor{position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:99999999;isolation:isolate;background:radial-gradient(ellipse at 50% 52%,rgba(255,145,190,.20) 0%,rgba(150,55,105,.12) 35%,rgba(20,5,22,.45) 75%),linear-gradient(90deg,#160916 0%,#281025 8%,#4a1b3b 18%,#6b294f 31%,#7f355d 43%,#6e2a50 56%,#7d3459 69%,#4b1a3b 83%,#281025 94%,#160916 100%)}  
-#introDoor::before{content:"";position:absolute;inset:-3%;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(17,4,19,.62) 0px,rgba(17,4,19,.40) 30px,rgba(255,174,205,.10) 52px,rgba(255,174,205,.16) 70px,rgba(38,8,31,.42) 91px,rgba(10,2,15,.48) 115px);box-shadow:0 0 100px rgba(0,0,0,.70),inset 0 0 220px rgba(20,0,20,.65);transform:scale(1.02)}  
-#introDoor::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,rgba(255,154,195,.22) 0%,rgba(255,116,169,.12) 28%,transparent 58%),radial-gradient(circle at 50% 72%,rgba(255,108,165,.20),transparent 35%)}  
-#introDoor .door-camera{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;perspective:900px;perspective-origin:50% 50%}  
-#introDoor .door-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;transform-style:preserve-3d}  
-#introDoor .door-scene::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1.3px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.65) 0 1px,transparent 2px);background-size:73px 91px,117px 137px;background-position:10px 15px,40px 60px;opacity:.42;animation:sparkle 5s linear infinite}  
-#introDoor .door-scene::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:100%;
-  height:46%; /* dày hơn */
-  transform:translateX(-50%) perspective(900px) rotateX(72deg);
-  transform-origin:bottom;
-
-  /* gradient nhiều lớp để giống ảnh */
-  background:
-    radial-gradient(ellipse at 50% 95%, rgba(255,255,255,.65) 0%, rgba(255,210,235,.45) 18%, rgba(255,150,200,.32) 40%, rgba(120,40,90,.22) 65%, transparent 100%),
-    linear-gradient(180deg, rgba(255,190,220,.28) 0%, rgba(180,55,110,.25) 50%, rgba(45,8,32,.55) 100%);
-
-  border-top:2px solid rgba(255,255,255,.85);
-
-  /* bóng đổ nổi khối */
-  box-shadow:
-    0 -15px 35px rgba(255,120,175,.55),
-    0 -35px 75px rgba(255,80,150,.35),
-    inset 0 22px 45px rgba(255,255,255,.28),
-    inset 0 -22px 45px rgba(255,120,180,.28);
-
-  filter:blur(1.5px);
-  opacity:.9;
-  pointer-events:none;
-
-  /* hình thang rộng để giống mặt sàn */
-  clip-path:polygon(10% 100%,90% 100%,100% 0%,0% 0%);
-}
-@keyframes sparkle{from{transform:translateY(0)}to{transform:translateY(-20px)}}  
-#introDoor .door-back-light{position:absolute;left:50%;top:18%;width:110%;height:70%;z-index:4;border-radius:50%;opacity:0;transform:translate3d(-50%,0,0) scaleX(.02);transform-origin:center center;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,#ffffff 0%,#ffffff 18%,rgba(255,252,255,1) 30%,rgba(255,235,244,.98) 45%,rgba(255,195,220,.88) 60%,rgba(255,135,180,.58) 75%,rgba(255,90,150,.25) 88%,transparent 100%);filter:blur(10px);box-shadow:0 0 80px rgba(255,255,255,1),0 0 160px rgba(255,190,220,1),0 0 280px rgba(255,120,175,.95),0 0 400px rgba(255,80,150,.7);will-change:transform,opacity}  
-#introDoor .door-glow,#introDoor .door-glow-left,#introDoor .door-glow-right{position:absolute;z-index:16;pointer-events:none}  
-#introDoor .door-glow{left:50%;top:24%;width:2px;height:58%;transform:translateX(-50%);opacity:.65;background:linear-gradient(180deg,transparent,rgba(255,255,255,.8) 15%,#fff 35%,#fff 65%,rgba(255,255,255,.8) 85%,transparent);filter:blur(2px);box-shadow:0 0 12px #fff,0 0 30px rgba(255,160,205,.9)}  
-#introDoor .door-glow-left,#introDoor .door-glow-right{top:25%;width:3px;height:55%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.7),transparent);box-shadow:0 0 15px rgba(255,255,255,.6);filter:blur(2px)}  
-#introDoor .door-glow-left{left:calc(50% - 2px)}  
-#introDoor .door-glow-right{right:calc(50% - 2px)}  
-#introDoor .door-frame{  display:flex;  
-  flex-direction:column;  
-  align-items:center;  
-  justify-content:center;position:absolute;inset:0;z-index:10;overflow:hidden;pointer-events:none;transform-style:preserve-3d}  
-#introDoor .door-arch{display:flex;justify-content:center;align-items:center;gap:2%;position:absolute;left:9%;right:9%;top:15%;bottom:36%;border:clamp(14px,1vw,20px) solid #d46a9e;border-bottom-width:18px;border-radius:50% 50% 0 0/24% 24% 0 0;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,180,210,.12) 20%,rgba(255,255,255,.18) 50%,rgba(255,180,210,.12) 80%,rgba(255,255,255,.25));box-shadow:inset 0 8px 18px rgba(255,255,255,.35),inset 0 -8px 18px rgba(80,0,60,.25),0 0 25px rgba(255,120,175,.65),0 0 45px rgba(255,90,160,.45)}  
-#introDoor .door-arch::before{content:"";position:absolute;inset:6px;border:5px solid rgba(255,175,210,.72);border-radius:50% 50% 0 0/22% 22% 0 0;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent);box-shadow:inset 0 6px 12px rgba(255,255,255,.45),inset 0 -6px 12px rgba(80,0,60,.25),0 0 12px rgba(255,120,180,.65)}  
-#introDoor .door-wing{position:relative;width:32%;height:50%;border-radius:16px;border:3px solid rgba(255,170,210,.72);background:linear-gradient(145deg,#d99ab2 0%,#b96588 55%,#9e5374 100%);box-shadow:inset 10px 10px 22px rgba(255,255,255,.15),inset -12px -12px 24px rgba(60,0,40,.38),0 12px 28px rgba(35,0,30,.40);transform-style:preserve-3d} 
-#introDoor .door-wing::before{content:"";position:absolute;inset:25px;border-radius:10px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.12),transparent 70%);border:1.5px solid rgba(255,210,225,.22);box-shadow:inset 0 0 16px rgba(0,0,0,.25)} 
-#introDoor .door-wing-left{transform:rotateY(2deg);border-right-color:rgba(255,220,235,.90)}  
-#introDoor .door-wing-right{transform:rotateY(-2deg);border-left-color:rgba(255,220,235,.90)}  
-#introDoor .door-wing-left::after{content:"❦ ✦ ❧ ✦ ❦";writing-mode:vertical-rl;position:absolute;top:10%;left:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}  
-#introDoor .door-wing-right::after{content:"❧ ✦ ❦ ✦ ❧";writing-mode:vertical-rl;position:absolute;top:10%;right:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}  
-/* MỞ CỬA — GIỮ NGUYÊN */  
-#introDoor.door-start .door-wing-left{animation:doorLeftOpen 3.4s ease-in-out forwards}  
-#introDoor.door-start .door-wing-right{animation:doorRightOpen 3.4s ease-in-out forwards}  
-  
-@keyframes doorLeftOpen{from{transform:translateX(0)}to{transform:translateX(-115%)}}  
-@keyframes doorRightOpen{from{transform:translateX(0)}to{transform:translateX(115%)}}  
-#introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);z-index:8;font-family:sans-serif;font-size:clamp(45px,5vw,70px);line-height:1;color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);filter:drop-shadow(0 0 4px rgba(255,255,255,.75));pointer-events:none;animation:heartGlow 2s ease-in-out infinite alternate}  
-@keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}  
-#introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);z-index:30;border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#8b5a32 0%,#4b2c1d 28%,#21110b 65%,#0d0503 100%);color:#fff;font-size:31px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20);transition:.25s ease;pointer-events:none}  
+/* INTRO DOOR FULL */
+#introDoor{position:absolute;inset:0;width:100vw;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 52%,rgba(255,145,190,.25) 0%,rgba(150,55,105,.18) 35%,rgba(20,5,22,.55) 75%),linear-gradient(90deg,#160916 0%,#281025 8%,#4a1b3b 18%,#6b294f 31%,#7f355d 43%,#6e2a50 56%,#7d3459 69%,#4b1a3b 83%,#281025 94%,#160916 100%)}
+#introDoor::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 2px),radial-gradient(circle,rgba(255,180,215,.6) 1px,transparent 2px);background-size:80px 80px,120px 120px;background-position:20px 30px,60px 90px;opacity:.4;animation:sparkleMove 6s linear infinite}
+@keyframes sparkleMove{from{transform:translateY(0)}to{transform:translateY(-20px)}}
+#introDoor .door-scene::after{content:"";position:absolute;left:50%;bottom:0;width:100%;height:46%;transform:translateX(-50%) perspective(900px) rotateX(72deg);transform-origin:bottom;background:radial-gradient(ellipse at 50% 95%,rgba(255,255,255,.65) 0%,rgba(255,210,235,.45) 18%,rgba(255,150,200,.32) 40%,rgba(120,40,90,.22) 65%,transparent 100%),linear-gradient(180deg,rgba(255,190,220,.28) 0%,rgba(180,55,110,.25) 50%,rgba(45,8,32,.55) 100%);border-top:2px solid rgba(255,255,255,.85);box-shadow:0 -15px 35px rgba(255,120,175,.55),0 -35px 75px rgba(255,80,150,.35),inset 0 22px 45px rgba(255,255,255,.28),inset 0 -22px 45px rgba(255,120,180,.28);filter:blur(1.5px);opacity:.9;clip-path:polygon(10% 100%,90% 100%,100% 0%,0% 0%)}
+#introDoor .door-arch{position:absolute;left:9%;right:9%;top:15%;bottom:36%;border:clamp(14px,1vw,20px) solid #d46a9e;border-bottom-width:18px;border-radius:50% 50% 0 0/24% 24% 0 0;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,180,210,.12) 20%,rgba(255,255,255,.18) 50%,rgba(255,180,210,.12) 80%,rgba(255,255,255,.25));box-shadow:inset 0 8px 18px rgba(255,255,255,.35),inset 0 -8px 18px rgba(80,0,60,.25),0 0 25px rgba(255,120,175,.65),0 0 45px rgba(255,90,160,.45)}
+#introDoor .door-wing{position:relative;width:32%;height:50%;border-radius:16px;border:3px solid rgba(255,170,210,.72);background:linear-gradient(145deg,#f7b5d1 0%,#d46a9e 55%,#9e5374 100%);box-shadow:inset 10px 10px 22px rgba(255,255,255,.15),inset -12px -12px 24px rgba(60,0,40,.38),0 12px 28px rgba(35,0,30,.40)}
+#introDoor .door-wing-left::after{content:"❦ ✦ ❧ ✦ ❦";writing-mode:vertical-rl;position:absolute;top:10%;left:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}
+#introDoor .door-wing-right::after{content:"❧ ✦ ❦ ✦ ❧";writing-mode:vertical-rl;position:absolute;top:10%;right:8px;font-family:'Great Vibes',cursive;font-size:clamp(18px,2.5vw,28px);color:#ffe1f0;text-shadow:0 0 4px #fff,0 0 8px rgba(255,190,215,.95),0 0 16px rgba(255,105,180,.65)}
+#introDoor .door-heart{position:absolute;top:28%;left:50%;transform:translateX(-50%) scale(.9);font-size:clamp(45px,5vw,70px);color:#ff4f81;-webkit-text-stroke:1.5px #fff;text-shadow:0 0 8px rgba(255,105,160,.8),0 0 20px rgba(255,120,180,.6),0 0 40px rgba(255,80,150,.4);animation:heartGlow 2s ease-in-out infinite alternate}
+@keyframes heartGlow{from{transform:translateX(-50%) scale(.9);opacity:.85}to{transform:translateX(-50%) scale(1.05);opacity:1}}
+#introDoor .door-lock{position:absolute;left:50%;top:53%;width:72px;height:72px;transform:translate(-50%,-50%);border:3px solid #d99a51;border-radius:50%;background:radial-gradient(circle at 35% 27%,#d9a441 0%,#8b5a32 28%,#4b2c1d 65%,#21110b 100%);box-shadow:0 0 0 5px rgba(38,10,22,.80),0 0 0 7px rgba(255,175,90,.08),0 0 18px rgba(255,177,91,.45),0 0 38px rgba(255,80,140,.20)}
 #introDoor .door-torch{position:absolute;display:none !important;top:49%;z-index:20;font-size:clamp(27px,3.2vw,44px);line-height:1;filter:drop-shadow(0 0 4px #ff6200) drop-shadow(0 0 10px #ff8d22) drop-shadow(0 0 22px rgba(255,60,0,.75));animation:torchFloat 1.15s ease-in-out infinite alternate;pointer-events:none}  
 #introDoor .door-torch-left{left:6%}  
 #introDoor .door-torch-right{right:6%}  
