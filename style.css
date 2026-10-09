@@ -207,7 +207,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-torch-left{left:6%} 
 #introDoor .door-torch-right{right:6%} 
 @keyframes torchFloat{from{transform:translateX(3px) scale(.94)}to{transform:translateX(-4px) scale(1.08)}} 
-#introDoor .door-light-gap{position:absolute;left:50%;top:23%;width:2px;height:67%;transform:translateX(-50%);z-index:18;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.95) 35%,#ffffff 50%,rgba(255,255,255,.95) 65%,transparent 100%);opacity:1;filter:blur(2px);box-shadow:0 0 8px #ffffff,0 0 20px #ffffff,0 0 45px rgba(255,180,215,.95),0 0 90px rgba(255,100,170,.75);pointer-events:none} 
+#introDoor .door-light-gap{position:absolute;left:50%;top:23%;width:2px;height:77%;transform:translateX(-50%);z-index:18;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.95) 35%,#ffffff 50%,rgba(255,255,255,.95) 65%,transparent 100%);opacity:1;filter:blur(2px);box-shadow:0 0 8px #ffffff,0 0 20px #ffffff,0 0 45px rgba(255,180,215,.95),0 0 90px rgba(255,100,170,.75);pointer-events:none} 
 
 /* DOOR ANIMATIONS */ 
 #introDoor.door-start .door-back-light{animation:doorLightOpen 3.4s ease-in-out forwards} 
@@ -252,7 +252,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-heart{top:25%;font-size:42px} 
 #introDoor .door-light-gap{top:16%;height:67%} 
 #introDoor .door-frame::before{top:13%;width:90%;font-size:12px;letter-spacing:6px} 
-#introDoor .door-lock{width:62px;height:62px;top:51%;font-size:27px} 
+#introDoor .door-lock{width:62px;height:62px;top:67%;font-size:27px} 
 #introDoor .door-torch{top:48%;font-size:30px} 
 #introDoor .door-torch-left{left:5%} 
 #introDoor .door-torch-right{right:5%} 
