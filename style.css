@@ -239,7 +239,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 
 /* MOBILE */ 
 @media (max-width:600px) and (min-height:600px) and (max-height:800px){ 
-#passwordPage .container{display:flex;flex-direction:column;width:calc(100vw - 8px);max-width:none;height:calc(100dvh - 8px);padding:28px 14px 5%;margin:4px auto;overflow-y:auto}
+#passwordPage .container{display:flex;flex-direction:column;width:calc(100vw - 8px);max-width:none;height:calc(100dvh - 8px);padding:28px 14px 7%;margin:4px auto;overflow-y:auto}
 #passwordPage .keypad{grid-template-columns:repeat(3,66px);column-gap:25px;row-gap:16px;margin-top:auto;margin-bottom:0}
 #passwordPage .btn{width:66px;height:66px;font-size:24px}
 #passwordPage .ok,#passwordPage .delete{width:66px;height:66px;font-size:34px;margin:0;transform:none}
