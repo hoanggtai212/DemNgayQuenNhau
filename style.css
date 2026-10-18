@@ -254,7 +254,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-lock{width:62px;height:62px;left:50%;top:61%;transform:translate(-50%,-50%);font-size:27px}
 #introDoor .door-torch{top:48%;font-size:30px} 
 #introDoor .door-torch-left{left:5%} 
-#introDoor .door-torch-right{right:5%} 
+#introDoor .door-torch-right{right:5%}
+#loveLoading .loading-wrapper{width:82%;height:29dvh;overflow:hidden;transition:width 1.3s ease,height 1.3s ease}#loveLoading .loading-wrapper.expanded{width:88%;height:38dvh}
 } 
 
 /* TRẠNG THÁI BAN ĐẦU */ 
