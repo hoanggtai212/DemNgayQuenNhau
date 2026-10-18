@@ -85,7 +85,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 .firework{position:absolute;width:4px;height:120px;background:linear-gradient(to top,#ff5b93,transparent)} 
 
 /* LOADING */ 
-#loveLoading{display:none;position:absolute;inset:0;justify-content:center;align-items:center;overflow:hidden;z-index:999999;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%)} 
+#loveLoading{display:none;position:absolute;inset:0;justify-content:center;align-items:center;padding-bottom:70px;overflow:hidden;z-index:999999;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%)} 
 #loveLoading::before,#loveLoading::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(5px)} 
 #loveLoading::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite} 
 #loveLoading::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation:floatingGlow 8s ease-in-out infinite reverse} 
