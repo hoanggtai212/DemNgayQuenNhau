@@ -14,13 +14,13 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}
 .love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc(4.5dvh - 5px) 20px 24px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:100vw;height:100dvh;transition:.3s ease}
 .name{font-family:'Great Vibes',cursive;font-size:2rem;color:#7d5a6a;margin-top:10px;font-weight:700}
-@keyframes pulse{0%{transform:translateX(-30px) scale(1)}50%{transform:translateX(-30px) scale(1.15)}100%{transform:translateX(-30px) scale(1)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 .day-counter{margin:0 0 5px}.counter-subtitle{font-family:'Poppins',sans-serif;font-size:1.1rem;font-style:italic;font-weight:500;line-height:1.3;color:#9b5f75;margin-top:-12px;margin-bottom:30px}
 .couple-display{display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 20px}
 .couple-display .avatar-container:first-child{transform:translateX(-15px)}
 .couple-display .avatar-container:last-child{transform:translateX(15px)}
 .avatar-container{display:flex;flex-direction:column;align-items:center;width:110px}
-.heart{display:flex;justify-content:center;align-items:center;font-size:3.5rem;color:#e75480;width:50px;height:110px;margin:0;animation:pulse 1.5s infinite;transform:translateX(-30px)} 
+.heart{display:flex;justify-content:center;align-items:center;font-size:3.5rem;color:#e75480;width:50px;height:110px;margin:0;animation:pulse 1.5s infinite;transform:none;flex-shrink:0}
 .avatar{width:130px;height:130px;border-radius:50%;overflow:hidden;border:6.7px solid #e75480;box-shadow:0 0 20px rgba(231,84,128,.5);transition:.4s ease;transform:scale(1.08)} 
 .avatar img{width:100%;height:100%;object-fit:cover}
 .time-display{display:flex;justify-content:center}
