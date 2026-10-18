@@ -7,6 +7,10 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 
 /* COUNTER / HOME */
 #counterPage{display:flex;justify-content:center;align-items:center;height:100dvh;overflow:hidden}
+#counterPage{position:relative;isolation:isolate;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.9) 0%,rgba(255,218,231,.75) 18%,transparent 45%),radial-gradient(circle at 15% 85%,rgba(255,143,181,.35),transparent 35%),radial-gradient(circle at 85% 15%,rgba(255,183,211,.4),transparent 35%),linear-gradient(135deg,#fff0f5 0%,#ffd9e6 45%,#f8c1d6 100%)}
+#counterPage::before,#counterPage::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(5px);z-index:0}
+#counterPage::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite}
+#counterPage::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation:floatingGlow 8s ease-in-out infinite reverse}
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}
 .love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:24px 20px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:min(92vw,520px);transition:.3s ease} 
 .couple-display{display:flex;justify-content:center;align-items:center;width:100%;padding:0 20px}
