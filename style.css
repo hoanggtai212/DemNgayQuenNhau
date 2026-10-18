@@ -90,7 +90,8 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #loveLoading::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite} 
 #loveLoading::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation:floatingGlow 8s ease-in-out infinite reverse} 
 .loading-wrapper,.success-wrapper{position:absolute;width:min(88vw,430px);padding:42px 38px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.65);border-radius:32px;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 25px 70px rgba(190,80,125,.18),inset 0 1px 0 rgba(255,255,255,.8)} 
-.loading-wrapper{animation:loadingCardIn 1s cubic-bezier(.22,1,.36,1)} 
+.loading-wrapper{animation:loadingCardIn 1s cubic-bezier(.22,1,.36,1)}
+.loading-wrapper>*{flex-shrink:0}
 .loading-heart-group{position:relative;width:300px;height:80px;margin-bottom:10px} 
 .loading-heart-left,.loading-heart-center,.loading-heart-right{position:absolute;display:flex;justify-content:center;align-items:center;font-size:43px;opacity:.25;transform:scale(.85);filter:blur(.5px);transition:.8s ease} 
 .loading-heart-left{left:0;top:5px} 
