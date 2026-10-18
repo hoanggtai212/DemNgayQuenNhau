@@ -32,6 +32,7 @@ function createHeartPhotoCentered(idx,total){const photo=document.createElement(
 function spawnHeartPhotosCentered(){const totalPhotos=30;for(let i=0;i<totalPhotos;i++){setTimeout(()=>createHeartPhotoCentered(i,totalPhotos),i*100)}}
 let lastTouchEnd=0;
 document.addEventListener("touchend",e=>{const clickable=e.target.closest("button,a,input,textarea,select,.btn,.ok");if(clickable)return;const now=Date.now();if(now-lastTouchEnd<300)e.preventDefault();lastTouchEnd=now},{passive:false});
+document.addEventListener("touchmove",e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});["gesturestart","gesturechange","gestureend"].forEach(e=>document.addEventListener(e,t=>t.preventDefault(),{passive:false}));
 /* ===== INTRO DOOR ===== */
 const door = document.getElementById("introDoor");
 const passwordPage = document.getElementById("passwordPage");
