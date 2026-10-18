@@ -261,4 +261,4 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 /* TRẠNG THÁI BAN ĐẦU */ 
 #unlock-overlay,#loveLoading,#loveSuccess,#curtainTransition{display:none} 
 #introDoor.hidden{display:none !important}
-#loveLoading.loading-transition-out{animation:loadingSceneOut 1s ease forwards;pointer-events:none}@keyframes loadingSceneOut{from{opacity:1;filter:blur(0);transform:scale(1)}to{opacity:0;filter:blur(12px);transform:scale(1.03)}}#curtainTransition{opacity:0;transition:opacity 1.5s ease}#curtainTransition.curtain-visible{opacity:1}
+#loveLoading.loading-transition-out{animation:loadingSceneOut 1.5s ease forwards;pointer-events:none}@keyframes loadingSceneOut{from{opacity:1;filter:blur(0);transform:scale(1)}to{opacity:0;filter:blur(12px);transform:scale(1.03)}}#curtainTransition{opacity:0;transition:opacity 2s ease}#curtainTransition.curtain-visible{opacity:1}
