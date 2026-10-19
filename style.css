@@ -12,7 +12,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #counterPage::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite}
 #counterPage::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation:floatingGlow 8s ease-in-out infinite reverse}
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}
-.love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc(4.5dvh - 5px) 20px 24px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:100vw;height:100dvh;transition:.3s ease}
+.love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc( 4dvh ) 20px 24px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:100vw;height:100dvh;transition:.3s ease}
 .name{font-family:'Great Vibes',cursive;font-size:2rem;color:#7d5a6a;margin-top:10px;font-weight:700}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 .day-counter{margin:5px 0 5px}
