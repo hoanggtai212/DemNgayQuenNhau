@@ -64,3 +64,5 @@ door.remove();
 });
 }
 alert(`📱 Kích thước màn hình:\n\n` +`${window.innerWidth}px × ${window.innerHeight}px`);
+function openLetter(){const menuPage=document.getElementById("menuPage"),overlay=document.getElementById("letterOverlay");if(menuPage)menuPage.style.display="none";if(overlay){overlay.classList.add("is-open");overlay.setAttribute("aria-hidden","false")}}
+function closeLetter(){const menuPage=document.getElementById("menuPage"),overlay=document.getElementById("letterOverlay"),frame=document.getElementById("letterFrame");if(frame){try{const audio=frame.contentDocument.getElementById("sound");if(audio)audio.pause()}catch(e){}try{frame.contentWindow.location.reload()}catch(e){frame.src="thu/index.html"}}if(overlay){overlay.classList.remove("is-open");overlay.setAttribute("aria-hidden","true")}if(menuPage)menuPage.style.display="flex"}
