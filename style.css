@@ -270,10 +270,10 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #introDoor .door-torch{top:48%;font-size:30px} 
 #introDoor .door-torch-left{left:5%} 
 #introDoor .door-torch-right{right:5%}
-#counterPage .back-btn,#albumPage .back-btn{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(32px,9.75vw,42px);padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}
-#counterPage .music-btn,#albumPage .music-btn{top:clamp(7px,2.05vw,10px);right:clamp(7px,2.56vw,12px);width:clamp(32px,9.75vw,42px);height:clamp(32px,9.75vw,42px);font-size:clamp(16px,4.62vw,21px)}
+#counterPage .back-btn,#albumPage .back-btn{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(29px,8.7vw,36px);padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}
+#counterPage .music-btn,#albumPage .music-btn{top:clamp(7px,2.05vw,10px);right:clamp(7px,2.56vw,12px);width:clamp(32px,9.75vw,42px);height:clamp(29px,8.7vw,36px);font-size:clamp(16px,4.62vw,21px)}
 #counterPage .time-box span.time-small{font-size:clamp(11px,3.33vw,14px);letter-spacing:clamp(1px,.5vw,2px);margin-top:clamp(6px,2.56vw,10px)}
-#letterOverlay .letter-overlay-back{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(32px,9.75vw,42px);min-height:0;padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}
+#letterOverlay .letter-overlay-back{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(29px,8.7vw,36px);min-height:0;padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}
 }
 
 /* TRẠNG THÁI BAN ĐẦU */ 
