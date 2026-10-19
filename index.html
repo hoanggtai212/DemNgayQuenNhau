@@ -123,7 +123,7 @@
 <p>Chọn một nơi để khám phá nha</p>
 
 <button onclick="showAlbum()" style="display:none">📸 Kho Báu Kỷ Niệm</button>
-<button>💌 Những Điều Muốn Nói 💌</button>
+<button type="button" onclick="openLetter()">💌 Những Điều Muốn Nói 💌</button>
 <button onclick="showCounterWithCurtain()">⏰ Thời Gian Bên Nhau ⏰</button>
 <button style="display:none">🎁 Một Điều Bất Ngờ 🎁</button>
 
@@ -178,6 +178,11 @@
 <div class="door-flash"></div>
 </div>
 
+<div id="letterOverlay" aria-hidden="true">
+  <button type="button" class="letter-overlay-back" onclick="closeLetter()" aria-label="Quay về menu">← Quay về</button>
+  <iframe id="letterFrame" src="thu/index.html" title="Bức thư Những Điều Muốn Nói" allow="autoplay"></iframe>
+</div>
+  
 <script src="script.js"></script>
 </body>
 </html>
