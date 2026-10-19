@@ -11,6 +11,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #counterPage::before,#counterPage::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(5px);z-index:0}
 #counterPage::before{width:300px;height:300px;background:rgba(255,105,160,.18);top:-100px;left:-80px;animation:floatingGlow 6s ease-in-out infinite}
 #counterPage::after{width:350px;height:350px;background:rgba(255,180,210,.25);bottom:-150px;right:-100px;animation:floatingGlow 8s ease-in-out infinite reverse}
+#counterPage .back-btn,#counterPage .music-btn{top:8px;width:40px;height:40px;font-size:20px;display:flex;align-items:center;justify-content:center}#counterPage .back-btn{left:12px}#counterPage .music-btn{right:12px}#counterPage .love-counter-container{padding-top:calc(4dvh + 12px)}
 #homePage{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}
 .love-counter-container{background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc( 4dvh ) 20px 24px;border-radius:25px;border:1.5px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(220,150,180,.37);text-align:center;z-index:1;width:100vw;height:100dvh;transition:.3s ease}
 .name{font-family:'Great Vibes',cursive;font-size:2rem;color:#7d5a6a;margin-top:10px;font-weight:700}
