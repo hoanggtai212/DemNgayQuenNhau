@@ -13,9 +13,8 @@
 
 <body>
 
-
 <section id="counterPage" style="display:none">
-<button class="back-btn" type="button" onclick="backHome()" aria-label="Quay về">←</button><button class="music-btn" type="button" id="counterMusicBtn" onclick="document.getElementById('musicBtn').click()" aria-label="Bật/tắt nhạc">♫</button>
+<button class="back-btn" type="button" onclick="backCounterToMenu()" aria-label="Quay về">←</button>
   <div class="love-counter-container">
 
 <h1 class="main-title"><span class="line1">Ngày Em Bước</span><span class="line2">Vào Đời Anh</span></h1>
@@ -85,7 +84,8 @@
 
 <section id="albumPage" style="display:none">
 <audio id="music" loop src="music.mp3"></audio>
-<button class="music-btn" id="musicBtn" aria-label="Nhạc">♫</button><button class="back-btn" type="button" onclick="backAlbumToMenu()" aria-label="Quay về">←</button>
+<button class="music-btn" id="musicBtn" aria-label="Nhạc">♫</button>
+<button class="back-btn" type="button" onclick="backAlbumToMenu()" aria-label="Quay về">←</button>
 
 <div class="main-content">
 <h1>💕 Khoảnh Khắc Tình Yêu 💕</h1>
