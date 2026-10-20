@@ -23,8 +23,8 @@ body {
 }
 
 /* ✅ sửa lại đúng class */
-.envelope-wrapper{height:min(380px,calc(100vw - 24px));margin-top:clamp(30px,12.08vw,50px);animation:float 3s ease-in-out infinite}
-#envelope{position:relative;width:min(380px,calc(100vw - 24px));height:auto;aspect-ratio:380/240;border-bottom-left-radius:6px;border-bottom-right-radius:6px;margin:0 auto;top:clamp(105px,30.2vw,125px);background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer}
+.envelope-wrapper{height:min(380px,calc(100vw - 24px));margin-top:clamp(50px,17vw,70px);animation:float 3s ease-in-out infinite}
+#envelope{position:relative;width:min(380px,calc(100vw - 24px));height:auto;aspect-ratio:380/240;border-bottom-left-radius:6px;border-bottom-right-radius:6px;margin:0 auto;top:clamp(130px,36.23vw,150px);background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer}
 
 .front {
     position: absolute;
@@ -189,7 +189,7 @@ body {
     50% { transform: scale(1.5); }
 }
 
-.controls{text-align:center;margin-top:clamp(45px,15vw,65px)}
+..controls{text-align:center;margin-top:clamp(30px,12.08vw,50px)}
 .controls button{font-weight:600;transition:all .3s ease;background-color:var(--color-env);border:2px solid var(--color-env2);border-radius:20px;color:white;padding:clamp(8px,2.9vw,12px) clamp(14px,6.04vw,25px);margin:clamp(5px,2.42vw,10px);font-size:clamp(13px,3.86vw,16px);cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.15);font-family:Arial,sans-serif}
 
 .controls button:hover {
