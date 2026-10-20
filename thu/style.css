@@ -23,24 +23,8 @@ body {
 }
 
 /* ✅ sửa lại đúng class */
-.envelope-wrapper {
-    height: 380px;
-    margin-top: 50px;
-    animation: float 3s ease-in-out infinite;
-}
-
-#envelope {
-    position: relative;
-    width: 380px;
-    height: 240px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    margin: 0 auto;
-    top: 150px;
-    background-color: var(--color-flap);
-    box-shadow: 0 4px 20px rgba(0,0,0,.1);
-    cursor: pointer;
-}
+.envelope-wrapper{height:min(380px,calc(100vw - 24px));margin-top:clamp(30px,12.08vw,50px);animation:float 3s ease-in-out infinite}
+#envelope{position:relative;width:min(380px,calc(100vw - 24px));height:auto;aspect-ratio:380/240;border-bottom-left-radius:6px;border-bottom-right-radius:6px;margin:0 auto;top:clamp(130px,36.23vw,150px);background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer}
 
 .front {
     position: absolute;
@@ -49,37 +33,11 @@ body {
     z-index: 3;
 }
 
-.flap {
-    border-left: 190px solid transparent;
-    border-right: 190px solid transparent;
-    border-bottom: 92px solid transparent;
-    border-top: 150px solid var(--color-flap);
-    transform-origin: top;
-    pointer-events: none;
-}
+.flap{border-left:clamp(0px,calc(50vw - 12px),190px) solid transparent;border-right:clamp(0px,calc(50vw - 12px),190px) solid transparent;border-bottom:clamp(66px,22.22vw,92px) solid transparent;border-top:clamp(108px,36.23vw,150px) solid var(--color-flap);transform-origin:top;pointer-events:none}
 
-.pocket {
-    border-left: 190px solid var(--color-env);
-    border-right: 190px solid var(--color-env);
-    border-bottom: 90px solid var(--color-env2);
-    border-top: 150px solid transparent;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
+.pocket{border-left:clamp(0px,calc(50vw - 12px),190px) solid var(--color-env);border-right:clamp(0px,calc(50vw - 12px),190px) solid var(--color-env);border-bottom:clamp(64px,21.74vw,90px) solid var(--color-env2);border-top:clamp(108px,36.23vw,150px) solid transparent;border-bottom-left-radius:6px;border-bottom-right-radius:6px}
 
-.letter {
-    position: relative;
-    background-color: #e0d9dd;
-    width: 95%;
-    margin: 0 auto;
-    height: 95%;
-    top: 0%;
-    border-radius: 6px;
-    box-shadow: 0 2px 26px rgba(0,0,0,.08);
-    padding: 15px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
+.letter{position:relative;background-color:#e0d9dd;width:95%;margin:0 auto;height:95%;top:0;border-radius:6px;box-shadow:0 2px 26px rgba(0,0,0,.08);padding:clamp(8px,3.62vw,15px);box-sizing:border-box;overflow:hidden}
 
 .letter:after {
     content: '';
@@ -107,22 +65,9 @@ body {
     overflow-y: auto;
 }
 
-.message p {
-    margin: 10px 0;
-    font-size: 1.4em;
-    text-shadow: 0 2px 3px rgba(0,0,0,0.1);
-}
+.message p{margin:10px 0;font-size:clamp(17px,5.41vw,22.4px);text-shadow:0 2px 3px rgba(0,0,0,.1)}
 
-.lyrics {
-    display: none;
-    font-size: 1em;
-    line-height: 1.5;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 1s ease-in;
-    max-height: 130px;
-    overflow-y: auto;
-}
+.lyrics{display:none;font-size:clamp(14px,3.86vw,16px);line-height:1.5;text-align:center;opacity:0;transition:opacity 1s ease-in;max-height:130px;overflow-y:auto}
 
 .lyric-page {
     display: none;
@@ -153,11 +98,7 @@ body {
     z-index: 1;
 }
 
-.open .letter {
-    transform: translateY(-80px) rotate(-2deg);
-    transition: transform 0.4s 0.6s ease, z-index 0.6s;
-    z-index: 2;
-}
+.open .letter{transform:translateY(clamp(-80px,-19.32vw,-65px)) rotate(-2deg);transition:transform 0.4s 0.6s ease,z-index 0.6s;z-index:2}
 
 .letter-corner {
     position: absolute;
@@ -248,25 +189,8 @@ body {
     50% { transform: scale(1.5); }
 }
 
-.controls {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.controls button {
-    font-weight: 600;
-    transition: all 0.3s ease;
-    background-color: var(--color-env);
-    border: 2px solid var(--color-env2);
-    border-radius: 20px;
-    color: white;
-    padding: 12px 25px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    font-family: Arial, sans-serif;
-}
+.controls{text-align:center;margin-top:clamp(30px,12.08vw,50px)}
+.controls button{font-weight:600;transition:all .3s ease;background-color:var(--color-env);border:2px solid var(--color-env2);border-radius:20px;color:white;padding:clamp(8px,2.9vw,12px) clamp(14px,6.04vw,25px);margin:clamp(5px,2.42vw,10px);font-size:clamp(13px,3.86vw,16px);cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.15);font-family:Arial,sans-serif}
 
 .controls button:hover {
     background-color: var(--color-env2);
