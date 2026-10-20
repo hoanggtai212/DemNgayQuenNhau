@@ -23,7 +23,7 @@ body {
 }
 
 /* ✅ sửa lại đúng class */
-.envelope-wrapper{height:min(380px,calc(100vw - 24px));margin-top:clamp(56px,calc(17vw + 6px),76px);animation:float 3s ease-in-out infinite}
+.envelope-wrapper{height:min(380px,calc(100vw - 24px));margin-top:clamp(60px,calc(17vw + 10px),80px);animation:float 3s ease-in-out infinite}
 #envelope{position:relative;width:min(380px,calc(100vw - 24px));height:auto;aspect-ratio:380/240;border-bottom-left-radius:6px;border-bottom-right-radius:6px;margin:0 auto;top:clamp(136px,36.23vw,150px);background-color:var(--color-flap);box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer}
 
 .front {
