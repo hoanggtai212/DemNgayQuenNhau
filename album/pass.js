@@ -2,8 +2,8 @@ let currentLock = 1;
 let inputPass = "";
 
 const passwords = {
-  1: "1",
-  2: "1",
+  1: "333",
+  2: "22",
   3: "1"
 };
 
