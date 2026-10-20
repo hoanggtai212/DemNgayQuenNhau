@@ -79,3 +79,9 @@ $(document).ready(function () {
       $("#page" + currentPage).addClass("active");
   }
 });
+
+/* CHẶN PHÓNG TO / THU NHỎ BẰNG 2 NGÓN TAY */
+function preventPinchZoom(e){if(e.touches&&e.touches.length>1)e.preventDefault()}
+document.addEventListener("touchstart",preventPinchZoom,{passive:false});
+document.addEventListener("touchmove",preventPinchZoom,{passive:false});
+["gesturestart","gesturechange","gestureend"].forEach(function(type){document.addEventListener(type,function(e){e.preventDefault()})});
