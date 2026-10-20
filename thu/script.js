@@ -79,7 +79,3 @@ $(document).ready(function () {
       $("#page" + currentPage).addClass("active");
   }
 });
-
-
-
-
