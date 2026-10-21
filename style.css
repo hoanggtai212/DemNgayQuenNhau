@@ -156,7 +156,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes buttonClickOut{0%{opacity:1;transform:scale(1);filter:blur(0)}45%{opacity:.8;transform:scale(.96);filter:blur(1px)}100%{opacity:0;transform:scale(.88);filter:blur(5px)}} 
 
 /* CURTAIN */ 
-#curtainTransition{display:none;position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;z-index:1000000;pointer-events:none} 
+#curtainTransition{display:none;position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden;z-index:100000100;pointer-events:none}
 #curtainTransition .curtain{position:absolute;top:-2%;width:51%;height:104%;background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px);box-shadow:0 0 45px rgba(60,0,30,.35);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translate3d(0,0,0)} 
 #curtainTransition .curtain::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.08) 0px,transparent 14px,rgba(60,0,30,.20) 32px,transparent 50px);pointer-events:none} 
 #curtainTransition .curtain-left{background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px)}
@@ -304,3 +304,6 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #passwordPage #albumPassBackBtn{position:fixed;top:12px;left:12px;z-index:100000010;display:none;align-items:center;justify-content:center;width:auto;height:40px;min-width:0;min-height:40px;padding:0 14px;border:0;border-radius:22px;background:#ff5b93;color:#fff;white-space:nowrap;font:600 14px 'Poppins',sans-serif;box-shadow:0 5px 15px rgba(0,0,0,.2);cursor:pointer}
 #passwordPage #albumPassBackBtn:active{transform:scale(.96)}
 @media(max-width:600px){#passwordPage #albumPassBackBtn{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(29px,8.7vw,36px);min-height:0;padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}}
+
+/* 💗 PASS 3: KHÓA MỜ DẦN GIỐNG LOADING */
+#unlock-overlay.lock-fade-out{opacity:0;filter:blur(12px);transform:scale(1.03);transition:opacity 1.5s ease,filter 1.5s ease,transform 1.5s ease;}
