@@ -1,4 +1,4 @@
-// 🔒 Chặn double tap zoom (mobile)
+BUI// 🔒 Chặn double tap zoom (mobile)
 let lastTouchEnd = 0;
 
 function preventDoubleTapZoom(container) {
@@ -51,7 +51,7 @@ introFront.className = 'front';
 introFront.innerHTML = `
   <div class="intro-content">
     <h1>Memory Album</h1>
-    <div class="author"><em>Bùi Ngọc Thiên Hương 😍</em></div>
+    <div class="author"><em>Hồng Nhng 😍</em></div>
     <div>🎁❤️🎁</div>
   </div>
 `;
