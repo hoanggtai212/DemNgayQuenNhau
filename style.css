@@ -294,9 +294,9 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 @keyframes passwordHeartExplode{0%{transform:translate(-50%,-50%) scale(.5);opacity:1}100%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(.9);opacity:0}}
 
 /* ===== ALBUM KỶ NIỆM ===== */
-#albumOverlay{display:none;position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;z-index:100000002;background:#ed7fca;overflow:hidden}
+#albumOverlay{display:none;position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;z-index:100000002;background:#ffeaf6;overflow:hidden}
 #albumOverlay.is-open{display:block}
-#albumOverlay #albumFrame{display:block;position:absolute;inset:0;width:100%;height:100%;border:0;background:#ed7fca}
+#albumOverlay #albumFrame{display:block;position:absolute;inset:0;width:100%;height:100%;border:0;background:#ffeaf6}
 #albumOverlay .album-overlay-back{position:absolute;top:12px;left:12px;z-index:100000010;display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border:0;border-radius:22px;background:#ff5b93;color:#fff;font:600 14px 'Poppins',sans-serif;box-shadow:0 5px 15px rgba(0,0,0,.2);cursor:pointer}
 #albumOverlay .album-overlay-back:active{transform:scale(.96)}
 @media(max-width:600px){#albumOverlay .album-overlay-back{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(29px,8.7vw,36px);min-height:0;padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}}
