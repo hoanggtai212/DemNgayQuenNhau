@@ -51,7 +51,7 @@ introFront.className = 'front';
 introFront.innerHTML = `
   <div class="intro-content">
     <h1>Memory Album</h1>
-    <div class="author"><em>Hồng Nhng 😍</em></div>
+    <div class="author"><em>😍 Hồng Nhung 😍</em></div>
     <div>🎁❤️🎁</div>
   </div>
 `;
