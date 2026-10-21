@@ -1,4 +1,4 @@
-BUI// 🔒 Chặn double tap zoom (mobile)
+// 🔒 Chặn double tap zoom (mobile)
 let lastTouchEnd = 0;
 
 function preventDoubleTapZoom(container) {
