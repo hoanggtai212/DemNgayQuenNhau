@@ -319,7 +319,7 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #passwordPage .display-wrap{height:clamp(48px,13.285vw,55px);margin-bottom:clamp(19px,5.314vw,22px)}
 #passwordPage .display-wrap #display{height:clamp(48px,13.285vw,55px)}
 #passwordPage #runningText{height:clamp(48px,13.285vw,55px);line-height:clamp(48px,13.285vw,55px)}
-#passwordPage .keypad{grid-template-columns:repeat(3,clamp(57px,15.942vw,66px));column-gap:clamp(36px,9.662vw,40px);row-gap:clamp(19px,5.314vw,22px)}
+#passwordPage .keypad{grid-template-columns:repeat(3,clamp(57px,15.942vw,66px));column-gap:clamp(30px,8.213vw,34px);row-gap:clamp(20px,5.314vw,24px)}
 #passwordPage .btn{width:clamp(57px,15.942vw,66px);height:clamp(57px,15.942vw,66px);font-size:clamp(21px,5.797vw,24px);border-radius:clamp(17px,4.83vw,20px)}
 #passwordPage .ok,#passwordPage .delete{width:clamp(57px,15.942vw,66px);height:clamp(57px,15.942vw,66px);font-size:clamp(29.5px,8.213vw,34px)}
 }
