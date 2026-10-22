@@ -159,7 +159,6 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 /* CURTAIN */ 
 #curtainTransition{display:none;position:fixed;inset:0;width:100vw;height:100dvh;overflow:hidden;z-index:100000100;pointer-events:none}
 #curtainTransition .curtain{position:absolute;top:-2%;width:51%;height:104%;background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px);box-shadow:0 0 45px rgba(60,0,30,.35);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translate3d(0,0,0)} 
-#curtainTransition .curtain{pointer-events:auto}
 #curtainTransition .curtain::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.08) 0px,transparent 14px,rgba(60,0,30,.20) 32px,transparent 50px);pointer-events:none} 
 #curtainTransition .curtain-left{background:linear-gradient(90deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px)}
 #curtainTransition .curtain-right{background:linear-gradient(270deg,#8b1748 0px,#c92763 22px,#f45f91 45px,#b51d58 68px,#df4078 90px)}
