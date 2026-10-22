@@ -555,6 +555,23 @@ button {
   }
 }
 
+/* ===== RESPONSIVE ALBUM: 414PX LÀ CHUẨN ===== */
+.book{width:min(85vw,750px,70vh);width:min(85vw,750px,70dvh);aspect-ratio:3/4}
+.page{border-radius:clamp(9px,2.9vw,12px);border-width:clamp(1px,.48vw,2px)}
+.page::after{width:clamp(24px,8.45vw,35px)}
+.page .front,.page .back{padding:clamp(12px,4.83vw,20px)}
+.page .front img,.page .back img{border-width:clamp(1px,.48vw,2px);border-radius:clamp(4px,1.45vw,6px)}
+.author{font-size:clamp(19px,5.31vw,34px);margin-top:clamp(10px,3.62vw,15px);letter-spacing:clamp(1px,.48vw,2px)}
+.intro-content,.end-content{border-width:clamp(2px,.725vw,3px);padding:clamp(8px,2.415vw,10px)}
+.intro-content h1{font-size:clamp(34px,10vw,70px);margin-bottom:clamp(10px,3.62vw,15px);line-height:1.12}
+.intro-content p{font-size:clamp(20px,6vw,32px);line-height:1.6}
+.end-content h2{font-size:clamp(17px,5vw,24px);margin-bottom:clamp(10px,3.38vw,14px)}
+.end-content span{font-size:clamp(12px,3.8vw,17px);line-height:1.6}
+.caption{margin-top:clamp(12px,4.35vw,18px);font-size:clamp(15px,4.83vw,20px);line-height:1.25;max-width:100%;overflow-wrap:anywhere}
 
-
-
+/* ===== MÀN HÌNH THẤP HOẶC NẰM NGANG ===== */
+@media(max-height:620px){
+.book{width:min(85vw,750px,65vh);width:min(85vw,750px,65dvh)}
+.page .front,.page .back{padding:clamp(8px,3vw,14px)}
+.caption{margin-top:clamp(8px,2.8vw,12px);font-size:clamp(13px,4vw,17px)}
+}
