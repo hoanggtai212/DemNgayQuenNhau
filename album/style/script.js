@@ -95,7 +95,7 @@ for (let i = 0; i < images.length; i++) {
   // FRONT = TRANG BÊN PHẢI (có ảnh)
   const img = document.createElement('img');
   img.src = images[i];
-  img.loading = "lazy";
+  img.loading = "eager";
   
   const caption = document.createElement('div');
   caption.className = 'caption';
