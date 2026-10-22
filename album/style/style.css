@@ -533,10 +533,8 @@ button {
   font-size: 14px;
   pointer-events: none;
   z-index: 30000;
-
   transform: translate(-50%, -50%);
   animation: heartExplode 0.7s ease-out forwards;
-  
   filter: drop-shadow(0 0 4px rgba(255,105,180,0.6));
 }
 
