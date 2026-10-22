@@ -305,5 +305,6 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #passwordPage #albumPassBackBtn:active{transform:scale(.96)}
 @media(max-width:600px){#passwordPage #albumPassBackBtn{top:clamp(7px,2.56vw,12px);left:clamp(7px,2.56vw,12px);height:clamp(29px,8.7vw,36px);min-height:0;padding:0 clamp(8px,3.08vw,14px);font-size:clamp(11px,3.33vw,14px)}}
 
-/* 💗 PASS 3: KHÓA MỜ DẦN GIỐNG LOADING */
-#unlock-overlay.lock-fade-out{opacity:0;filter:blur(12px);transform:scale(1.03);transition:opacity 1.5s ease,filter 1.5s ease,transform 1.5s ease;}
+/* 💗 PASS 3: CẢ TRANG VÀ Ổ KHÓA CÙNG MỜ */
+#passwordPage.album-pass-scene-fade,#unlock-overlay.album-pass-scene-fade{opacity:0;filter:blur(12px);transform:scale(1.03);transition:opacity 1.5s ease,filter 1.5s ease,transform 1.5s ease;pointer-events:none}
+
