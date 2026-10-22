@@ -371,3 +371,7 @@ document.querySelectorAll('.submit-btn').forEach(btn => {
     checkPass();
   });
 });
+
+// 💗 Báo album sẵn sàng khi ảnh và font đã tải
+function waitAlbumImage(img){if(typeof img.decode==="function")return img.decode().catch(()=>{});if(img.complete)return Promise.resolve();return new Promise(resolve=>{img.addEventListener("load",resolve,{once:true});img.addEventListener("error",resolve,{once:true})})}
+Promise.all([...Array.from(document.querySelectorAll(".book img")).map(waitAlbumImage),document.fonts?document.fonts.ready.catch(()=>{}):Promise.resolve()]).then(()=>{window.albumReady=true;window.dispatchEvent(new Event("albumready"))});
