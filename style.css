@@ -323,3 +323,5 @@ body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg
 #passwordPage .btn{width:clamp(57px,15.942vw,66px);height:clamp(57px,15.942vw,66px);font-size:clamp(21px,5.797vw,24px);border-radius:clamp(17px,4.83vw,20px)}
 #passwordPage .ok,#passwordPage .delete{width:clamp(57px,15.942vw,66px);height:clamp(57px,15.942vw,66px);font-size:clamp(29.5px,8.213vw,34px)}
 }
+#passwordPage .keypad .delete{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}
+#passwordPage .keypad .delete.show-delete{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}
